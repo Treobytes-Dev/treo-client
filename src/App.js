@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { lazy, Suspense } from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { DemoOne } from "./containers/DemoOne";
+import "./styles/App.css";
+
+// const HomeLazy = lazy(() => import('./components/Home'));
+const DemoOneLazy = lazy(() => import("./containers/DemoOne"));
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Container App</h2>
+      
+      <BrowserRouter>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route exact path="/demo-one" component={DemoOneLazy} />
+            <Route exact path="/demo-onev2" component={DemoOne} />
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
     </div>
   );
 }

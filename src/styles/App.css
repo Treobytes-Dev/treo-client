@@ -1,78 +1,125 @@
-.App {
-  text-align: center;
+.third {
+  min-height: calc(100vh - 50px);
+  background-color: #f76565;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.third span {
+  color: #fff;
+  font-size: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.third section {
+  color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* third end */
+
+.second {
+  min-height: calc(100vh - 50px);
+  background-color: #00bfff;
+  padding: 20px;
+}
+
+.second span {
+  color: #fff;
+  font-size: 40px;
+}
+
+.second section {
+  color: #fff;
+}
+
+/* second end */
+
+.home {
+  min-height: calc(100vh - 50px);
+  background-color: #333;
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.home div.title {
+  font-size: 40px;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home section p {
+  font-size: 20px;
 }
 
-/* demo one styles */
-.example-enter {
+/* home end */
+
+.header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+}
+
+.header li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.header li a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #333;
+}
+/* header end */
+
+.first {
+  min-height: calc(100vh - 50px);
+  background-color: #00d38a;
+  padding: 20px;
+}
+
+.first span {
+  color: #fff;
+  font-size: 40px;
+}
+
+.first section {
+  color: #fff;
+}
+/* first end */
+
+.fade-enter {
   opacity: 0.01;
 }
 
-.example-enter.example-enter-active {
+.fade-enter.fade-enter-active {
   opacity: 1;
-  transition: all 1000ms ease-in;
+  transition: opacity 300ms ease-in;
 }
 
-.example-leave {
+.fade-exit {
   opacity: 1;
 }
 
-.example-leave.example-leave-active {
+.fade-exit.fade-exit-active {
   opacity: 0.01;
-  transition: all 1000ms ease-out;
+  transition: opacity 300ms ease-in;
 }
 
-  .button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+div.transition-group {
+  position: relative;
 }
 
-.comp {
-  
+section.route-section {
   position: absolute;
-  background-color: pink;
-  padding: 10px;
-  
-  
+  width: 100%;
+  top: 0;
+  left: 0;
 }
-/* demo one styles */
+/* container ends */

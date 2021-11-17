@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <div className='header'>
+    <div className='page'>
+    <div className='page header'>
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -18,6 +19,7 @@ function Header() {
           <Link to="/third">Third</Link>
         </li>
       </ul>
+    </div>
     </div>
   );
 }

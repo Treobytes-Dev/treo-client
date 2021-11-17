@@ -2,6 +2,7 @@ import React from "react";
 
 function First() {
   return (
+    <div className='page'>
     <div className='first'>
       <span>First</span>
       <section>
@@ -26,6 +27,7 @@ function First() {
           ut placerat molestie. Ut tristique orci a leo tempus condimentum.
         </p>
       </section>
+    </div>
     </div>
   );
 }

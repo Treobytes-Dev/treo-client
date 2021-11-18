@@ -4,7 +4,7 @@ function Home() {
   return (
     <div className="page">
       <div className="home">
-        <h1 className="title">Home</h1>
+        <div className="title">Welcome to Page Transition App!</div>
         <section>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting

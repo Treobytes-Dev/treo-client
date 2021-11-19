@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
@@ -26,7 +26,10 @@ const routes = [
   { path: "/donate", name: "Donate", element: Donate },
 ];
 
-function RouterContainer() {
+export const RouterContainer = ({}) => {
+
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
     <div className="main-container">
       <>
@@ -147,6 +150,4 @@ function RouterContainer() {
       </>
     </div>
   );
-}
-
-export default RouterContainer;
+};

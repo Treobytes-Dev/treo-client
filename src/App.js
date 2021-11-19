@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.scss";
-import RouterContainer from "./containers/RouterContainer";
+import { RouterContainer } from "./containers/RouterContainer";
 
 function App() {
   return (

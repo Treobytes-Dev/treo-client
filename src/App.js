@@ -1,14 +1,12 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./styles/App.css";
 import RouterContainer from "./containers/RouterContainer";
-// const HomeLazy = lazy(() => import('./components/Home'));
-// const DemoOneLazy = lazy(() => import("./containers/DemoOne"));
 
 function App() {
   return (
     <div className="app">
-      <h2>Container App</h2>
+      <h2>Treobytes</h2>
       <Router>
         <RouterContainer />
       </Router>

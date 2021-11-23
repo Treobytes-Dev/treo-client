@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+// import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import Navigation from "./Navigation";
 
@@ -26,7 +26,10 @@ const routes = [
   { path: "/donate", name: "Donate", element: Donate },
 ];
 
-function RouterContainer() {
+export const RouterContainer = ({}) => {
+
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
     <div className="main-container">
       <>
@@ -34,8 +37,8 @@ function RouterContainer() {
           <Navigation routes={routes} />
         </div>
         <div className="container">
-          <TransitionGroup>
-            <CSSTransition timeout={300} classNames="page" unmountOnExit>
+          {/* <TransitionGroup> */}
+            {/* <CSSTransition timeout={300} classNames="page" unmountOnExit> */}
               <Routes>
                 {/* {routes.map(({ path, Component }) => (
               <Route key={path} exact="true" path={path}>
@@ -141,12 +144,10 @@ function RouterContainer() {
                   }
                 />
               </Routes>
-            </CSSTransition>
-          </TransitionGroup>
+            {/* </CSSTransition> */}
+          {/* </TransitionGroup> */}
         </div>
       </>
     </div>
   );
-}
-
-export default RouterContainer;
+};

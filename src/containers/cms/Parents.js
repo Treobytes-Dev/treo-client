@@ -1,5 +1,11 @@
 import React from "react";
 
+/**
+ * Parents container
+ * @function
+ * Parents - Renders the Parents container for the Parents page.
+ */
+
 function Parents() {
   return (
     <div className="page">

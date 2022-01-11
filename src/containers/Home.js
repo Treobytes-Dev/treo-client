@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
 
+/**
+ * Home container
+ * @function
+ * Home - Renders the Home container for the Home page.
+ */
+
 function Home() {
   const [error, setError] = useState(null);
   // const [isLoaded, setIsLoaded] = useState(false);

@@ -1,5 +1,11 @@
 import React from "react";
 
+/**
+ * Educators container
+ * @function
+ * Educators - Renders the Educators container for the Educators page.
+ */
+
 function Educators() {
   return (
     <div className="page">

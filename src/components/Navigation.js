@@ -1,6 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+/**
+ * Navigation
+ * @function
+ * Navigation - Renders a stateless navigation component.
+ */
+
 function Navigation({ routes }) {
   return (
     <div className="navigation">

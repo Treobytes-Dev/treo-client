@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 // import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-import Navigation from "./Navigation";
+import Navigation from "../components/Navigation";
 
 const Home = React.lazy(() => import("./Home"));
 const About = React.lazy(() => import("./cms/About"));

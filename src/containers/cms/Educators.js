@@ -1,6 +1,6 @@
 import React from "react";
 
-function Home() {
+function Educators() {
   return (
     <div className="page">
       <div className="home">
@@ -23,4 +23,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Educators;

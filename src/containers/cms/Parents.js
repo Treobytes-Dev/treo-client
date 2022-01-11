@@ -1,6 +1,12 @@
 import React from "react";
 
-function Home() {
+/**
+ * Parents container
+ * @function
+ * Parents - Renders the Parents container for the Parents page.
+ */
+
+function Parents() {
   return (
     <div className="page">
       <div className="home">
@@ -15,4 +21,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Parents;

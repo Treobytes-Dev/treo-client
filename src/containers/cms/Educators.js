@@ -1,6 +1,12 @@
 import React from "react";
 
-function Home() {
+/**
+ * Educators container
+ * @function
+ * Educators - Renders the Educators container for the Educators page.
+ */
+
+function Educators() {
   return (
     <div className="page">
       <div className="home">
@@ -23,4 +29,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Educators;

@@ -1,6 +1,12 @@
 import React from "react";
 
-function Home() {
+/**
+ * Programs container
+ * @function
+ * Programs - Renders the Programs container for the Programs page.
+ */
+
+function Programs() {
   return (
     <div className="page">
       <div className="home">
@@ -15,4 +21,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Programs;

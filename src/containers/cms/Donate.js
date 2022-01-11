@@ -1,6 +1,12 @@
 import React from "react";
 
-function Home() {
+/**
+ * Donate container
+ * @function
+ * Donate - Renders the Donate container for the Donate page.
+ */
+
+function Donate() {
   return (
     <div className="page">
       <div className="home">
@@ -15,4 +21,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Donate;

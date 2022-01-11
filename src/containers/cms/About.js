@@ -1,6 +1,12 @@
 import React from "react";
 
-function Home() {
+/**
+ * About container
+ * @function
+ * About - Renders the About container for the About page.
+ */
+
+function About() {
   return (
     <div className="page">
       <div className="home">
@@ -15,4 +21,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default About;

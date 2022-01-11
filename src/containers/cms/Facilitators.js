@@ -1,6 +1,12 @@
 import React from "react";
 
-function Home() {
+/**
+ * Facilitators container
+ * @function
+ * Facilitators - Renders the Facilitators container for the Facilitators page.
+ */
+
+function Facilitators() {
   return (
     <div className="page">
       <div className="home">
@@ -15,4 +21,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Facilitators;

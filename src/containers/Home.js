@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function Home() {
+  const [error, setError] = useState(null);
+  // const [isLoaded, setIsLoaded] = useState(false);
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:4000/api/blogs/")
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setItems(result.data);
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          setError(error);
+        }
+      );
+  }, []);
+
   return (
     <div className="page">
       <div className="home">
@@ -17,6 +37,11 @@ function Home() {
             and more recently with desktop publishing software like Aldus
             PageMaker including versions of Lorem Ipsum.
           </p>
+          {items.map((item) => (
+            <li key={item.id}>
+              {item.name} {item.type}
+            </li>
+          ))}
         </section>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Home() {
+function Facilitators() {
   return (
     <div className="page">
       <div className="home">
@@ -15,4 +15,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Facilitators;

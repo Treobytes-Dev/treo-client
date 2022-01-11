@@ -1,5 +1,11 @@
 import React from "react";
 
+/**
+ * Training container
+ * @function
+ * Training - Renders the Training container for the Training page.
+ */
+
 function Training() {
   return (
     <div className="page">

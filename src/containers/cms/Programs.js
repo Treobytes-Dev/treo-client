@@ -1,5 +1,11 @@
 import React from "react";
 
+/**
+ * Programs container
+ * @function
+ * Programs - Renders the Programs container for the Programs page.
+ */
+
 function Programs() {
   return (
     <div className="page">

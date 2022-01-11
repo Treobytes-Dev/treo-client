@@ -1,5 +1,11 @@
 import React from "react";
 
+/**
+ * Store container
+ * @function
+ * Store - Renders the Store container for the Store page.
+ */
+
 function Store() {
   return (
     <div className="page">

@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 // import { CSSTransition, TransitionGroup } from "react-transition-group";
-
 import Navigation from "../components/Navigation";
+
+/**
+ * RouterContainer
+ * @function
+ * RouterContainer - Renders the containers for navigation across the application.
+ */
 
 const Home = React.lazy(() => import("./Home"));
 const About = React.lazy(() => import("./cms/About"));

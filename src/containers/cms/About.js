@@ -1,5 +1,11 @@
 import React from "react";
 
+/**
+ * About container
+ * @function
+ * About - Renders the About container for the About page.
+ */
+
 function About() {
   return (
     <div className="page">

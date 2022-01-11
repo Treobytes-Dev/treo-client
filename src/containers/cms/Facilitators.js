@@ -1,5 +1,11 @@
 import React from "react";
 
+/**
+ * Facilitators container
+ * @function
+ * Facilitators - Renders the Facilitators container for the Facilitators page.
+ */
+
 function Facilitators() {
   return (
     <div className="page">

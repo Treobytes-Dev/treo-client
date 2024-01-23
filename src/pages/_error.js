@@ -19,7 +19,7 @@ function Error({ statusCode, componentName }) {
 						<Alert dimensions={100} />
 					</div>
 					<div className='group'>
-						<h2 className='header-two'>Oops, there was an error.</h2>
+						<h2 className='header-two '>Oops, there was an error.</h2>
 						<Link className='anchor' href={state ? '/admin/dashboard' : '/'}>
 							Click here to return to the {state ? 'dashboard' : 'landing page'}
 							.

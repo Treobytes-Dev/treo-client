@@ -1,0 +1,141 @@
+@import './_variables.scss';
+
+// all users
+.all-users {
+	.wrapper {
+		background-color: $color-white;
+		padding: 20px;
+		@media #{$medium} {
+			padding: 40px;
+		}
+
+		.heading {
+			display: flex;
+			align-items: center;
+
+			.header-four {
+				margin-left: 15px;
+			}
+		}
+
+		.heading,
+		.search {
+			margin-bottom: 20px;
+		}
+
+		.titles {
+			display: none;
+
+			@media #{$medium} {
+				display: flex;
+				padding-bottom: 20px;
+				padding-left: 40px;
+			}
+
+			.title {
+				display: inline-flex;
+				width: 100%;
+				@media #{$medium} {
+					width: 22%;
+				}
+			}
+		}
+
+		.user {
+			display: flex;
+			border-bottom: 1px solid $gray-200;
+			flex-direction: column;
+
+			@media #{$large} {
+				flex-direction: row;
+				align-items: center;
+			}
+
+			.info {
+				display: flex;
+				flex-direction: column;
+
+				@media #{$large} {
+					display: inline-flex;
+					flex-direction: row;
+					align-items: center;
+					width: 90%;
+				}
+
+				.avatar {
+					margin-right: 1rem;
+				}
+
+				.name,
+				.role {
+					width: 23.5%;
+				}
+
+				.email {
+					width: 24%;
+				}
+
+				.posts {
+					width: 10%;
+				}
+			}
+
+			.buttons {
+				display: flex;
+				justify-content: flex-end;
+
+				@media #{$large} {
+					display: inline-flex;
+					width: 10%;
+				}
+
+				.edit .anchor {
+					color: $color-font-body;
+				}
+			}
+		}
+	}
+}
+
+// new user
+.new-user {
+	.wrapper {
+		background-color: $color-white;
+		padding: 20px;
+
+		@media #{$large} {
+			padding: 40px;
+		}
+	}
+}
+
+// profile
+.profile {
+	.wrapper {
+		background-color: $color-white;
+		padding: 20px;
+
+		@media #{$medium} {
+			padding: 40px;
+		}
+
+		.group {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			padding: 0 0 20px 0;
+
+			.label {
+				width: auto;
+				font-weight: bold;
+				margin: 0;
+			}
+
+			.paragraph {
+				margin: 0 0 0 10px;
+			}
+		}
+	}
+}
+
+// edit user

@@ -1,0 +1,72 @@
+@import './_variables.scss';
+
+// page styles
+.comments {
+	.wrapper-comments,
+	.search-comments {
+		display: flex;
+		width: 100%;
+	}
+
+	.wrapper-comments {
+		flex-direction: column;
+		padding: 20px;
+		background-color: $color-white;
+		margin-top: 20px;
+
+		@media #{$medium} {
+			padding: 40px;
+		}
+
+		.filtered-comments {
+			.wrapper {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+
+				.text {
+					display: inline-flex;
+					flex-direction: row;
+
+					.label,
+					.paragraph {
+						width: auto;
+					}
+
+					.label {
+						font-weight: bold;
+					}
+
+					.paragraph {
+						margin-left: 10px;
+					}
+				}
+			}
+
+			.content {
+				display: flex;
+			}
+
+			.btns {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				.edit,
+				.delete {
+					width: 100px;
+				}
+			}
+		}
+	}
+}
+
+.comment-form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	@media #{$medium} {
+		width: 500px;
+	}
+}

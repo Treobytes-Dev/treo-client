@@ -1,0 +1,71 @@
+@import './_variables.scss';
+
+// crud edit
+.crud-edit {
+	.list {
+		display: flex;
+		flex-direction: column;
+
+		.item {
+			display: flex;
+			flex-direction: column;
+			background-color: $color-white;
+			padding: 40px 20px;
+			border-radius: 5px;
+
+			.input-container,
+			.inside-btns {
+				display: flex;
+			}
+
+			.input-container {
+				flex-direction: column;
+				.editable {
+					display: flex;
+					width: 100%;
+					flex-direction: column;
+
+					.default-menu {
+						display: flex;
+						flex-direction: column;
+						width: 100%;
+					}
+
+					.sub-menu {
+						display: flex;
+						flex-direction: column;
+						width: 100%;
+					}
+				}
+			}
+
+			.inside-btns {
+				.btn {
+					display: inline-flex;
+					flex-direction: column;
+					height: auto;
+					align-items: center;
+					margin-right: 20px;
+
+					.paragraph {
+						display: none;
+
+						@media #{$medium} {
+							display: flex;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.wrapper-btn {
+		display: flex;
+		margin: 20px 0;
+
+		@media #{$medium} {
+			align-items: center;
+			width: 200px;
+		}
+	}
+}

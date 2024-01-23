@@ -1,0 +1,40 @@
+// break points
+$small: '(min-width: 607px)';
+$medium: '(min-width: 768px)';
+$large: '(min-width: 992px)';
+$xlarge: '(min-width: 1200px)';
+
+// colors
+$color-white: #fff;
+$color-black: #000;
+$color-font-body: #424242;
+
+$color-black-alpha: rgba(0, 0, 0, 0.6);
+
+$color-primary: #6ec1e4;
+
+$color-warning: #ff9800;
+$color-success: #4caf50;
+$color-danger: #f44336;
+
+// scss-docs-start gray-color-variables
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$color-muted-blue: #8793ab;
+
+// heading
+$heading-one: 2.5rem;
+$heading-two: 2rem;
+$heading-three: 1.75rem;
+$heading-four: 1.5rem;
+$heading-five: 1.25rem;
+$heading-six: 1rem;

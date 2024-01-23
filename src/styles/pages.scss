@@ -1,0 +1,280 @@
+@import './_variables.scss';
+
+// default
+.page {
+	.container {
+		padding: 20px 0;
+
+		@media #{$medium} {
+			padding: 40px 0;
+		}
+
+		.intro {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+
+			.paragraph {
+				padding: 20px 0;
+			}
+		}
+
+		.secondary {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			@media #{$medium} {
+				flex-direction: row;
+			}
+
+			.column {
+				display: flex;
+
+				@media #{$medium} {
+					display: inline-flex;
+				}
+
+				&.col-1 {
+					flex-direction: column;
+
+					@media #{$medium} {
+						width: 60%;
+						padding-right: 20px;
+					}
+
+					.paragraph {
+						padding: 20px 0;
+					}
+				}
+
+				&.col-2 {
+					flex-direction: column;
+
+					@media #{$medium} {
+						width: 40%;
+						padding-left: 20px;
+					}
+				}
+			}
+		}
+
+		.third {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			.group {
+				display: flex;
+
+				&.one {
+					@media #{$medium} {
+						flex-direction: row;
+					}
+
+					flex-direction: column;
+
+					.heading,
+					.paragraph {
+						display: flex;
+						justify-content: center;
+						text-align: center;
+						align-items: center;
+
+						@media #{$medium} {
+							display: inline-flex;
+						}
+					}
+
+					.heading {
+						@media #{$medium} {
+							width: 40%;
+						}
+
+						.wrapper-icon {
+							width: 30px;
+						}
+					}
+
+					.paragraph {
+						padding: 20px 0;
+						@media #{$medium} {
+							width: 60%;
+						}
+					}
+				}
+
+				&.two {
+					flex-direction: column;
+					justify-content: center;
+					align-self: center;
+					text-align: center;
+
+					.paragraph {
+						padding: 20px 0;
+					}
+				}
+			}
+		}
+
+		.fourth {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			@media #{$medium} {
+				flex-direction: row;
+			}
+
+			.column {
+				display: flex;
+				flex-direction: column;
+
+				@media #{$medium} {
+					display: inline-flex;
+				}
+
+				&.col-1 {
+					align-items: center;
+					text-align: center;
+
+					@media #{$medium} {
+						width: 60%;
+						padding-right: 20px;
+					}
+
+					.heading {
+						display: flex;
+						align-items: center;
+
+						.wrapper-icon {
+							width: 30px;
+						}
+					}
+
+					.paragraph {
+						padding: 20px 0;
+					}
+
+					.wrapper-image {
+						.img {
+							border-radius: 10px;
+						}
+					}
+				}
+
+				&.col-2 {
+					@media #{$medium} {
+						width: 40%;
+						padding-left: 20px;
+					}
+				}
+			}
+		}
+
+		.fifth {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			@media #{$medium} {
+				flex-direction: row;
+			}
+
+			.column {
+				display: flex;
+				flex-direction: column;
+
+				@media #{$medium} {
+					display: inline-flex;
+				}
+
+				&.col-1 {
+					display: flex;
+					flex-direction: column;
+					text-align: center;
+
+					@media #{$medium} {
+						width: 60%;
+						padding-right: 20px;
+					}
+
+					.heading {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						justify-content: center;
+
+						.wrapper-icon {
+							width: 40px;
+						}
+					}
+				}
+
+				&.col-2 {
+					@media #{$medium} {
+						width: 40%;
+						padding-left: 20px;
+					}
+
+					.wrapper-image {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						border-radius: 10px;
+
+						.img {
+							border-radius: 10px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// admin
+// pages index
+.pages {
+	.wrapper {
+		background-color: $color-white;
+		padding: 20px;
+
+		@media #{$medium} {
+			padding: 40px;
+		}
+
+		.heading {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+
+		.add-new {
+			margin: 1rem 0px;
+			display: flex;
+			width: 150px;
+		}
+
+		.page-list {
+			border-bottom: 1px solid $gray-200;
+
+			.options {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				.edit,
+				.delete {
+					width: 100px;
+				}
+			}
+		}
+	}
+}

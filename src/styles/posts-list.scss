@@ -1,0 +1,37 @@
+@import './_variables.scss';
+
+.posts-list {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 20px;
+
+	@media #{$medium} {
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.post-title {
+		@media #{$medium} {
+			width: 50%;
+			display: inline-flex;
+		}
+	}
+
+	.options {
+		display: inline-flex;
+
+		@media #{$medium} {
+			width: 50%;
+			display: inline-flex;
+			justify-content: flex-end;
+		}
+
+		.view,
+		.edit,
+		.delete {
+			width: 33%;
+		}
+	}
+}

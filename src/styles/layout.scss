@@ -1,0 +1,42 @@
+@import './_variables.scss';
+
+.layout {
+	display: flex;
+	align-items: stretch;
+}
+
+// container
+.container {
+	margin-right: 15px;
+	margin-left: 15px;
+}
+
+*,
+:after,
+:before {
+	box-sizing: border-box;
+}
+
+@media #{$medium} {
+	.container {
+		width: 750px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+@media #{$large} {
+	.container {
+		width: 970px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+@media #{$xlarge} {
+	.container {
+		width: 1170px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}

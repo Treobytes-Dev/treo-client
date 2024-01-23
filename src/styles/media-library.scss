@@ -1,0 +1,83 @@
+@import './_variables.scss';
+
+// media library
+.library {
+	display: flex;
+	width: 100%;
+	background-color: $color-white;
+	border-radius: 10px;
+	padding: 20px;
+	margin-top: 20px;
+
+	@media #{$medium} {
+		padding: 40px;
+	}
+
+	.media {
+		display: inline-flex;
+		flex-direction: row;
+		margin: 10px;
+
+		.btn {
+			border: none;
+
+			&.set-media {
+				background-color: transparent;
+				cursor: pointer;
+			}
+
+			&.delete-media {
+				width: 30px;
+				height: 30px;
+				color: $color-danger;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.new-media {
+	.upload-image {
+		// inherits label styles
+		align-items: center;
+		justify-content: center;
+		padding: 20px;
+		background-color: $color-white;
+		margin: 20px 0;
+
+		@media #{$medium} {
+			padding: 40px;
+		}
+
+		.paragraph {
+			display: none;
+			@media #{$medium} {
+				display: flex;
+			}
+		}
+	}
+}
+
+// featured image modal
+.featured-image {
+	display: flex;
+	flex-direction: column;
+	width: 75%;
+	align-items: center;
+
+	@media #{$medium} {
+		width: 50%;
+	}
+
+	&.show-image {
+		background-color: transparent;
+	}
+
+	&.add-image {
+		background-color: white;
+	}
+
+	.img {
+		width: 100%;
+	}
+}

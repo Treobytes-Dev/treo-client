@@ -1,0 +1,19 @@
+@import './_variables.scss';
+
+.loading-to-redirect {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;
+
+	.wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@media #{$medium} {
+			width: 35%;
+		}
+	}
+}

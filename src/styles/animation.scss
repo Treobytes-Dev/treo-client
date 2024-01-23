@@ -1,0 +1,148 @@
+// animation styles
+@import './_variables';
+
+.fade-in {
+	animation: fade-in 0.5s both;
+}
+
+// fade-in
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.fade-out {
+	animation: fade-out 0.5s ease-out both;
+}
+
+@keyframes fade-out {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+// wobble
+.wobble {
+	animation: wobble 0.5s both;
+}
+
+@keyframes wobble {
+	0%,
+	100% {
+		transform: translateX(0%);
+		transform-origin: 50% 50%;
+	}
+
+	15% {
+		transform: translateX(-30px) rotate(-6deg);
+	}
+
+	30% {
+		transform: translateX(15px) rotate(6deg);
+	}
+
+	45% {
+		transform: translateX(-15px) rotate(-3.6deg);
+	}
+
+	60% {
+		transform: translateX(9px) rotate(2.4deg);
+	}
+
+	75% {
+		transform: translateX(-6px) rotate(-1.2deg);
+	}
+}
+
+.vibrate {
+	animation: vibrate 0.5s linear both;
+}
+
+@keyframes vibrate {
+	0% {
+		transform: translate(0);
+	}
+
+	10% {
+		transform: translate(-2px, -2px);
+	}
+
+	20% {
+		transform: translate(2px, -2px);
+	}
+
+	30% {
+		transform: translate(-2px, 2px);
+	}
+
+	40% {
+		transform: translate(2px, 2px);
+	}
+
+	50% {
+		transform: translate(-2px, -2px);
+	}
+
+	60% {
+		transform: translate(2px, -2px);
+	}
+
+	70% {
+		transform: translate(-2px, 2px);
+	}
+
+	80% {
+		transform: translate(-2px, -2px);
+	}
+
+	90% {
+		transform: translate(2px, -2px);
+	}
+
+	100% {
+		transform: translate(0);
+	}
+}
+
+// flip-in
+.flip-in {
+	animation: flip-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes flip-in {
+	0% {
+		transform: rotateX(80deg);
+		opacity: 0;
+	}
+
+	100% {
+		transform: rotateX(0);
+		opacity: 1;
+	}
+}
+
+// flip-out
+.flip-out {
+	animation: flip-out 0.45s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@keyframes flip-out {
+	0% {
+		transform: rotateX(0);
+		opacity: 1;
+	}
+
+	100% {
+		transform: rotateX(70deg);
+		opacity: 0;
+	}
+}

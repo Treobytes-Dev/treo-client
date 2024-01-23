@@ -1,0 +1,44 @@
+@import './_variables.scss';
+
+// buttons
+.button {
+	padding: 10px 5px;
+	border-radius: 5px;
+	height: 60px;
+
+	&.primary {
+		background-color: $color-primary;
+		color: $color-white;
+		margin: 20px 0;
+		width: 100%;
+	}
+
+	&.submit {
+		background-color: $color-success;
+		color: $color-white;
+		margin: 20px 0;
+		width: 100%;
+	}
+
+	&.edit {
+		background-color: $color-white;
+		border: 1px solid $color-font-body;
+		margin: 20px 0;
+		width: 100%;
+	}
+
+	&.delete {
+		background-color: $color-white;
+		color: $color-danger;
+		margin: 20px 0;
+		width: 100%;
+	}
+
+	&.warning {
+		background-color: $color-white;
+		border: 1px solid $color-warning;
+		color: $color-warning;
+		margin: 20px 0;
+		width: 100%;
+	}
+}

@@ -1,0 +1,32 @@
+@import './_variables.scss';
+
+.image-container {
+	display: flex;
+	flex-direction: column;
+	.single {
+		display: flex;
+
+		.img {
+			width: 100%;
+			border-radius: 10px;
+		}
+	}
+
+	.multiples {
+		display: flex;
+		justify-content: space-between;
+		padding-top: 20px;
+
+		@media #{$medium} {
+			display: inline-flex;
+		}
+
+		.thumbnail {
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			height: 100px;
+			border-radius: 10px;
+		}
+	}
+}

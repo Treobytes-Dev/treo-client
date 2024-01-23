@@ -1,0 +1,141 @@
+@import './_variables.scss';
+
+.diagram-levels {
+	display: flex;
+	flex-direction: column;
+
+	.row {
+		display: flex;
+		flex-direction: column;
+
+		@media #{$medium} {
+			flex-direction: row;
+		}
+
+		&.row-1 {
+			@media #{$medium} {
+				padding: 0 50px;
+			}
+
+			.box {
+				@media #{$medium} {
+					width: 25%;
+					padding: 0 20px;
+
+					&.box-one {
+						border-right: 3px solid #ff6633;
+					}
+
+					&.box-two {
+						border-right: 3px solid #cc3333;
+					}
+
+					&.box-three {
+						border-right: 3px solid #990033;
+					}
+				}
+
+				.position {
+					text-align: right;
+
+					&.one {
+						color: #ff9900;
+					}
+
+					&.two {
+						color: #ff6633;
+					}
+
+					&.three {
+						color: #cc3333;
+					}
+
+					&.four {
+						color: #990033;
+					}
+				}
+			}
+		}
+
+		&.row-2 {
+			.section {
+				display: flex;
+				color: $color-white;
+				text-align: center;
+
+				.number {
+					color: $color-font-body;
+					background-color: $color-white;
+					width: 100px;
+					height: 80px;
+					border-radius: 50%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					&.one {
+						border: 5px solid #ff9900;
+					}
+
+					&.two {
+						border: 5px solid #ff6633;
+					}
+
+					&.three {
+						border: 5px solid #cc3333;
+					}
+
+					&.four {
+						border: 5px solid #990033;
+					}
+				}
+
+				.with-icon {
+					display: flex;
+					width: 50%;
+				}
+
+				&.text {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					padding: 0 20px;
+					color: $color-white;
+				}
+
+				&.first {
+					border-radius: 50px 0px 0px 50px;
+				}
+
+				&.one {
+					background-color: #ff9900;
+				}
+
+				&.two {
+					background-color: #ff6633;
+				}
+
+				&.three {
+					background-color: #cc3333;
+				}
+
+				&.four {
+					background-color: #990033;
+				}
+
+				&.one,
+				&.two,
+				&.three,
+				&.four {
+					border-radius: 0 50px 50px 0;
+					display: flex;
+
+					@media #{$medium} {
+						display: inline-flex;
+					}
+				}
+			}
+		}
+	}
+}

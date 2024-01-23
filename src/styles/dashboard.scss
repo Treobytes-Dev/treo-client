@@ -1,0 +1,79 @@
+@import './_variables.scss';
+
+.dashboard {
+	.group {
+		display: flex;
+		flex-direction: column;
+
+		&.one {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+
+			.stat {
+				display: flex;
+				width: 100%;
+				padding: 0 20px;
+
+				@media #{$medium} {
+					display: inline-flex;
+					width: 33%;
+				}
+			}
+		}
+
+		&.two {
+			flex-direction: column;
+
+			@media #{$medium} {
+				flex-direction: row;
+			}
+
+			.column {
+				display: flex;
+				flex-direction: column;
+
+				@media #{$medium} {
+					display: inline-flex;
+					width: 50%;
+				}
+
+				&.one {
+					margin-bottom: 20px;
+					@media #{$medium} {
+						margin-right: 10px;
+						margin-bottom: 0;
+					}
+				}
+
+				&.two {
+					@media #{$medium} {
+						margin-left: 10px;
+					}
+				}
+
+				.btn {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					width: 100%;
+					padding: 20px;
+					background-color: $color-white;
+					border-radius: 10px 10px 0 0;
+				}
+
+				.list {
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					padding: 20px;
+					background-color: $color-white;
+					border-radius: 0 0 10px 10px;
+					.anchor {
+						color: $color-font-body;
+					}
+				}
+			}
+		}
+	}
+}

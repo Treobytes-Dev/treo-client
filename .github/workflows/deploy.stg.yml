@@ -19,7 +19,7 @@ jobs:
         with:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          aws-region: your-aws-region # Replace with your AWS region
+          aws-region: us-west-2 
 
       # Install AWS CLI
       - name: Install AWS CLI

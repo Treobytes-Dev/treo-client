@@ -7,6 +7,7 @@ import axios from 'axios';
 
 import Avatar from '../assets/icons/Avatar.js';
 import Logo from '../assets/icons/Logo.js';
+import { Loader } from '../assets/icons/Loader.js';
 
 // todo:
 // create CRUD functionality to add pages
@@ -85,7 +86,11 @@ const Navigation = () => {
 
 	return (
 		<div className='navigation'>
-			{loading && <div className='loader'>Loading...</div>}
+			{loading && (
+				<div className='loader'>
+					<Loader />
+				</div>
+			)}
 			{!!errorMsg && (
 				<div
 					className='error'
@@ -104,7 +109,7 @@ const Navigation = () => {
 						}`}
 						style={{ width: '300px' }}
 					>
-						<Logo />
+						{/* <Logo /> */}
 					</Link>
 				</li>
 

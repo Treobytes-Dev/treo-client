@@ -3,12 +3,29 @@ import { AppContext } from '../context';
 import Head from 'next/head';
 import axios from 'axios';
 
+// mocks
+import {
+	mockHeroImage,
+	mockHeroHeader2,
+	mockHeroHeader4,
+	mockIntroHeader,
+	mockIntroParagraph,
+	mockSingleImage,
+	mockEngineeringKitPhoto,
+	mockThumbnails,
+	mockRowOne,
+	mockRowTwo,
+} from '../mocks';
+
 // components
 import Navigation from '../components/Navigation';
 import Status from '../components/Status';
 import { Hero } from '../components/Hero';
 import ImageContainer from '../components/ImageContainer';
 import DiagramLevels from '../components/DiagramLevels';
+
+import { TemplateIntro } from '../components/TemplateIntro';
+
 // icons
 import { Loader } from '../assets/icons/Loader';
 import { CarrotDown } from '../assets/icons/CarrotDown';
@@ -28,10 +45,8 @@ const Home = ({ componentName, data }) => {
 		);
 	}
 
-	console.log('data', data);
-
 	useEffect(() => {
-		pageId.length > 0 && setPageId(data._id);
+		pageId?.length > 0 && setPageId(data._id);
 	}, []);
 
 	// comments
@@ -74,66 +89,6 @@ const Home = ({ componentName, data }) => {
 		</Head>
 	);
 
-	const mockSingleImage =
-		'https://i0.wp.com/treobytes.org/wp-content/uploads/2020/03/AdobeStock_267992921-scaled.jpeg?resize=360%2C240&ssl=1';
-
-	const mockEngineeringKitPhoto =
-		'https://i0.wp.com/treobytes.org/wp-content/uploads/2021/07/AdobeStock_236050835-scaled.jpeg?fit=750%2C500&ssl=1';
-
-	const mockThumbnails = [
-		'https://i0.wp.com/treobytes.org/wp-content/uploads/2019/10/AdobeStock_269246946.jpeg?resize=360%2C240&ssl=1',
-
-		'https://i0.wp.com/treobytes.org/wp-content/uploads/2019/09/shutterstock_391124713.jpg?resize=360%2C240&ssl=1',
-
-		'https://i0.wp.com/treobytes.org/wp-content/uploads/2019/09/shutterstock_660256189.jpg?resize=360%2C240&ssl=1',
-	];
-
-	const mockRowOne = [
-		{
-			number: '01',
-			text: '	Proactively engineer real-time bandwidth for bricks-and-clicks quality vector Assertively evisculate interdependent leadership skills through clicks-and-mortar.',
-			classModifier: 'one',
-		},
-		{
-			number: '02',
-			text: 'Monotonectally synergize professional value before equity invested						e-tailers. Seamlessly supply performance based portals with quality.',
-			classModifier: 'two',
-		},
-		{
-			number: '03',
-			text: 'Dynamically brand synergistic total linkage and tactical sources.      Synergistically negotiate value-added mindshare without fully tested.',
-			classModifier: 'three',
-		},
-		{
-			number: '04',
-			text: 'Synergistically reconceptualize diverse sources rather than open-source quality vectors. Progressively brand parallel customer service without.',
-			classModifier: 'four',
-		},
-	];
-
-	const mockRowTwo = [
-		{
-			number: '01',
-			text: 'Basic "RoBo" Motion',
-			classModifier: 'one',
-		},
-		{
-			number: '02',
-			text: 'Technical Programming',
-			classModifier: 'two',
-		},
-		{
-			number: '03',
-			text: 'Prototyping',
-			classModifier: 'three',
-		},
-		{
-			number: '04',
-			text: 'Project Completion Knowledge Assessment',
-			classModifier: 'four',
-		},
-	];
-
 	return (
 		<>
 			{head()}
@@ -143,44 +98,14 @@ const Home = ({ componentName, data }) => {
 					(!!successMsg && (
 						<Status errorMsg={errorMsg} successMsg={successMsg} />
 					))}
-				<div className='hero-wrapper'>
-					<Hero
-						children={
-							<>
-								<div className='fore-ground'>
-									<div className='text'>
-										<h2 className='header-two'>6th - 8th Grade</h2>
-										<h4 className='header-four'>Vocational STEM Education</h4>
-									</div>
-								</div>
-								<div className='assets'>
-									<div className='carrot-down'>
-										<CarrotDown fill='#333' />
-									</div>
-								</div>
-							</>
-						}
-						background='http://treobytes.org/wp-content/uploads/2019/09/Girl-STEAM.jpg'
-					/>
-				</div>
 
-				{/* template */}
-				<div className='container'>
-					<div className='intro'>
-						<h2 className='header-two'>
-							Career Aspirations Being in Middle School
-						</h2>
-						<p className='paragraph'>
-							In today’s technology-driven world, more than half of all students
-							will be expected to use STEM as part of their future careers.
-							Providing them with both exposure and career training is a must.
-							The earlier that training begins, the more likely that students
-							will understand and consider STEM careers and be empowered with
-							the skillsets to succeed professionally – wherever their adult
-							lives take them.
-						</p>
-					</div>
-				</div>
+				<TemplateIntro
+					heroImage={mockHeroImage}
+					heroHeader={mockHeroHeader2}
+					heroSubHeader={mockHeroHeader4}
+					introHeader={mockIntroHeader}
+					introBody={mockIntroParagraph}
+				/>
 
 				<div className='container'>
 					<div className='secondary'>

@@ -38,9 +38,6 @@ const Home = ({ componentName, data }) => {
 	const [errorMsg, setErrorMsg] = useState('');
 	const [successMsg, setSuccessMsg] = useState('');
 	const [pageId, setPageId] = useState(data._id);
-	// editing
-
-	const [content, setContent] = useState('');
 
 	if (errorMsg) setTimeout(() => setErrorMsg(''), 3000);
 	if (successMsg) setTimeout(() => setSuccessMsg(''), 3000);

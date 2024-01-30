@@ -6,6 +6,7 @@ import Cookies from 'js-cookie';
 import axios from 'axios';
 
 import Avatar from '../assets/icons/Avatar.js';
+import Logo from '../assets/icons/Logo.js';
 
 // todo:
 // create CRUD functionality to add pages
@@ -98,9 +99,12 @@ const Navigation = () => {
 				<li className='list-item'>
 					<Link
 						href='/'
-						className={current === '/' ? `nav-link active` : 'nav-link'}
+						className={`logo ${
+							current === '/' ? `nav-link active` : 'nav-link'
+						}`}
+						style={{ width: '300px' }}
 					>
-						LOGO
+						<Logo />
 					</Link>
 				</li>
 

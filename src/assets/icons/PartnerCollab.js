@@ -1,7 +1,7 @@
 import React from 'react';
 import { string } from 'prop-types';
 
-const Robot = ({ componentName, additionalClassName }) => (
+const PartnerCollab = ({ componentName, additionalClassName }) => (
 	<svg
 		className={`${componentName} ${additionalClassName}`}
 		x={0}
@@ -41,7 +41,7 @@ const Robot = ({ componentName, additionalClassName }) => (
 	</svg>
 );
 
-Robot.propTypes = {
+PartnerCollab.propTypes = {
 	/**
 	 * Optional additional className
 	 */
@@ -58,8 +58,8 @@ Robot.propTypes = {
 	viewBox: string,
 };
 
-Robot.defaultProps = {
-	componentName: 'robot',
+PartnerCollab.defaultProps = {
+	componentName: 'partner-collab',
 };
 
-export default Robot;
+export default PartnerCollab;

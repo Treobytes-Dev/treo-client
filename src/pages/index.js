@@ -20,15 +20,16 @@ import {
 // components
 import Navigation from '../components/Navigation';
 import Status from '../components/Status';
-import { Hero } from '../components/Hero';
-import ImageContainer from '../components/ImageContainer';
+
 import DiagramLevels from '../components/DiagramLevels';
 
 import { TemplateIntro } from '../components/TemplateIntro';
+import { TemplateSecondary } from '../components/TemplateSecondary';
+import { TemplateThird } from '../components/TemplateThird';
+import { TemplateFourth } from '../components/TemplateFourth';
 
 // icons
 import { Loader } from '../assets/icons/Loader';
-import { CarrotDown } from '../assets/icons/CarrotDown';
 import Robot from '../assets/icons/Robot';
 import PartnerCollab from '../assets/icons/PartnerCollab';
 
@@ -107,62 +108,36 @@ const Home = ({ componentName, data }) => {
 					introBody={mockIntroParagraph}
 				/>
 
-				<div className='container'>
-					<div className='secondary'>
-						<div className='column col-1'>
-							<h2 className='header-two'>Technical Skill Development</h2>
-							<p className='paragraph'>
-								In Treobytes’ 6th - 8th grade Vocational STEM Program, students
-								are inspired to fully engage in various pathways in the most in
-								demand disciplines: Electrical Engineering, Mechanical
-								Engineering, Structural Engineering, Computer Science and more.{' '}
-							</p>
-							<p className='paragraph'>
-								Our hands on vocational programs mirror current college
-								curriculum distributed in a micro learning format. These brief
-								learning modules comprising bite-sized learning activities teach
-								students how to design and conduct experiments, to identify and
-								solve problems, to understand professional and ethical
-								responsibility, and to communicate effectively.
-							</p>
-						</div>
-						<div className='column col-2'>
-							<ImageContainer
-								singleImage={mockSingleImage}
-								thumbnails={mockThumbnails}
-								singleAltTag='Treobytes thumbnail'
-							/>
-						</div>
-					</div>
-				</div>
+				<TemplateSecondary
+					header='Technical Skill Development'
+					copyPrimary='In Treobytes’ 6th - 8th grade Vocational STEM Program, students
+  are inspired to fully engage in various pathways in the most in
+  demand disciplines: Electrical Engineering, Mechanical
+  Engineering, Structural Engineering, Computer Science and more.'
+					copySecondary='Our hands on vocational programs mirror current college
+  curriculum distributed in a micro learning format. These brief
+  learning modules comprising bite-sized learning activities teach
+  students how to design and conduct experiments, to identify and
+  solve problems, to understand professional and ethical
+  responsibility, and to communicate effectively.'
+					singleImage={mockSingleImage}
+					thumbnails={mockThumbnails}
+					singleAltTag='Treobytes thumbnail'
+				/>
 
-				<div className='container'>
-					<div className='third'>
-						<div className='group one'>
-							<div className='heading'>
-								<div className='wrapper-icon'>
-									<Robot />
-								</div>
-								<h4 className='header-four'>Mechanical Engineering:</h4>
-							</div>
-							<p className='paragraph'>
-								Robotics is a branch of engineering that involves the
-								conception, design, manufacture and operation of robots. The
-								objective of the robotics field is to create intelligent
-								machines that can assist humans in a variety of ways.
-							</p>
-						</div>
-						<div className='group two'>
-							<h4 className='header-four'>Curriculum Sequence:</h4>
-							<p className='paragraph'>
-								Each unit consist of 6-8 micro learning modules developing
-								fundamental engineering knowledge, math and physic application,
-								hands on projects and assessments Career explorations is
-								incorporated will all programs
-							</p>
-						</div>
-					</div>
-				</div>
+				<TemplateThird
+					icon={<Robot />}
+					headerPrimary='Mechanical Engineering'
+					copyPrimary='Robotics is a branch of engineering that involves the
+          conception, design, manufacture and operation of robots. The
+          objective of the robotics field is to create intelligent
+          machines that can assist humans in a variety of ways.'
+					headerSecondary='Curriculum Sequence'
+					copySecondary='Each unit consist of 6-8 micro learning modules developing
+          fundamental engineering knowledge, math and physic application,
+          hands on projects and assessments Career explorations is
+          incorporated will all programs'
+				/>
 
 				<div className='container'>
 					<DiagramLevels
@@ -172,69 +147,32 @@ const Home = ({ componentName, data }) => {
 					/>
 				</div>
 
-				<div className='container'>
-					<div className='fourth'>
-						<div className='column col-1'>
-							<div className='heading'>
-								<div className='wrapper-icon'>
-									<Robot />
-								</div>
-								<h4 className='header-four'>Robotics Engineering Kits:</h4>
-							</div>
-							<p className='paragraph'>
-								The components of a robot are the body/frame, control system,
-								manipulators, and drivetrain. Body/frame: The body or frame can
-								be of any shape and size. Essentially, the body/frame provides
-								the structure of the robot.
-							</p>
-							<div className='wrapper-image'>
-								<img
-									src={mockEngineeringKitPhoto}
-									alt='robotics engineering kit'
-									className='img'
-								/>
-							</div>
-						</div>
+				<TemplateSecondary
+					withIcon={true}
+					icon={<Robot />}
+					withIconHeader='Robotics Engineering Kits'
+					copyPrimary='The components of a robot are the body/frame, control system,
+          manipulators, and drivetrain. Body/frame: The body or frame can
+          be of any shape and size. Essentially, the body/frame provides
+          the structure of the robot.'
+					imageSecondary={true}
+					imageSrc={mockEngineeringKitPhoto}
+					imageAlt='robotics engineering kit'
+					singleImage={mockSingleImage}
+					thumbnails={mockThumbnails}
+					singleAltTag='Treobytes thumbnail'
+				/>
 
-						<div className='column col-2'>
-							<ImageContainer
-								singleImage={mockSingleImage}
-								thumbnails={mockThumbnails}
-								singleAltTag='Treobytes thumbnail'
-							/>
-						</div>
-					</div>
-				</div>
-
-				<div className='container'>
-					<div className='fifth'>
-						<div className='column col-1'>
-							<div className='heading'>
-								<div className='wrapper-icon'>
-									<PartnerCollab />
-								</div>
-
-								<h4 className='header-four'>Partner Collaboration:</h4>
-							</div>
-							<p className='paragraph'>
-								Expertly trained Treobytes staff facilitate and deliver online
-								learning experiences through a dynamic mix of live sessions, as
-								well as interactive and collaborative cohort-based
-								opportunities.
-							</p>
-						</div>
-
-						<div className='column col-2'>
-							<div className='wrapper-image'>
-								<img
-									src={mockEngineeringKitPhoto}
-									alt='robotics engineering kit'
-									className='img'
-								/>
-							</div>
-						</div>
-					</div>
-				</div>
+				<TemplateFourth
+					icon={<PartnerCollab />}
+					headerPrimary='Partner Collaboration'
+					copyPrimary='Expertly trained Treobytes staff facilitate and deliver online
+          learning experiences through a dynamic mix of live sessions, as
+          well as interactive and collaborative cohort-based
+          opportunities.'
+					imageSrc={mockEngineeringKitPhoto}
+					imageAlt='robotics engineering kit'
+				/>
 			</div>
 		</>
 	);

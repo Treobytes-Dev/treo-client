@@ -1,35 +1,37 @@
-name: Deploy to AWS API Gateway
+name: Deploy Next.js app to S3
 
 on:
   push:
     branches:
-      - stg # Set your deployment branch
+      - stg # Set this to the branch you want to deploy from
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
-      # Setup AWS credentials
-      - name: Set up AWS credentials
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14' # Set this to the Node.js version you're using
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build and Export Next.js app
+        run: |
+          npm run build
+          npm run export
+
+      - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          aws-region: us-west-2 
+          aws-region: us-west-2 # Set your AWS region
 
-      # Install AWS CLI
-      - name: Install AWS CLI
-        run: |
-          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-          unzip awscliv2.zip
-          sudo ./aws/install
-
-      # Deploy to AWS API Gateway
-      - name: Deploy to AWS API Gateway
-        run: |
-          # Add your deployment commands here
-          # This might involve using AWS CLI commands or running a script that handles the deployment
+      - name: Deploy to S3
+        run: aws s3 sync ./out s3://treobytes-stg --delete

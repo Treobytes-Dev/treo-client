@@ -195,7 +195,7 @@ const Menus = ({ componentName }) => {
 				<p className={renderLinkName}>{renderLinkName}</p>
 				<p className={renderUrl}>{renderUrl}</p>
 				<p className={renderPosition}>{renderPosition}</p>
-				<p className={renderSubItems}>{renderSubItems}</p>
+				<p className={renderSubItems}>{renderSubItems}</p>HEY
 			</>
 		);
 	};
@@ -262,8 +262,8 @@ const Menus = ({ componentName }) => {
 						handleAddClick={handleAddClick}
 						listData={menuList}
 						handleEditClick={handleEdit}
-						addToSubArray={addToSubArray}
-						deleteFromSubArray={deleteFromSubArray}
+						handleAddToSubArray={addToSubArray}
+						handleDeleteFromSubArray={deleteFromSubArray}
 						changeHandler={handleChange}
 						handlePrompt={handleDeletePrompt}
 						handleDelete={handleItemDelete}

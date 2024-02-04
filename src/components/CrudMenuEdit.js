@@ -15,8 +15,8 @@ const CrudMenuEdit = ({
 	handleAddClick,
 	listData,
 	handleEditClick,
-	addToSubArray,
-	deleteFromSubArray,
+	handleAddToSubArray,
+	handleDeleteFromSubArray,
 	changeHandler,
 	handleDelete,
 	handleDeleteClick,
@@ -37,48 +37,59 @@ const CrudMenuEdit = ({
 					<div key={item.id} className='item'>
 						<div className='input-container'>
 							{item.editable ? (
-								<div className='editable'>
+								<form className='editable'>
 									<div className='default-menu'>
-										<label htmlFor='linkName'>Link Name</label>
-										<input
-											className='input-text'
-											name='linkName'
-											aria-label='linkName'
-											type='text'
-											onChange={(e) => changeHandler(e, item)}
-											value={!item.linkName ? '' : item.linkName}
-											disabled={!item.editable}
-											placeholder='Link name'
-										/>
+										<div className='form-group'>
+											<label htmlFor='linkName'>Link Name</label>
+											<input
+												className='input-text'
+												name='linkName'
+												aria-label='linkName'
+												type='text'
+												onChange={(e) => changeHandler(e, item)}
+												value={!item.linkName ? '' : item.linkName}
+												disabled={!item.editable}
+												placeholder='Link name'
+											/>
+										</div>
 
-										<label htmlFor='url'>URL</label>
-										<input
-											className='input-text'
-											name='url'
-											aria-label='url'
-											type='text'
-											onChange={(e) => changeHandler(e, item)}
-											value={!item.url ? '' : item.url}
-											disabled={!item.editable}
-											placeholder='URL'
-										/>
+										<div className='form-group'>
+											<label htmlFor='url'>URL</label>
+											<input
+												className='input-text'
+												name='url'
+												aria-label='url'
+												type='text'
+												onChange={(e) => changeHandler(e, item)}
+												value={!item.url ? '' : item.url}
+												disabled={!item.editable}
+												placeholder='URL'
+											/>
+										</div>
 
-										<label htmlFor='position'>Position</label>
-										<input
-											className='input-text'
-											name='position'
-											aria-label='position'
-											type='text'
-											onChange={(e) => changeHandler(e, item)}
-											value={!item.position ? '' : item.position}
-											disabled={!item.editable}
-											placeholder='Position'
-										/>
+										<div className='form-group'>
+											<label htmlFor='position'>Position</label>
+											<input
+												className='input-text'
+												name='position'
+												aria-label='position'
+												type='text'
+												onChange={(e) => changeHandler(e, item)}
+												value={!item.position ? '' : item.position}
+												disabled={!item.editable}
+												placeholder='Position'
+											/>
+										</div>
 									</div>
 
 									<ul className='unordered-list sub-menu'>
 										{item.editable && (
-											<button onClick={() => addToSubArray(item.id)}>
+											<button
+												onClick={(e) => {
+													e.preventDefault();
+													handleAddToSubArray(item.id);
+												}}
+											>
 												Add to Sub-Array
 											</button>
 										)}
@@ -87,14 +98,16 @@ const CrudMenuEdit = ({
 												{subItem}
 												<button
 													className='button'
-													onClick={() => deleteFromSubArray(item.id, subIndex)}
+													onClick={() =>
+														handleDeleteFromSubArray(item.id, subIndex)
+													}
 												>
 													Delete
 												</button>
 											</li>
 										))}
 									</ul>
-								</div>
+								</form>
 							) : (
 								<>
 									{item.url === '' ||

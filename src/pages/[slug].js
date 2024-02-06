@@ -46,7 +46,7 @@ const SinglePage = ({ data }) => {
 	return (
 		<>
 			<Head>
-				<title>Treobytes | {data.title}</title>
+				<title>{`Treobytes | ${data.title}`}</title>
 				<meta
 					description={
 						data?.content ? data.content.substring(0, 160) : data.title

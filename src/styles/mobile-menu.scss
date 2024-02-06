@@ -2,6 +2,11 @@
 // BASE STYLES
 
 .mobile-menu {
+	display: inline-flex;
+	width: 25%;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 0 20px;
 	.overlay,
 	.menu {
 		height: 100%;
@@ -24,7 +29,6 @@
 	}
 
 	.menu {
-		// transform: translateX(100%);
 		align-items: flex-end;
 		flex-direction: column;
 		width: 100%;
@@ -38,7 +42,6 @@
 
 		.wrapper-header,
 		.wrapper-content {
-			width: 90%;
 			padding: 20px;
 		}
 
@@ -54,19 +57,27 @@
 
 		.wrapper-content {
 			height: 100%;
+
+			.base-options .list-item {
+				&:hover {
+					background-color: rgba($color: $color-primary, $alpha: 0.6);
+					color: $color-white;
+				}
+			}
 		}
 	}
 
 	.menu-y.active {
 		transform: translateY(0);
+		align-items: normal;
 	}
 
 	.active {
 		opacity: 1;
 		visibility: visible;
 		transition: all 0.5s linear;
-		// transform: translateX(0);
 		display: flex;
 		position: absolute;
+		background-color: $color-white;
 	}
 }

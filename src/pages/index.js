@@ -60,7 +60,7 @@ const Home = ({ componentName, data }) => {
 
 	const head = () => (
 		<Head>
-			<title>Treobytes | {data.title}</title>
+			<title>{`Treobytes | ${data.title}`}</title>
 			<meta
 				name='description'
 				content={

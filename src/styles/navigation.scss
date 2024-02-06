@@ -26,9 +26,14 @@
 		padding: 10px 20px;
 
 		&.logo {
+			display: inline-flex;
 			width: 250px;
 			padding: 0;
 			justify-content: flex-start;
+
+			@media #{$medium} {
+				display: flex;
+			}
 		}
 	}
 

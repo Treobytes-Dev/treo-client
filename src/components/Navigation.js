@@ -192,8 +192,7 @@ const Navigation = () => {
 				<MobileMenu
 					trigger='Click me'
 					leftIconClose='Left Close'
-					rightIconClose='Right Close'
-					children='Hello World'
+					children={renderNavContent()}
 				/>
 			)}
 			{windowWidth > 768 && renderNavContent()}

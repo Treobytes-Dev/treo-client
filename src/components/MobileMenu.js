@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { node, string } from 'prop-types';
 
+import Menu from '../assets/icons/Menu';
+import { Close } from '../assets/icons/Close';
 /**
  * Primary UI component for user interaction
  */
@@ -42,7 +44,7 @@ export const MobileMenu = ({
 			data-test-id={`${componentName}`}
 		>
 			<div className='trigger' data-test-id='trigger' onClick={handleClick}>
-				{trigger}
+				<Menu fill='#333' />
 			</div>
 
 			<div
@@ -63,18 +65,10 @@ export const MobileMenu = ({
 						data-test-id='icon-left'
 						onClick={handleClick}
 					>
-						{leftIconClose}
+						<Close />
 					</i>
 
 					{title}
-
-					<i
-						className='icon-right'
-						data-test-id='icon-right'
-						onClick={handleClick}
-					>
-						{rightIconClose}
-					</i>
 				</div>
 
 				<div className='wrapper-content'>{children}</div>

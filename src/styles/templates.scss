@@ -1,0 +1,185 @@
+@import './_variables.scss';
+
+// template sections
+.intro {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+
+	.paragraph {
+		padding: 20px 0;
+	}
+}
+
+.secondary {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	@media #{$medium} {
+		flex-direction: row;
+	}
+
+	.column {
+		display: flex;
+
+		@media #{$medium} {
+			display: inline-flex;
+		}
+
+		&.col-1 {
+			flex-direction: column;
+
+			@media #{$medium} {
+				width: 60%;
+				padding-right: 20px;
+			}
+
+			.heading {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+
+				.wrapper-icon {
+					width: 40px;
+				}
+			}
+
+			.paragraph {
+				padding: 20px 0;
+				text-align: center;
+			}
+		}
+
+		&.col-2 {
+			flex-direction: column;
+
+			@media #{$medium} {
+				width: 40%;
+				padding-left: 20px;
+			}
+		}
+	}
+}
+
+.third {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.group {
+		display: flex;
+
+		&.one {
+			@media #{$medium} {
+				flex-direction: row;
+			}
+
+			flex-direction: column;
+
+			.heading,
+			.paragraph {
+				display: flex;
+				justify-content: center;
+				text-align: center;
+				align-items: center;
+
+				@media #{$medium} {
+					display: inline-flex;
+					width: 40%;
+				}
+
+				.wrapper-icon {
+					width: 40px;
+				}
+			}
+
+			.paragraph {
+				padding: 20px 0;
+				@media #{$medium} {
+					width: 60%;
+				}
+			}
+		}
+
+		&.two {
+			flex-direction: column;
+			justify-content: center;
+			align-self: center;
+			text-align: center;
+
+			.paragraph {
+				padding: 20px 0;
+			}
+		}
+	}
+}
+
+.fourth {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	@media #{$medium} {
+		flex-direction: row;
+	}
+
+	.column {
+		display: flex;
+		flex-direction: column;
+
+		@media #{$medium} {
+			display: inline-flex;
+		}
+
+		&.col-1 {
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+
+			@media #{$medium} {
+				width: 60%;
+				padding-right: 20px;
+			}
+
+			.heading {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+
+				.wrapper-icon {
+					width: 40px;
+				}
+			}
+
+			.paragraph {
+				padding: 20px 0;
+			}
+		}
+
+		&.col-2 {
+			@media #{$medium} {
+				width: 40%;
+				padding-left: 20px;
+			}
+
+			.wrapper-image {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 10px;
+
+				.img {
+					border-radius: 10px;
+				}
+			}
+		}
+	}
+}

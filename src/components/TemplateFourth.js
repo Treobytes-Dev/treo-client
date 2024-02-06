@@ -10,7 +10,7 @@ export const TemplateFourth = ({
 }) => {
 	return (
 		<div className='container'>
-			<div className='fifth'>
+			<div className='fourth'>
 				<div className='column col-1'>
 					<div className='heading'>
 						<div className='wrapper-icon'>{icon}</div>

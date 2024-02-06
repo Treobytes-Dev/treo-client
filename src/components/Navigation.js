@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 import axios from 'axios';
 
+import { MobileMenu } from './MobileMenu.js';
 import Avatar from '../assets/icons/Avatar.js';
 import Logo from '../assets/icons/Logo.js';
 import { Loader } from '../assets/icons/Loader.js';
@@ -25,6 +26,7 @@ const Navigation = () => {
 	const [loading, setLoading] = useState('');
 	const [errorMsg, setErrorMsg] = useState('');
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	const [windowWidth, setWindowWidth] = useState(0); // initialize with a default value, like 0
 
 	const router = useRouter();
 	const { pages } = page;
@@ -38,6 +40,23 @@ const Navigation = () => {
 	useEffect(() => {
 		if (state?.token) fetchPages();
 	}, [state?.token]);
+
+	useEffect(() => {
+		// Ensure the code runs only in the client-side
+		const handleResize = () => {
+			setWindowWidth(window.innerWidth);
+		};
+
+		if (typeof window !== 'undefined') {
+			window.addEventListener('resize', handleResize);
+
+			// Set the initial width
+			setWindowWidth(window.innerWidth);
+
+			// Cleanup
+			return () => window.removeEventListener('resize', handleResize);
+		}
+	}, []);
 
 	const fetchPages = async () => {
 		setLoading(true);
@@ -84,35 +103,9 @@ const Navigation = () => {
 		);
 	});
 
-	return (
-		<div className='navigation'>
-			{loading && (
-				<div className='loader'>
-					<Loader />
-				</div>
-			)}
-			{!!errorMsg && (
-				<div
-					className='error'
-					style={{ backgroundColor: 'red', color: 'white' }}
-				>
-					{errorMsg}
-				</div>
-			)}
-
+	const renderNavContent = () => (
+		<>
 			<ul className='unordered-list base-options'>
-				<li className='list-item'>
-					<Link
-						href='/'
-						className={`logo ${
-							current === '/' ? `nav-link active` : 'nav-link'
-						}`}
-						style={{ width: '300px' }}
-					>
-						<Logo />
-					</Link>
-				</li>
-
 				<li className='list-item'>
 					<Link
 						href='/blog'
@@ -169,6 +162,41 @@ const Navigation = () => {
 					</div>
 				</>
 			)}
+		</>
+	);
+
+	return (
+		<div className='navigation'>
+			{loading && (
+				<div className='loader'>
+					<Loader />
+				</div>
+			)}
+			{!!errorMsg && (
+				<div
+					className='error'
+					style={{ backgroundColor: 'red', color: 'white' }}
+				>
+					{errorMsg}
+				</div>
+			)}
+			<Link
+				href='/'
+				className={`logo ${current === '/' ? `nav-link active` : 'nav-link'}`}
+				style={{ width: '300px' }}
+			>
+				<Logo />
+			</Link>
+
+			{windowWidth < 768 && (
+				<MobileMenu
+					trigger='Click me'
+					leftIconClose='Left Close'
+					rightIconClose='Right Close'
+					children='Hello World'
+				/>
+			)}
+			{windowWidth > 768 && renderNavContent()}
 		</div>
 	);
 };

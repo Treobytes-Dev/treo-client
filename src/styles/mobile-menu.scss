@@ -1,0 +1,72 @@
+@import './_variables.scss';
+// BASE STYLES
+
+.mobile-menu {
+	.overlay,
+	.menu {
+		height: 100%;
+		right: 0;
+		top: 0;
+		visibility: hidden;
+		z-index: 1;
+	}
+
+	.overlay {
+		background-color: rgba(0, 0, 0, 0.5);
+		opacity: 0;
+		transition: visibility 0s linear 1s, opacity 1s;
+		width: 100%;
+		position: absolute;
+	}
+
+	.menu-y {
+		transform: translateY(-100%);
+	}
+
+	.menu {
+		// transform: translateX(100%);
+		align-items: flex-end;
+		flex-direction: column;
+		width: 100%;
+		transition: 0.5s linear, opacity 1s;
+		overflow-x: hidden;
+		position: fixed;
+
+		@media #{$medium} {
+			width: 50%;
+		}
+
+		.wrapper-header,
+		.wrapper-content {
+			width: 90%;
+			padding: 20px;
+		}
+
+		.wrapper-header {
+			display: flex;
+
+			.icon-right {
+				position: absolute;
+				right: 0;
+				margin-right: 20px;
+			}
+		}
+
+		.wrapper-content {
+			height: 100%;
+		}
+	}
+
+	.menu-y.active {
+		transform: translateY(0);
+	}
+
+	.active {
+		opacity: 1;
+		visibility: visible;
+		transition: all 0.5s linear;
+		// transform: translateX(0);
+		display: flex;
+		position: absolute;
+	}
+}

@@ -7,6 +7,17 @@
 	background-color: $color-white;
 	border-bottom: 1px solid $gray-100;
 
+	// override the default styles for the ul
+	.unordered-list {
+		&.base-options {
+			display: unset;
+
+			@media #{$medium} {
+				display: flex;
+			}
+		}
+	}
+
 	.nav-link {
 		display: flex;
 		flex-direction: row;

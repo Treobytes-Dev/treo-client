@@ -109,7 +109,7 @@ const Navigation = () => {
 						}`}
 						style={{ width: '300px' }}
 					>
-						{/* <Logo /> */}
+						<Logo />
 					</Link>
 				</li>
 

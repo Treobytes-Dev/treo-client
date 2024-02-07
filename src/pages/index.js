@@ -58,6 +58,7 @@ const Home = ({ componentName, data }) => {
 	if (errorMsg) setTimeout(() => setErrorMsg(''), 3000);
 	if (successMsg) setTimeout(() => setSuccessMsg(''), 3000);
 
+	// scroll to logic
 	const scrollToTarget = () => {
 		const targetElement = document.getElementById('scroll-to-el');
 		if (targetElement) {

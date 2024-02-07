@@ -61,37 +61,39 @@ const NewPage = ({ componentName }) => {
 					{!!errorMsg ||
 						(!!loading && <Status errorMsg={errorMsg} loading={loading} />)}
 
-					<h1 className='pages'>New Page</h1>
+					<div className='wrapper'>
+						<h1 className='header-one'>New Page</h1>
 
-					<form className='form'>
-						<div className='form-group'>
-							<label className='label'>Page Name ( Defines the slug )</label>
-							<input
-								value={name}
-								onChange={(e) => setName(e.target.value)}
-								className='input-text'
-								type='text'
-							/>
-						</div>
+						<form className='form'>
+							<div className='form-group'>
+								<label className='label'>Page Name ( Defines the slug )</label>
+								<input
+									value={name}
+									onChange={(e) => setName(e.target.value)}
+									className='input-text'
+									type='text'
+								/>
+							</div>
 
-						<div className='form-group'>
-							<label className='label'>Title</label>
-							<input
-								value={title}
-								onChange={(e) => setTitle(e.target.value)}
-								className='input-text'
-								type='text'
-							/>
-						</div>
+							<div className='form-group'>
+								<label className='label'>Title</label>
+								<input
+									value={title}
+									onChange={(e) => setTitle(e.target.value)}
+									className='input-text'
+									type='text'
+								/>
+							</div>
 
-						<button
-							onClick={handleSave}
-							className='button submit'
-							style={{ width: '150px' }}
-						>
-							{loading ? '...Loading' : 'Submit'}
-						</button>
-					</form>
+							<button
+								onClick={handleSave}
+								className='button submit'
+								style={{ width: '150px' }}
+							>
+								{loading ? '...Loading' : 'Submit'}
+							</button>
+						</form>
+					</div>
 				</div>
 			}
 		/>

@@ -255,32 +255,34 @@ const Menus = ({ componentName }) => {
 					{!!errorMsg ||
 						(!!loading && <Status errorMsg={errorMsg} loading={loading} />)}
 
-					<h1 className='header-one'>Menus</h1>
+					<div className='wrapper'>
+						<h1 className='header-one'>Menus</h1>
 
-					<h3 className='header-three'>Header</h3>
-					<CrudMenuEdit
-						handleAddClick={handleAddClick}
-						listData={menuList}
-						handleEditClick={handleEdit}
-						handleAddToSubArray={addToSubArray}
-						handleDeleteFromSubArray={deleteFromSubArray}
-						changeHandler={handleChange}
-						handlePrompt={handleDeletePrompt}
-						handleDelete={handleItemDelete}
-						handleDeleteClick={handleDeletePrompt}
-						addBtnText={'Add new link'}
-						renderItems={renderItems}
-						// selectOptions={languagesArr.map((option) => (
-						// 	<option key={randomId(10)} className='option' value={option.id}>
-						// 		{option.id}
-						// 	</option>
-						// ))}
-						optionValue='Select'
-					/>
-					{renderPrompt()}
+						<h3 className='header-three'>Header</h3>
+						<CrudMenuEdit
+							handleAddClick={handleAddClick}
+							listData={menuList}
+							handleEditClick={handleEdit}
+							handleAddToSubArray={addToSubArray}
+							handleDeleteFromSubArray={deleteFromSubArray}
+							changeHandler={handleChange}
+							handlePrompt={handleDeletePrompt}
+							handleDelete={handleItemDelete}
+							handleDeleteClick={handleDeletePrompt}
+							addBtnText={'Add new link'}
+							renderItems={renderItems}
+							// selectOptions={languagesArr.map((option) => (
+							// 	<option key={randomId(10)} className='option' value={option.id}>
+							// 		{option.id}
+							// 	</option>
+							// ))}
+							optionValue='Select'
+						/>
+						{renderPrompt()}
 
-					<h3 className='header-three'>Footer</h3>
-					<div className='wrapper'>Footer menu section</div>
+						<h3 className='header-three'>Footer</h3>
+						<div className='wrapper'>Footer menu section</div>
+					</div>
 				</div>
 			}
 		/>

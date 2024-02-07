@@ -28,8 +28,10 @@ const Widgets = ({ componentName }) => {
 						(!!successMsg && (
 							<Status errorMsg={errorMsg} successMsg={successMsg} />
 						))}
-					<h1 className='header-one'>Widgets</h1>
-					<div className='content'>Content</div>
+					<div className='wrapper'>
+						<h1 className='header-one'>Widgets</h1>
+						<div className='content'>Content</div>
+					</div>
 				</div>
 			}
 		/>

@@ -64,5 +64,43 @@
 		@media #{$medium} {
 			padding: 40px;
 		}
+
+		.header-one {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+// admin
+// menus
+.menus {
+	.wrapper {
+		background-color: $color-white;
+		padding: 20px;
+
+		@media #{$medium} {
+			padding: 40px;
+		}
+
+		.header-one {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+// admin
+// widgets
+.widgets {
+	.wrapper {
+		background-color: $color-white;
+		padding: 20px;
+
+		@media #{$medium} {
+			padding: 40px;
+		}
+
+		.header-one {
+			margin-bottom: 20px;
+		}
 	}
 }

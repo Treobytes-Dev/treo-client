@@ -133,10 +133,11 @@ const Navigation = () => {
 
 			{!!state && (
 				<>
-					<div className='user-options'>
-						<button className='btn' onClick={() => setIsLoggedIn(!isLoggedIn)}>
-							<Avatar />
-						</button>
+					<button
+						className='user-options'
+						onClick={() => setIsLoggedIn(!isLoggedIn)}
+					>
+						<Avatar />
 
 						{isLoggedIn && (
 							<ul className='unordered-list'>
@@ -159,7 +160,7 @@ const Navigation = () => {
 								</li>
 							</ul>
 						)}
-					</div>
+					</button>
 				</>
 			)}
 		</>

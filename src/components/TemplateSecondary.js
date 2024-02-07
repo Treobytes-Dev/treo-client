@@ -3,6 +3,7 @@ import { string, bool, object } from 'prop-types';
 import ImageContainer from './ImageContainer';
 
 export const TemplateSecondary = ({
+	componentName,
 	header,
 	withIcon,
 	icon,
@@ -18,7 +19,10 @@ export const TemplateSecondary = ({
 }) => {
 	return (
 		<div className='container'>
-			<div className='secondary'>
+			<div
+				className={`template-${componentName} ${componentName}`}
+				id={`template-${componentName}`}
+			>
 				<div className='column col-1'>
 					{withIcon ? (
 						<div className='heading'>
@@ -52,6 +56,7 @@ export const TemplateSecondary = ({
 };
 
 TemplateSecondary.propTypes = {
+	componentName: string,
 	/**
 	 * Add an additional className
 	 */
@@ -67,6 +72,6 @@ TemplateSecondary.propTypes = {
 };
 
 TemplateSecondary.defaultProps = {
-	componentName: 'template-secondary',
+	componentName: 'secondary',
 	additionalClassName: '',
 };

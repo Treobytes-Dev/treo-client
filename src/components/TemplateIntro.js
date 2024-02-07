@@ -4,11 +4,13 @@ import { Hero } from './Hero';
 import { CarrotDown } from '../assets/icons/CarrotDown';
 
 export const TemplateIntro = ({
+	componentName,
 	heroImage,
 	heroHeader,
 	heroSubHeader,
 	introHeader,
 	introBody,
+	scrollToTarget,
 }) => {
 	return (
 		<>
@@ -22,11 +24,13 @@ export const TemplateIntro = ({
 									<h4 className='header-four'>{heroSubHeader}</h4>
 								</div>
 							</div>
-							<div className='assets'>
+							{/* <button > */}
+							<button className='assets' onClick={scrollToTarget}>
 								<div className='carrot-down'>
 									<CarrotDown fill='#333' />
 								</div>
-							</div>
+							</button>
+							{/* </button> */}
 						</>
 					}
 					background={heroImage}
@@ -34,7 +38,10 @@ export const TemplateIntro = ({
 			</div>
 
 			<div className='container'>
-				<div className='intro'>
+				<div
+					className={`template-${componentName} intro`}
+					id={`template-${componentName}`}
+				>
 					<h2 className='header-two'>{introHeader}</h2>
 					<p className='paragraph'>{introBody}</p>
 				</div>
@@ -44,6 +51,7 @@ export const TemplateIntro = ({
 };
 
 TemplateIntro.propTypes = {
+	componentName: string,
 	/**
 	 * Add an additional className
 	 */
@@ -56,6 +64,6 @@ TemplateIntro.propTypes = {
 };
 
 TemplateIntro.defaultProps = {
-	componentName: 'template-intro',
+	componentName: 'intro',
 	additionalClassName: '',
 };

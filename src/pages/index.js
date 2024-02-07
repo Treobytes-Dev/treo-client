@@ -58,6 +58,13 @@ const Home = ({ componentName, data }) => {
 	if (errorMsg) setTimeout(() => setErrorMsg(''), 3000);
 	if (successMsg) setTimeout(() => setSuccessMsg(''), 3000);
 
+	const scrollToTarget = () => {
+		const targetElement = document.getElementById('scroll-to-el');
+		if (targetElement) {
+			targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	};
+
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${data.title}`}</title>
@@ -106,24 +113,27 @@ const Home = ({ componentName, data }) => {
 					heroSubHeader={mockHeroHeader4}
 					introHeader={mockIntroHeader}
 					introBody={mockIntroParagraph}
+					scrollToTarget={scrollToTarget}
 				/>
 
-				<TemplateSecondary
-					header='Technical Skill Development'
-					copyPrimary='In Treobytes’ 6th - 8th grade Vocational STEM Program, students
+				<div id='scroll-to-el'>
+					<TemplateSecondary
+						header='Technical Skill Development'
+						copyPrimary='In Treobytes’ 6th - 8th grade Vocational STEM Program, students
   are inspired to fully engage in various pathways in the most in
   demand disciplines: Electrical Engineering, Mechanical
   Engineering, Structural Engineering, Computer Science and more.'
-					copySecondary='Our hands on vocational programs mirror current college
+						copySecondary='Our hands on vocational programs mirror current college
   curriculum distributed in a micro learning format. These brief
   learning modules comprising bite-sized learning activities teach
   students how to design and conduct experiments, to identify and
   solve problems, to understand professional and ethical
   responsibility, and to communicate effectively.'
-					singleImage={mockSingleImage}
-					thumbnails={mockThumbnails}
-					singleAltTag='Treobytes thumbnail'
-				/>
+						singleImage={mockSingleImage}
+						thumbnails={mockThumbnails}
+						singleAltTag='Treobytes thumbnail'
+					/>
+				</div>
 
 				<TemplateThird
 					icon={<Robot />}

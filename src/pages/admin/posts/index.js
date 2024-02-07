@@ -34,7 +34,6 @@ const Posts = ({ componentName }) => {
 		setLoading(true);
 
 		try {
-			// TODO: check if this is the correct route
 			const { data } = await axios.get('/posts-all');
 
 			setLoading(false);

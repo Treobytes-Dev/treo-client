@@ -2,6 +2,7 @@ import React from 'react';
 import { string, object } from 'prop-types';
 
 export const TemplateThird = ({
+	componentName,
 	icon,
 	headerPrimary,
 	copyPrimary,
@@ -10,7 +11,7 @@ export const TemplateThird = ({
 }) => {
 	return (
 		<div className='container'>
-			<div className='third'>
+			<div className={`template-${componentName} ${componentName}`}>
 				<div className='group one'>
 					<div className='heading'>
 						<div className='wrapper-icon'>{icon}</div>
@@ -28,6 +29,7 @@ export const TemplateThird = ({
 };
 
 TemplateThird.propTypes = {
+	componentName: string,
 	/**
 	 * Add an additional className
 	 */
@@ -40,6 +42,6 @@ TemplateThird.propTypes = {
 };
 
 TemplateThird.defaultProps = {
-	componentName: 'template-third',
+	componentName: 'third',
 	additionalClassName: '',
 };

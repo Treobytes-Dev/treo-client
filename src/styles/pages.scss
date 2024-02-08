@@ -85,6 +85,90 @@
 		.header-one {
 			margin-bottom: 20px;
 		}
+
+		.crud-edit.menu .list {
+			.item {
+				padding: 0 0 20px 20px;
+				background-color: $gray-100;
+				margin: 10px 0;
+
+				&:hover {
+					background-color: rgba($color: $gray-400, $alpha: 0.5);
+				}
+
+				.input-container {
+					.render-item {
+						border-bottom: 1px solid $gray-200;
+						padding: 20px 0;
+
+						.label {
+							font-weight: 600;
+						}
+					}
+
+					.render-sub-items {
+						padding: 20px 0 20px 20px;
+						border-bottom: 1px solid $gray-200;
+
+						.sub-link-name {
+							margin-bottom: 20px;
+						}
+					}
+
+					// editing
+					.unordered-list.sub-menu {
+						.add-sub-menu {
+							width: 100%;
+							display: flex;
+							flex-direction: row;
+							padding: 20px 0;
+							align-items: center;
+
+							.paragraph {
+								margin-left: 15px;
+								color: $color-success;
+							}
+						}
+
+						.list-item {
+							.delete-sub-menu {
+								margin-left: 20px;
+								height: auto;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								flex-direction: column;
+
+								.paragraph {
+									display: none;
+								}
+
+								@media #{$medium} {
+									.paragraph {
+										display: flex;
+										text-align: center;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.inside-btns {
+					display: flex;
+					.not-editable {
+						margin-top: 20px;
+					}
+				}
+			}
+
+			.item-editable {
+				padding: 20px 20px;
+				&:hover {
+					background-color: $gray-100;
+				}
+			}
+		}
 	}
 }
 

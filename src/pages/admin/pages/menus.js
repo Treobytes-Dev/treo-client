@@ -58,15 +58,7 @@ const Menus = ({ componentName }) => {
 		const min = 10; // minimum value
 		const max = 99; // maximum value
 
-		const createNewItem = (
-			id,
-			url,
-			linkName,
-			position,
-			subItems,
-			editable,
-			checked
-		) => {
+		const createNewItem = (id, url, linkName, position, subItems, editable) => {
 			return {
 				id: id,
 				url: url,
@@ -74,7 +66,6 @@ const Menus = ({ componentName }) => {
 				position: position,
 				subItems: subItems,
 				editable: editable,
-				checked: checked,
 			};
 		};
 
@@ -84,8 +75,7 @@ const Menus = ({ componentName }) => {
 			'', // linkName
 			0, // position
 			[], // subItems
-			true, // editable
-			false // checked
+			true // editable
 		);
 
 		!!newItem.editable &&
@@ -154,7 +144,7 @@ const Menus = ({ componentName }) => {
 			if (item.id === id) {
 				return {
 					...item,
-					subItems: [...item.subItems, `SubItem ${item.subItems.length + 1}`],
+					subItems: [...item.subItems, item.subItems],
 				};
 			}
 			return item;
@@ -188,14 +178,38 @@ const Menus = ({ componentName }) => {
 		const renderUrl = item.url;
 		const renderLinkName = item.linkName;
 		const renderPosition = item.position;
-		const renderSubItems = item.subItems.length;
+		const renderSubItems = item.subItems.map((subItem, subIndex) => (
+			<div key={subIndex} className='render-item render-sub-items'>
+				<div className='sub-link-name'>
+					<label className='label'>Sub Link Name</label>
+					<p className='paragraph'>{subItem.subLinkName}</p>
+				</div>
+
+				<div className='sub-url-name'>
+					<label className='label'>Sub URL Name</label>
+					<p className='paragraph'>{subItem.subUrlName}</p>
+				</div>
+			</div>
+		));
 
 		return (
 			<>
-				<p className={renderLinkName}>{renderLinkName}</p>
-				<p className={renderUrl}>{renderUrl}</p>
-				<p className={renderPosition}>{renderPosition}</p>
-				<p className={renderSubItems}>{renderSubItems}</p>
+				<div className='render-item render-link-name'>
+					<label className='label'>Link Name</label>
+					<p className='paragraph'>{renderLinkName}</p>
+				</div>
+
+				<div className='render-item render-link-name'>
+					<label className='label'>URL</label>
+					<p className='paragraph'>{renderUrl}</p>
+				</div>
+
+				<div className='render-item render-link-name'>
+					<label className='label'>Position</label>
+					<p className='paragraph'>{renderPosition}</p>
+				</div>
+
+				<>{renderSubItems}</>
 			</>
 		);
 	};
@@ -255,32 +269,34 @@ const Menus = ({ componentName }) => {
 					{!!errorMsg ||
 						(!!loading && <Status errorMsg={errorMsg} loading={loading} />)}
 
-					<h1 className='header-one'>Menus</h1>
+					<div className='wrapper'>
+						<h1 className='header-one'>Menus</h1>
 
-					<h3 className='header-three'>Header</h3>
-					<CrudMenuEdit
-						handleAddClick={handleAddClick}
-						listData={menuList}
-						handleEditClick={handleEdit}
-						addToSubArray={addToSubArray}
-						deleteFromSubArray={deleteFromSubArray}
-						changeHandler={handleChange}
-						handlePrompt={handleDeletePrompt}
-						handleDelete={handleItemDelete}
-						handleDeleteClick={handleDeletePrompt}
-						addBtnText={'Add new link'}
-						renderItems={renderItems}
-						// selectOptions={languagesArr.map((option) => (
-						// 	<option key={randomId(10)} className='option' value={option.id}>
-						// 		{option.id}
-						// 	</option>
-						// ))}
-						optionValue='Select'
-					/>
-					{renderPrompt()}
+						<h3 className='header-three'>Header</h3>
+						<CrudMenuEdit
+							handleAddClick={handleAddClick}
+							listData={menuList}
+							handleEditClick={handleEdit}
+							handleAddToSubArray={addToSubArray}
+							handleDeleteFromSubArray={deleteFromSubArray}
+							changeHandler={handleChange}
+							handlePrompt={handleDeletePrompt}
+							handleDelete={handleItemDelete}
+							handleDeleteClick={handleDeletePrompt}
+							addBtnText={'Add new link'}
+							renderItems={renderItems}
+							// selectOptions={languagesArr.map((option) => (
+							// 	<option key={randomId(10)} className='option' value={option.id}>
+							// 		{option.id}
+							// 	</option>
+							// ))}
+							optionValue='Select'
+						/>
+						{renderPrompt()}
 
-					<h3 className='header-three'>Footer</h3>
-					<div className='wrapper'>Footer menu section</div>
+						<h3 className='header-three'>Footer</h3>
+						<div className='wrapper'>Footer menu section</div>
+					</div>
 				</div>
 			}
 		/>

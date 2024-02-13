@@ -1,0 +1,83 @@
+@import './_variables.scss';
+// BASE STYLES
+
+.mobile-menu {
+	display: inline-flex;
+	width: 25%;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 0 20px;
+	.overlay,
+	.menu {
+		height: 100%;
+		right: 0;
+		top: 0;
+		visibility: hidden;
+		z-index: 1;
+	}
+
+	.overlay {
+		background-color: rgba(0, 0, 0, 0.5);
+		opacity: 0;
+		transition: visibility 0s linear 1s, opacity 1s;
+		width: 100%;
+		position: absolute;
+	}
+
+	.menu-y {
+		transform: translateY(-100%);
+	}
+
+	.menu {
+		align-items: flex-end;
+		flex-direction: column;
+		width: 100%;
+		transition: 0.5s linear, opacity 1s;
+		overflow-x: hidden;
+		position: fixed;
+
+		@media #{$medium} {
+			width: 50%;
+		}
+
+		.wrapper-header,
+		.wrapper-content {
+			padding: 20px;
+		}
+
+		.wrapper-header {
+			display: flex;
+
+			.icon-right {
+				position: absolute;
+				right: 0;
+				margin-right: 20px;
+			}
+		}
+
+		.wrapper-content {
+			height: 100%;
+
+			.base-options .list-item {
+				&:hover {
+					background-color: rgba($color: $color-primary, $alpha: 0.6);
+					color: $color-white;
+				}
+			}
+		}
+	}
+
+	.menu-y.active {
+		transform: translateY(0);
+		align-items: normal;
+	}
+
+	.active {
+		opacity: 1;
+		visibility: visible;
+		transition: all 0.5s linear;
+		display: flex;
+		position: absolute;
+		background-color: $color-white;
+	}
+}

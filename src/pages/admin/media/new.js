@@ -71,28 +71,32 @@ const NewMedia = ({ componentName }) => {
 							/>
 						))}
 
-					<div className='content'>
-						<Link className='anchor' href='/admin/media/library'>
-							View Library
-						</Link>
-						<h1 className='header-one'>New Media</h1>
+					<div className='wrapper'>
+						<div className='content'>
+							<Link className='anchor' href='/admin/media/library'>
+								View Library
+							</Link>
+							<h1 className='header-one'>New Media</h1>
 
-						<label className='label upload-image'>
-							<p className='paragraph'>Upload an image to the media library</p>
-							<AddPhoto fill='#000' dimensions='100' viewBox='0 96 960 960' />
+							<label className='label upload-image'>
+								<p className='paragraph'>
+									Upload an image to the media library
+								</p>
+								<AddPhoto fill='#000' dimensions='100' viewBox='0 96 960 960' />
 
-							<input
-								onChange={handleImageUpload}
-								type='file'
-								accept='images/*'
-								hidden
-							/>
-						</label>
-						{uploadedImage !== '' && (
-							<div className='img-container'>
-								<img src={uploadedImage} alt='uploaded image' />
-							</div>
-						)}
+								<input
+									onChange={handleImageUpload}
+									type='file'
+									accept='images/*'
+									hidden
+								/>
+							</label>
+							{uploadedImage !== '' && (
+								<div className='img-container'>
+									<img src={uploadedImage} alt='uploaded image' />
+								</div>
+							)}
+						</div>
 					</div>
 				</div>
 			}

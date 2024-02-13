@@ -142,113 +142,115 @@ const Categories = ({ componentName }) => {
 							<Status errorMsg={errorMsg} successMsg={successMsg} />
 						))}
 
-					<div className='group heading'>
-						<h1 className='header-one'>Categories</h1>
-						<h3 className='header-three'>({categories?.length})</h3>
-					</div>
-
-					<div className='content'>
-						<div className='add-category'>
-							<h4 className='header-four'>Add new category</h4>
-							<form className='form-group'>
-								<div className='form-group'>
-									<label className='label'>Name of category</label>
-									<input
-										onChange={handleChangeName}
-										type='text'
-										className='input-text'
-										value={name}
-									/>
-								</div>
-
-								<button
-									onClick={onFinish}
-									className='button submit'
-									style={{ width: '150px' }}
-								>
-									{loading ? '...Loading' : 'Submit'}
-								</button>
-							</form>
+					<div className='wrapper'>
+						<div className='group heading'>
+							<h1 className='header-one'>Categories</h1>
+							<h3 className='header-three'>({categories?.length})</h3>
 						</div>
 
-						{categories &&
-							categories.map((category) => (
-								<div key={category._id} className='each-category'>
-									<h3 className='header-three title'>{category.name}</h3>
-									<div className='text'>
-										<label className='label'>Slug:</label>
-										<p className='paragraph slug'>{category.slug}</p>
+						<div className='content'>
+							<div className='add-category'>
+								<h4 className='header-four'>Add new category</h4>
+								<form className='form-group'>
+									<div className='form-group'>
+										<label className='label'>Name of category</label>
+										<input
+											onChange={handleChangeName}
+											type='text'
+											className='input-text'
+											value={name}
+										/>
 									</div>
 
-									<div className='text'>
-										<label className='label'>Created at:</label>
-										<p className='paragraph created'>
-											{formatTimeStamp(category.createdAt)} ago
-										</p>
-									</div>
-
-									<div className='text'>
-										<label className='label'>Updated:</label>
-										<p className='paragraph updated'>
-											{formatTimeStamp(category.updatedAt)} ago
-										</p>
-									</div>
-
-									<div className='group'>
-										<Link
-											href={`/category/${category.slug}`}
-											className='anchor'
-										>
-											View
-										</Link>
-										<button
-											className='button edit'
-											onClick={() => handleEdit(category)}
-										>
-											edit
-										</button>
-										{/* TODO: add prompt for warning before deleting */}
-										<button
-											className='button delete'
-											onClick={() => handleDelete(category)}
-										>
-											delete
-										</button>
-									</div>
-								</div>
-							))}
-
-						<Modal
-							content={
-								<form
-									className='form'
-									style={{
-										backgroundColor: 'rgba(255,255,255,0.9)',
-										width: '50%',
-										height: '50%',
-										display: 'flex',
-										flexDirection: 'column',
-										justifyContent: 'center',
-										alignItems: 'center',
-									}}
-								>
-									<input
-										className='input-text'
-										type='text'
-										placeholder='Add a category'
-										value={modalValue || updatingCategory.name}
-										onChange={(e) => {
-											setModalValue(e.target.value);
-										}}
-									/>
-									<button className='button submit' onClick={handleUpdate}>
-										Submit
+									<button
+										onClick={onFinish}
+										className='button submit'
+										style={{ width: '150px' }}
+									>
+										{loading ? '...Loading' : 'Submit'}
 									</button>
 								</form>
-							}
-							isVisible={visible}
-							setIsVisible={setVisible}
-						/>
+							</div>
+
+							{categories &&
+								categories.map((category) => (
+									<div key={category._id} className='each-category'>
+										<h3 className='header-three title'>{category.name}</h3>
+										<div className='text'>
+											<label className='label'>Slug:</label>
+											<p className='paragraph slug'>{category.slug}</p>
+										</div>
+
+										<div className='text'>
+											<label className='label'>Created at:</label>
+											<p className='paragraph created'>
+												{formatTimeStamp(category.createdAt)} ago
+											</p>
+										</div>
+
+										<div className='text'>
+											<label className='label'>Updated:</label>
+											<p className='paragraph updated'>
+												{formatTimeStamp(category.updatedAt)} ago
+											</p>
+										</div>
+
+										<div className='group'>
+											<Link
+												href={`/category/${category.slug}`}
+												className='anchor'
+											>
+												View
+											</Link>
+											<button
+												className='button edit'
+												onClick={() => handleEdit(category)}
+											>
+												edit
+											</button>
+											{/* TODO: add prompt for warning before deleting */}
+											<button
+												className='button delete'
+												onClick={() => handleDelete(category)}
+											>
+												delete
+											</button>
+										</div>
+									</div>
+								))}
+
+							<Modal
+								content={
+									<form
+										className='form'
+										style={{
+											backgroundColor: 'rgba(255,255,255,0.9)',
+											width: '50%',
+											height: '50%',
+											display: 'flex',
+											flexDirection: 'column',
+											justifyContent: 'center',
+											alignItems: 'center',
+										}}
+									>
+										<input
+											className='input-text'
+											type='text'
+											placeholder='Add a category'
+											value={modalValue || updatingCategory.name}
+											onChange={(e) => {
+												setModalValue(e.target.value);
+											}}
+										/>
+										<button className='button submit' onClick={handleUpdate}>
+											Submit
+										</button>
+									</form>
+								}
+								isVisible={visible}
+								setIsVisible={setVisible}
+							/>
+						</div>
 					</div>
 				</div>
 			}

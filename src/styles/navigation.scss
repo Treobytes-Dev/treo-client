@@ -7,23 +7,54 @@
 	background-color: $color-white;
 	border-bottom: 1px solid $gray-100;
 
+	// override the default styles for the ul
+	.unordered-list {
+		&.base-options {
+			display: unset;
+
+			@media #{$medium} {
+				display: flex;
+			}
+		}
+	}
+
 	.nav-link {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
 		padding: 10px 20px;
+
+		&.logo {
+			display: inline-flex;
+			width: 250px;
+			padding: 0;
+			justify-content: flex-start;
+
+			@media #{$medium} {
+				display: flex;
+			}
+		}
 	}
 
 	.base-options {
 		justify-content: flex-start;
+		align-items: center;
 	}
 
 	.user-options {
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		background-color: rgba($color: #000000, $alpha: 0.08);
-		padding: 0 10px;
+		padding: 15px 0;
+		width: 100%;
+
+		@media #{$medium} {
+			width: 100px;
+			height: 100%;
+			padding: 0;
+		}
 
 		&:hover {
 			background-color: rgba($color: #000000, $alpha: 0.16);
@@ -36,13 +67,14 @@
 			z-index: 1;
 			top: 0;
 			right: 0;
-			margin-top: 45px;
+			margin-top: 90px;
 			background-color: $color-white;
 			border-bottom: 1px solid $gray-300;
 			border-right: 1px solid $gray-300;
 			border-left: 1px solid $gray-300;
 			border-radius: 0 0 0 5px;
 			padding: 10px;
+			box-shadow: 1px 15px 40px rgba($color: $color-black-alpha, $alpha: 0.4);
 
 			.list-item {
 				&:hover {

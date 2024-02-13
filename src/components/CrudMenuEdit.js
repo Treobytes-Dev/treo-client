@@ -9,14 +9,15 @@ import { array, func, string, bool, oneOfType, object } from 'prop-types';
 import Trash from '../assets/icons/Trash';
 import CheckWCircle from '../assets/icons/CheckWCircle';
 import Edit from '../assets/icons/Edit';
+import { AddCircle } from '../assets/icons/AddCircle';
 
 const CrudMenuEdit = ({
 	componentName,
 	handleAddClick,
 	listData,
 	handleEditClick,
-	addToSubArray,
-	deleteFromSubArray,
+	handleAddToSubArray,
+	handleDeleteFromSubArray,
 	changeHandler,
 	handleDelete,
 	handleDeleteClick,
@@ -34,71 +35,124 @@ const CrudMenuEdit = ({
 		<div className={componentName} data-testid={componentName}>
 			<div className='list'>
 				{listData.map((item) => (
-					<div key={item.id} className='item'>
+					<div
+						key={item.id}
+						className={!item.editable ? 'item' : 'item item-editable'}
+					>
 						<div className='input-container'>
 							{item.editable ? (
-								<div className='editable'>
+								<form className='editable'>
 									<div className='default-menu'>
-										<label htmlFor='linkName'>Link Name</label>
-										<input
-											className='input-text'
-											name='linkName'
-											aria-label='linkName'
-											type='text'
-											onChange={(e) => changeHandler(e, item)}
-											value={!item.linkName ? '' : item.linkName}
-											disabled={!item.editable}
-											placeholder='Link name'
-										/>
+										<div className='form-group'>
+											<label className='label' htmlFor='linkName'>
+												Link Name
+											</label>
+											<input
+												className='input-text'
+												name='linkName'
+												aria-label='linkName'
+												type='text'
+												onChange={(e) => changeHandler(e, item)}
+												value={!item.linkName ? '' : item.linkName}
+												disabled={!item.editable}
+												placeholder='Link name'
+											/>
+										</div>
 
-										<label htmlFor='url'>URL</label>
-										<input
-											className='input-text'
-											name='url'
-											aria-label='url'
-											type='text'
-											onChange={(e) => changeHandler(e, item)}
-											value={!item.url ? '' : item.url}
-											disabled={!item.editable}
-											placeholder='URL'
-										/>
+										<div className='form-group'>
+											<label className='label' htmlFor='url'>
+												URL
+											</label>
+											<input
+												className='input-text'
+												name='url'
+												aria-label='url'
+												type='text'
+												onChange={(e) => changeHandler(e, item)}
+												value={!item.url ? '' : item.url}
+												disabled={!item.editable}
+												placeholder='URL'
+											/>
+										</div>
 
-										<label htmlFor='position'>Position</label>
-										<input
-											className='input-text'
-											name='position'
-											aria-label='position'
-											type='text'
-											onChange={(e) => changeHandler(e, item)}
-											value={!item.position ? '' : item.position}
-											disabled={!item.editable}
-											placeholder='Position'
-										/>
+										<div className='form-group'>
+											<label className='label' htmlFor='position'>
+												Position
+											</label>
+											<input
+												className='input-text'
+												name='position'
+												aria-label='position'
+												type='text'
+												onChange={(e) => changeHandler(e, item)}
+												value={!item.position ? '' : item.position}
+												disabled={!item.editable}
+												placeholder='Position'
+											/>
+										</div>
 									</div>
 
 									<ul className='unordered-list sub-menu'>
 										{item.editable && (
-											<button onClick={() => addToSubArray(item.id)}>
-												Add to Sub-Array
+											<button
+												className='btn add-sub-menu'
+												onClick={(e) => {
+													e.preventDefault();
+													handleAddToSubArray(item.id);
+												}}
+											>
+												<AddCircle fill='#4caf50' />
+												<p className='paragraph'>Add Sub Menu</p>
 											</button>
 										)}
 										{item.subItems.map((subItem, subIndex) => (
-											<li className='list-item' key={subIndex}>
-												{subItem}
+											<li className='list-item sub-list-item' key={subIndex}>
+												<div className='form-group'>
+													<label className='label' htmlFor='subLinkName'>
+														Sub Menu Link Name
+													</label>
+													<input
+														className='input-text'
+														name='subLinkName'
+														aria-label='subLinkName'
+														type='text'
+														onChange={(e) => changeHandler(e, subItem)}
+														value={subItem.subLinkName}
+														placeholder='Link name'
+													/>
+												</div>
+
+												<div className='form-group'>
+													<label className='label' htmlFor='subUrlName'>
+														Sub Menu URL Name
+													</label>
+													<input
+														className='input-text'
+														name='subUrlName'
+														aria-label='subUrlName'
+														type='text'
+														onChange={(e) => changeHandler(e, subItem)}
+														value={subItem.subUrlName}
+														placeholder='URL name'
+													/>
+												</div>
 												<button
-													className='button'
-													onClick={() => deleteFromSubArray(item.id, subIndex)}
+													className='button delete-sub-menu'
+													onClick={() =>
+														handleDeleteFromSubArray(item.id, subIndex)
+													}
 												>
-													Delete
+													<Trash fill='#f44336' />
+													<p className='paragraph'>Delete Sub Menu</p>
 												</button>
 											</li>
 										))}
 									</ul>
-								</div>
+								</form>
 							) : (
 								<>
-									{item.url === '' ||
-										(item.linkName === '' && handleDelete(item.id))}
+									{(item.url === '' || item.linkName === '') &&
+										handleDelete(item.id)}
 									{renderItems(item)}
 								</>
 							)}
@@ -106,13 +160,13 @@ const CrudMenuEdit = ({
 
 						<div className='inside-btns'>
 							{item.editable ? (
-								<>
+								<div className={item.editable && 'editable'}>
 									<button
 										className='btn'
 										data-testid='crud-save-btn'
 										onClick={() => handleEditClick(item, false)}
 									>
-										<CheckWCircle fill='#4caf50' />{' '}
+										<CheckWCircle fill='#4caf50' />
 										<p className='paragraph'>Save</p>
 									</button>
 
@@ -124,9 +178,9 @@ const CrudMenuEdit = ({
 										<Trash fill='#f44336' />
 										<p className='paragraph'>Delete</p>
 									</button>
-								</>
+								</div>
 							) : (
-								<>
+								<div className={!item.editable && 'not-editable'}>
 									<button
 										className='btn'
 										data-testid='crud-edit-btn'
@@ -143,7 +197,7 @@ const CrudMenuEdit = ({
 										<Trash fill='#f44336' />
 										<p className='paragraph'>Delete</p>
 									</button>
-								</>
+								</div>
 							)}
 						</div>
 					</div>

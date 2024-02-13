@@ -9,7 +9,7 @@ const Menu = ({
 	viewBox,
 }) => (
 	<svg
-		className={`icon ${componentName} ${additionalClassName}`}
+		className={`icon icon-${componentName} ${additionalClassName}`}
 		fill={fill}
 		height={dimensions}
 		width={dimensions}

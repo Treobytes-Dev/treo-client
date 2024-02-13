@@ -8,234 +8,6 @@
 		@media #{$medium} {
 			padding: 40px 0;
 		}
-
-		.intro {
-			display: flex;
-			justify-content: center;
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
-
-			.paragraph {
-				padding: 20px 0;
-			}
-		}
-
-		.secondary {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-
-			@media #{$medium} {
-				flex-direction: row;
-			}
-
-			.column {
-				display: flex;
-
-				@media #{$medium} {
-					display: inline-flex;
-				}
-
-				&.col-1 {
-					flex-direction: column;
-
-					@media #{$medium} {
-						width: 60%;
-						padding-right: 20px;
-					}
-
-					.paragraph {
-						padding: 20px 0;
-					}
-				}
-
-				&.col-2 {
-					flex-direction: column;
-
-					@media #{$medium} {
-						width: 40%;
-						padding-left: 20px;
-					}
-				}
-			}
-		}
-
-		.third {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-
-			.group {
-				display: flex;
-
-				&.one {
-					@media #{$medium} {
-						flex-direction: row;
-					}
-
-					flex-direction: column;
-
-					.heading,
-					.paragraph {
-						display: flex;
-						justify-content: center;
-						text-align: center;
-						align-items: center;
-
-						@media #{$medium} {
-							display: inline-flex;
-						}
-					}
-
-					.heading {
-						@media #{$medium} {
-							width: 40%;
-						}
-
-						.wrapper-icon {
-							width: 30px;
-						}
-					}
-
-					.paragraph {
-						padding: 20px 0;
-						@media #{$medium} {
-							width: 60%;
-						}
-					}
-				}
-
-				&.two {
-					flex-direction: column;
-					justify-content: center;
-					align-self: center;
-					text-align: center;
-
-					.paragraph {
-						padding: 20px 0;
-					}
-				}
-			}
-		}
-
-		.fourth {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-
-			@media #{$medium} {
-				flex-direction: row;
-			}
-
-			.column {
-				display: flex;
-				flex-direction: column;
-
-				@media #{$medium} {
-					display: inline-flex;
-				}
-
-				&.col-1 {
-					align-items: center;
-					text-align: center;
-
-					@media #{$medium} {
-						width: 60%;
-						padding-right: 20px;
-					}
-
-					.heading {
-						display: flex;
-						align-items: center;
-
-						.wrapper-icon {
-							width: 30px;
-						}
-					}
-
-					.paragraph {
-						padding: 20px 0;
-					}
-
-					.wrapper-image {
-						.img {
-							border-radius: 10px;
-						}
-					}
-				}
-
-				&.col-2 {
-					@media #{$medium} {
-						width: 40%;
-						padding-left: 20px;
-					}
-				}
-			}
-		}
-
-		.fifth {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-
-			@media #{$medium} {
-				flex-direction: row;
-			}
-
-			.column {
-				display: flex;
-				flex-direction: column;
-
-				@media #{$medium} {
-					display: inline-flex;
-				}
-
-				&.col-1 {
-					display: flex;
-					flex-direction: column;
-					text-align: center;
-
-					@media #{$medium} {
-						width: 60%;
-						padding-right: 20px;
-					}
-
-					.heading {
-						display: flex;
-						flex-direction: row;
-						align-items: center;
-						justify-content: center;
-
-						.wrapper-icon {
-							width: 40px;
-						}
-					}
-				}
-
-				&.col-2 {
-					@media #{$medium} {
-						width: 40%;
-						padding-left: 20px;
-					}
-
-					.wrapper-image {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						border-radius: 10px;
-
-						.img {
-							border-radius: 10px;
-						}
-					}
-				}
-			}
-		}
 	}
 }
 
@@ -256,14 +28,17 @@
 			align-items: center;
 		}
 
+		// add new button
 		.add-new {
 			margin: 1rem 0px;
 			display: flex;
 			width: 150px;
+			align-items: center;
 		}
 
 		.page-list {
 			border-bottom: 1px solid $gray-200;
+			padding: 20px 0 10px 0;
 
 			.options {
 				display: flex;
@@ -275,6 +50,141 @@
 					width: 100px;
 				}
 			}
+		}
+	}
+}
+
+// admin
+// create a new page
+.new-page {
+	.wrapper {
+		background-color: $color-white;
+		padding: 20px;
+
+		@media #{$medium} {
+			padding: 40px;
+		}
+
+		.header-one {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+// admin
+// menus
+.menus {
+	.wrapper {
+		background-color: $color-white;
+		padding: 20px;
+
+		@media #{$medium} {
+			padding: 40px;
+		}
+
+		.header-one {
+			margin-bottom: 20px;
+		}
+
+		.crud-edit.menu .list {
+			.item {
+				padding: 0 0 20px 20px;
+				background-color: $gray-100;
+				margin: 10px 0;
+
+				&:hover {
+					background-color: rgba($color: $gray-400, $alpha: 0.5);
+				}
+
+				.input-container {
+					.render-item {
+						border-bottom: 1px solid $gray-200;
+						padding: 20px 0;
+
+						.label {
+							font-weight: 600;
+						}
+					}
+
+					.render-sub-items {
+						padding: 20px 0 20px 20px;
+						border-bottom: 1px solid $gray-200;
+
+						.sub-link-name {
+							margin-bottom: 20px;
+						}
+					}
+
+					// editing
+					.unordered-list.sub-menu {
+						.add-sub-menu {
+							width: 100%;
+							display: flex;
+							flex-direction: row;
+							padding: 20px 0;
+							align-items: center;
+
+							.paragraph {
+								margin-left: 15px;
+								color: $color-success;
+							}
+						}
+
+						.list-item {
+							.delete-sub-menu {
+								margin-left: 20px;
+								height: auto;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								flex-direction: column;
+
+								.paragraph {
+									display: none;
+								}
+
+								@media #{$medium} {
+									.paragraph {
+										display: flex;
+										text-align: center;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.inside-btns {
+					display: flex;
+					.not-editable {
+						margin-top: 20px;
+					}
+				}
+			}
+
+			.item-editable {
+				padding: 20px 20px;
+				&:hover {
+					background-color: $gray-100;
+				}
+			}
+		}
+	}
+}
+
+// admin
+// widgets
+.widgets {
+	.wrapper {
+		background-color: $color-white;
+		padding: 20px;
+
+		@media #{$medium} {
+			padding: 40px;
+		}
+
+		.header-one {
+			margin-bottom: 20px;
 		}
 	}
 }

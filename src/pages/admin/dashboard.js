@@ -30,113 +30,115 @@ const Admin = ({ componentName }) => {
 		<AdminLayout
 			children={
 				<div className={`${componentName} main`}>
-					<h1 className='header-one'>Dashboard</h1>
-					<h5 className='header-five'>
-						Hello {state && state.user && state.user.name}
-					</h5>
-					<div className='group one'>
-						<Link className='stat' href='/admin/posts'>
-							<button className='button edit'>Posts: {numbers.posts}</button>
-						</Link>
+					<div className='wrapper'>
+						<h1 className='header-one'>Dashboard</h1>
+						<h5 className='header-five'>
+							Hello {state && state.user && state.user.name}
+						</h5>
+						<div className='group one'>
+							<Link className='stat' href='/admin/posts'>
+								<button className='button edit'>Posts: {numbers.posts}</button>
+							</Link>
 
-						<Link className='stat' href='/admin/comments'>
-							<button className='button edit'>
-								Comments: {numbers.comments}
-							</button>
-						</Link>
+							<Link className='stat' href='/admin/comments'>
+								<button className='button edit'>
+									Comments: {numbers.comments}
+								</button>
+							</Link>
 
-						<Link className='stat' href='/admin/categories'>
-							<button className='button edit'>
-								Categories: {numbers.categories}
-							</button>
-						</Link>
+							<Link className='stat' href='/admin/categories'>
+								<button className='button edit'>
+									Categories: {numbers.categories}
+								</button>
+							</Link>
 
-						<Link className='stat' href='/admin/users'>
-							<button className='button edit'>Users: {numbers.users}</button>
-						</Link>
-					</div>
-
-					<div className='group two'>
-						<div className='column one'>
-							<button
-								className='btn'
-								style={{ display: 'flex', flexDirection: 'row' }}
-								onClick={() => setIsPostVisible(!isPostsVisible)}
-							>
-								<h5 className='header-five'>Blog Posts </h5>
-								{isPostsVisible ? (
-									<CarrotDown
-										fill='#333'
-										viewBox='0 96 960 960'
-										dimensions='20'
-									/>
-								) : (
-									<div style={{ transform: 'rotate(180deg)' }}>
-										<CarrotDown
-											fill='#333'
-											viewBox='0 96 960 960'
-											dimensions='20'
-										/>
-									</div>
-								)}
-							</button>
-
-							{!isPostsVisible && (
-								<div className='list'>
-									{!isPostsVisible &&
-										latestPosts.map((post) => (
-											<Link
-												className='anchor'
-												href={`/post/${post.slug}`}
-												key={post._id}
-												style={{ display: 'flex' }}
-											>
-												{post.title}
-											</Link>
-										))}
-								</div>
-							)}
+							<Link className='stat' href='/admin/users'>
+								<button className='button edit'>Users: {numbers.users}</button>
+							</Link>
 						</div>
 
-						<div className='column two'>
-							<button
-								className='btn'
-								style={{ display: 'flex', flexDirection: 'row' }}
-								onClick={() => setIsCategoriesVisible(!isCategoriesVisible)}
-							>
-								<h5 className='header-five'>Categories</h5>
-								{isCategoriesVisible ? (
-									<CarrotDown
-										fill='#333'
-										viewBox='0 96 960 960'
-										dimensions='20'
-									/>
-								) : (
-									<div style={{ transform: 'rotate(180deg)' }}>
+						<div className='group two'>
+							<div className='column one'>
+								<button
+									className='btn'
+									style={{ display: 'flex', flexDirection: 'row' }}
+									onClick={() => setIsPostVisible(!isPostsVisible)}
+								>
+									<h5 className='header-five'>Blog Posts </h5>
+									{isPostsVisible ? (
 										<CarrotDown
 											fill='#333'
 											viewBox='0 96 960 960'
 											dimensions='20'
 										/>
+									) : (
+										<div style={{ transform: 'rotate(180deg)' }}>
+											<CarrotDown
+												fill='#333'
+												viewBox='0 96 960 960'
+												dimensions='20'
+											/>
+										</div>
+									)}
+								</button>
+
+								{!isPostsVisible && (
+									<div className='list'>
+										{!isPostsVisible &&
+											latestPosts.map((post) => (
+												<Link
+													className='anchor'
+													href={`/post/${post.slug}`}
+													key={post._id}
+													style={{ display: 'flex' }}
+												>
+													{post.title}
+												</Link>
+											))}
 									</div>
 								)}
-							</button>
+							</div>
 
-							{!isCategoriesVisible && (
-								<div className='list'>
-									{!isCategoriesVisible &&
-										categories.map((c) => (
-											<Link
-												className='anchor'
-												href={`/category/${c.slug}`}
-												key={c._id}
-												style={{ display: 'flex' }}
-											>
-												{c.name}
-											</Link>
-										))}
-								</div>
-							)}
+							<div className='column two'>
+								<button
+									className='btn'
+									style={{ display: 'flex', flexDirection: 'row' }}
+									onClick={() => setIsCategoriesVisible(!isCategoriesVisible)}
+								>
+									<h5 className='header-five'>Categories</h5>
+									{isCategoriesVisible ? (
+										<CarrotDown
+											fill='#333'
+											viewBox='0 96 960 960'
+											dimensions='20'
+										/>
+									) : (
+										<div style={{ transform: 'rotate(180deg)' }}>
+											<CarrotDown
+												fill='#333'
+												viewBox='0 96 960 960'
+												dimensions='20'
+											/>
+										</div>
+									)}
+								</button>
+
+								{!isCategoriesVisible && (
+									<div className='list'>
+										{!isCategoriesVisible &&
+											categories.map((c) => (
+												<Link
+													className='anchor'
+													href={`/category/${c.slug}`}
+													key={c._id}
+													style={{ display: 'flex' }}
+												>
+													{c.name}
+												</Link>
+											))}
+									</div>
+								)}
+							</div>
 						</div>
 					</div>
 				</div>

@@ -7,21 +7,30 @@
 	padding: 20px;
 	border-radius: 10px;
 
-	.add-new {
-		&.button {
-			align-items: center;
-			display: flex;
-			margin: 1rem 0;
-			width: 125px;
-		}
-	}
-
-	.list {
+	.wrapper {
 		background-color: $color-white;
 		padding: 20px;
-		border-radius: 10px;
+		border-radius: 15px;
 		@media #{$medium} {
 			padding: 40px;
+		}
+
+		.add-new {
+			&.button {
+				align-items: center;
+				display: flex;
+				margin: 1rem 0;
+				width: 125px;
+			}
+		}
+
+		.list {
+			background-color: $color-white;
+			padding: 20px;
+			border-radius: 10px;
+			@media #{$medium} {
+				padding: 40px;
+			}
 		}
 	}
 }
@@ -209,61 +218,71 @@
 }
 
 .categories {
-	.heading {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		margin-bottom: 20px;
-	}
-
-	.content {
-		display: flex;
+	.wrapper {
 		background-color: $color-white;
-		padding: 40px;
+		padding: 20px;
+		border-radius: 15px;
+		display: flex;
+		flex-direction: column;
 
-		.add-category {
-			display: flex;
-			flex-direction: column;
+		@media #{$medium} {
+			padding: 40px;
 		}
 
-		.each-category {
-			border-top: 1px solid #e9ecef;
-			padding: 20px 0;
+		.heading {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			margin-bottom: 20px;
+		}
 
-			.title {
-				margin-bottom: 15px;
-			}
+		.content {
+			display: flex;
 
-			.text {
+			.add-category {
 				display: flex;
-				padding-top: 10px;
 				flex-direction: column;
-
-				@media #{$medium} {
-					padding-top: 0;
-					flex-direction: row;
-				}
-
-				.label,
-				.paragraph {
-					width: auto;
-				}
-
-				.label {
-					font-weight: bold;
-					margin-right: 10px;
-				}
 			}
 
-			.group {
-				display: flex;
-				flex-direction: row;
-				justify-content: space-between;
-				align-items: center;
+			.each-category {
+				border-top: 1px solid #e9ecef;
+				padding: 20px 0;
 
-				.edit,
-				.delete {
-					width: 100px;
+				.title {
+					margin-bottom: 15px;
+				}
+
+				.text {
+					display: flex;
+					padding-top: 10px;
+					flex-direction: column;
+
+					@media #{$medium} {
+						padding-top: 0;
+						flex-direction: row;
+					}
+
+					.label,
+					.paragraph {
+						width: auto;
+					}
+
+					.label {
+						font-weight: bold;
+						margin-right: 10px;
+					}
+				}
+
+				.group {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+
+					.edit,
+					.delete {
+						width: 100px;
+					}
 				}
 			}
 		}

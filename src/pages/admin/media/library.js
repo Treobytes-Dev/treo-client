@@ -75,28 +75,30 @@ const MediaLibrary = ({ componentName }) => {
 								loading={loading}
 							/>
 						))}
-					<h1 className='header-one'>Media Library</h1>
+					<div className='wrapper'>
+						<h1 className='header-one'>Media Library</h1>
 
-					<Library
-						media={media}
-						// add modal and prompt for image delete
-						handleImageDelete={handleImageDelete}
-						handleSelectedMedia={handleSelectedMedia}
-					/>
+						<Library
+							media={media}
+							// add modal and prompt for image delete
+							handleImageDelete={handleImageDelete}
+							handleSelectedMedia={handleSelectedMedia}
+						/>
 
-					<Modal
-						content={
-							<div className='featured-image show-image'>
-								<img
-									className='img'
-									src={activeImage.url}
-									alt={'CMS Media Library image'}
-								/>
-							</div>
-						}
-						isVisible={visible}
-						setIsVisible={setVisible}
-					/>
+						<Modal
+							content={
+								<div className='featured-image show-image'>
+									<img
+										className='img'
+										src={activeImage.url}
+										alt={'CMS Media Library image'}
+									/>
+								</div>
+							}
+							isVisible={visible}
+							setIsVisible={setVisible}
+						/>
+					</div>
 				</div>
 			}
 		/>

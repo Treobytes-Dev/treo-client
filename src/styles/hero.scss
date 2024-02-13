@@ -1,4 +1,5 @@
 @import './_variables.scss';
+@import './animation.scss';
 
 html,
 body,
@@ -48,6 +49,7 @@ body,
 				align-items: center;
 				justify-content: center;
 				flex-direction: column;
+				box-shadow: 20px 20px 60px #1b1b1b;
 			}
 		}
 
@@ -55,14 +57,29 @@ body,
 			display: flex;
 			flex-direction: column;
 			align-items: flex-end;
-			justify-content: flex-end;
 			height: 50%;
+			padding-top: 25%;
+
+			@media #{$medium} {
+				justify-content: flex-end;
+				padding-top: 0;
+			}
 
 			.carrot-down {
-				background-color: $color-white;
+				@extend .heartbeat;
+				background-color: rgba($color: $color-white, $alpha: 0.4);
 				border-radius: 50%;
 				height: 100px;
 				width: 100px;
+				box-shadow: 20px 20px 60px #bebebe;
+
+				&:hover {
+					background-color: $color-white;
+				}
+
+				@media #{$medium} {
+					background-color: $color-white;
+				}
 			}
 		}
 	}

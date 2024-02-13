@@ -34,7 +34,6 @@ const Posts = ({ componentName }) => {
 		setLoading(true);
 
 		try {
-			// TODO: check if this is the correct route
 			const { data } = await axios.get('/posts-all');
 
 			setLoading(false);
@@ -92,57 +91,61 @@ const Posts = ({ componentName }) => {
 						loading={loading}
 					/>
 
-					<div
-						className='group heading'
-						style={{
-							display: 'flex',
-							flexDirection: 'row',
-							alignItems: 'center',
-						}}
-					>
-						<h1 className='header-one'>Posts</h1>
-						<h3 className='header-three'>({posts?.length})</h3>
-					</div>
+					<div className='wrapper'>
+						<div
+							className='group heading'
+							style={{
+								display: 'flex',
+								flexDirection: 'row',
+								alignItems: 'center',
+							}}
+						>
+							<h1 className='header-one'>Posts</h1>
+							<h3 className='header-three'>({posts?.length})</h3>
+						</div>
 
-					<button className='button edit add-new'>
-						<Link className='anchor add-new' href='/admin/posts/new'>
-							+ Add New
-						</Link>
-					</button>
-					<input
-						onChange={(e) => setKeyword(e.target.value.toLowerCase())}
-						type='text'
-						className='input-text'
-						placeholder='Search...'
-						value={keyword}
-						style={{
-							margin: '1rem 0',
-						}}
-					/>
+						<button className='button edit add-new'>
+							<Link className='anchor add-new' href='/admin/posts/new'>
+								+ Add New
+							</Link>
+						</button>
+						<input
+							onChange={(e) => setKeyword(e.target.value.toLowerCase())}
+							type='text'
+							className='input-text'
+							placeholder='Search...'
+							value={keyword}
+							style={{
+								margin: '1rem 0',
+							}}
+						/>
 
-					<div className='list'>
-						<PostsList
-							posts={posts?.filter((p) =>
-								p.title.toLowerCase().includes(keyword)
-							)}
-							handleEdit={handleEdit}
-							// handleDelete={handleDelete}
-							handlePrompt={handlePrompt}
+						<div className='list'>
+							<PostsList
+								posts={posts?.filter((p) =>
+									p.title.toLowerCase().includes(keyword)
+								)}
+								handleEdit={handleEdit}
+								// handleDelete={handleDelete}
+								handlePrompt={handlePrompt}
+							/>
+						</div>
+
+						<Modal
+							content={
+								<div>
+									<h3 className='heading-three' style={{ color: '#fff' }}>
+										Are you sure you want to delete "{activePost.title}"?
+									</h3>
+									<button onClick={() => handleDelete(activePost)}>
+										Delete
+									</button>
+								</div>
+							}
+							isVisible={visible}
+							setIsVisible={setVisible}
 						/>
 					</div>
-
-					<Modal
-						content={
-							<div>
-								<h3 className='heading-three' style={{ color: '#fff' }}>
-									Are you sure you want to delete "{activePost.title}"?
-								</h3>
-								<button onClick={() => handleDelete(activePost)}>Delete</button>
-							</div>
-						}
-						isVisible={visible}
-						setIsVisible={setVisible}
-					/>
 				</div>
 			}
 		/>

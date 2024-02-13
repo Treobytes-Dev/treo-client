@@ -1,76 +1,90 @@
 @import './_variables.scss';
 
 .dashboard {
-	.group {
-		display: flex;
-		flex-direction: column;
+	.wrapper {
+		background-color: $color-white;
+		padding: 20px;
+		border-radius: 15px;
 
-		&.one {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-
-			.stat {
-				display: flex;
-				width: 100%;
-				padding: 0 20px;
-
-				@media #{$medium} {
-					display: inline-flex;
-					width: 33%;
-				}
-			}
+		@media #{$medium} {
+			padding: 40px;
 		}
 
-		&.two {
+		.header-one {
+			margin-bottom: 20px;
+		}
+
+		.group {
+			display: flex;
 			flex-direction: column;
 
-			@media #{$medium} {
+			&.one {
+				display: flex;
 				flex-direction: row;
+				flex-wrap: wrap;
+
+				.stat {
+					display: flex;
+					width: 100%;
+					padding: 0 20px;
+
+					@media #{$medium} {
+						display: inline-flex;
+						width: 33%;
+					}
+				}
 			}
 
-			.column {
-				display: flex;
+			&.two {
 				flex-direction: column;
 
 				@media #{$medium} {
-					display: inline-flex;
-					width: 50%;
-				}
-
-				&.one {
-					margin-bottom: 20px;
-					@media #{$medium} {
-						margin-right: 10px;
-						margin-bottom: 0;
-					}
-				}
-
-				&.two {
-					@media #{$medium} {
-						margin-left: 10px;
-					}
-				}
-
-				.btn {
-					display: flex;
 					flex-direction: row;
-					align-items: center;
-					width: 100%;
-					padding: 20px;
-					background-color: $color-white;
-					border-radius: 10px 10px 0 0;
 				}
 
-				.list {
+				.column {
 					display: flex;
 					flex-direction: column;
-					width: 100%;
-					padding: 20px;
-					background-color: $color-white;
-					border-radius: 0 0 10px 10px;
-					.anchor {
-						color: $color-font-body;
+
+					@media #{$medium} {
+						display: inline-flex;
+						width: 50%;
+					}
+
+					&.one {
+						margin-bottom: 20px;
+						@media #{$medium} {
+							margin-right: 10px;
+							margin-bottom: 0;
+						}
+					}
+
+					&.two {
+						@media #{$medium} {
+							margin-left: 10px;
+						}
+					}
+
+					.btn {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						width: 100%;
+						padding: 20px;
+						background-color: $color-white;
+						border-radius: 10px 10px 0 0;
+					}
+
+					.list {
+						display: flex;
+						flex-direction: column;
+						width: 100%;
+						padding: 20px;
+						background-color: $color-white;
+						border-radius: 0 0 10px 10px;
+						.anchor {
+							color: $color-font-body;
+						}
 					}
 				}
 			}

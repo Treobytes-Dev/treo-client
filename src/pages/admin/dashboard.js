@@ -6,7 +6,7 @@ import AdminLayout from '../../components/AdminLayout';
 import useNumbers from '../../hooks/useNumbers';
 import useLatestPosts from '../../hooks/useLatestPosts';
 import useCategory from '../../hooks/useCategory';
-import useGetPages from '../../hooks/useGetPages';
+// import useGetPages from '../../hooks/useGetPages';
 // next
 import Link from 'next/link';
 // icons
@@ -22,9 +22,7 @@ const Admin = ({ componentName }) => {
 	const { numbers } = useNumbers();
 	const { latestPosts } = useLatestPosts();
 	const { categories } = useCategory();
-	const { pages } = useGetPages();
-
-	console.log('pages => ', pages);
+	// const { pages } = useGetPages();
 
 	return (
 		<AdminLayout

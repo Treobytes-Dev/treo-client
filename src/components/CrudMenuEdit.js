@@ -23,6 +23,7 @@ const CrudMenuEdit = ({
 	handleDeleteClick,
 	addBtnText,
 	renderItems,
+	selectOptions,
 }) => {
 	// todo: sub menu functionality
 	// add check mark to indicate if has sub menu
@@ -79,8 +80,8 @@ const CrudMenuEdit = ({
 											<label className='label' htmlFor='position'>
 												Position
 											</label>
-											<input
-												className='input-text'
+											<select
+												className='select'
 												name='position'
 												aria-label='position'
 												type='text'
@@ -88,7 +89,13 @@ const CrudMenuEdit = ({
 												value={!item.position ? '' : item.position}
 												disabled={!item.editable}
 												placeholder='Position'
-											/>
+											>
+												<option className='option' value=''>
+													Select Position
+												</option>
+
+												{selectOptions}
+											</select>
 										</div>
 									</div>
 

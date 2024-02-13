@@ -45,12 +45,7 @@ const Menus = ({ componentName }) => {
 
 	//This is a function that handles the click event when a user wants to add a language. It takes in the last item ID from the menuLastIdGen, creates a new item with an empty string, true boolean and false boolean. It then pushes the new item to the menuList array and sets both menuList and menuPreviousItems arrays with the spread operator. The menuLastIdGen constant is used in the handleAddClick function below.
 	const handleAddClick = useCallback(() => {
-		// const lastItemId = menuLastIdGen;
-
 		// todo:
-		// add functionality to check if has sub menu
-		// functionality for sub menu
-		// functionality to view existing pages
 		// functionality to select position of menu item for display
 		// configure back end modal and controller to handle menu
 		// style input fields
@@ -262,6 +257,22 @@ const Menus = ({ componentName }) => {
 
 	if (errorMsg) setTimeout(() => setErrorMsg(''), 3000);
 
+	console.log('menuList => ', menuList.length);
+
+	const menuMin = 1;
+	const menuLength = menuList.length;
+
+	let options = [];
+
+	// Prepare options using a for loop
+	for (let i = menuMin; i <= menuLength; i++) {
+		options.push(
+			<option key={i} value={i} className='option'>
+				{i}
+			</option>
+		);
+	}
+
 	return (
 		<AdminLayout
 			children={
@@ -285,11 +296,7 @@ const Menus = ({ componentName }) => {
 							handleDeleteClick={handleDeletePrompt}
 							addBtnText={'Add new link'}
 							renderItems={renderItems}
-							// selectOptions={languagesArr.map((option) => (
-							// 	<option key={randomId(10)} className='option' value={option.id}>
-							// 		{option.id}
-							// 	</option>
-							// ))}
+							selectOptions={options}
 							optionValue='Select'
 						/>
 						{renderPrompt()}

@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect, useCallback } from 'react';
+import { useState, useContext, useEffect, useCallback, use } from 'react';
 import { AppContext } from '../../../context';
 
 import axios from 'axios';
@@ -25,7 +25,9 @@ const Menus = ({ componentName }) => {
 	const [state, media] = useContext(AppContext);
 
 	// local state
+	// const [isFocused, setIsFocused] = useState(false);
 	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState(false);
 	const [errorMsg, setErrorMsg] = useState('');
 	const [modalValue, setModalValue] = useState('');
 	const [visible, setVisible] = useState(false);
@@ -255,10 +257,7 @@ const Menus = ({ componentName }) => {
 		</Animation>
 	);
 
-	if (errorMsg) setTimeout(() => setErrorMsg(''), 3000);
-
-	console.log('menuList => ', menuList.length);
-
+	// render number of menus created in the select options
 	const menuMin = 1;
 	const menuLength = menuList.length;
 
@@ -273,6 +272,45 @@ const Menus = ({ componentName }) => {
 		);
 	}
 
+	const focusLinkName = () => {
+		// setIsFocused(true);
+	};
+
+	const blurLinkName = () => {
+		// setIsFocused(false);
+		// isNotEmpty();
+		// isEmail();
+		// isPassword();
+	};
+
+	if (errorMsg) setTimeout(() => setErrorMsg(''), 3000);
+
+	function checkDuplicatePositions(items) {
+		const positionMap = new Map();
+
+		for (const item of items) {
+			if (positionMap.has(item.position)) {
+				// If the position is already encountered, return or handle duplicate
+				return true; // Indicate that a duplicate was found
+			} else {
+				// Otherwise, add the position to the map
+				positionMap.set(item.position, true);
+			}
+		}
+
+		return false; // Indicate that no duplicates were found
+	}
+
+	useEffect(() => {
+		const hasDuplicates = checkDuplicatePositions(menuList);
+
+		if (hasDuplicates) {
+			setError('Duplicate positions found');
+		} else {
+			setError('');
+		}
+	}, [menuList]);
+
 	return (
 		<AdminLayout
 			children={
@@ -280,9 +318,9 @@ const Menus = ({ componentName }) => {
 					{!!errorMsg ||
 						(!!loading && <Status errorMsg={errorMsg} loading={loading} />)}
 
+					{JSON.stringify(menuList, null, 5)}
 					<div className='wrapper'>
 						<h1 className='header-one'>Menus</h1>
-
 						<h3 className='header-three'>Header</h3>
 						<CrudMenuEdit
 							handleAddClick={handleAddClick}
@@ -298,6 +336,7 @@ const Menus = ({ componentName }) => {
 							renderItems={renderItems}
 							selectOptions={options}
 							optionValue='Select'
+							errorDuplicates={error}
 						/>
 						{renderPrompt()}
 

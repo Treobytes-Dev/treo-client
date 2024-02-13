@@ -19,18 +19,22 @@ const CrudMenuEdit = ({
 	handleAddToSubArray,
 	handleDeleteFromSubArray,
 	changeHandler,
+	onFocusLinkName,
+	onBlurLinkName,
+	onFocusUrl,
+	onBlurUrl,
+	onFocusPosition,
+	onBlurPosition,
 	handleDelete,
 	handleDeleteClick,
 	addBtnText,
 	renderItems,
 	selectOptions,
+	errorDuplicates,
+	errorValidateUrl,
 }) => {
-	// todo: sub menu functionality
-	// add check mark to indicate if has sub menu
-	// if true, add a input field to capture title menu item
-	// then render a new crud menu edit component
-
-	// if false, render crud menu edit component as is
+	let urlRegex =
+		/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
 
 	return (
 		<div className={componentName} data-testid={componentName}>
@@ -41,6 +45,11 @@ const CrudMenuEdit = ({
 						className={!item.editable ? 'item' : 'item item-editable'}
 					>
 						<div className='input-container'>
+							{!!errorDuplicates && (
+								<p className='error-msg' style={{ color: 'red' }}>
+									Duplicate positions found
+								</p>
+							)}
 							{item.editable ? (
 								<form className='editable'>
 									<div className='default-menu'>
@@ -53,7 +62,9 @@ const CrudMenuEdit = ({
 												name='linkName'
 												aria-label='linkName'
 												type='text'
-												onChange={(e) => changeHandler(e, item)}
+												onChange={(e) => {
+													changeHandler(e, item);
+												}}
 												value={!item.linkName ? '' : item.linkName}
 												disabled={!item.editable}
 												placeholder='Link name'
@@ -74,6 +85,12 @@ const CrudMenuEdit = ({
 												disabled={!item.editable}
 												placeholder='URL'
 											/>
+											{urlRegex.test(item.url) === false &&
+												item.url.length > 2 && (
+													<p className='error-msg' style={{ color: 'red' }}>
+														Please enter a valid URL.
+													</p>
+												)}
 										</div>
 
 										<div className='form-group'>
@@ -86,6 +103,8 @@ const CrudMenuEdit = ({
 												aria-label='position'
 												type='text'
 												onChange={(e) => changeHandler(e, item)}
+												onFocus={onFocusPosition}
+												onBlur={onBlurPosition}
 												value={!item.position ? '' : item.position}
 												disabled={!item.editable}
 												placeholder='Position'
@@ -172,6 +191,7 @@ const CrudMenuEdit = ({
 										className='btn'
 										data-testid='crud-save-btn'
 										onClick={() => handleEditClick(item, false)}
+										disabled={errorDuplicates ? true : false}
 									>
 										<CheckWCircle fill='#4caf50' />
 										<p className='paragraph'>Save</p>

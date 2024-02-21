@@ -38,6 +38,9 @@ const EditPage = ({ componentName }) => {
 	const [featuredImage, setFeaturedImage] = useState({});
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
+	// checkboxes
+	const [checked, setChecked] = useState(false);
+	const [displayIntro, setDisplayIntro] = useState(false);
 
 	// template list
 	const [templateList, setTemplateList] = useState([]);
@@ -329,6 +332,12 @@ const EditPage = ({ componentName }) => {
 		}
 	};
 
+	const handleChecked = (value) => {
+		setDisplayIntro(value);
+
+		console.log('handleChecked value => ', value);
+	};
+
 	// status messages
 	if (errorMsg) setTimeout(() => setErrorMsg(''), 3000);
 	if (successMsg) setTimeout(() => setSuccessMsg(''), 3000);
@@ -366,6 +375,9 @@ const EditPage = ({ componentName }) => {
 						selectOptions={options}
 						optionValue='Select'
 						errorDuplicates={error}
+						handleChecked={handleChecked}
+						checked={displayIntro}
+						displayIntro={displayIntro}
 					/>
 					{renderPrompt()}
 

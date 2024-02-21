@@ -29,10 +29,9 @@ const CrudMenuEdit = ({
 	displaySecondary,
 	displayThird,
 	displayFourth,
+	handleChecked,
+	checked,
 }) => {
-	let urlRegex =
-		/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
-
 	return (
 		<div className={componentName} data-testid={componentName}>
 			<div className='list'>
@@ -50,24 +49,64 @@ const CrudMenuEdit = ({
 							{item.editable ? (
 								<form className='editable'>
 									<div className='default-menu'>
+										<div className='form-group'>
+											<input
+												className='checkbox intro'
+												name='checkIntro'
+												type='checkbox'
+												checked={displayIntro}
+												onChange={() => handleChecked(!displayIntro)}
+												disabled={false}
+											/>
+											<label className='label' htmlFor='checkIntro'>
+												Display intro template?
+											</label>
+										</div>
+
 										{displayIntro && (
-											<div className='form-group'>
-												<label className='label' htmlFor='introTitle'>
-													Intro Title
-												</label>
-												<input
-													className='input-text'
-													name='introTitle'
-													aria-label='introTitle'
-													type='text'
-													onChange={(e) => {
-														changeHandler(e, item);
-													}}
-													value={!item.introTitle ? '' : item.introTitle}
-													disabled={!item.editable}
-													placeholder='Intro Title'
-												/>
-											</div>
+											<>
+												{' '}
+												<div className='form-group'>
+													<label className='label' htmlFor='introTitle'>
+														Intro Title
+													</label>
+													<input
+														className='input-text'
+														name='introTitle'
+														aria-label='introTitle'
+														type='text'
+														onChange={(e) => {
+															changeHandler(e, item);
+														}}
+														value={!item.introTitle ? '' : item.introTitle}
+														disabled={!item.editable}
+														placeholder='Intro Title'
+													/>
+												</div>
+												<div className='form-group'>
+													<label className='label' htmlFor='position'>
+														Position
+													</label>
+													<select
+														className='select'
+														name='position'
+														aria-label='position'
+														type='text'
+														onChange={(e) => changeHandler(e, item)}
+														onFocus={onFocusPosition}
+														onBlur={onBlurPosition}
+														value={!item.position ? '' : item.position}
+														disabled={!item.editable}
+														placeholder='Position'
+													>
+														<option className='option' value=''>
+															Select Position
+														</option>
+
+														{selectOptions}
+													</select>
+												</div>
+											</>
 										)}
 
 										{displaySecondary && (
@@ -131,49 +170,6 @@ const CrudMenuEdit = ({
 												/>
 											</div>
 										)}
-
-										<div className='form-group'>
-											<label className='label' htmlFor='linkName'>
-												Link Name
-											</label>
-											<input
-												className='input-text'
-												name='linkName'
-												aria-label='linkName'
-												type='text'
-												onChange={(e) => {
-													changeHandler(e, item);
-												}}
-												value={!item.linkName ? '' : item.linkName}
-												disabled={!item.editable}
-												placeholder='Link name'
-											/>
-										</div>
-
-										{/* select position */}
-										<div className='form-group'>
-											<label className='label' htmlFor='position'>
-												Position
-											</label>
-											<select
-												className='select'
-												name='position'
-												aria-label='position'
-												type='text'
-												onChange={(e) => changeHandler(e, item)}
-												onFocus={onFocusPosition}
-												onBlur={onBlurPosition}
-												value={!item.position ? '' : item.position}
-												disabled={!item.editable}
-												placeholder='Position'
-											>
-												<option className='option' value=''>
-													Select Position
-												</option>
-
-												{selectOptions}
-											</select>
-										</div>
 									</div>
 								</form>
 							) : (

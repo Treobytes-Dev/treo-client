@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect, useCallback, use } from 'react';
+import { useState, useContext, useEffect, useCallback } from 'react';
 import { AppContext } from '../../../context';
 
 import axios from 'axios';
@@ -272,19 +272,6 @@ const Menus = ({ componentName }) => {
 		);
 	}
 
-	const focusLinkName = () => {
-		// setIsFocused(true);
-	};
-
-	const blurLinkName = () => {
-		// setIsFocused(false);
-		// isNotEmpty();
-		// isEmail();
-		// isPassword();
-	};
-
-	if (errorMsg) setTimeout(() => setErrorMsg(''), 3000);
-
 	function checkDuplicatePositions(items) {
 		const positionMap = new Map();
 
@@ -301,6 +288,10 @@ const Menus = ({ componentName }) => {
 		return false; // Indicate that no duplicates were found
 	}
 
+	function sortByPosition(array) {
+		return array.sort((a, b) => parseInt(a.position) - parseInt(b.position));
+	}
+
 	useEffect(() => {
 		const hasDuplicates = checkDuplicatePositions(menuList);
 
@@ -310,6 +301,8 @@ const Menus = ({ componentName }) => {
 			setError('');
 		}
 	}, [menuList]);
+
+	if (errorMsg) setTimeout(() => setErrorMsg(''), 3000);
 
 	return (
 		<AdminLayout
@@ -324,7 +317,7 @@ const Menus = ({ componentName }) => {
 						<h3 className='header-three'>Header</h3>
 						<CrudMenuEdit
 							handleAddClick={handleAddClick}
-							listData={menuList}
+							listData={sortByPosition(menuList)}
 							handleEditClick={handleEdit}
 							handleAddToSubArray={addToSubArray}
 							handleDeleteFromSubArray={deleteFromSubArray}

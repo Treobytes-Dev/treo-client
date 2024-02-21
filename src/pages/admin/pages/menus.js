@@ -301,6 +301,10 @@ const Menus = ({ componentName }) => {
 		return false; // Indicate that no duplicates were found
 	}
 
+	function sortByPosition(array) {
+		return array.sort((a, b) => parseInt(a.position) - parseInt(b.position));
+	}
+
 	useEffect(() => {
 		const hasDuplicates = checkDuplicatePositions(menuList);
 
@@ -324,7 +328,7 @@ const Menus = ({ componentName }) => {
 						<h3 className='header-three'>Header</h3>
 						<CrudMenuEdit
 							handleAddClick={handleAddClick}
-							listData={menuList}
+							listData={sortByPosition(menuList)}
 							handleEditClick={handleEdit}
 							handleAddToSubArray={addToSubArray}
 							handleDeleteFromSubArray={deleteFromSubArray}

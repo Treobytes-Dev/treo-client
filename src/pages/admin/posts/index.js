@@ -38,6 +38,8 @@ const Posts = ({ componentName }) => {
 
 			setLoading(false);
 			setPost((prev) => ({ ...prev, posts: data }));
+
+			console.log('data => ', data);
 		} catch (err) {
 			setLoading(false);
 			setErrorMsg('Unable to fetch posts.');

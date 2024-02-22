@@ -39,19 +39,17 @@ const EditPage = ({ componentName }) => {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
 	// checkboxes
-	const [checked, setChecked] = useState(false);
 	const [displayIntro, setDisplayIntro] = useState(false);
-
+	const [displaySecondary, setDisplaySecondary] = useState(false);
+	const [displayThird, setDisplayThird] = useState(false);
+	const [displayFourth, setDisplayFourth] = useState(false);
 	// template list
 	const [templateList, setTemplateList] = useState([]);
 	const [templatePreviousItems, setTemplatePreviousItems] = useState([]);
-
 	const [isDeleting, setIsDeleting] = useState('');
-
 	// modal component state
 	const [visible, setVisible] = useState(false);
 	const [animationModal, setAnimationModal] = useState('');
-
 	// statuses
 	const [successMsg, setSuccessMsg] = useState('');
 	const [errorMsg, setErrorMsg] = useState('');
@@ -82,11 +80,6 @@ const EditPage = ({ componentName }) => {
 
 	//This is a function that handles the click event when a user wants to add a language. It takes in the last item ID from the menuLastIdGen, creates a new item with an empty string, true boolean and false boolean. It then pushes the new item to the templateList array and sets both templateList and templatePreviousItems arrays with the spread operator. The menuLastIdGen constant is used in the handleAddClick function below.
 	const handleAddClick = useCallback(() => {
-		// todo:
-		// functionality to select position of menu item for display
-		// configure back end modal and controller to handle menu
-		// style input fields
-
 		const min = 10; // minimum value
 		const max = 99; // maximum value
 
@@ -172,6 +165,10 @@ const EditPage = ({ componentName }) => {
 
 	const handleSubmitDelete = async () => {
 		console.log('handleSubmitDelete: templateList => ', templateList);
+	};
+
+	const handleSubmit = async () => {
+		console.log('handleSubmit: templateList => ', templateList);
 	};
 
 	const renderPrompt = () => (
@@ -332,10 +329,28 @@ const EditPage = ({ componentName }) => {
 		}
 	};
 
-	const handleChecked = (value) => {
+	const handleCheckedIntro = (value) => {
 		setDisplayIntro(value);
 
-		console.log('handleChecked value => ', value);
+		console.log('handleCheckedIntro value => ', value);
+	};
+
+	const handleCheckedSecondary = (value) => {
+		setDisplaySecondary(value);
+
+		console.log('handleCheckedSecondary value => ', value);
+	};
+
+	const handleCheckedThird = (value) => {
+		setDisplayThird(value);
+
+		console.log('handleCheckedThird value => ', value);
+	};
+
+	const handleCheckedFourth = (value) => {
+		setDisplayFourth(value);
+
+		console.log('handleCheckedFourth value => ', value);
 	};
 
 	// status messages
@@ -375,9 +390,14 @@ const EditPage = ({ componentName }) => {
 						selectOptions={options}
 						optionValue='Select'
 						errorDuplicates={error}
-						handleChecked={handleChecked}
-						checked={displayIntro}
+						handleCheckedIntro={handleCheckedIntro}
 						displayIntro={displayIntro}
+						handleCheckedSecondary={handleCheckedSecondary}
+						displaySecondary={displaySecondary}
+						handleCheckedThird={handleCheckedThird}
+						displayThird={displayThird}
+						handleCheckedFourth={handleCheckedFourth}
+						displayFourth={displayFourth}
 					/>
 					{renderPrompt()}
 

@@ -31,6 +31,9 @@ const CrudMenuEdit = ({
 	displayFourth,
 	handleCheckedIntro,
 	handleCheckedSecondary,
+	handleCheckedWithIcon,
+	displayWithIcon,
+	displayImageSecondary,
 	handleCheckedThird,
 	handleCheckedFourth,
 }) => {
@@ -190,25 +193,278 @@ const CrudMenuEdit = ({
 
 											{displaySecondary && (
 												<>
+													<div className='form-group '>
+														<input
+															className='checkbox with-icon'
+															name='checkWithIcon'
+															type='checkbox'
+															checked={displayWithIcon}
+															onChange={() =>
+																handleCheckedWithIcon(!displayWithIcon)
+															}
+															disabled={false}
+														/>
+														<label className='label' htmlFor='checkWithIcon'>
+															Would you like to display an icon?
+														</label>
+													</div>
+
+													{/* add checkbox */}
+													{displayWithIcon ? (
+														<div className='form-group'>
+															<label className='label' htmlFor='withIconHeader'>
+																Header with Icon
+															</label>
+															<input
+																className='input-text'
+																name='withIconHeader'
+																aria-label='withIconHeader'
+																type='text'
+																onChange={(e) => {
+																	changeHandler(e, item);
+																}}
+																value={
+																	!item.withIconHeader
+																		? ''
+																		: item.withIconHeader
+																}
+																disabled={!item.editable}
+																placeholder='Header with Icon'
+															/>
+														</div>
+													) : (
+														<div className='form-group'>
+															<label
+																className='label'
+																htmlFor='secondaryHeader'
+															>
+																Secondary Header
+															</label>
+															<input
+																className='input-text'
+																name='secondaryHeader'
+																aria-label='secondaryHeader'
+																type='text'
+																onChange={(e) => {
+																	changeHandler(e, item);
+																}}
+																value={
+																	!item.secondaryHeader
+																		? ''
+																		: item.secondaryHeader
+																}
+																disabled={!item.editable}
+																placeholder='secondary Header'
+															/>
+														</div>
+													)}
+
 													<div className='form-group'>
-														<label className='label' htmlFor='secondaryTitle'>
-															Secondary Title
+														<label className='label' htmlFor='copyPrimary'>
+															Primary copy
 														</label>
 														<input
 															className='input-text'
-															name='secondaryTitle'
-															aria-label='secondaryTitle'
+															name='copyPrimary'
+															aria-label='copyPrimary'
+															type='text'
+															onChange={(e) => {
+																changeHandler(e, item);
+															}}
+															value={!item.copyPrimary ? '' : item.copyPrimary}
+															disabled={!item.editable}
+															placeholder='Primary Copy'
+														/>
+													</div>
+
+													{/* add checkbox */}
+													{displayImageSecondary ? (
+														<>
+															<div className='form-group'>
+																<label
+																	className='label'
+																	htmlFor='imageSecondaryImageSrc'
+																>
+																	Image Source
+																</label>
+																<input
+																	className='input-text'
+																	name='imageSecondaryImageSrc'
+																	aria-label='imageSecondaryImageSrc'
+																	type='text'
+																	onChange={(e) => {
+																		changeHandler(e, item);
+																	}}
+																	value={
+																		!item.imageSecondaryImageSrc
+																			? ''
+																			: item.imageSecondaryImageSrc
+																	}
+																	disabled={!item.editable}
+																	placeholder='Image Source'
+																/>
+															</div>
+
+															<div className='form-group'>
+																<label
+																	className='label'
+																	htmlFor='imageSecondaryImageAlt'
+																>
+																	Image Alt Tag
+																</label>
+																<input
+																	className='input-text'
+																	name='imageSecondaryImageAlt'
+																	aria-label='imageSecondaryImageAlt'
+																	type='text'
+																	onChange={(e) => {
+																		changeHandler(e, item);
+																	}}
+																	value={
+																		!item.imageSecondaryImageAlt
+																			? ''
+																			: item.imageSecondaryImageAlt
+																	}
+																	disabled={!item.editable}
+																	placeholder='Image Source'
+																/>
+															</div>
+														</>
+													) : (
+														<div className='form-group'>
+															<label className='label' htmlFor='copySecondary'>
+																Secondary Copy
+															</label>
+															<input
+																className='input-text'
+																name='copySecondary'
+																aria-label='copySecondary'
+																type='text'
+																onChange={(e) => {
+																	changeHandler(e, item);
+																}}
+																value={
+																	!item.copySecondary ? '' : item.copySecondary
+																}
+																disabled={!item.editable}
+																placeholder='Secondary Copy'
+															/>
+														</div>
+													)}
+
+													<h5 className='header-five'>Image Container</h5>
+													{/* todo:
+                          // add functinoality to upload image
+                          */}
+													<div className='form-group'>
+														<label className='label' htmlFor='mainImageSrc'>
+															Main Image
+														</label>
+														<input
+															className='input-text'
+															name='mainImageSrc'
+															aria-label='mainImageSrc'
 															type='text'
 															onChange={(e) => {
 																changeHandler(e, item);
 															}}
 															value={
-																!item.secondaryTitle ? '' : item.secondaryTitle
+																!item.mainImageSrc ? '' : item.mainImageSrc
 															}
 															disabled={!item.editable}
-															placeholder='Secondary Title'
+															placeholder='Main Image Source'
 														/>
 													</div>
+
+													<div className='form-group'>
+														<label className='label' htmlFor='mainImageAltTag'>
+															Main Image Alt Tag
+														</label>
+														<input
+															className='input-text'
+															name='mainImageAltTag'
+															aria-label='mainImageAltTag'
+															type='text'
+															onChange={(e) => {
+																changeHandler(e, item);
+															}}
+															value={
+																!item.mainImageAltTag
+																	? ''
+																	: item.mainImageAltTag
+															}
+															disabled={!item.editable}
+															placeholder='Main Image Alt Tag'
+														/>
+													</div>
+
+													{/* todo:
+                          // add functinoality to upload thumbnails
+                          */}
+													<div className='form-group'>
+														<label className='label' htmlFor='mainImageAltTag'>
+															Thumbnail 1
+														</label>
+														{/* <input
+															className='input-text'
+															name='mainImageAltTag'
+															aria-label='mainImageAltTag'
+															type='text'
+															onChange={(e) => {
+																changeHandler(e, item);
+															}}
+															value={
+																!item.mainImageAltTag
+																	? ''
+																	: item.mainImageAltTag
+															}
+															disabled={!item.editable}
+															placeholder='Main Image Alt Tag'
+														/> */}
+													</div>
+													<div className='form-group'>
+														<label className='label' htmlFor='mainImageAltTag'>
+															Thumbnail 2
+														</label>
+														{/* <input
+															className='input-text'
+															name='mainImageAltTag'
+															aria-label='mainImageAltTag'
+															type='text'
+															onChange={(e) => {
+																changeHandler(e, item);
+															}}
+															value={
+																!item.mainImageAltTag
+																	? ''
+																	: item.mainImageAltTag
+															}
+															disabled={!item.editable}
+															placeholder='Main Image Alt Tag'
+														/> */}
+													</div>
+													<div className='form-group'>
+														<label className='label' htmlFor='mainImageAltTag'>
+															Thumbnail 3
+														</label>
+														{/* <input
+															className='input-text'
+															name='mainImageAltTag'
+															aria-label='mainImageAltTag'
+															type='text'
+															onChange={(e) => {
+																changeHandler(e, item);
+															}}
+															value={
+																!item.mainImageAltTag
+																	? ''
+																	: item.mainImageAltTag
+															}
+															disabled={!item.editable}
+															placeholder='Main Image Alt Tag'
+														/> */}
+													</div>
+
 													<div className='form-group'>
 														<label className='label' htmlFor='position'>
 															Position

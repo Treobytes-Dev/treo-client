@@ -51,245 +51,314 @@ const CrudMenuEdit = ({
 							{item.editable ? (
 								<form className='editable'>
 									<div className='default-menu'>
-										<div className='form-group'>
-											<input
-												className='checkbox intro'
-												name='checkIntro'
-												type='checkbox'
-												checked={displayIntro}
-												onChange={() => handleCheckedIntro(!displayIntro)}
-												disabled={false}
-											/>
-											<label className='label' htmlFor='checkIntro'>
-												Display intro template?
-											</label>
+										{/* elements for intro */}
+										<div className='wrapper-intro'>
+											<div className='form-group check-box'>
+												<input
+													className='checkbox intro'
+													name='checkIntro'
+													type='checkbox'
+													checked={displayIntro}
+													onChange={() => handleCheckedIntro(!displayIntro)}
+													disabled={false}
+												/>
+												<label className='label' htmlFor='checkIntro'>
+													Display intro template?
+												</label>
+											</div>
+
+											{displayIntro && (
+												<>
+													<div className='form-group'>
+														<label className='label' htmlFor='heroHeader'>
+															Hero Header
+														</label>
+														<input
+															className='input-text'
+															name='heroHeader'
+															aria-label='heroHeader'
+															type='text'
+															onChange={(e) => {
+																changeHandler(e, item);
+															}}
+															value={!item.heroHeader ? '' : item.heroHeader}
+															disabled={!item.editable}
+															placeholder='Hero Header'
+														/>
+													</div>
+
+													<div className='form-group'>
+														<label className='label' htmlFor='heroSubHeader'>
+															Hero Sub Header
+														</label>
+														<input
+															className='input-text'
+															name='heroSubHeader'
+															aria-label='heroSubHeader'
+															type='text'
+															onChange={(e) => {
+																changeHandler(e, item);
+															}}
+															value={
+																!item.heroSubHeader ? '' : item.heroSubHeader
+															}
+															disabled={!item.editable}
+															placeholder='Hero Sub Header'
+														/>
+													</div>
+
+													<div className='form-group'>
+														<label className='label' htmlFor='introHeader'>
+															Intro Header
+														</label>
+														<input
+															className='input-text'
+															name='introHeader'
+															aria-label='introHeader'
+															type='text'
+															onChange={(e) => {
+																changeHandler(e, item);
+															}}
+															value={!item.introHeader ? '' : item.introHeader}
+															disabled={!item.editable}
+															placeholder='Intro Header'
+														/>
+													</div>
+
+													<div className='form-group'>
+														<label className='label' htmlFor='introBody'>
+															Intro Body
+														</label>
+														<input
+															className='input-text'
+															name='introBody'
+															aria-label='introBody'
+															type='text'
+															onChange={(e) => {
+																changeHandler(e, item);
+															}}
+															value={!item.introBody ? '' : item.introBody}
+															disabled={!item.editable}
+															placeholder='Intro Body'
+														/>
+													</div>
+
+													<div className='form-group'>
+														<label className='label' htmlFor='position'>
+															Position
+														</label>
+														<select
+															className='select'
+															name='position'
+															aria-label='position'
+															type='text'
+															onChange={(e) => changeHandler(e, item)}
+															onFocus={onFocusPosition}
+															onBlur={onBlurPosition}
+															value={!item.position ? '' : item.position}
+															disabled={!item.editable}
+															placeholder='Position'
+														>
+															{displayIntro && (
+																<option className='option' value='1'>
+																	1
+																</option>
+															)}
+														</select>
+													</div>
+												</>
+											)}
 										</div>
 
-										{displayIntro && (
-											<>
-												<div className='form-group'>
-													<label className='label' htmlFor='introTitle'>
-														Intro Title
-													</label>
-													<input
-														className='input-text'
-														name='introTitle'
-														aria-label='introTitle'
-														type='text'
-														onChange={(e) => {
-															changeHandler(e, item);
-														}}
-														value={!item.introTitle ? '' : item.introTitle}
-														disabled={!item.editable}
-														placeholder='Intro Title'
-													/>
-												</div>
-												<div className='form-group'>
-													<label className='label' htmlFor='position'>
-														Position
-													</label>
-													<select
-														className='select'
-														name='position'
-														aria-label='position'
-														type='text'
-														onChange={(e) => changeHandler(e, item)}
-														onFocus={onFocusPosition}
-														onBlur={onBlurPosition}
-														value={!item.position ? '' : item.position}
-														disabled={!item.editable}
-														placeholder='Position'
-													>
-														<option className='option' value=''>
-															Select Position
-														</option>
+										{/* elements for secondary */}
+										<div className='wrapper-secondary'>
+											<div className='form-group check-box'>
+												<input
+													className='checkbox secondary'
+													name='checkSecondary'
+													type='checkbox'
+													checked={displaySecondary}
+													onChange={() =>
+														handleCheckedSecondary(!displaySecondary)
+													}
+													disabled={false}
+												/>
+												<label className='label' htmlFor='checkSecondary'>
+													Display secondary template?
+												</label>
+											</div>
 
-														{selectOptions}
-													</select>
-												</div>
-											</>
-										)}
+											{displaySecondary && (
+												<>
+													<div className='form-group'>
+														<label className='label' htmlFor='secondaryTitle'>
+															Secondary Title
+														</label>
+														<input
+															className='input-text'
+															name='secondaryTitle'
+															aria-label='secondaryTitle'
+															type='text'
+															onChange={(e) => {
+																changeHandler(e, item);
+															}}
+															value={
+																!item.secondaryTitle ? '' : item.secondaryTitle
+															}
+															disabled={!item.editable}
+															placeholder='Secondary Title'
+														/>
+													</div>
+													<div className='form-group'>
+														<label className='label' htmlFor='position'>
+															Position
+														</label>
+														<select
+															className='select'
+															name='position'
+															aria-label='position'
+															type='text'
+															onChange={(e) => changeHandler(e, item)}
+															onFocus={onFocusPosition}
+															onBlur={onBlurPosition}
+															value={!item.position ? '' : item.position}
+															disabled={!item.editable}
+															placeholder='Position'
+														>
+															<option className='option' value=''>
+																Select Position
+															</option>
 
-										<div className='form-group'>
-											<input
-												className='checkbox secondary'
-												name='checkSecondary'
-												type='checkbox'
-												checked={displaySecondary}
-												onChange={() =>
-													handleCheckedSecondary(!displaySecondary)
-												}
-												disabled={false}
-											/>
-											<label className='label' htmlFor='checkSecondary'>
-												Display secondary template?
-											</label>
+															{selectOptions}
+														</select>
+													</div>
+												</>
+											)}
 										</div>
 
-										{displaySecondary && (
-											<>
-												<div className='form-group'>
-													<label className='label' htmlFor='secondaryTitle'>
-														Secondary Title
-													</label>
-													<input
-														className='input-text'
-														name='secondaryTitle'
-														aria-label='secondaryTitle'
-														type='text'
-														onChange={(e) => {
-															changeHandler(e, item);
-														}}
-														value={
-															!item.secondaryTitle ? '' : item.secondaryTitle
-														}
-														disabled={!item.editable}
-														placeholder='Secondary Title'
-													/>
-												</div>
-												<div className='form-group'>
-													<label className='label' htmlFor='position'>
-														Position
-													</label>
-													<select
-														className='select'
-														name='position'
-														aria-label='position'
-														type='text'
-														onChange={(e) => changeHandler(e, item)}
-														onFocus={onFocusPosition}
-														onBlur={onBlurPosition}
-														value={!item.position ? '' : item.position}
-														disabled={!item.editable}
-														placeholder='Position'
-													>
-														<option className='option' value=''>
-															Select Position
-														</option>
+										{/* elements for third */}
+										<div className='wrapper-third'>
+											<div className='form-group check-box'>
+												<input
+													className='checkbox third'
+													name='checkThird'
+													type='checkbox'
+													checked={displayThird}
+													onChange={() => handleCheckedThird(!displayThird)}
+													disabled={false}
+												/>
+												<label className='label' htmlFor='checkThird'>
+													Display third template?
+												</label>
+											</div>
 
-														{selectOptions}
-													</select>
-												</div>
-											</>
-										)}
+											{displayThird && (
+												<>
+													<div className='form-group'>
+														<label className='label' htmlFor='thirdTitle'>
+															Third Title
+														</label>
+														<input
+															className='input-text'
+															name='thirdTitle'
+															aria-label='thirdTitle'
+															type='text'
+															onChange={(e) => {
+																changeHandler(e, item);
+															}}
+															value={!item.thirdTitle ? '' : item.thirdTitle}
+															disabled={!item.editable}
+															placeholder='Third Title'
+														/>
+													</div>
+													<div className='form-group'>
+														<label className='label' htmlFor='position'>
+															Position
+														</label>
+														<select
+															className='select'
+															name='position'
+															aria-label='position'
+															type='text'
+															onChange={(e) => changeHandler(e, item)}
+															onFocus={onFocusPosition}
+															onBlur={onBlurPosition}
+															value={!item.position ? '' : item.position}
+															disabled={!item.editable}
+															placeholder='Position'
+														>
+															<option className='option' value=''>
+																Select Position
+															</option>
 
-										<div className='form-group'>
-											<input
-												className='checkbox third'
-												name='checkThird'
-												type='checkbox'
-												checked={displayThird}
-												onChange={() => handleCheckedThird(!displayThird)}
-												disabled={false}
-											/>
-											<label className='label' htmlFor='checkThird'>
-												Display third template?
-											</label>
+															{selectOptions}
+														</select>
+													</div>
+												</>
+											)}
 										</div>
 
-										{displayThird && (
-											<>
-												<div className='form-group'>
-													<label className='label' htmlFor='thirdTitle'>
-														Third Title
-													</label>
-													<input
-														className='input-text'
-														name='thirdTitle'
-														aria-label='thirdTitle'
-														type='text'
-														onChange={(e) => {
-															changeHandler(e, item);
-														}}
-														value={!item.thirdTitle ? '' : item.thirdTitle}
-														disabled={!item.editable}
-														placeholder='Third Title'
-													/>
-												</div>
-												<div className='form-group'>
-													<label className='label' htmlFor='position'>
-														Position
-													</label>
-													<select
-														className='select'
-														name='position'
-														aria-label='position'
-														type='text'
-														onChange={(e) => changeHandler(e, item)}
-														onFocus={onFocusPosition}
-														onBlur={onBlurPosition}
-														value={!item.position ? '' : item.position}
-														disabled={!item.editable}
-														placeholder='Position'
-													>
-														<option className='option' value=''>
-															Select Position
-														</option>
+										{/* elements for fourth */}
+										<div className='wrapper-fourth'>
+											<div className='form-group check-box'>
+												<input
+													className='checkbox fourth'
+													name='checkFourth'
+													type='checkbox'
+													checked={displayFourth}
+													onChange={() => handleCheckedFourth(!displayFourth)}
+													disabled={false}
+												/>
+												<label className='label' htmlFor='checkFourth'>
+													Display fourth template?
+												</label>
+											</div>
 
-														{selectOptions}
-													</select>
-												</div>
-											</>
-										)}
+											{displayFourth && (
+												<>
+													<div className='form-group'>
+														<label className='label' htmlFor='fourthTitle'>
+															Fourth Title
+														</label>
+														<input
+															className='input-text'
+															name='fourthTitle'
+															aria-label='fourthTitle'
+															type='text'
+															onChange={(e) => {
+																changeHandler(e, item);
+															}}
+															value={!item.fourthTitle ? '' : item.fourthTitle}
+															disabled={!item.editable}
+															placeholder='Fourth Title'
+														/>
+													</div>
+													<div className='form-group'>
+														<label className='label' htmlFor='position'>
+															Position
+														</label>
+														<select
+															className='select'
+															name='position'
+															aria-label='position'
+															type='text'
+															onChange={(e) => changeHandler(e, item)}
+															onFocus={onFocusPosition}
+															onBlur={onBlurPosition}
+															value={!item.position ? '' : item.position}
+															disabled={!item.editable}
+															placeholder='Position'
+														>
+															<option className='option' value=''>
+																Select Position
+															</option>
 
-										<div className='form-group'>
-											<input
-												className='checkbox fourth'
-												name='checkFourth'
-												type='checkbox'
-												checked={displayFourth}
-												onChange={() => handleCheckedFourth(!displayFourth)}
-												disabled={false}
-											/>
-											<label className='label' htmlFor='checkFourth'>
-												Display fourth template?
-											</label>
+															{selectOptions}
+														</select>
+													</div>
+												</>
+											)}
 										</div>
-
-										{displayFourth && (
-											<>
-												<div className='form-group'>
-													<label className='label' htmlFor='fourthTitle'>
-														Fourth Title
-													</label>
-													<input
-														className='input-text'
-														name='fourthTitle'
-														aria-label='fourthTitle'
-														type='text'
-														onChange={(e) => {
-															changeHandler(e, item);
-														}}
-														value={!item.fourthTitle ? '' : item.fourthTitle}
-														disabled={!item.editable}
-														placeholder='Fourth Title'
-													/>
-												</div>
-												<div className='form-group'>
-													<label className='label' htmlFor='position'>
-														Position
-													</label>
-													<select
-														className='select'
-														name='position'
-														aria-label='position'
-														type='text'
-														onChange={(e) => changeHandler(e, item)}
-														onFocus={onFocusPosition}
-														onBlur={onBlurPosition}
-														value={!item.position ? '' : item.position}
-														disabled={!item.editable}
-														placeholder='Position'
-													>
-														<option className='option' value=''>
-															Select Position
-														</option>
-
-														{selectOptions}
-													</select>
-												</div>
-											</>
-										)}
 									</div>
 								</form>
 							) : (

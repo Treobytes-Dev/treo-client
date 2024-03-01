@@ -29,87 +29,59 @@ const Navigation = () => {
 	const [windowWidth, setWindowWidth] = useState(0); // initialize with a default value, like 0
 
 	const router = useRouter();
-	const pages = [
+	const navLinks = [
 		{
-			title: 'Programs',
-			links: [
+			id: 44,
+			url: '/programs',
+			linkName: 'Programs',
+			position: '1',
+			subItems: [
 				{
-					title: 'Summer Camps',
-					url: '/programs',
+					subLinkName: 'Summer Camps',
+					subUrlName: '/summer-camps',
 				},
 				{
-					title: 'Our Curriculum',
-					url: '/our-curriculum',
+					subLinkName: 'Scholars Program',
+					subUrlName: '/scholars-program',
 				},
 				{
-					title: 'Our Approach',
-					url: '/our-approach',
+					subLinkName: 'Workshops',
+					subUrlName: '/workshops',
 				},
 			],
+			editable: false,
 		},
 		{
-			title: 'About',
-			links: [
-				{
-					title: 'Our Story',
-					url: '/our-story',
-				},
-				{
-					title: 'Our Team',
-					url: '/our-team',
-				},
-				{
-					title: 'Our Mission',
-					url: '/our-mission',
-				},
-			],
+			id: 64,
+			url: '/about',
+			linkName: 'About',
+			position: '2',
+			subItems: [],
+			editable: false,
 		},
 		{
-			title: 'Students',
-			links: [
-				{
-					title: 'Student Life',
-					url: '/student-life',
-				},
-				{
-					title: 'Student Projects',
-					url: '/student-projects',
-				},
-				{
-					title: 'Student Stories',
-					url: '/student-stories',
-				},
-			],
+			id: 17,
+			url: '/students',
+			linkName: 'Students',
+			position: '3',
+			subItems: [],
+			editable: false,
 		},
 		{
-			title: 'Parents',
-			links: [
-				{
-					title: 'Parent Resources',
-					url: '/parent-resources',
-				},
-				{
-					title: 'Parent Testimonials',
-					url: '/parent-testimonials',
-				},
-			],
+			id: 20,
+			url: '/parents',
+			linkName: 'Parents',
+			position: '4',
+			subItems: [],
+			editable: false,
 		},
 		{
-			title: 'Partner with Us',
-			links: [
-				{
-					title: 'Partners',
-					url: '/partners',
-				},
-				{
-					title: 'Sponsorship',
-					url: '/sponsorship',
-				},
-				{
-					title: 'Collaboration',
-					url: '/collaboration',
-				},
-			],
+			id: 93,
+			url: '/partner-with-us',
+			linkName: 'Partner with us',
+			position: '5',
+			subItems: [],
+			editable: false,
 		},
 	];
 
@@ -152,87 +124,17 @@ const Navigation = () => {
 	const renderNavContent = () => (
 		<>
 			<ul className='unordered-list base-options'>
-				{}
-				<li className='list-item'>
-					<Link
-						href='/programs'
-						className={current === '/programs' ? `nav-link active` : 'nav-link'}
-					>
-						Programs
-					</Link>
-				</li>
-
-				<li className='list-item'>
-					<Link
-						href='/about'
-						className={current === '/about' ? `nav-link active` : 'nav-link'}
-					>
-						About
-					</Link>
-				</li>
-
-				<li className='list-item'>
-					<Link
-						href='/students'
-						className={current === '/students' ? `nav-link active` : 'nav-link'}
-					>
-						Students
-					</Link>
-				</li>
-
-				<li className='list-item'>
-					<Link
-						href='/parents'
-						className={current === '/parents' ? `nav-link active` : 'nav-link'}
-					>
-						Parents
-					</Link>
-				</li>
-
-				<li className='list-item'>
-					<Link
-						href='/partner-with-us'
-						className={
-							current === '/partner-with' ? `nav-link active` : 'nav-link'
-						}
-					>
-						Partner with us
-					</Link>
-				</li>
+				{navLinks.map((link) => (
+					<li className='list-item' key={link.id}>
+						<Link
+							href={link.url}
+							className={current === link.url ? `nav-link active` : 'nav-link'}
+						>
+							{link.linkName}
+						</Link>
+					</li>
+				))}
 			</ul>
-
-			{!!state && (
-				<>
-					<button
-						className='user-options'
-						onClick={() => setIsLoggedIn(!isLoggedIn)}
-					>
-						<Avatar />
-
-						{isLoggedIn && (
-							<ul className='unordered-list'>
-								<li className='list-item'>
-									<Link
-										href='/admin/dashboard'
-										className={
-											current === '/admin/dashboard'
-												? `nav-link active`
-												: 'nav-link'
-										}
-									>
-										{state?.user?.role}
-									</Link>
-								</li>
-								<li className='list-item'>
-									<a onClick={logout} className='anchor log-out'>
-										Log out
-									</a>
-								</li>
-							</ul>
-						)}
-					</button>
-				</>
-			)}
 		</>
 	);
 

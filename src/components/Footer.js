@@ -58,50 +58,16 @@ const Footer = () => {
 		}
 	}, []);
 
-	const fetchPages = async () => {
-		setLoading(true);
-
-		try {
-			const { data } = await axios.get('/pages-all');
-
-			setLoading(false);
-			setPage((prev) => ({ ...prev, pages: data }));
-		} catch (err) {
-			setLoading(false);
-			setErrorMsg('Unable to fetch pages.');
-			console.error(`Unable to fetch pages. ${err}`);
-		}
-	};
-
-	const logout = () => {
-		try {
-			axios.get(`/signout`);
-
-			window.localStorage.removeItem('auth');
-			Cookies.remove('token');
-			setState(null);
-			router.push('/admin/signin');
-		} catch (err) {
-			console.error(err.response.data);
-		}
-	};
-
-	const allPages = page?.pages?.map((page) => {
-		return (
-			<li className='list-item' key={page._id}>
-				<Link
-					href={`/admin/pages/${page.slug}`}
-					className={
-						current === `/admin/pages/${page.slug}`
-							? `nav-link active`
-							: 'nav-link'
-					}
-				>
-					{page.name}
-				</Link>
-			</li>
-		);
-	});
+	const footerLinks = [
+		{
+			id: 44,
+			url: '/help-center',
+			linkName: 'Help Center',
+			position: '1',
+			subItems: [],
+			editable: false,
+		},
+	];
 
 	const currentYear = new Date().getFullYear();
 
@@ -111,16 +77,16 @@ const Footer = () => {
 				{`\u00A9`} {currentYear} Treobytes. All rights reserved
 			</p>
 			<ul className='unordered-list base-options'>
-				<li className='list-item'>
-					<Link
-						href='/help-center'
-						className={
-							current === '/help-center' ? `nav-link active` : 'nav-link'
-						}
-					>
-						Help Center
-					</Link>
-				</li>
+				{footerLinks.map((link) => (
+					<li className='list-item' key={link.id}>
+						<Link
+							href={link.url}
+							className={current === link.url ? `nav-link active` : 'nav-link'}
+						>
+							{link.linkName}
+						</Link>
+					</li>
+				))}
 			</ul>
 		</div>
 	);

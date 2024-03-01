@@ -34,7 +34,7 @@ import { Loader } from '../assets/icons/Loader';
 import Robot from '../assets/icons/Robot';
 import PartnerCollab from '../assets/icons/PartnerCollab';
 
-const Home = ({ componentName, data }) => {
+const Home = ({ componentName }) => {
 	const [state] = useContext(AppContext);
 
 	// comments

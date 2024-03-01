@@ -1,7 +1,6 @@
 // categories page on the admin side
 import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../../../context';
-import { useRouter } from 'next/router';
 // axios
 import axios from 'axios';
 // next imports
@@ -15,9 +14,6 @@ import Status from '../../../components/Status';
 
 const Categories = ({ componentName }) => {
 	const [state] = useContext(AppContext);
-	const router = useRouter();
-
-	if (state && state.user.role !== 'admin') router.push('/admin/dashboard');
 
 	// local state
 	const [loading, setLoading] = useState(false);

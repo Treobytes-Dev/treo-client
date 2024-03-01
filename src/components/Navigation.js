@@ -29,17 +29,95 @@ const Navigation = () => {
 	const [windowWidth, setWindowWidth] = useState(0); // initialize with a default value, like 0
 
 	const router = useRouter();
-	const { pages } = page;
+	const pages = [
+		{
+			title: 'Programs',
+			links: [
+				{
+					title: 'Summer Camps',
+					url: '/programs',
+				},
+				{
+					title: 'Our Curriculum',
+					url: '/our-curriculum',
+				},
+				{
+					title: 'Our Approach',
+					url: '/our-approach',
+				},
+			],
+		},
+		{
+			title: 'About',
+			links: [
+				{
+					title: 'Our Story',
+					url: '/our-story',
+				},
+				{
+					title: 'Our Team',
+					url: '/our-team',
+				},
+				{
+					title: 'Our Mission',
+					url: '/our-mission',
+				},
+			],
+		},
+		{
+			title: 'Students',
+			links: [
+				{
+					title: 'Student Life',
+					url: '/student-life',
+				},
+				{
+					title: 'Student Projects',
+					url: '/student-projects',
+				},
+				{
+					title: 'Student Stories',
+					url: '/student-stories',
+				},
+			],
+		},
+		{
+			title: 'Parents',
+			links: [
+				{
+					title: 'Parent Resources',
+					url: '/parent-resources',
+				},
+				{
+					title: 'Parent Testimonials',
+					url: '/parent-testimonials',
+				},
+			],
+		},
+		{
+			title: 'Partner with Us',
+			links: [
+				{
+					title: 'Partners',
+					url: '/partners',
+				},
+				{
+					title: 'Sponsorship',
+					url: '/sponsorship',
+				},
+				{
+					title: 'Collaboration',
+					url: '/collaboration',
+				},
+			],
+		},
+	];
 
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			setCurrent(window.location.pathname);
 		}
 	}, []);
-
-	useEffect(() => {
-		if (state?.token) fetchPages();
-	}, [state?.token]);
 
 	useEffect(() => {
 		// Ensure the code runs only in the client-side
@@ -58,21 +136,6 @@ const Navigation = () => {
 		}
 	}, []);
 
-	const fetchPages = async () => {
-		setLoading(true);
-
-		try {
-			const { data } = await axios.get('/pages-all');
-
-			setLoading(false);
-			setPage((prev) => ({ ...prev, pages: data }));
-		} catch (err) {
-			setLoading(false);
-			setErrorMsg('Unable to fetch pages.');
-			console.error(`Unable to fetch pages. ${err}`);
-		}
-	};
-
 	const logout = () => {
 		try {
 			axios.get(`/signout`);
@@ -89,6 +152,7 @@ const Navigation = () => {
 	const renderNavContent = () => (
 		<>
 			<ul className='unordered-list base-options'>
+				{}
 				<li className='list-item'>
 					<Link
 						href='/programs'

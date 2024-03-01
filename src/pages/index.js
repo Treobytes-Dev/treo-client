@@ -19,6 +19,7 @@ import {
 
 // components
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 import Status from '../components/Status';
 
 import DiagramLevels from '../components/DiagramLevels';
@@ -36,24 +37,9 @@ import PartnerCollab from '../assets/icons/PartnerCollab';
 const Home = ({ componentName, data }) => {
 	const [state] = useContext(AppContext);
 
-	if (!data) {
-		// Data is still loading
-		return (
-			<>
-				<p className='paragraph'>Loading...</p>
-				<Loader />
-			</>
-		);
-	}
-
-	useEffect(() => {
-		pageId?.length > 0 && setPageId(data._id);
-	}, []);
-
 	// comments
 	const [errorMsg, setErrorMsg] = useState('');
 	const [successMsg, setSuccessMsg] = useState('');
-	const [pageId, setPageId] = useState(data._id);
 
 	if (errorMsg) setTimeout(() => setErrorMsg(''), 3000);
 	if (successMsg) setTimeout(() => setSuccessMsg(''), 3000);
@@ -68,23 +54,9 @@ const Home = ({ componentName, data }) => {
 
 	const head = () => (
 		<Head>
-			<title>{`Treobytes | ${data.title}`}</title>
-			<meta
-				name='description'
-				content={
-					data?.content
-						? data.content.substring(0, 150)
-						: 'A content management system'
-				}
-			/>
-			<meta
-				name='og:description'
-				content={
-					data?.content
-						? data.content.substring(0, 150)
-						: 'A content management system'
-				}
-			/>
+			<title>{`Treobytes | ${componentName}`}</title>
+			<meta name='description' content={`Treobytes ${componentName} page`} />
+			<meta name='og:description' content={`Treobytes ${componentName} page`} />
 			<meta property='og:type' content='website' />
 			{/* update site name below based on project */}
 			<meta property='og:site_name' content='Social' />
@@ -184,29 +156,11 @@ const Home = ({ componentName, data }) => {
 					imageSrc={mockEngineeringKitPhoto}
 					imageAlt='robotics engineering kit'
 				/>
+				<Footer />
 			</div>
 		</>
 	);
 };
-
-export async function getServerSideProps() {
-	try {
-		const { data } = await axios.get(`/page/home`);
-
-		return {
-			props: {
-				data,
-			},
-		};
-	} catch (error) {
-		console.error('Error fetching page:', error);
-		return {
-			props: {
-				data: {},
-			},
-		};
-	}
-}
 
 Home.defaultProps = {
 	componentName: 'home',

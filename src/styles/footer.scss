@@ -1,0 +1,40 @@
+@import './_variables.scss';
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	background-color: $color-white;
+	border-bottom: 1px solid $gray-100;
+	background-color: purple;
+	color: $color-white;
+	padding: 20px;
+	flex-direction: column;
+
+	@media #{$medium} {
+		padding: 40px;
+		flex-direction: row;
+	}
+
+	// override the default styles for the ul
+	.unordered-list {
+		&.base-options {
+			display: unset;
+
+			@media #{$medium} {
+				display: flex;
+			}
+		}
+	}
+
+	.nav-link {
+		display: flex;
+		flex-direction: row;
+		padding: 0 20px;
+	}
+
+	.base-options {
+		justify-content: flex-start;
+		align-items: center;
+	}
+}

@@ -189,7 +189,7 @@ const Home = ({ componentName, data }) => {
 	);
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	try {
 		const { data } = await axios.get(`/page/home`);
 

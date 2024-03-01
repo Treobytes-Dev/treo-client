@@ -86,49 +86,55 @@ const Navigation = () => {
 		}
 	};
 
-	const allPages = page?.pages?.map((page) => {
-		return (
-			<li className='list-item' key={page._id}>
-				<Link
-					href={`/admin/pages/${page.slug}`}
-					className={
-						current === `/admin/pages/${page.slug}`
-							? `nav-link active`
-							: 'nav-link'
-					}
-				>
-					{page.name}
-				</Link>
-			</li>
-		);
-	});
-
 	const renderNavContent = () => (
 		<>
 			<ul className='unordered-list base-options'>
 				<li className='list-item'>
 					<Link
-						href='/blog'
-						className={current === '/blog' ? `nav-link active` : 'nav-link'}
+						href='/programs'
+						className={current === '/programs' ? `nav-link active` : 'nav-link'}
 					>
-						Blog
+						Programs
 					</Link>
 				</li>
 
-				{page?.pages?.map((page) => {
-					return (
-						<li className='list-item' key={page._id}>
-							<Link
-								href={`/${page.slug}`}
-								className={
-									current === `/${page.slug}` ? `nav-link active` : 'nav-link'
-								}
-							>
-								{page.title}
-							</Link>
-						</li>
-					);
-				})}
+				<li className='list-item'>
+					<Link
+						href='/about'
+						className={current === '/about' ? `nav-link active` : 'nav-link'}
+					>
+						About
+					</Link>
+				</li>
+
+				<li className='list-item'>
+					<Link
+						href='/students'
+						className={current === '/students' ? `nav-link active` : 'nav-link'}
+					>
+						Students
+					</Link>
+				</li>
+
+				<li className='list-item'>
+					<Link
+						href='/parents'
+						className={current === '/parents' ? `nav-link active` : 'nav-link'}
+					>
+						Parents
+					</Link>
+				</li>
+
+				<li className='list-item'>
+					<Link
+						href='/partner-with-us'
+						className={
+							current === '/partner-with' ? `nav-link active` : 'nav-link'
+						}
+					>
+						Partner with us
+					</Link>
+				</li>
 			</ul>
 
 			{!!state && (

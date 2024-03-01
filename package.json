@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next build && next export",
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
@@ -28,7 +29,7 @@
     "react-dom": "^18.2.0",
     "react-image-file-resizer": "^0.4.8",
     "react-quill": "^2.0.0",
-    "sanitize-html": "^2.11.0",
+    "sanitize-html": "^2.12.1",
     "sass": "^1.69.6"
   },
   "devDependencies": {

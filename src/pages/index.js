@@ -36,24 +36,9 @@ import PartnerCollab from '../assets/icons/PartnerCollab';
 const Home = ({ componentName, data }) => {
 	const [state] = useContext(AppContext);
 
-	// if (!data) {
-	// 	// Data is still loading
-	// 	return (
-	// 		<>
-	// 			<p className='paragraph'>Loading...</p>
-	// 			<Loader />
-	// 		</>
-	// 	);
-	// }
-
-	// useEffect(() => {
-	// 	pageId?.length > 0 && setPageId(data._id);
-	// }, []);
-
 	// comments
 	const [errorMsg, setErrorMsg] = useState('');
 	const [successMsg, setSuccessMsg] = useState('');
-	const [pageId, setPageId] = useState(data._id);
 
 	if (errorMsg) setTimeout(() => setErrorMsg(''), 3000);
 	if (successMsg) setTimeout(() => setSuccessMsg(''), 3000);
@@ -188,25 +173,6 @@ const Home = ({ componentName, data }) => {
 		</>
 	);
 };
-
-// export async function getStaticProps() {
-// 	try {
-// 		const { data } = await axios.get(`/page/home`);
-
-// 		return {
-// 			props: {
-// 				data,
-// 			},
-// 		};
-// 	} catch (error) {
-// 		console.error('Error fetching page:', error);
-// 		return {
-// 			props: {
-// 				data: {},
-// 			},
-// 		};
-// 	}
-// }
 
 Home.defaultProps = {
 	componentName: 'home',

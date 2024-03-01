@@ -36,19 +36,19 @@ import PartnerCollab from '../assets/icons/PartnerCollab';
 const Home = ({ componentName, data }) => {
 	const [state] = useContext(AppContext);
 
-	if (!data) {
-		// Data is still loading
-		return (
-			<>
-				<p className='paragraph'>Loading...</p>
-				<Loader />
-			</>
-		);
-	}
+	// if (!data) {
+	// 	// Data is still loading
+	// 	return (
+	// 		<>
+	// 			<p className='paragraph'>Loading...</p>
+	// 			<Loader />
+	// 		</>
+	// 	);
+	// }
 
-	useEffect(() => {
-		pageId?.length > 0 && setPageId(data._id);
-	}, []);
+	// useEffect(() => {
+	// 	pageId?.length > 0 && setPageId(data._id);
+	// }, []);
 
 	// comments
 	const [errorMsg, setErrorMsg] = useState('');
@@ -68,7 +68,7 @@ const Home = ({ componentName, data }) => {
 
 	const head = () => (
 		<Head>
-			<title>{`Treobytes | ${data.title}`}</title>
+			<title>{`Treobytes | Home Page`}</title>
 			<meta
 				name='description'
 				content={
@@ -189,24 +189,24 @@ const Home = ({ componentName, data }) => {
 	);
 };
 
-export async function getStaticProps() {
-	try {
-		const { data } = await axios.get(`/page/home`);
+// export async function getStaticProps() {
+// 	try {
+// 		const { data } = await axios.get(`/page/home`);
 
-		return {
-			props: {
-				data,
-			},
-		};
-	} catch (error) {
-		console.error('Error fetching page:', error);
-		return {
-			props: {
-				data: {},
-			},
-		};
-	}
-}
+// 		return {
+// 			props: {
+// 				data,
+// 			},
+// 		};
+// 	} catch (error) {
+// 		console.error('Error fetching page:', error);
+// 		return {
+// 			props: {
+// 				data: {},
+// 			},
+// 		};
+// 	}
+// }
 
 Home.defaultProps = {
 	componentName: 'home',

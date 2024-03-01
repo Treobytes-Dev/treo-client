@@ -87,7 +87,7 @@ const SinglePage = ({ data }) => {
 	);
 };
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
 	const { slug } = params;
 
 	try {

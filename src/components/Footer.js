@@ -67,6 +67,14 @@ const Footer = () => {
 			subItems: [],
 			editable: false,
 		},
+		{
+			id: 45,
+			url: '/contact-us',
+			linkName: 'Contact Us',
+			position: '1',
+			subItems: [],
+			editable: false,
+		},
 	];
 
 	const currentYear = new Date().getFullYear();

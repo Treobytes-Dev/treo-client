@@ -32,31 +32,44 @@ const Navigation = () => {
 	const navLinks = [
 		{
 			id: 44,
-			url: '/programs',
+			url: '/programs/summer-camps',
 			linkName: 'Programs',
 			position: '1',
 			subItems: [
 				{
 					subLinkName: 'Summer Camps',
-					subUrlName: '/summer-camps',
+					subUrlName: '/programs/summer-camps',
 				},
 				{
 					subLinkName: 'Scholars Program',
-					subUrlName: '/scholars-program',
+					subUrlName: '/programs/scholars-program',
 				},
 				{
 					subLinkName: 'Workshops',
-					subUrlName: '/workshops',
+					subUrlName: '/programs/workshops',
 				},
 			],
 			editable: false,
 		},
 		{
 			id: 64,
-			url: '/about',
+			url: '/about/our-story',
 			linkName: 'About',
 			position: '2',
-			subItems: [],
+			subItems: [
+				{
+					subLinkName: 'Our Story',
+					subUrlName: '/about/our-story',
+				},
+				{
+					subLinkName: 'Leadership',
+					subUrlName: '/about/leadership',
+				},
+				{
+					subLinkName: 'Accomplishments',
+					subUrlName: '/about/accomplishments',
+				},
+			],
 			editable: false,
 		},
 		{
@@ -77,10 +90,31 @@ const Navigation = () => {
 		},
 		{
 			id: 93,
-			url: '/partner-with-us',
+			url: '/partner-with-us/districts',
 			linkName: 'Partner with us',
 			position: '5',
-			subItems: [],
+			subItems: [
+				{
+					subLinkName: 'Districts',
+					subUrlName: '/partner-with-us/districts',
+				},
+				{
+					subLinkName: 'Corporate',
+					subUrlName: '/partner-with-us/corporate',
+				},
+				{
+					subLinkName: 'Colleges',
+					subUrlName: '/partner-with-us/colleges',
+				},
+				{
+					subLinkName: 'Foundations',
+					subUrlName: '/partner-with-us/foundations',
+				},
+				{
+					subLinkName: 'Donate',
+					subUrlName: '/partner-with-us/donate',
+				},
+			],
 			editable: false,
 		},
 	];

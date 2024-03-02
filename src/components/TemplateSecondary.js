@@ -27,10 +27,10 @@ export const TemplateSecondary = ({
 					{withIcon ? (
 						<div className='heading'>
 							<div className='wrapper-icon'>{icon}</div>
-							<h4 className='header-four'>{withIconHeader}:</h4>
+							<h4 className='header header-four'>{withIconHeader}:</h4>
 						</div>
 					) : (
-						<h2 className='header-two'>{header}</h2>
+						<h2 className='header header-two'>{header}</h2>
 					)}
 
 					<p className='paragraph'>{copyPrimary}</p>

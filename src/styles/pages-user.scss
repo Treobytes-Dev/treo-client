@@ -1,0 +1,36 @@
+@import './_variables.scss';
+
+// default
+.page {
+	.container {
+		padding: 20px 0;
+
+		@media #{$medium} {
+			padding: 40px 0;
+		}
+	}
+
+	&.help-center {
+		.heading {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $color-secondary;
+		}
+
+		.copy-block {
+			padding: 20px 0 0 0;
+			@media #{$medium} {
+				padding: 40px 0 0 0;
+			}
+
+			.header {
+				margin-bottom: 10px;
+			}
+
+			.unordered-list {
+				flex-direction: column;
+			}
+		}
+	}
+}

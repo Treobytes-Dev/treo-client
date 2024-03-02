@@ -20,8 +20,8 @@ export const TemplateIntro = ({
 						<>
 							<div className='fore-ground'>
 								<div className='text'>
-									<h2 className='header-two'>{heroHeader}</h2>
-									<h4 className='header-four'>{heroSubHeader}</h4>
+									<h2 className='header header-two'>{heroHeader}</h2>
+									<h4 className='header header-four'>{heroSubHeader}</h4>
 								</div>
 							</div>
 							{/* <button > */}
@@ -42,7 +42,7 @@ export const TemplateIntro = ({
 					className={`template-${componentName} intro`}
 					id={`template-${componentName}`}
 				>
-					<h2 className='header-two'>{introHeader}</h2>
+					<h2 className='header header-two'>{introHeader}</h2>
 					<p className='paragraph'>{introBody}</p>
 				</div>
 			</div>

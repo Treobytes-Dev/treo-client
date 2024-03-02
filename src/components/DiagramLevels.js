@@ -29,7 +29,7 @@ const DiagramLevels = ({ componentName, rowOne, rowTwo, icon }) => {
 							<p className='paragraph'>{row.text}</p>
 						</div>
 						<div className={`number ${row.classModifier}`}>
-							<h4 className='header-four'>{row.number}</h4>
+							<h4 className='header header-four'>{row.number}</h4>
 						</div>
 					</div>
 				))}

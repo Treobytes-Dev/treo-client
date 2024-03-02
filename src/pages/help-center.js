@@ -7,6 +7,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Status from '../components/Status';
 import { CopyBlock } from '../components/CopyBlock';
+import { FAQs } from '../assets/icons/FAQs';
 
 const HelpCenter = ({ componentName }) => {
 	const head = () => (
@@ -50,7 +51,10 @@ const HelpCenter = ({ componentName }) => {
 				/> */}
 
 				<div className='container'>
-					<h2 className='header-two'>FAQs</h2>
+					<div className='heading'>
+						<h2 className='header header-two'>FAQs</h2>
+						<FAQs dimensions={50} />
+					</div>
 					<CopyBlock
 						header='Why should my student join a Treobytes program?'
 						copyPrimary='We take pride in always improving our programs and developing new offerings to students that keep up with industry standards. Technology is always getting better, and we are too! Our staff are STEM college students with a passion for preparing the next generation for the challenges they will likely face.'
@@ -66,7 +70,7 @@ const HelpCenter = ({ componentName }) => {
 					/>
 					<CopyBlock
 						header='Who can speak with if I have a question about a Treobytes program?'
-						copyPrimary='Reach out to us at info@treobytes.com or 619.333.8589'
+						copyPrimary={`Reach out to us at info@treobytes.com or 619.333.8589`}
 					/>
 					<CopyBlock
 						header='What are the student to facilitator ratios?'

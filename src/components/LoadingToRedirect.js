@@ -22,7 +22,7 @@ const LoadingToRedirect = ({ path }) => {
 
 	return (
 		<div className='loading-to-redirect'>
-			<h4 className='header-four'>{count} seconds</h4>
+			<h4 className='header header-four'>{count} seconds</h4>
 			<div className='wrapper'>
 				<Loader />
 			</div>

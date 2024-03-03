@@ -120,8 +120,9 @@ body {
 	margin-inline-end: 0;
 	padding-inline-start: 0;
 
-	li {
+	.list-item {
 		list-style-type: none;
+		color: $gray-600;
 	}
 }
 
@@ -213,4 +214,8 @@ body {
 
 .checkbox[disabled] label {
 	cursor: not-allowed;
+}
+
+.paragraph {
+	color: $gray-600;
 }

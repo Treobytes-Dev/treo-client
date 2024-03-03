@@ -29,17 +29,101 @@ const Navigation = () => {
 	const [windowWidth, setWindowWidth] = useState(0); // initialize with a default value, like 0
 
 	const router = useRouter();
-	const { pages } = page;
+	const navLinks = [
+		{
+			id: 44,
+			url: '/programs/summer-camps',
+			linkName: 'Programs',
+			position: '1',
+			subItems: [
+				{
+					subLinkName: 'Summer Camps',
+					subUrlName: '/programs/summer-camps',
+				},
+				{
+					subLinkName: 'Scholars Program',
+					subUrlName: '/programs/scholars-program',
+				},
+				{
+					subLinkName: 'Workshops',
+					subUrlName: '/programs/workshops',
+				},
+			],
+			editable: false,
+		},
+		{
+			id: 64,
+			url: '/about/our-story',
+			linkName: 'About',
+			position: '2',
+			subItems: [
+				{
+					subLinkName: 'Our Story',
+					subUrlName: '/about/our-story',
+				},
+				{
+					subLinkName: 'Leadership',
+					subUrlName: '/about/leadership',
+				},
+				{
+					subLinkName: 'Accomplishments',
+					subUrlName: '/about/accomplishments',
+				},
+			],
+			editable: false,
+		},
+		{
+			id: 17,
+			url: '/students',
+			linkName: 'Students',
+			position: '3',
+			subItems: [],
+			editable: false,
+		},
+		{
+			id: 20,
+			url: '/parents',
+			linkName: 'Parents',
+			position: '4',
+			subItems: [],
+			editable: false,
+		},
+		{
+			id: 93,
+			url: '/partner-with-us/districts',
+			linkName: 'Partner with us',
+			position: '5',
+			subItems: [
+				{
+					subLinkName: 'Districts',
+					subUrlName: '/partner-with-us/districts',
+				},
+				{
+					subLinkName: 'Corporate',
+					subUrlName: '/partner-with-us/corporate',
+				},
+				{
+					subLinkName: 'Colleges',
+					subUrlName: '/partner-with-us/colleges',
+				},
+				{
+					subLinkName: 'Foundations',
+					subUrlName: '/partner-with-us/foundations',
+				},
+				{
+					subLinkName: 'Donate',
+					subUrlName: '/partner-with-us/donate',
+				},
+			],
+			editable: false,
+		},
+	];
 
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			setCurrent(window.location.pathname);
 		}
 	}, []);
-
-	useEffect(() => {
-		if (state?.token) fetchPages();
-	}, [state?.token]);
 
 	useEffect(() => {
 		// Ensure the code runs only in the client-side
@@ -58,21 +142,6 @@ const Navigation = () => {
 		}
 	}, []);
 
-	const fetchPages = async () => {
-		setLoading(true);
-
-		try {
-			const { data } = await axios.get('/pages-all');
-
-			setLoading(false);
-			setPage((prev) => ({ ...prev, pages: data }));
-		} catch (err) {
-			setLoading(false);
-			setErrorMsg('Unable to fetch pages.');
-			console.error(`Unable to fetch pages. ${err}`);
-		}
-	};
-
 	const logout = () => {
 		try {
 			axios.get(`/signout`);
@@ -86,83 +155,20 @@ const Navigation = () => {
 		}
 	};
 
-	const allPages = page?.pages?.map((page) => {
-		return (
-			<li className='list-item' key={page._id}>
-				<Link
-					href={`/admin/pages/${page.slug}`}
-					className={
-						current === `/admin/pages/${page.slug}`
-							? `nav-link active`
-							: 'nav-link'
-					}
-				>
-					{page.name}
-				</Link>
-			</li>
-		);
-	});
-
 	const renderNavContent = () => (
 		<>
 			<ul className='unordered-list base-options'>
-				<li className='list-item'>
-					<Link
-						href='/blog'
-						className={current === '/blog' ? `nav-link active` : 'nav-link'}
-					>
-						Blog
-					</Link>
-				</li>
-
-				{page?.pages?.map((page) => {
-					return (
-						<li className='list-item' key={page._id}>
-							<Link
-								href={`/${page.slug}`}
-								className={
-									current === `/${page.slug}` ? `nav-link active` : 'nav-link'
-								}
-							>
-								{page.title}
-							</Link>
-						</li>
-					);
-				})}
+				{navLinks.map((link) => (
+					<li className='list-item' key={link.id}>
+						<Link
+							href={link.url}
+							className={current === link.url ? `nav-link active` : 'nav-link'}
+						>
+							{link.linkName}
+						</Link>
+					</li>
+				))}
 			</ul>
-
-			{!!state && (
-				<>
-					<button
-						className='user-options'
-						onClick={() => setIsLoggedIn(!isLoggedIn)}
-					>
-						<Avatar />
-
-						{isLoggedIn && (
-							<ul className='unordered-list'>
-								<li className='list-item'>
-									<Link
-										href='/admin/dashboard'
-										className={
-											current === '/admin/dashboard'
-												? `nav-link active`
-												: 'nav-link'
-										}
-									>
-										{state?.user?.role}
-									</Link>
-								</li>
-								<li className='list-item'>
-									<a onClick={logout} className='anchor log-out'>
-										Log out
-									</a>
-								</li>
-							</ul>
-						)}
-					</button>
-				</>
-			)}
 		</>
 	);
 

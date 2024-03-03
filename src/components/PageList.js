@@ -7,7 +7,7 @@ const PageList = ({ componentName, pages, handlePrompt, handleEdit }) => {
 			{pages?.length ? (
 				pages.map((page) => (
 					<div key={page._id} className={componentName}>
-						<h4 className='header-four'>{page.title}</h4>
+						<h4 className='header header-four'>{page.title}</h4>
 						<div className='options'>
 							<Link className='view anchor' href={`/${page.slug}`}>
 								View
@@ -26,7 +26,7 @@ const PageList = ({ componentName, pages, handlePrompt, handleEdit }) => {
 					</div>
 				))
 			) : (
-				<h4 className='header-four'>No pages</h4>
+				<h4 className='header header-four'>No pages</h4>
 			)}
 		</>
 	);

@@ -16,7 +16,7 @@ export const TemplateFourth = ({
 					<div className='heading'>
 						<div className='wrapper-icon'>{icon}</div>
 
-						<h4 className='header-four'>{headerPrimary}:</h4>
+						<h4 className='header header-four'>{headerPrimary}:</h4>
 					</div>
 					<p className='paragraph'>{copyPrimary}</p>
 				</div>

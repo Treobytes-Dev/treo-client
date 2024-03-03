@@ -1,0 +1,94 @@
+@import './_variables.scss';
+
+// default
+.page {
+	.anchor {
+		color: $color-third;
+	}
+
+	.container {
+		padding: 20px 0;
+
+		@media #{$medium} {
+			padding: 40px 0;
+		}
+	}
+
+	&.help-center {
+		.heading {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $color-secondary;
+		}
+
+		.copy-block {
+			padding: 20px 0 0 0;
+			@media #{$medium} {
+				padding: 40px 0 0 0;
+			}
+
+			.header {
+				margin-bottom: 10px;
+			}
+
+			.unordered-list {
+				flex-direction: column;
+			}
+		}
+	}
+
+	&.contact-us {
+		.splits {
+			display: flex;
+			flex-direction: column;
+
+			@media #{$medium} {
+				flex-direction: row;
+			}
+
+			.column {
+				padding: 20px;
+
+				@media #{$medium} {
+					width: 50%;
+					padding: 40px;
+				}
+
+				&.column-1 {
+					background-color: $gray-800;
+
+					.intro-copy {
+						color: $color-white;
+
+						@media #{$medium} {
+							font-size: 5rem;
+							line-height: 1;
+						}
+					}
+					.contact-links {
+						flex-direction: column;
+
+						.list-item {
+							display: flex;
+							margin-top: 15px;
+						}
+					}
+				}
+
+				&.column-2 {
+					.group {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						margin: 0 0 20px 0;
+
+						.header {
+							margin: 0 0 0 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

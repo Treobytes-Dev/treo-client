@@ -67,14 +67,6 @@ const Footer = () => {
 			subItems: [],
 			editable: false,
 		},
-		{
-			id: 45,
-			url: '/contact-us',
-			linkName: 'Contact Us',
-			position: '1',
-			subItems: [],
-			editable: false,
-		},
 	];
 
 	const currentYear = new Date().getFullYear();
@@ -95,6 +87,21 @@ const Footer = () => {
 						</Link>
 					</li>
 				))}
+			</ul>
+
+			<ul className='unordered-list base-options'>
+				<li className='list-item'>
+					<Link href='/contact-us'>Contact Us</Link>
+				</li>
+				<li className='list-item'>
+					{/* <Link href={mailto:}></Link> */}
+					<Link href='mailto:info@treobytes.com?body=My custom mail body'>
+						info@treobytes.com
+					</Link>
+				</li>
+				<li className='list-item'>
+					<Link href='tel:+6193338589'>619.333.8589</Link>
+				</li>
 			</ul>
 		</div>
 	);

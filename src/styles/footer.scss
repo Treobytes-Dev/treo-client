@@ -6,7 +6,7 @@
 	width: 100%;
 	background-color: $color-white;
 	border-bottom: 1px solid $gray-100;
-	background-color: purple;
+	background-color: rgba(173, 33, 70, 0.9);
 	color: $color-white;
 	padding: 20px;
 	flex-direction: column;
@@ -16,14 +16,24 @@
 		flex-direction: row;
 	}
 
+	.paragraph,
+	.list-item {
+		color: $color-white;
+	}
+
 	// override the default styles for the ul
 	.unordered-list {
 		&.base-options {
 			display: unset;
+			flex-direction: column;
 
 			@media #{$medium} {
 				display: flex;
 			}
+		}
+
+		.list-item {
+			color: $color-white;
 		}
 	}
 
@@ -35,6 +45,5 @@
 
 	.base-options {
 		justify-content: flex-start;
-		align-items: center;
 	}
 }

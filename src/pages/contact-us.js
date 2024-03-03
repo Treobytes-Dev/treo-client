@@ -14,6 +14,8 @@ import Suggestions from '../assets/icons/Suggestions';
 import Partnerships from '../assets/icons/Partnerships';
 import Edit from '../assets/icons/Edit';
 import AnythingElse from '../assets/icons/AnythingElse';
+import EmailUs from '../assets/icons/EmailUs';
+import CallUs from '../assets/icons/CallUs';
 
 const ContactUs = ({ componentName }) => {
 	const head = () => (
@@ -49,18 +51,23 @@ const ContactUs = ({ componentName }) => {
 
 				<div className='splits'>
 					<div className='column column-1'>
-						<h2 className='header header-two'>
+						<h2 className='header header-two intro-copy'>
 							We would love to hear from you!
 						</h2>
 
 						<ul className='unordered-list contact-links'>
 							<li className='list-item'>
-								<Link href='mailto:info@treobytes.com?body=My custom mail body'>
+								<EmailUs dimensions={50} />
+								<Link
+									className='anchor'
+									href='mailto:info@treobytes.com?body=My custom mail body'
+								>
 									<h2 className='header header-two'>info@treobytes.com</h2>
 								</Link>
 							</li>
 							<li className='list-item'>
-								<Link href='tel:+6193338589'>
+								<CallUs dimensions={50} />
+								<Link className='anchor' href='tel:+6193338589'>
 									<h2 className='header header-two'>619.333.8589</h2>
 								</Link>
 							</li>

@@ -33,4 +33,15 @@
 			}
 		}
 	}
+
+	&.contact-us {
+		.splits {
+			display: flex;
+			flex-direction: column;
+
+			@media #{$medium} {
+				flex-direction: row;
+			}
+		}
+	}
 }

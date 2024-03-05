@@ -38,10 +38,6 @@ const Footer = () => {
 	}, []);
 
 	useEffect(() => {
-		if (state?.token) fetchPages();
-	}, [state?.token]);
-
-	useEffect(() => {
 		// Ensure the code runs only in the client-side
 		const handleResize = () => {
 			setWindowWidth(window.innerWidth);

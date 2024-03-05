@@ -63,6 +63,12 @@ body {
 }
 
 // headings
+.page {
+	.header {
+		font-weight: 700;
+	}
+}
+
 .header-one {
 	font-size: $heading-one;
 	line-height: normal;

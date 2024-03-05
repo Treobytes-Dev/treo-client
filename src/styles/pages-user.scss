@@ -24,6 +24,60 @@
 
 		.copy-block {
 			padding: 20px 0 0 0;
+
+			@media #{$medium} {
+				padding: 40px 0 0 0;
+			}
+
+			.header {
+				margin-bottom: 10px;
+			}
+
+			.unordered-list {
+				flex-direction: column;
+			}
+		}
+	}
+
+	&.our-story {
+		.the-problem {
+			background-color: $color-secondary;
+			text-align: center;
+			color: $color-white;
+			padding: 40px 0;
+
+			.header-two {
+				margin-bottom: 40px;
+				font-size: 4rem;
+			}
+
+			.header-three {
+				line-height: 1.5;
+			}
+		}
+
+		.row {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.column {
+			display: flex;
+			@media #{$medium} {
+				display: inline-flex;
+				width: 50%;
+			}
+
+			&.column-2.round {
+				justify-content: flex-end;
+			}
+		}
+
+		.copy-block {
+			text-align: center;
+			padding: 20px 0 0 0;
+
 			@media #{$medium} {
 				padding: 40px 0 0 0;
 			}

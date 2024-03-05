@@ -61,9 +61,30 @@
 			flex-direction: row;
 			justify-content: space-between;
 			align-items: center;
+
+			.copy {
+				align-items: center;
+				text-align: center;
+				padding: 0 20px;
+				.header {
+					line-height: 1.5;
+				}
+
+				@media #{$medium} {
+					padding: 0 40px;
+				}
+			}
+
+			&.btm {
+				background-color: $color-third;
+				color: $color-white;
+			}
 		}
 		.column {
 			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
 			@media #{$medium} {
 				display: inline-flex;
 				width: 50%;
@@ -74,21 +95,9 @@
 			}
 		}
 
-		.copy-block {
-			text-align: center;
-			padding: 20px 0 0 0;
-
-			@media #{$medium} {
-				padding: 40px 0 0 0;
-			}
-
-			.header {
-				margin-bottom: 10px;
-			}
-
-			.unordered-list {
-				flex-direction: column;
-			}
+		.wrapper-icon {
+			display: flex;
+			justify-content: center;
 		}
 	}
 

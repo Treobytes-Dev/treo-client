@@ -3,7 +3,6 @@ import Head from 'next/head';
 // components
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
-import { CopyBlock } from '../../components/CopyBlock';
 
 import { TemplateIntro } from '../../components/TemplateIntro';
 
@@ -50,26 +49,34 @@ const OurStory = ({ componentName }) => {
 				<TemplateIntro heroImage={hero} heroHeader='About Us' />
 
 				<div className='container'>
-					<div className='column column-1'>
-						Treobytes is 501(c)(3) non-profit focused on building the next
-						generation of the STEM workforce. Established in 2014, our mission
-						is to change the socio and economic trajectory for students by
-						providing vocational STEM education. Treobytes strives towards
-						developing a diverse workforce who is prepared to meet industry
-						demands in STEM disciplines.
+					<div className='intro-columns'>
+						<div className='column column-1'>
+							Treobytes is 501(c)(3) non-profit focused on building the next
+							generation of the STEM workforce. Established in 2014, our mission
+							is to change the socio and economic trajectory for students by
+							providing vocational STEM education. Treobytes strives towards
+							developing a diverse workforce who is prepared to meet industry
+							demands in STEM disciplines.
+						</div>
+						<div className='column column-2'>
+							We achieve this by providing hands-on classes with a culminating
+							ending project. Treobytes collaborates with our “TREO” of
+							partners: students, educational systems and industry partners. We
+							are looking for any support, no matter how small! Donations would
+							be used to update technologies, equipment, and STEM topics offered
+							to students.
+						</div>
 					</div>
-					<div className='column column-2'>
-						We achieve this by providing hands-on classes with a culminating
-						ending project. Treobytes collaborates with our “TREO” of partners:
-						students, educational systems and industry partners. We are looking
-						for any support, no matter how small! Donations would be used to
-						update technologies, equipment, and STEM topics offered to students.
+				</div>
+
+				<div className='container'>
+					<div className='wrapper-icon'>
+						<RobotFace dimensions={150} fill={'rgb(173, 33, 70)'} />
 					</div>
 				</div>
 
 				<div className='the-problem'>
 					<div className='container'>
-						<RobotFace dimensions={150} fill={'#fff'} />
 						<h2 className='header header-two'>The Problem</h2>
 						<h3 className='header header-three'>
 							Students are falling behind in STEM competencies. Our STEM
@@ -77,19 +84,20 @@ const OurStory = ({ componentName }) => {
 							populations. What ideas and which solutions are not being
 							developed by this missing talent?
 						</h3>
+						<ComputerScreen dimensions={150} fill={'#fff'} />
 					</div>
 				</div>
 
-				<ComputerScreen dimensions={250} />
-
-				<div className='row'>
-					<div className='column column-1'>
-						<ChevronButton dimensions={250} />
+				<div className='row top'>
+					<div className='column column-1 copy'>
+						<ChevronButton dimensions={150} />
 
 						<h3 className='header header-three'>
-							To empower our youth to master the skills needed to obtain jobs
-							for today’s and tomorrow’s economy to ensure that pathways to
-							well-paying jobs are accessible.
+							Our mission, through our hands-on curriculum and industry
+							experience, is to provide engaging and relevant STEM knowledge
+							empowering students to build awareness and exposure to career
+							paths, and that develop self-efficacy towards educational and
+							career goals.
 						</h3>
 					</div>
 					<div className='column column-2 round'>
@@ -97,28 +105,23 @@ const OurStory = ({ componentName }) => {
 					</div>
 				</div>
 
-				<PhoneAndWatch dimensions={250} />
-
-				<div className='row'>
-					<div
-						className='column column-1 round'
-						// style={{
-						// 	backgroundImage: `url(${vision})`,
-						// 	backgroundRepeat: 'no-repeat',
-						// 	backgroundPosition: 'center center',
-						// 	backgroundSize: 'cover',
-						// 	height: '300px',
-						// }}
-					>
+				<div className='row btm'>
+					<div className='column column-1 round'>
 						<img className='img mission' src={vision} alt='vision' />
 					</div>
-					<div className='column column-2'>
-						<RunningPerson dimensions={250} />
+					<div className='column column-2 copy'>
+						<RunningPerson dimensions={150} fill={'#fff'} />
 						<h3 className='header header-three'>
 							To empower our youth to master the skills needed to obtain jobs
 							for today’s and tomorrow’s economy to ensure that pathways to
 							well-paying jobs are accessible.
 						</h3>
+					</div>
+				</div>
+
+				<div className='container'>
+					<div className='wrapper-icon'>
+						<PhoneAndWatch dimensions={150} fill={'rgb(173, 33, 70)'} />
 					</div>
 				</div>
 

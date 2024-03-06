@@ -113,7 +113,15 @@
 			padding: 20px 0;
 			flex-direction: column;
 
-			@media #{$medium} {
+			&.tier-4 .column {
+				margin-bottom: 20px;
+
+				@media #{$medium} {
+					margin-bottom: 0;
+				}
+			}
+
+			@media #{$large} {
 				padding: 40px 0;
 				flex-direction: row;
 			}
@@ -124,6 +132,14 @@
 				border: 1px solid $gray-500;
 				border-radius: 5px;
 				padding: 20px;
+				overflow-wrap: break-word;
+				width: 100%;
+				margin: 10px;
+
+				@media #{$medium} {
+					width: 225px;
+					min-height: 225px;
+				}
 
 				.title {
 					color: $color-secondary;
@@ -131,26 +147,30 @@
 				}
 
 				.avatar {
-					.image {
-						vertical-align: middle;
-						border-radius: 50%;
-						width: 50px;
-						height: 50px;
-					}
+					background-repeat: no-repeat;
+					background-position: top;
+					background-size: cover;
+					height: 50px;
+					width: 50px;
+					border-radius: 50%;
 				}
 			}
 
 			.column {
 				display: flex;
 				flex-direction: column;
+				align-items: center;
+				width: 100%;
 
 				@media #{$medium} {
 					display: inline-flex;
+					width: auto;
 				}
 
 				.cards {
 					display: flex;
 					flex-direction: column;
+					width: 100%;
 
 					@media #{$medium} {
 						display: inline-flex;

@@ -312,4 +312,106 @@
 			}
 		}
 	}
+
+	&.accomplishments {
+		.numbers {
+			display: flex;
+			width: 100%;
+			justify-content: space-evenly;
+			font-size: 36px;
+			flex-direction: column;
+
+			@media #{$large} {
+				flex-direction: row;
+			}
+
+			.block {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				overflow-wrap: break-word;
+
+				.header {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex-direction: column;
+					height: 300px;
+				}
+
+				@media #{$large} {
+					display: inline-flex;
+					width: 33%;
+				}
+
+				.callout {
+					color: $color-white;
+					font-size: 5rem;
+					font-weight: 700;
+				}
+
+				&.block-1 {
+					background-color: #bc597b;
+				}
+
+				&.block-2 {
+					background-color: #e59f67;
+				}
+
+				&.block-3 {
+					background-color: #f7dba2;
+				}
+			}
+		}
+
+		.copy-block {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 20px 0;
+
+			@media #{$medium} {
+				padding: 40px 0;
+			}
+
+			.section-title {
+				text-align: center;
+				.call-out {
+					color: $color-secondary;
+				}
+			}
+
+			.unordered-list {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+
+				@media #{$medium} {
+					width: 50%;
+					display: inline-flex;
+					padding: 20px 0;
+				}
+
+				.list-item {
+					list-style-type: disc;
+					padding: 10px 0;
+				}
+			}
+		}
+
+		.bottom-block {
+			background-color: $color-third;
+			color: $color-white;
+			padding: 20px 0;
+
+			@media #{$medium} {
+				padding: 40px 0;
+			}
+
+			.header {
+				line-height: 2;
+			}
+		}
+	}
 }

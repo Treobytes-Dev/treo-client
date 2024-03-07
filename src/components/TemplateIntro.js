@@ -25,11 +25,14 @@ export const TemplateIntro = ({
 								</div>
 							</div>
 							{/* <button > */}
-							<button className='assets' onClick={scrollToTarget}>
-								<div className='carrot-down'>
-									<CarrotDown fill='#333' />
-								</div>
-							</button>
+							{scrollToTarget && (
+								<button className='assets' onClick={scrollToTarget}>
+									<div className='carrot-down'>
+										<CarrotDown fill='#333' />
+									</div>
+								</button>
+							)}
+
 							{/* </button> */}
 						</>
 					}
@@ -37,15 +40,17 @@ export const TemplateIntro = ({
 				/>
 			</div>
 
-			<div className='container'>
-				<div
-					className={`template-${componentName} intro`}
-					id={`template-${componentName}`}
-				>
-					<h2 className='header header-two'>{introHeader}</h2>
-					<p className='paragraph'>{introBody}</p>
+			{(introHeader || introBody) && (
+				<div className='container'>
+					<div
+						className={`template-${componentName} intro`}
+						id={`template-${componentName}`}
+					>
+						<h2 className='header header-two'>{introHeader}</h2>
+						<p className='paragraph'>{introBody}</p>
+					</div>
 				</div>
-			</div>
+			)}
 		</>
 	);
 };

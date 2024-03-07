@@ -414,4 +414,83 @@
 			}
 		}
 	}
+
+	&.students {
+		.row {
+			display: flex;
+			flex-direction: column;
+
+			@media #{$medium} {
+				flex-direction: row;
+			}
+
+			.block {
+				@media #{$medium} {
+					width: 50%;
+				}
+
+				&.block-copy {
+					color: $color-white;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					height: 400px;
+
+					@media #{$medium} {
+						height: 500px;
+						display: flex;
+						line-height: 2;
+					}
+
+					.header {
+						text-align: center;
+						font-size: 3rem;
+
+						@media #{$medium} {
+							line-height: 2;
+						}
+					}
+				}
+
+				&.block-image {
+					display: flex;
+
+					@media #{$medium} {
+						display: flex;
+					}
+				}
+			}
+
+			&.row-1 {
+				.block-copy {
+					background-color: #bc597b;
+				}
+			}
+
+			&.row-2 {
+				.block-copy {
+					background-color: #e59f67;
+					order: 1;
+
+					@media #{$medium} {
+						order: 2;
+					}
+				}
+
+				.block-image {
+					order: 2;
+
+					@media #{$medium} {
+						order: 1;
+					}
+				}
+			}
+
+			&.row-3 {
+				.block-copy {
+					background-color: #f7dba2;
+				}
+			}
+		}
+	}
 }

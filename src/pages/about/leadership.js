@@ -26,6 +26,73 @@ const Card = ({ title, name, contact, source }) => (
 	</div>
 );
 
+const LeadershipTree = () => (
+	<div className='container leadership-tree'>
+		<div className='tier tier-1'>
+			<Card
+				title='Founder & CEO'
+				name='Ava Mason'
+				contact='ava@treobytes.com'
+				source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692311/avatar-ava_qz1ado.jpg'
+			/>
+		</div>
+		<div className='tier tier-2'>
+			<Card
+				title='Director'
+				name='Antoine Serrano'
+				contact='antoines@treobytes.com'
+				source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692261/avatar-antoine-serrano_tvpevf.jpg'
+			/>
+		</div>
+		<div className='tier tier-3'>
+			<Card
+				title='Assistant Director'
+				name='Lauren Wisniewski'
+				contact='lauren@treobytes.com'
+				source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692261/avatar-lauren-wisniewski_dxg29g.jpg'
+			/>
+			<Card title='Operations Administrator' name='TBA' />
+		</div>
+		<div className='tier tier-4'>
+			<div className='column column-1'>
+				<h4 className='header header-four'>Marketing Team</h4>
+				<div className='cards'>
+					<Card
+						title='Marketing Director'
+						name='Jeremy Joseph'
+						contact='jjoseph@treobytes.com'
+						source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692261/avatar-jeremy-joseph_a48dyt.jpg'
+					/>
+					<Card
+						title='Digital Marketing Specialist'
+						name='Sarai Gomez'
+						contact='sarai@treobytes.com'
+						source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692261/avatar-sarai-gomez_jejdvh.jpg'
+					/>
+				</div>
+			</div>
+
+			<div className='column column-2'>
+				<h4 className='header header-four'>Product Development</h4>
+				<div className='cards'>
+					<Card
+						title='Product Development'
+						name='Khalil Jackson'
+						contact='khalil@treobytes.com'
+						source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692261/avatar-khalil-jackson_drcs0c.jpg'
+					/>
+					<Card
+						title='Product Development'
+						name='Ryan Palmares'
+						contact='ryan@treobytes.com'
+						source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692261/avatar-ryan-palmares_df6nba.jpg'
+					/>
+				</div>
+			</div>
+		</div>
+	</div>
+);
+
 const Leadership = ({ componentName }) => {
 	const head = () => (
 		<Head>
@@ -48,6 +115,14 @@ const Leadership = ({ componentName }) => {
 	const hero =
 		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1709693053/leadership-hero_tgmuu8.jpg';
 
+	const colleges = [
+		{ id: 1, name: 'USD' },
+		{ id: 2, name: 'SDSU' },
+		{ id: 3, name: 'UCSD' },
+		{ id: 4, name: 'UCSM' },
+		{ id: 5, name: 'SDCCD' },
+	];
+
 	return (
 		<>
 			{head()}
@@ -60,68 +135,35 @@ const Leadership = ({ componentName }) => {
 					introBody='Meet our team working to achieve equity in the STEM workforce!'
 				/>
 
-				<div className='container'>
-					<div className='tier tier-1'>
-						<Card
-							title='Founder & CEO'
-							name='Ava Mason'
-							contact='ava@treobytes.com'
-							source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692311/avatar-ava_qz1ado.jpg'
-						/>
-					</div>
-					<div className='tier tier-2'>
-						<Card
-							title='Director'
-							name='Antoine Serrano'
-							contact='antoines@treobytes.com'
-							source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692261/avatar-antoine-serrano_tvpevf.jpg'
-						/>
-					</div>
-					<div className='tier tier-3'>
-						<Card
-							title='Assistant Director'
-							name='Lauren Wisniewski'
-							contact='lauren@treobytes.com'
-							source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692261/avatar-lauren-wisniewski_dxg29g.jpg'
-						/>
-						<Card title='Operations Administrator' name='TBA' />
-					</div>
-					<div className='tier tier-4'>
-						<div className='column column-1'>
-							<h4 className='header header-four'>Marketing Team</h4>
-							<div className='cards'>
-								<Card
-									title='Marketing Director'
-									name='Jeremy Joseph'
-									contact='jjoseph@treobytes.com'
-									source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692261/avatar-jeremy-joseph_a48dyt.jpg'
-								/>
-								<Card
-									title='Digital Marketing Specialist'
-									name='Sarai Gomez'
-									contact='sarai@treobytes.com'
-									source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692261/avatar-sarai-gomez_jejdvh.jpg'
-								/>
-							</div>
-						</div>
+				<LeadershipTree />
 
-						<div className='column column-2'>
-							<h4 className='header header-four'>Product Development</h4>
-							<div className='cards'>
-								<Card
-									title='Product Development'
-									name='Khalil Jackson'
-									contact='khalil@treobytes.com'
-									source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692261/avatar-khalil-jackson_drcs0c.jpg'
-								/>
-								<Card
-									title='Product Development'
-									name='Ryan Palmares'
-									contact='ryan@treobytes.com'
-									source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692261/avatar-ryan-palmares_df6nba.jpg'
-								/>
+				<div className='facilitators'>
+					<h2 className='header header-two'>Facilitators</h2>
+					<div className='colleges'>
+						{colleges.map((college) => (
+							<div
+								key={college.id}
+								className={`college ${college.name.toLowerCase()}`}
+							>
+								<p className='paragraph'>{college.name}</p>
 							</div>
-						</div>
+						))}
+					</div>
+				</div>
+
+				<div className='block'>
+					<div className='container'>
+						<h5 className='header header-five copy'>
+							Recruiting a diverse population of STEM college students to
+							facilitate courses for middle school students is paramount for
+							creating an inclusive and enriching educational experience.
+							Diverse role models and instructors bring varied perspectives,
+							backgrounds, and experiences, inspiring middle school students
+							from different walks of life to pursue STEM fields. Exposure to
+							instructors with diverse identities and backgrounds not only
+							enhances representation but also helps break down stereotypes,
+							showcasing the breadth of possibilities within STEM.
+						</h5>
 					</div>
 				</div>
 				<Footer />

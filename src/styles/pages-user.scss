@@ -112,76 +112,148 @@
 			}
 		}
 
-		.tier {
-			display: flex;
-			justify-content: space-evenly;
-			align-items: center;
-			padding: 0 0 20px 0;
-			flex-direction: column;
-
-			&.tier-4 .column {
-				margin-bottom: 20px;
-
-				@media #{$medium} {
-					margin-bottom: 0;
-				}
-			}
-
-			@media #{$large} {
-				padding: 0 0 40px 0;
-				flex-direction: row;
-			}
-
-			// component
-			.box {
-				background-color: $color-white;
-				border: 1px solid $gray-500;
-				border-radius: 5px;
-				padding: 20px;
-				overflow-wrap: break-word;
-				width: 100%;
-				margin: 10px;
-
-				@media #{$medium} {
-					width: 225px;
-					min-height: 225px;
-				}
-
-				.title {
-					color: $color-secondary;
-					margin: 15px 0;
-				}
-
-				.avatar {
-					background-repeat: no-repeat;
-					background-position: top;
-					background-size: cover;
-					height: 50px;
-					width: 50px;
-					border-radius: 50%;
-				}
-			}
-
-			.column {
+		// leadership-tree
+		.leadership-tree {
+			.tier {
 				display: flex;
-				flex-direction: column;
+				justify-content: space-evenly;
 				align-items: center;
-				width: 100%;
+				padding: 0 0 20px 0;
+				flex-direction: column;
 
-				@media #{$medium} {
-					display: inline-flex;
-					width: auto;
+				&.tier-4 .column {
+					margin-bottom: 20px;
+
+					@media #{$medium} {
+						margin-bottom: 0;
+					}
 				}
 
-				.cards {
+				@media #{$large} {
+					padding: 0 0 40px 0;
+					flex-direction: row;
+				}
+
+				// component
+				.box {
+					background-color: $color-white;
+					border: 1px solid $gray-500;
+					border-radius: 5px;
+					padding: 20px;
+					overflow-wrap: break-word;
+					width: 100%;
+					margin: 10px;
+
+					@media #{$large} {
+						width: 245px;
+						min-height: 265px;
+					}
+
+					.title {
+						color: $color-secondary;
+						margin: 15px 0;
+					}
+
+					.avatar {
+						background-repeat: no-repeat;
+						background-position: top;
+						background-size: cover;
+						height: 50px;
+						width: 50px;
+						border-radius: 50%;
+					}
+				}
+
+				.column {
 					display: flex;
 					flex-direction: column;
+					align-items: center;
 					width: 100%;
 
 					@media #{$medium} {
 						display: inline-flex;
-						flex-direction: row;
+						width: auto;
 					}
+
+					.cards {
+						display: flex;
+						flex-direction: column;
+						width: 100%;
+
+						@media #{$medium} {
+							display: inline-flex;
+							flex-direction: row;
+						}
+					}
+				}
+			}
+		}
+
+		.facilitators {
+			.header {
+				text-align: center;
+				margin-bottom: 20px;
+			}
+
+			.colleges {
+				display: flex;
+				flex-direction: column;
+
+				@media #{$medium} {
+					flex-direction: row;
+				}
+
+				.college {
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					height: 100px;
+
+					@media #{$medium} {
+						width: 20%;
+						height: 200px;
+						display: inline-flex;
+					}
+
+					&.usd {
+						background-color: #f7dba2;
+					}
+
+					&.sdsu {
+						background-color: #e59f67;
+					}
+
+					&.ucsd {
+						background-color: #ce90a2;
+					}
+
+					&.ucsm {
+						background-color: #d66c42;
+					}
+
+					&.sdccd {
+						background-color: #bc597b;
+					}
+
+					.paragraph {
+						color: $color-white;
+						font-size: 24px;
+						font-weight: 700;
+					}
+				}
+			}
+		}
+
+		.block {
+			background-color: #9f3f62;
+			.copy {
+				padding: 20px 0;
+				color: $color-white;
+				line-height: 1.75;
+
+				@media #{$medium} {
+					padding: 40px 0;
 				}
 			}
 		}

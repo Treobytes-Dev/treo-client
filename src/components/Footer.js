@@ -4,6 +4,7 @@ import { AppContext } from '../context';
 import { useRouter } from 'next/router';
 
 import { Instagram } from '../assets/icons/Instagram.js';
+import { Facebook } from '../assets/icons/Facebook.js';
 
 // todo:
 // create CRUD functionality to add pages
@@ -18,34 +19,12 @@ const Footer = () => {
 	const [state, setState, page, setPage] = useContext(AppContext);
 	// local
 	const [current, setCurrent] = useState();
-	const [loading, setLoading] = useState('');
-	const [errorMsg, setErrorMsg] = useState('');
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
-	const [windowWidth, setWindowWidth] = useState(0); // initialize with a default value, like 0
 
 	const router = useRouter();
-	const { pages } = page;
 
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			setCurrent(window.location.pathname);
-		}
-	}, []);
-
-	useEffect(() => {
-		// Ensure the code runs only in the client-side
-		const handleResize = () => {
-			setWindowWidth(window.innerWidth);
-		};
-
-		if (typeof window !== 'undefined') {
-			window.addEventListener('resize', handleResize);
-
-			// Set the initial width
-			setWindowWidth(window.innerWidth);
-
-			// Cleanup
-			return () => window.removeEventListener('resize', handleResize);
 		}
 	}, []);
 
@@ -113,6 +92,13 @@ const Footer = () => {
 					>
 						<Instagram fill='#fff' />
 						<div className='copy'>Instagram</div>
+					</Link>
+				</li>
+
+				<li className='list-item'>
+					<Link className='nav-link' href='https://www.facebook.com/treobytes'>
+						<Facebook fill='#fff' />
+						<div className='copy'>Facebook</div>
 					</Link>
 				</li>
 			</ul>

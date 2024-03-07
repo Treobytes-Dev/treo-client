@@ -415,6 +415,41 @@
 		}
 	}
 
+	&.parents {
+		.row {
+			display: flex;
+			flex-direction: column;
+			padding: 20px 0;
+			min-height: 300px;
+
+			@media #{$medium} {
+				flex-direction: row;
+				padding: 40px 0;
+				background-image: url('https://res.cloudinary.com/dtjvswb7v/image/upload/v1709784496/speech-bubble_jdhmyt.png');
+				background-repeat: no-repeat;
+				background-position: right;
+				background-size: contain;
+				height: 300px;
+			}
+
+			&.row-2 {
+				background-color: $color-third;
+				color: $color-white;
+				justify-content: center;
+
+				@media #{$medium} {
+					margin: 40px 0;
+				}
+			}
+
+			.block {
+				&.block-name {
+					padding: 20px 0 0 0;
+				}
+			}
+		}
+	}
+
 	&.students {
 		.row {
 			display: flex;

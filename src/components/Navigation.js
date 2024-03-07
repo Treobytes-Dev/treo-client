@@ -26,6 +26,7 @@ const Navigation = () => {
 	const [loading, setLoading] = useState('');
 	const [errorMsg, setErrorMsg] = useState('');
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	const [highlightIndex, setHighlightIndex] = useState('');
 	const [windowWidth, setWindowWidth] = useState(0); // initialize with a default value, like 0
 
 	const router = useRouter();
@@ -155,62 +156,95 @@ const Navigation = () => {
 		}
 	};
 
-	// Define a state variable to track hover status
-	const [isHovered, setIsHovered] = useState(false);
-	const [highlightIndex, setHighlightIndex] = useState('');
-
 	useEffect(() => {}, [highlightIndex]);
 
 	const handleDisplaySubOptions = (e) => {
 		console.log('e', highlightIndex);
-		setIsHovered(true);
 		setHighlightIndex(e.target.innerText);
 	};
 
 	const handleHideSubOptions = () => {
-		setIsHovered(false);
 		setHighlightIndex('');
 	};
 
 	const renderNavContent = () => (
 		<>
 			<ul className='unordered-list base-options'>
-				{navLinks.map((link, index) => (
-					<li
-						className={`list-item ${
-							link.linkName === highlightIndex ? 'highlight' : ''
-						}`}
-						key={link.id}
-						onMouseEnter={handleDisplaySubOptions}
-						onMouseLeave={handleHideSubOptions}
-					>
-						<Link
-							href={link.url}
-							className={current === link.url ? `nav-link active` : 'nav-link'}
-						>
-							{link.linkName}
-						</Link>
-						{link?.subItems?.length > 0 && (
-							<ul className='unordered-list sub-options'>
-								{link.linkName === highlightIndex &&
-									link.subItems.map((subLink) => (
-										<li className='list-item' key={subLink.subLinkName}>
-											<Link
-												href={subLink.subUrlName}
-												className={
-													current === subLink.subUrlName
-														? `nav-link active`
-														: 'nav-link'
-												}
-											>
-												{subLink.subLinkName}
-											</Link>
-										</li>
-									))}
-							</ul>
-						)}
-					</li>
-				))}
+				{/* mobile first */}
+				{windowWidth < 768
+					? navLinks.map((link) => (
+							<li
+								className='list-item '
+								key={link.id}
+								onMouseEnter={handleDisplaySubOptions}
+								onMouseLeave={handleHideSubOptions}
+							>
+								<Link
+									href={link.url}
+									className={
+										current === link.url ? `nav-link active` : 'nav-link'
+									}
+								>
+									{link.linkName}
+								</Link>
+								{link?.subItems?.length > 0 && (
+									<ul className='unordered-list sub-options'>
+										{link.subItems.map((subLink) => (
+											<li className='list-item' key={subLink.subLinkName}>
+												<Link
+													href={subLink.subUrlName}
+													className={
+														current === subLink.subUrlName
+															? `nav-link current`
+															: 'nav-link'
+													}
+												>
+													{subLink.subLinkName}
+												</Link>
+											</li>
+										))}
+									</ul>
+								)}
+							</li>
+					  ))
+					: navLinks.map((link) => (
+							<li
+								className={`list-item ${
+									link.linkName === highlightIndex ? 'highlight' : ''
+								}`}
+								key={link.id}
+								onMouseEnter={handleDisplaySubOptions}
+								onMouseLeave={handleHideSubOptions}
+							>
+								<Link
+									href={link.url}
+									className={
+										current === link.url ? `nav-link active` : 'nav-link'
+									}
+								>
+									{link.linkName}
+								</Link>
+								{link?.subItems?.length > 0 && (
+									<ul className='unordered-list sub-options'>
+										{link.linkName === highlightIndex &&
+											link.subItems.map((subLink) => (
+												<li className='list-item' key={subLink.subLinkName}>
+													<Link
+														href={subLink.subUrlName}
+														className={
+															current === subLink.subUrlName
+																? `nav-link active`
+																: 'nav-link'
+														}
+													>
+														{subLink.subLinkName}
+													</Link>
+												</li>
+											))}
+									</ul>
+								)}
+							</li>
+					  ))}
 			</ul>
 		</>
 	);

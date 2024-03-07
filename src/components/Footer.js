@@ -2,13 +2,8 @@ import { useContext, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { AppContext } from '../context';
 import { useRouter } from 'next/router';
-import Cookies from 'js-cookie';
-import axios from 'axios';
 
-import { MobileMenu } from './MobileMenu.js';
-import Avatar from '../assets/icons/Avatar.js';
-import Logo from '../assets/icons/Logo.js';
-import { Loader } from '../assets/icons/Loader.js';
+import { Instagram } from '../assets/icons/Instagram.js';
 
 // todo:
 // create CRUD functionality to add pages
@@ -87,16 +82,38 @@ const Footer = () => {
 
 			<ul className='unordered-list base-options'>
 				<li className='list-item'>
-					<Link href='/contact-us'>Contact Us</Link>
+					<Link
+						className={
+							current === '/contact-us' ? `nav-link active` : 'nav-link'
+						}
+						href='/contact-us'
+					>
+						Contact Us
+					</Link>
 				</li>
 				<li className='list-item'>
 					{/* <Link href={mailto:}></Link> */}
-					<Link href='mailto:info@treobytes.com?body=My custom mail body'>
+					<Link
+						className='nav-link'
+						href='mailto:info@treobytes.com?body=My custom mail body'
+					>
 						info@treobytes.com
 					</Link>
 				</li>
 				<li className='list-item'>
-					<Link href='tel:+6193338589'>619.333.8589</Link>
+					<Link className='nav-link' href='tel:+6193338589'>
+						619.333.8589
+					</Link>
+				</li>
+
+				<li className='list-item'>
+					<Link
+						className='nav-link'
+						href='https://www.instagram.com/treobytes/?hl=en'
+					>
+						<Instagram fill='#fff' />
+						<div className='copy'>Instagram</div>
+					</Link>
 				</li>
 			</ul>
 		</div>

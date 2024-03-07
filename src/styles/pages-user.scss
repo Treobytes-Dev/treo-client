@@ -106,11 +106,17 @@
 			background-position: top;
 		}
 
+		.template-intro {
+			.paragraph {
+				@extend .header-three;
+			}
+		}
+
 		.tier {
 			display: flex;
 			justify-content: space-evenly;
 			align-items: center;
-			padding: 20px 0;
+			padding: 0 0 20px 0;
 			flex-direction: column;
 
 			&.tier-4 .column {
@@ -122,7 +128,7 @@
 			}
 
 			@media #{$large} {
-				padding: 40px 0;
+				padding: 0 0 40px 0;
 				flex-direction: row;
 			}
 

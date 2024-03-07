@@ -26,24 +26,36 @@
 		&.base-options {
 			display: unset;
 			flex-direction: column;
+			justify-content: flex-start;
+			margin-top: 20px;
 
 			@media #{$medium} {
 				display: flex;
+				margin-top: 0;
 			}
 		}
 
 		.list-item {
 			color: $color-white;
+
+			&:hover {
+				background-color: rgba($color: $color-black, $alpha: 0.16);
+			}
+
+			.nav-link {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				margin: 0 0 10px 0;
+
+				@media #{$medium} {
+					padding: 0 20px;
+				}
+
+				.copy {
+					margin-left: 10px;
+				}
+			}
 		}
-	}
-
-	.nav-link {
-		display: flex;
-		flex-direction: row;
-		padding: 0 20px;
-	}
-
-	.base-options {
-		justify-content: flex-start;
 	}
 }

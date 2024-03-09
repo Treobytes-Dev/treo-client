@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 
 import { Instagram } from '../assets/icons/Instagram.js';
 import { Facebook } from '../assets/icons/Facebook.js';
+import { LinkedIn } from '../assets/icons/LinkedIn.js';
 
 // todo:
 // create CRUD functionality to add pages
@@ -43,10 +44,60 @@ const Footer = () => {
 
 	return (
 		<div className='footer'>
-			<p className='paragraph'>
-				{`\u00A9`} {currentYear} Treobytes. All rights reserved
-			</p>
-			<ul className='unordered-list base-options'>
+			<ul className='unordered-list base-options col-1'>
+				<li className='list-item'>
+					<p className='paragraph'>961 S 16th St</p>
+				</li>
+
+				<li className='list-item'>
+					<p className='paragraph'>San Diego, CA 92113</p>
+				</li>
+
+				<li className='list-item'>
+					<p className='paragraph'>Barrio Logan</p>
+				</li>
+			</ul>
+
+			<ul className='unordered-list base-options col-2'>
+				<li className='list-item'>
+					<p className='paragraph'>Copyright {`\u00A9`} Treobytes</p>
+				</li>
+
+				<li className='list-item'>
+					<p className='paragraph'>EIN 46-3992953</p>
+				</li>
+
+				<div className='icons'>
+					<li className='list-item'>
+						<Link
+							className='nav-link'
+							href='https://www.instagram.com/treobytes/?hl=en'
+						>
+							<Instagram fill='#fff' />
+						</Link>
+					</li>
+
+					<li className='list-item'>
+						<Link
+							className='nav-link'
+							href='https://www.facebook.com/treobytes'
+						>
+							<Facebook fill='#fff' />
+						</Link>
+					</li>
+
+					<li className='list-item'>
+						<Link
+							className='nav-link'
+							href='https://www.linkedin.com/company/treobytes'
+						>
+							<LinkedIn fill='#fff' />
+						</Link>
+					</li>
+				</div>
+			</ul>
+
+			<ul className='unordered-list base-options col-3'>
 				{footerLinks.map((link) => (
 					<li className='list-item' key={link.id}>
 						<Link
@@ -57,21 +108,7 @@ const Footer = () => {
 						</Link>
 					</li>
 				))}
-			</ul>
-
-			<ul className='unordered-list base-options'>
 				<li className='list-item'>
-					<Link
-						className={
-							current === '/contact-us' ? `nav-link active` : 'nav-link'
-						}
-						href='/contact-us'
-					>
-						Contact Us
-					</Link>
-				</li>
-				<li className='list-item'>
-					{/* <Link href={mailto:}></Link> */}
 					<Link
 						className='nav-link'
 						href='mailto:info@treobytes.com?body=My custom mail body'
@@ -82,23 +119,6 @@ const Footer = () => {
 				<li className='list-item'>
 					<Link className='nav-link' href='tel:+6193338589'>
 						619.333.8589
-					</Link>
-				</li>
-
-				<li className='list-item'>
-					<Link
-						className='nav-link'
-						href='https://www.instagram.com/treobytes/?hl=en'
-					>
-						<Instagram fill='#fff' />
-						<div className='copy'>Instagram</div>
-					</Link>
-				</li>
-
-				<li className='list-item'>
-					<Link className='nav-link' href='https://www.facebook.com/treobytes'>
-						<Facebook fill='#fff' />
-						<div className='copy'>Facebook</div>
 					</Link>
 				</li>
 			</ul>

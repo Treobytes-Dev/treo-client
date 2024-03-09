@@ -35,6 +35,42 @@
 			}
 		}
 
+		&.col-1 {
+			text-align: left;
+
+			.paragraph {
+				margin: 0 0 10px 0;
+			}
+		}
+
+		&.col-2 {
+			@media #{$medium} {
+				text-align: center;
+			}
+
+			.paragraph {
+				margin: 0 0 10px 0;
+			}
+
+			.icons {
+				display: flex;
+				flex-direction: row;
+				margin: 0 0 10px 0;
+
+				.list-item {
+					padding: 0 20px 0 0;
+				}
+			}
+		}
+
+		&.col-3 {
+			text-align: right;
+
+			@media #{$medium} {
+				align-items: flex-end;
+			}
+		}
+
 		.list-item {
 			color: $color-white;
 
@@ -50,10 +86,6 @@
 
 				@media #{$medium} {
 					padding: 0 20px;
-				}
-
-				.copy {
-					margin-left: 10px;
 				}
 			}
 		}

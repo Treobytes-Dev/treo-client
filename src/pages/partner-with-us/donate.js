@@ -1,10 +1,10 @@
 import Head from 'next/head';
 
 // components
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
+import Navigation from '../../components/Navigation';
+import Footer from '../../components/Footer';
 
-import { TemplateIntro } from '../components/TemplateIntro';
+import { TemplateIntro } from '../../components/TemplateIntro';
 
 const Donate = ({ componentName }) => {
 	const head = () => (
@@ -26,7 +26,7 @@ const Donate = ({ componentName }) => {
 	);
 
 	const hero =
-		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1709693053/leadership-hero_tgmuu8.jpg';
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710009545/hero-donate_o9mqil.jpg';
 
 	return (
 		<>
@@ -36,7 +36,7 @@ const Donate = ({ componentName }) => {
 				<TemplateIntro
 					heroImage={hero}
 					heroHeader='Students'
-					introHeader='Why join Treobytes camps and STEM class?'
+					introHeader='Donate'
 				/>
 				<Footer />
 			</div>

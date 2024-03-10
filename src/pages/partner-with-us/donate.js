@@ -38,6 +38,50 @@ const Donate = ({ componentName }) => {
 					heroHeader='Students'
 					introHeader='Donate'
 				/>
+
+				<div className='pillars'>
+					<div className='pillar pillar-1'>
+						<div className='badge'>
+							<img
+								className='img'
+								src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710009960/donate-hand-shake_hrxs24.png'
+								alt='Support Treobytes'
+							/>
+						</div>
+
+						<h3 className='header header-three copy'>SUPPORT TREOBYTES</h3>
+					</div>
+					<div className='pillar pillar-2'>
+						<div className='badge'>
+							<img
+								className='img'
+								src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710010060/donate-graduate_awuegl.png'
+								alt='Support Treobytes'
+							/>
+						</div>
+						<h3 className='header header-three copy'>
+							HELP US REACH MORE STUDENTS
+						</h3>
+					</div>
+					<div className='pillar pillar-3'>
+						<div className='badge'>
+							<img
+								className='img'
+								src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710010060/donate-teaching_v6x7yl.png'
+								alt='Support Treobytes'
+							/>
+						</div>
+						<h3 className='header header-three copy'>
+							IMPROVE OUR STEM PROGRAMS
+						</h3>
+					</div>
+				</div>
+
+				<div className='container'>
+					<h2 className='header header-two'>
+						LET’S BUILD THE NEXT GENERATION OF STEM LEADERS TOGETHER!
+					</h2>
+				</div>
 				<Footer />
 			</div>
 		</>

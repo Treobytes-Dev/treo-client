@@ -570,4 +570,71 @@
 			}
 		}
 	}
+
+	&.donate {
+		.pillars {
+			display: flex;
+			flex-direction: column;
+
+			@media #{$medium} {
+				flex-direction: row;
+			}
+
+			.pillar {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+
+				@media #{$medium} {
+					display: inline-flex;
+					width: 33.3%;
+				}
+
+				.badge {
+					border-radius: 50%;
+					width: 150px;
+					height: 150px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					.img {
+						width: 50%;
+					}
+				}
+
+				&.pillar-1 {
+					.badge {
+						background-color: $color-secondary;
+					}
+
+					.copy {
+						color: $color-secondary;
+					}
+				}
+
+				&.pillar-2 {
+					.badge {
+						background-color: $color-third;
+					}
+
+					.copy {
+						color: $color-third;
+					}
+				}
+
+				&.pillar-3 {
+					.badge {
+						background-color: rgb(206, 144, 162);
+					}
+
+					.copy {
+						color: rgb(206, 144, 162);
+					}
+				}
+			}
+		}
+	}
 }

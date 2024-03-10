@@ -636,5 +636,34 @@
 				}
 			}
 		}
+
+		.columns {
+			display: flex;
+			flex-direction: column;
+			// justify-content: center;
+			align-items: center;
+
+			@media #{$medium} {
+				flex-direction: row;
+			}
+
+			.column {
+				display: flex;
+				flex-direction: column;
+
+				@media #{$medium} {
+					width: 50%;
+					display: inline-flex;
+				}
+
+				.paragraph {
+					margin: 15px 0 0 0;
+				}
+			}
+		}
+
+		.red {
+			color: $color-secondary;
+		}
 	}
 }

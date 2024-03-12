@@ -6,6 +6,11 @@
 	border-radius: 5px;
 	height: 60px;
 
+	&.default {
+		border-radius: 30px;
+		font-weight: 700;
+	}
+
 	&.primary {
 		background-color: $color-primary;
 		color: $color-white;

@@ -6,6 +6,10 @@ import Footer from '../../components/Footer';
 
 import { TemplateIntro } from '../../components/TemplateIntro';
 
+// icons
+import { Coffee } from '../../assets/icons/Coffee';
+import { Cake } from '../../assets/icons/Cake';
+
 const Donate = ({ componentName }) => {
 	const head = () => (
 		<Head>
@@ -78,24 +82,23 @@ const Donate = ({ componentName }) => {
 				</div>
 
 				<div className='container'>
-					<h2 className='header header-two red'>
+					<h2 className='header header-two red build-the-next-generation'>
 						LET’S BUILD THE NEXT GENERATION OF STEM LEADERS TOGETHER!
 					</h2>
 				</div>
 
 				<div className='container'>
 					<div className='columns'>
-						{' '}
 						<div className='column col-1'>
 							<h3 className='header header-three red'>
 								EMPOWERING 25,000 STUDENTS IN STEM
 							</h3>
 							<p className='paragraph'>
-								We are so proud that we've touched the lives of over 25,000
-								students, guiding them towards the vast horizon of the STEM
-								field. We focused on preparing students to meet college entrance
-								requirements gaps, to thrive in the college environment and the
-								STEM workforce.
+								We are so proud that we've touched the lives of over{' '}
+								<div className='callout'>25,000 students</div>, guiding them
+								towards the vast horizon of the STEM field. We focused on
+								preparing students to meet college entrance requirements gaps,
+								to thrive in the college environment and the STEM workforce.
 							</p>
 							<p className='paragraph'>
 								With your help, future young minds, brimming with potential,
@@ -188,13 +191,9 @@ const Donate = ({ componentName }) => {
 				<div className='container'>
 					<div className='columns'>
 						<div className='column col-1'>
-							<img
-								className='img'
-								src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710010479/donate-image-1_kob3iq.jpg'
-								alt='walking the streets image'
-							/>
+							<Coffee dimensions={100} />
 							<h3 className='header header-three red'>
-								FOR THE PRIcCE OF A CUP OF COFFEE
+								FOR THE PRICE OF A CUP OF COFFEE
 							</h3>
 							<p className='paragraph'>
 								We love our lattes. We also love knowing that our youth are
@@ -203,12 +202,76 @@ const Donate = ({ componentName }) => {
 						</div>
 
 						<div className='column col-2'>
-							<img
-								className='img'
-								src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710010479/donate-image-1_kob3iq.jpg'
-								alt='walking the streets image'
+							<div
+								className='image-content'
+								style={{
+									backgroundImage:
+										'url(' +
+										'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710010480/donate-image-2_m6jz36.jpg' +
+										')',
+								}}
 							/>
-							<button className='submit'>Donate</button>
+
+							<button className='button default submit red'>Donate</button>
+						</div>
+					</div>
+				</div>
+
+				<div className='container'>
+					<div className='columns'>
+						<div className='column col-1'>
+							<Cake dimensions={100} />
+							<h3 className='header header-three orange'>ON GOING SUPPORT</h3>
+							<p className='paragraph'>
+								Once a year we celebrate another wonderful orbit around the Sun
+								(minus 6 hours and 9 minutes). Once in a while, we put someone
+								else above ourselves.
+							</p>
+						</div>
+
+						<div className='column col-2'>
+							<div
+								className='image-content'
+								style={{
+									backgroundImage:
+										'url(' +
+										'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710010480/donate-image-3_d0mjtw.jpg' +
+										')',
+								}}
+							/>
+
+							<button className='button default submit orange'>Donate</button>
+						</div>
+					</div>
+				</div>
+
+				<div className='container'>
+					<div className='columns'>
+						<div className='column col-1'>
+							<img
+								className='image-icon'
+								src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710090673/donate-icon-globe_lvxoo3.png'
+								alt='a global solution icon'
+							/>
+							<h3 className='header header-three pale'>A GLOBAL SOLUTION</h3>
+							<p className='paragraph'>
+								The world is big, its challenges are bigger. For those who
+								operate in a global scope, this is an opportunity to deliver
+								global impact.
+							</p>
+						</div>
+
+						<div className='column col-2'>
+							<div
+								className='image-content'
+								style={{
+									backgroundImage:
+										'url(' +
+										'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710010481/donate-image-4_vjputf.jpg' +
+										')',
+								}}
+							/>
+							<button className='button default submit pale'>Donate</button>
 						</div>
 					</div>
 				</div>

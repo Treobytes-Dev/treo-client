@@ -6,7 +6,7 @@ import Footer from '../../components/Footer';
 
 import { TemplateIntro } from '../../components/TemplateIntro';
 
-const SummerCamps = ({ componentName }) => {
+const SummerOfSTEM = ({ componentName }) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -44,8 +44,8 @@ const SummerCamps = ({ componentName }) => {
 	);
 };
 
-SummerCamps.defaultProps = {
-	componentName: 'summer-camps',
+SummerOfSTEM.defaultProps = {
+	componentName: 'summer-of-stem',
 };
 
-export default SummerCamps;
+export default SummerOfSTEM;

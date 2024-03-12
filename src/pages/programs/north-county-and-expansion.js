@@ -6,7 +6,7 @@ import Footer from '../../components/Footer';
 
 import { TemplateIntro } from '../../components/TemplateIntro';
 
-const WorkShops = ({ componentName }) => {
+const NorthCountyAndExpansion = ({ componentName }) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -44,8 +44,8 @@ const WorkShops = ({ componentName }) => {
 	);
 };
 
-WorkShops.defaultProps = {
-	componentName: 'work-shops',
+NorthCountyAndExpansion.defaultProps = {
+	componentName: 'north-county-and-expansion',
 };
 
-export default WorkShops;
+export default NorthCountyAndExpansion;

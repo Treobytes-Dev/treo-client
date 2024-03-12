@@ -6,7 +6,7 @@ import Footer from '../../components/Footer';
 
 import { TemplateIntro } from '../../components/TemplateIntro';
 
-const ScholarsProgram = ({ componentName }) => {
+const LevelUpAtMesaCollege = ({ componentName }) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -44,8 +44,8 @@ const ScholarsProgram = ({ componentName }) => {
 	);
 };
 
-ScholarsProgram.defaultProps = {
-	componentName: 'scholars-program',
+LevelUpAtMesaCollege.defaultProps = {
+	componentName: 'level-up-at-mesa-college',
 };
 
-export default ScholarsProgram;
+export default LevelUpAtMesaCollege;

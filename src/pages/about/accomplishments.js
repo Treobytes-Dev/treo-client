@@ -59,28 +59,30 @@ const Accomplishments = ({ componentName }) => {
 							<span className='call-out'>ADVANCED</span> TECHNOLOGY WE BRING TO
 							STUDENTS
 						</h3>
-						<ul className='unordered-list'>
-							<li className='list-item'>
-								<h5 className='header header-five'>Infento builds</h5>
-							</li>
-							<li className='list-item'>
-								<h5 className='header header-five'>Drones</h5>
-							</li>
-							<li className='list-item'>
-								<h5 className='header header-five'>3D printing</h5>
-							</li>
-						</ul>
-						<ul className='unordered-list'>
-							<li className='list-item'>
-								<h5 className='header header-five'>Arduinos</h5>
-							</li>
-							<li className='list-item'>
-								<h5 className='header header-five'>Laser cutters</h5>
-							</li>
-							<li className='list-item'>
-								<h5 className='header header-five'>CNC machines</h5>
-							</li>
-						</ul>
+						<div className='lists'>
+							<ul className='unordered-list'>
+								<li className='list-item'>
+									<h5 className='header header-five'>Infento builds</h5>
+								</li>
+								<li className='list-item'>
+									<h5 className='header header-five'>Drones</h5>
+								</li>
+								<li className='list-item'>
+									<h5 className='header header-five'>3D printing</h5>
+								</li>
+							</ul>
+							<ul className='unordered-list'>
+								<li className='list-item'>
+									<h5 className='header header-five'>Arduinos</h5>
+								</li>
+								<li className='list-item'>
+									<h5 className='header header-five'>Laser cutters</h5>
+								</li>
+								<li className='list-item'>
+									<h5 className='header header-five'>CNC machines</h5>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 
@@ -92,7 +94,7 @@ const Accomplishments = ({ componentName }) => {
 						</h2>
 					</div>
 				</div>
-        <Footer />
+				<Footer />
 			</div>
 		</>
 	);

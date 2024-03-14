@@ -3,6 +3,8 @@ import Head from 'next/head';
 // components
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
+import Button from '../../components/Button';
+import ProgramDates from '../../components/ProgramDates';
 
 import { TemplateIntro } from '../../components/TemplateIntro';
 
@@ -36,8 +38,14 @@ const SummerOfSTEM = ({ componentName }) => {
 				<TemplateIntro
 					heroImage={hero}
 					heroHeader='Students'
-					introHeader='Why join Treobytes camps and STEM class?'
+					introHeader='SUMMER OF STEM CAMP'
 				/>
+				<div className='container'>
+					<div className='wrapper-btn'>
+						<Button children='JOIN TODAY!' additionalClass='red' />
+					</div>
+				</div>
+				<ProgramDates />
 				<Footer />
 			</div>
 		</>

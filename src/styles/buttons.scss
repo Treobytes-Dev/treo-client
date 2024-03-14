@@ -1,6 +1,7 @@
 @import './_variables.scss';
 
 // buttons
+
 .button {
 	padding: 10px 5px;
 	border-radius: 5px;
@@ -45,5 +46,17 @@
 		color: $color-warning;
 		margin: 20px 0;
 		width: 100%;
+	}
+
+	&.red {
+		background-color: $color-secondary;
+	}
+
+	&.orange {
+		background-color: $color-third;
+	}
+
+	&.pale {
+		background-color: #ce90a2;
 	}
 }

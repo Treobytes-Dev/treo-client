@@ -9,6 +9,7 @@ import { MobileMenu } from './MobileMenu.js';
 import Avatar from '../assets/icons/Avatar.js';
 import Logo from '../assets/icons/Logo.js';
 import { Loader } from '../assets/icons/Loader.js';
+import { CarrotDown } from '../assets/icons/CarrotDown.js';
 
 // todo:
 // create CRUD functionality to add pages
@@ -189,7 +190,14 @@ const Navigation = () => {
 										current === link.url ? `nav-link active` : 'nav-link'
 									}
 								>
-									{link.linkName}
+									<p className='paragraph'>{link.linkName}</p>
+									{link?.subItems?.length > 0 && (
+										<CarrotDown
+											fill='#333'
+											viewBox='0 96 960 960'
+											dimensions='20'
+										/>
+									)}
 								</Link>
 								{link?.subItems?.length > 0 && (
 									<ul className='unordered-list sub-options'>
@@ -212,6 +220,7 @@ const Navigation = () => {
 							</li>
 					  ))
 					: navLinks.map((link) => (
+							// desktop
 							<li
 								className={`list-item ${
 									link.linkName === highlightIndex ? 'highlight' : ''
@@ -226,8 +235,16 @@ const Navigation = () => {
 										current === link.url ? `nav-link active` : 'nav-link'
 									}
 								>
-									{link.linkName}
+									<p className='paragraph'>{link.linkName}</p>
+									{link?.subItems?.length > 0 && (
+										<CarrotDown
+											fill='#333'
+											viewBox='0 96 960 960'
+											dimensions='20'
+										/>
+									)}
 								</Link>
+
 								{link?.subItems?.length > 0 && (
 									<ul className='unordered-list sub-options'>
 										{link.linkName === highlightIndex &&

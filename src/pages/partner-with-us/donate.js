@@ -3,6 +3,7 @@ import Head from 'next/head';
 // components
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
+import Button from '../../components/Button';
 
 import { TemplateIntro } from '../../components/TemplateIntro';
 
@@ -94,8 +95,8 @@ const Donate = ({ componentName }) => {
 								EMPOWERING 25,000 STUDENTS IN STEM
 							</h3>
 							<p className='paragraph'>
-								We are so proud that we've touched the lives of over{' '}
-								<div className='callout'>25,000 students</div>, guiding them
+								We are so proud that we've touched the lives of over
+								<span className='callout'>25,000 students</span>, guiding them
 								towards the vast horizon of the STEM field. We focused on
 								preparing students to meet college entrance requirements gaps,
 								to thrive in the college environment and the STEM workforce.
@@ -212,7 +213,7 @@ const Donate = ({ componentName }) => {
 								}}
 							/>
 
-							<button className='button default submit red'>Donate</button>
+							<Button additionalClass='red' children='Donate' />
 						</div>
 					</div>
 				</div>
@@ -240,7 +241,7 @@ const Donate = ({ componentName }) => {
 								}}
 							/>
 
-							<button className='button default submit orange'>Donate</button>
+							<Button additionalClass='orange' children='Donate' />
 						</div>
 					</div>
 				</div>
@@ -271,7 +272,7 @@ const Donate = ({ componentName }) => {
 										')',
 								}}
 							/>
-							<button className='button default submit pale'>Donate</button>
+							<Button additionalClass='pale' children='Donate' />
 						</div>
 					</div>
 				</div>

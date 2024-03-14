@@ -342,7 +342,7 @@
 
 				@media #{$large} {
 					display: inline-flex;
-					width: 33%;
+					width: 33.3%;
 				}
 
 				.callout {
@@ -382,20 +382,30 @@
 				}
 			}
 
-			.unordered-list {
+			.lists {
 				display: flex;
 				flex-direction: column;
-				width: 100%;
 
 				@media #{$medium} {
-					width: 50%;
-					display: inline-flex;
-					padding: 20px 0;
+					flex-direction: row;
 				}
 
-				.list-item {
-					list-style-type: disc;
-					padding: 10px 0;
+				.unordered-list {
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					margin: 0 20px;
+
+					@media #{$medium} {
+						width: 50%;
+						display: inline-flex;
+						padding: 20px 0;
+					}
+
+					.list-item {
+						list-style-type: disc;
+						padding: 10px 0;
+					}
 				}
 			}
 		}
@@ -711,22 +721,18 @@
 				color: #ce90a2;
 			}
 		}
+	}
 
-		.button {
+	&.summer-of-stem {
+		.wrapper-btn {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
 			@media #{$medium} {
-				width: 250px;
-			}
-
-			&.red {
-				background-color: $color-secondary;
-			}
-
-			&.orange {
-				background-color: $color-third;
-			}
-
-			&.pale {
-				background-color: #ce90a2;
+				.button {
+					width: 250px;
+				}
 			}
 		}
 	}

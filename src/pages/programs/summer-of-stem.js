@@ -7,6 +7,7 @@ import Button from '../../components/Button';
 import ProgramDates from '../../components/ProgramDates';
 
 import { TemplateIntro } from '../../components/TemplateIntro';
+import Link from 'next/link';
 
 const SummerOfSTEM = ({ componentName }) => {
 	const head = () => (
@@ -41,9 +42,14 @@ const SummerOfSTEM = ({ componentName }) => {
 					introHeader='SUMMER OF STEM CAMP'
 				/>
 				<div className='container'>
-					<div className='wrapper-btn'>
+					<a
+						href='https://www.hisawyer.com/treobytes/schedules?sched_ids%5B%5D=191129&schedule_id=camps'
+						target='_blank'
+						rel='noreferrer noopener'
+						className='wrapper-btn'
+					>
 						<Button children='JOIN TODAY!' additionalClass='red' />
-					</div>
+					</a>
 				</div>
 				<ProgramDates />
 				<Footer />

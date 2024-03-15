@@ -1,0 +1,26 @@
+@import './_variables.scss';
+
+.program-dates {
+	.images,
+	.information {
+		display: flex;
+		flex-direction: column;
+		@media #{$medium} {
+			width: 50%;
+			display: inline-flex;
+		}
+	}
+
+	.images {
+		.row {
+			display: flex;
+		}
+	}
+
+	// .information {
+
+	// 	@media #{$medium} {
+	// 		display: inline-flex;
+	// 	}
+	// }
+}

@@ -1,98 +1,119 @@
 @import './_variables.scss';
 
 .program-dates {
-	background-color: rgba($color: $color-third, $alpha: 0.2);
-	.images,
-	.information {
+	background-color: #e49f67;
+
+	.container {
 		display: flex;
-		flex-direction: column;
 
-		@media #{$medium} {
-			width: 50%;
-			display: inline-flex;
-		}
-	}
-
-	.images {
-		.row {
+		.images,
+		.information {
 			display: flex;
 			flex-direction: column;
-			padding: 40px 0 0 0;
 
 			@media #{$medium} {
-				flex-direction: row;
-				justify-content: space-evenly;
+				width: 50%;
+				display: inline-flex;
 			}
+		}
 
-			.image {
-				background-repeat: no-repeat;
-				background-position: center;
-				background-size: cover;
-				height: 400px;
-				margin: 10px 0;
+		.images {
+			.row {
 				display: flex;
-				align-items: flex-end;
-				text-align: center;
-				justify-content: center;
+				flex-direction: column;
 
-				.copy {
-					width: 100%;
-
-					.paragraph {
-						background-color: $color-black-alpha;
-						min-height: 70px;
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						color: $color-white;
-
-						@media #{$medium} {
-							border-radius: 0 0 10px 10px;
-						}
-					}
+				&.row-2 {
+					padding: 40px 0 0 0;
 				}
 
 				@media #{$medium} {
-					height: 250px;
-					width: 250px;
-					border-radius: 10px;
+					flex-direction: row;
+					justify-content: space-evenly;
+				}
+
+				.image {
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: cover;
+					height: 400px;
+					margin: 10px 0;
+					display: flex;
+					align-items: flex-end;
+					text-align: center;
+					justify-content: center;
+
+					.copy {
+						width: 100%;
+
+						.paragraph {
+							background-color: $color-black-alpha;
+							min-height: 70px;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							color: $color-white;
+
+							@media #{$medium} {
+								border-radius: 0 0 10px 10px;
+							}
+						}
+					}
+
+					@media #{$medium} {
+						height: 250px;
+						width: 250px;
+						border-radius: 10px;
+					}
 				}
 			}
 		}
-	}
 
-	.information {
-		color: $color-white;
-
-		@media #{$medium} {
-			display: inline-flex;
-		}
-
-		.boxes {
-			display: flex;
+		.information {
+			color: $color-white;
 
 			@media #{$medium} {
 				display: inline-flex;
+				padding: 0 0 0 40px;
 			}
 
-			.boxes-1,
-			.boxes-2 {
-				display: flex;
-				flex-direction: column;
-				width: 100%;
-				padding: 0 15px 0 0;
+			.header {
+				text-align: center;
+			}
 
-				.box {
+			.boxes {
+				display: flex;
+
+				@media #{$medium} {
+					display: inline-flex;
+				}
+
+				.boxes-1,
+				.boxes-2 {
 					display: flex;
 					flex-direction: column;
-					margin: 15px 0 0 0;
+					width: 100%;
+					padding: 0 15px 0 0;
 
-					.heading {
+					.box {
 						display: flex;
+						flex-direction: column;
+						margin: 40px 0 0 0;
 
-						.icon {
-							width: 25px;
-							margin: 0 15px 0 0;
+						.heading {
+							display: flex;
+
+							.icon {
+								width: 25px;
+								margin: 0 15px 0 0;
+							}
+						}
+
+						.content {
+							padding: 0 0 0 40px;
+
+							.paragraph {
+								color: $color-white;
+							}
 						}
 					}
 				}

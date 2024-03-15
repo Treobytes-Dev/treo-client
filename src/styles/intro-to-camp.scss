@@ -1,0 +1,36 @@
+@import './_variables.scss';
+
+.intro-to-camp {
+	.container {
+		.header {
+			text-align: center;
+			color: $color-secondary;
+		}
+
+		.columns {
+			display: flex;
+			flex-direction: column;
+
+			@media #{$medium} {
+				flex-direction: row;
+			}
+
+			.col {
+				@media #{$medium} {
+					width: 50%;
+				}
+
+				&.col-1 {
+					.unordered-list .list-item {
+						display: flex;
+						flex-direction: row;
+
+						.check {
+							width: 25px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -31,6 +31,10 @@ const SummerOfSTEM = ({ componentName }) => {
 	const hero =
 		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1709693053/leadership-hero_tgmuu8.jpg';
 
+const listItemsSummerOfSTEM = [
+  
+]
+
 	return (
 		<>
 			{head()}
@@ -92,7 +96,10 @@ const SummerOfSTEM = ({ componentName }) => {
 					contentTime={<p className='paragraph'>9:00am -4:00pm</p>}
 				/>
 
-				<IntroToCamp />
+				<IntroToCamp 
+        
+        listItemMarks={}
+        />
 				<Footer />
 			</div>
 		</>

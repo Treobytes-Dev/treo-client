@@ -1,10 +1,10 @@
 import Head from 'next/head';
 
 // components
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
+import Navigation from '../../components/Navigation';
+import Footer from '../../components/Footer';
 
-import { TemplateIntro } from '../components/TemplateIntro';
+import { TemplateIntro } from '../../components/TemplateIntro';
 
 const Foundations = ({ componentName }) => {
 	const head = () => (

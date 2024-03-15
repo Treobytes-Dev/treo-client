@@ -51,7 +51,16 @@ const SummerOfSTEM = ({ componentName }) => {
 						<Button children='JOIN TODAY!' additionalClass='red' />
 					</a>
 				</div>
-				<ProgramDates />
+				<ProgramDates
+					image1='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710429934/summer-of-stem-1_n2voyq.jpg'
+					image2='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710429934/summer-of-stem-2_zqfgjx.jpg'
+					image3='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710429934/summer-of-stem-3_pssexv.jpg'
+					image4='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710429934/summer-of-stem-4_ivn4mz.jpg'
+					paragraph1={`Game Development and Design`.toUpperCase()}
+					paragraph2={`STEM Sports + Tech`.toUpperCase()}
+					paragraph3={`Infento Building`.toUpperCase()}
+					paragraph4={`STEMFaire: Cardboard Engineering`.toUpperCase()}
+				/>
 				<Footer />
 			</div>
 		</>

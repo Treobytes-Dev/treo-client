@@ -9,10 +9,15 @@ const ProgramDates = ({
 	image2,
 	image3,
 	image4,
-	paragraph1,
-	paragraph2,
-	paragraph3,
-	paragraph4,
+	description1,
+	description2,
+	description3,
+	description4,
+	contentLocation,
+	contentCost,
+	contentDays,
+	contentDates,
+	contentTime,
 }) => {
 	return (
 		<div className={`${componentName} `} data-testid={componentName}>
@@ -26,7 +31,7 @@ const ProgramDates = ({
 							}}
 						>
 							<div className='copy'>
-								<p className='paragraph paragraph-1'>{paragraph1}</p>
+								<p className='paragraph paragraph-1'>{description1}</p>
 							</div>
 						</div>
 
@@ -37,7 +42,7 @@ const ProgramDates = ({
 							}}
 						>
 							<div className='copy'>
-								<p className='paragraph paragraph-2'>{paragraph2}</p>
+								<p className='paragraph paragraph-2'>{description2}</p>
 							</div>
 						</div>
 					</div>
@@ -49,7 +54,7 @@ const ProgramDates = ({
 							}}
 						>
 							<div className='copy'>
-								<p className='paragraph paragraph-3'>{paragraph3}</p>
+								<p className='paragraph paragraph-3'>{description3}</p>
 							</div>
 						</div>
 						<div
@@ -59,7 +64,7 @@ const ProgramDates = ({
 							}}
 						>
 							<div className='copy'>
-								<p className='paragraph paragraph-4'>{paragraph4}</p>
+								<p className='paragraph paragraph-4'>{description4}</p>
 							</div>
 						</div>
 					</div>
@@ -68,13 +73,71 @@ const ProgramDates = ({
 				<div className='information'>
 					<h4 className='header header-four'>Program Dates in Summer 2024: </h4>
 					<div className='boxes'>
-						<div className='box location'>LOCATION</div>
-						<div className='box cost'>COST</div>
-						<div className='box days'>DAYS</div>
-						<div className='box dates'>DATES</div>
-						<div className='box time'>
-							<Time />
-							TIME
+						<div className='boxes-1'>
+							<div className='box location'>
+								<div className='heading'>
+									<div className='icon'>
+										<img
+											src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710429934/icon-location_z4gqvm.png'
+											alt='location icon'
+										/>
+									</div>
+									<h6 className='header header-six'>LOCATION</h6>
+								</div>
+
+								<div className='content'>{contentLocation}</div>
+							</div>
+							<div className='box cost'>
+								<div className='heading'>
+									<div className='icon'>
+										<img
+											src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710429934/icon-cost_sdcjdd.png'
+											alt='cost icon'
+										/>
+									</div>
+									<h6 className='header header-six'>COST</h6>
+								</div>
+
+								<div className='content'>{contentCost}</div>
+							</div>
+							<div className='box days'>
+								<div className='heading'>
+									<div className='icon'>
+										<img
+											src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710429934/icon-dates_uo6bq6.png'
+											alt='days icon'
+										/>
+									</div>
+									<h6 className='header header-six'>DAYS</h6>
+								</div>
+
+								<div className='content'>{contentDays}</div>
+							</div>
+						</div>
+
+						<div className='boxes-2'>
+							<div className='box dates'>
+								<div className='heading'>
+									<div className='icon'>
+										<img
+											src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710429934/icon-dates_uo6bq6.png'
+											alt='days icon'
+										/>
+									</div>
+									<h6 className='header header-six'>DATES</h6>
+								</div>
+
+								<div className='content'>{contentDates}</div>
+							</div>
+							<div className='box time'>
+								<div className='heading'>
+									<div className='icon'>
+										<Time fill='#fff' />
+									</div>
+									<h6 className='header header-six'>TIME</h6>
+								</div>
+								<div className='content'>{contentTime}</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -88,7 +151,19 @@ ProgramDates.propTypes = {
 	 * Define component name
 	 */
 	componentName: string,
-	backgroundColor: string,
+	image1: string,
+	image2: string,
+	image3: string,
+	image4: string,
+	description1: string,
+	description2: string,
+	description3: string,
+	description4: string,
+	contentLocation: any,
+	contentCost: any,
+	contentDays: any,
+	contentDates: any,
+	contentTime: any,
 };
 
 ProgramDates.defaultProps = {

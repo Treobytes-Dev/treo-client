@@ -1,6 +1,7 @@
 @import './_variables.scss';
 
 .program-dates {
+	background-color: rgba($color: $color-third, $alpha: 0.2);
 	.images,
 	.information {
 		display: flex;
@@ -60,10 +61,42 @@
 		}
 	}
 
-	// .information {
+	.information {
+		color: $color-white;
 
-	// 	@media #{$medium} {
-	// 		display: inline-flex;
-	// 	}
-	// }
+		@media #{$medium} {
+			display: inline-flex;
+		}
+
+		.boxes {
+			display: flex;
+
+			@media #{$medium} {
+				display: inline-flex;
+			}
+
+			.boxes-1,
+			.boxes-2 {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				padding: 0 15px 0 0;
+
+				.box {
+					display: flex;
+					flex-direction: column;
+					margin: 15px 0 0 0;
+
+					.heading {
+						display: flex;
+
+						.icon {
+							width: 25px;
+							margin: 0 15px 0 0;
+						}
+					}
+				}
+			}
+		}
+	}
 }

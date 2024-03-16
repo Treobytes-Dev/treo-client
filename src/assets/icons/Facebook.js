@@ -28,7 +28,7 @@ Facebook.propTypes = {
 };
 
 Facebook.defaultProps = {
-	dimensions: '16',
+	dimensions: 16,
 	viewBox: '0 0 16 16',
 	fill: '#333',
 

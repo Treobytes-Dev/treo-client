@@ -16,17 +16,39 @@
 			}
 
 			.col {
+				margin: 40px 0 0 0;
+
 				@media #{$medium} {
 					width: 50%;
+					margin: 0;
 				}
 
 				&.col-1 {
-					.unordered-list .list-item {
-						display: flex;
-						flex-direction: row;
+					.unordered-list {
+						flex-direction: column;
 
-						.check {
-							width: 25px;
+						.list-item {
+							display: flex;
+							flex-direction: row;
+							padding: 5px 0;
+
+							.check {
+								width: 25px;
+								height: 25px;
+								margin: 0 15px 0 0;
+							}
+						}
+					}
+				}
+
+				&.col-2 {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+
+					.image .img {
+						@media #{$medium} {
+							border-radius: 10px;
 						}
 					}
 				}

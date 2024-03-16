@@ -6,6 +6,7 @@ import Footer from '../../components/Footer';
 import Button from '../../components/Button';
 import ProgramDates from '../../components/ProgramDates';
 import IntroToCamp from '../../components/IntroToCamp';
+import ThingsToKnow from '../../components/ThingsToKnow';
 
 import { TemplateIntro } from '../../components/TemplateIntro';
 
@@ -31,9 +32,19 @@ const SummerOfSTEM = ({ componentName }) => {
 	const hero =
 		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1709693053/leadership-hero_tgmuu8.jpg';
 
-const listItemsSummerOfSTEM = [
-  
-]
+	const listItemsSummerOfSTEM = [
+		{ copy: 'World class STEM instruction' },
+		{ copy: 'Access to industry-level tools and equipment' },
+		{ copy: 'Solving complex problems' },
+		{
+			copy: 'Developing soft skills: work in groups, communication, conflict resolution',
+		},
+		{ copy: 'Vocational pathways' },
+		{ copy: 'Develop intellectual curiosity' },
+		{ copy: 'Replicate industry roles' },
+		{ copy: 'Experiential Learning' },
+		{ copy: 'Having fun and building last friendships' },
+	];
 
 	return (
 		<>
@@ -96,10 +107,22 @@ const listItemsSummerOfSTEM = [
 					contentTime={<p className='paragraph'>9:00am -4:00pm</p>}
 				/>
 
-				<IntroToCamp 
-        
-        listItemMarks={}
-        />
+				<IntroToCamp
+					listItemMarks={listItemsSummerOfSTEM.map((item, index) => (
+						<li className='list-item' key={index}>
+							<img
+								className='check'
+								src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710524188/program-checkmark_rwdl56.png'
+								alt='check mark'
+							/>
+							<p className='paragraph'>{item.copy}</p>
+						</li>
+					))}
+					collegeName='Mesa College'
+					collegeText='Business and Technology Building'
+				/>
+
+				<ThingsToKnow />
 				<Footer />
 			</div>
 		</>

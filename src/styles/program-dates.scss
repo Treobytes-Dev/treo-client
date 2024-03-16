@@ -5,6 +5,11 @@
 
 	.container {
 		display: flex;
+		flex-direction: column;
+
+		@media #{$medium} {
+			flex-direction: row;
+		}
 
 		.images,
 		.information {
@@ -52,17 +57,15 @@
 							justify-content: center;
 							align-items: center;
 							color: $color-white;
-
-							@media #{$medium} {
-								border-radius: 0 0 10px 10px;
-							}
+							border-radius: 0 0 10px 10px;
 						}
 					}
+
+					border-radius: 10px;
 
 					@media #{$medium} {
 						height: 250px;
 						width: 250px;
-						border-radius: 10px;
 					}
 				}
 			}

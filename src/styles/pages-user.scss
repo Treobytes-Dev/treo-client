@@ -723,16 +723,31 @@
 		}
 	}
 
-	&.summer-of-stem {
-		.wrapper-btn {
-			display: flex;
-			justify-content: center;
-			align-items: center;
+	&.summer-camps {
+		.intro-join-today {
+			.wrapper-btn {
+				display: flex;
+				justify-content: center;
+				align-items: center;
 
-			@media #{$medium} {
-				.button {
-					width: 250px;
+				@media #{$medium} {
+					.button {
+						width: 250px;
+					}
 				}
+			}
+		}
+
+		.title-section {
+			text-align: center;
+
+			.header-three {
+				color: $color-secondary;
+			}
+
+			.callout {
+				font-weight: 400;
+				margin: 0 0 0 10px;
 			}
 		}
 	}

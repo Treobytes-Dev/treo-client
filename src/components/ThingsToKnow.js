@@ -30,7 +30,7 @@ const ThingsToKnow = ({ componentName }) => (
 					</div>
 
 					<div className='wrapper-buttons'>
-						<p className='paragraph'>SIGN UP</p>
+						<h6 className='header header-six'>{`Sign Up`.toUpperCase()}</h6>
 						<a
 							href='https://www.hisawyer.com/treobytes/schedules?sched_ids%5B%5D=191129&schedule_id=camps'
 							target='_blank'

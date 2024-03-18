@@ -39,20 +39,16 @@ const Navigation = () => {
 			position: '1',
 			subItems: [
 				{
-					subLinkName: 'Summer of STEM',
-					subUrlName: '/programs/summer-of-stem',
+					subLinkName: 'Summer Camps',
+					subUrlName: '/programs/summer-camps',
 				},
 				{
-					subLinkName: 'Level Up at Mesa College',
-					subUrlName: '/programs/level-up-at-mesa-college',
+					subLinkName: 'Scholars Program',
+					subUrlName: '/programs/scholars-program',
 				},
 				{
-					subLinkName: 'Level Up City College',
-					subUrlName: '/programs/level-up-city-college',
-				},
-				{
-					subLinkName: 'North County and Expansion',
-					subUrlName: '/programs/north-county-and-expansion',
+					subLinkName: 'After School Enrichment',
+					subUrlName: '/programs/After School Enrichment',
 				},
 			],
 			editable: false,

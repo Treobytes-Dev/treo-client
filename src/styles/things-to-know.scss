@@ -16,9 +16,11 @@
 			}
 
 			.col {
-				margin: 40px 0 0 0;
+				margin: 40px 40px 0 40px;
 				display: flex;
 				flex-direction: column;
+				border-radius: 20px;
+				padding: 20px;
 
 				@media #{$medium} {
 					display: inline-flex;
@@ -26,10 +28,20 @@
 
 				@media #{$medium} {
 					width: 50%;
-					margin: 0;
+				}
+
+				.header-three {
+					font-weight: 400;
 				}
 
 				&.col-1 {
+					background-color: $color-secondary;
+					color: $color-white;
+
+					.header-six {
+						color: $color-third;
+					}
+
 					.block {
 						margin: 15px 0 0 0;
 						display: flex;
@@ -42,6 +54,14 @@
 								display: inline-flex;
 								justify-content: space-around;
 							}
+
+							.group .paragraph {
+								color: $color-white;
+							}
+						}
+
+						.paragraph {
+							color: $color-white;
 						}
 					}
 
@@ -50,13 +70,24 @@
 						display: flex;
 						flex-direction: column;
 
-						@media #{$medium} {
-							flex-direction: row;
+						.paragraph {
+							color: $color-third;
+						}
+
+						.anchor {
+							text-align: center;
+							width: 150px;
+							color: $color-white;
+							background-color: rgba($color: $color-white, $alpha: 0.5);
+							padding: 10px;
+							border-radius: 10px;
 						}
 					}
 				}
 
 				&.col-2 {
+					border: 1px solid $color-secondary;
+
 					.block {
 						margin: 15px 0 0 0;
 						display: flex;

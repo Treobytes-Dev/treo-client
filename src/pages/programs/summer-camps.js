@@ -4,10 +4,13 @@ import Head from 'next/head';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import Button from '../../components/Button';
-
 import SummerOfSTEM from '../../components/SummerOfSTEM';
-
+import ProgramContainer from '../../components/ProgramContainer';
 import { TemplateIntro } from '../../components/TemplateIntro';
+
+// icons
+import SportsTech from '../../assets/icons/SportsTech';
+import GameDevelopment from '../../assets/icons/GameDevelopment';
 
 const SummerCamps = ({ componentName }) => {
 	const head = () => (
@@ -45,6 +48,19 @@ const SummerCamps = ({ componentName }) => {
 		{ copy: 'Having fun and building last friendships' },
 	];
 
+	const stemSportsThumbnails = [
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710786701/stem-sports-thumbnail-3_yazona.jpg',
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710786700/stem-sports-thumbnail-1_acak3a.jpg',
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710796588/hero-level-up-city-college_bqeyav.jpg',
+	];
+
+	const gameDevelopmentThumbnails = [
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710786700/game-development-thumbnail-3_w3qbp6.jpg',
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710796010/web-developers-thumbnail-3_i06zxz.jpg',
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710786700/game-development-thumbnail-2_h0nwel.jpg',
+	];
+
+	const tradeMark = '\u2122';
 	return (
 		<>
 			{head()}
@@ -83,6 +99,30 @@ const SummerCamps = ({ componentName }) => {
 						</h6>
 					</div>
 				</div>
+
+				<ProgramContainer
+					hasIcon={<SportsTech />}
+					programTitle='Stem Sports + Tech'
+					programSubtitle='Combine physical movement and technology!'
+					programDescription={`Utilizing the Garmin ${tradeMark} technology system, this camp builds a student wellness portfolio (daily-to-yearly, delivering heart rate data, reflective journaling, and performance metrics) that can correlate to academic, social, and emotional growth`}
+					programFootText='Each day, students will take part in various health and nutrition activities incorporating different STEM sports and technologies'
+					btnColor='purple'
+					thumbnails={stemSportsThumbnails}
+					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710786700/stem-sports-single-image_r0gqja.jpg'
+					singleAltTag='Stem Sports + Tech'
+				/>
+
+				<ProgramContainer
+					hasIcon={<GameDevelopment />}
+					programTitle='Game Development'
+					programSubtitle='New Curriculum! '
+					programDescription='Build the video game you have always wanted to play! Game Development and Design involves design, audio, sound, coding, scripting, and narration'
+					programFootText='Students will develop all these key skills as they work in groups with the culmination of a video game development and design'
+					btnColor='blue'
+					thumbnails={gameDevelopmentThumbnails}
+					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710786700/game-development-single-image_eic0qd.jpg'
+					singleAltTag='Game Development'
+				/>
 
 				<Footer />
 			</div>

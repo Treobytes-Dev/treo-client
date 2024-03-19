@@ -1,0 +1,52 @@
+@import './_variables.scss';
+
+.program-container .container {
+	display: flex;
+	flex-direction: column;
+
+	@media #{$medium} {
+		flex-direction: row;
+	}
+	.column {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding-bottom: 20px;
+
+		@media #{$medium} {
+			width: 100%;
+		}
+
+		&.col-1 {
+			@media #{$medium} {
+				padding: 0 20px;
+			}
+
+			.header-wrapper {
+				display: flex;
+				align-items: center;
+
+				.has-icon {
+					margin: 0 0 0 15px;
+				}
+			}
+
+			.paragraph {
+				margin: 20px 0 0 0;
+			}
+
+			.btn-wrapper {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 40px 0 0 0;
+
+				.button {
+					@media #{$medium} {
+						width: 250px;
+					}
+				}
+			}
+		}
+	}
+}

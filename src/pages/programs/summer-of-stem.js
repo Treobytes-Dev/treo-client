@@ -12,6 +12,7 @@ import IntroToCamp from '../../components/IntroToCamp';
 import ThingsToKnow from '../../components/ThingsToKnow';
 import TracksSection from '../../components/TracksSection';
 import ProgramContainer from '../../components/ProgramContainer';
+import IntroSignUp from '../../components/IntroSignUp';
 
 // icons
 import SportsTech from '../../assets/icons/SportsTech';
@@ -85,16 +86,11 @@ const SummerOfSTEM = ({ componentName }) => {
 			<Navigation />
 			<div className={`page ${componentName}`}>
 				<TemplateIntro heroImage={hero} introHeader='SUMMER OF STEM CAMP' />
-				<div className='container'>
-					<a
-						href='https://www.hisawyer.com/treobytes/schedules?sched_ids%5B%5D=191129&schedule_id=camps'
-						target='_blank'
-						rel='noreferrer noopener'
-						className='wrapper-btn'
-					>
-						<Button children='JOIN TODAY!' additionalClass='red' />
-					</a>
-				</div>
+
+				<IntroSignUp
+					href='https://www.hisawyer.com/treobytes/schedules?sched_ids%5B%5D=191129&schedule_id=camps'
+					btnText={`join today!`.toUpperCase()}
+				/>
 
 				<ProgramDates
 					image1='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710429934/summer-of-stem-1_n2voyq.jpg'
@@ -147,6 +143,7 @@ const SummerOfSTEM = ({ componentName }) => {
 							<p className='paragraph'>{item.copy}</p>
 						</li>
 					))}
+					collegeImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710524188/mesa-college_pbflas.jpg'
 					collegeName='Mesa College'
 					collegeText='Business and Technology Building'
 				/>

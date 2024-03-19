@@ -5,6 +5,7 @@ const IntroToCamp = ({
 	listItemMarks,
 	collegeName,
 	collegeText,
+	collegeImage,
 }) => (
 	<div className={componentName}>
 		<div className='container'>
@@ -15,10 +16,7 @@ const IntroToCamp = ({
 				</div>
 				<div className='col col-2'>
 					<div className='image'>
-						<img
-							className='img'
-							src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710524188/mesa-college_pbflas.jpg'
-						/>
+						<img className='img' src={collegeImage} />
 					</div>
 					<h3 className='header header-three'>{collegeName.toUpperCase()}</h3>
 					<p className='paragraph'>{collegeText}</p>

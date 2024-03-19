@@ -8,26 +8,14 @@ import { TemplateIntro } from '../../components/TemplateIntro';
 import ProgramDates from '../../components/ProgramDates';
 import IntroToCamp from '../../components/IntroToCamp';
 import ProgramContainer from '../../components/ProgramContainer';
+import TracksSection from '../../components/TracksSection';
+import IntroSignUp from '../../components/IntroSignUp';
 
 // icons
 import SportsTech from '../../assets/icons/SportsTech';
 import GameDevelopment from '../../assets/icons/GameDevelopment';
 import Sailboat from '../../assets/icons/Sailboat';
 import AerialDrone from '../../assets/icons/AerialDrone';
-
-const TitleSection = () => (
-	<div className='title-section'>
-		<div className='container'>
-			<h3 className='header header-three'>{`Tracks 2024`.toUpperCase()}</h3>
-			<h6 className='header header-six'>
-				Note:
-				<span className='callout'>
-					Each track's curriculum will repeat each week
-				</span>
-			</h6>
-		</div>
-	</div>
-);
 
 const LevelUpAtMesaCollege = ({ componentName }) => {
 	const head = () => (
@@ -107,18 +95,10 @@ const LevelUpAtMesaCollege = ({ componentName }) => {
 					introHeader={`Treobytes Summer Level Up Camp At Mesa College`.toUpperCase()}
 				/>
 
-				<div className='intro-sign-up'>
-					<div className='container'>
-						<a
-							href='https://www.inplay.org/providers/treobytes'
-							target='_blank'
-							rel='noreferrer noopener'
-							className='wrapper-btn'
-						>
-							<Button children='SIGN UP ON INPLAY' additionalClass='red' />
-						</a>
-					</div>
-				</div>
+				<IntroSignUp
+					href='https://www.inplay.org/providers/treobytes'
+					btnText={`sign up on inplay`.toUpperCase()}
+				/>
 
 				<ProgramDates
 					image1='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692266/summer-of-stem-camps-hero_fvqzmt.jpg'
@@ -171,11 +151,12 @@ const LevelUpAtMesaCollege = ({ componentName }) => {
 							<p className='paragraph'>{item.copy}</p>
 						</li>
 					))}
+					collegeImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710524188/mesa-college_pbflas.jpg'
 					collegeName='Mesa College'
 					collegeText='Business and Technology Building'
 				/>
 
-				<TitleSection />
+				<TracksSection />
 
 				<ProgramContainer
 					hasIcon={<SportsTech />}
@@ -249,7 +230,13 @@ const LevelUpAtMesaCollege = ({ componentName }) => {
 				/>
 
 				<ProgramContainer
-					hasIcon={`ICON`}
+					hasIcon={
+						<img
+							className='icon'
+							src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710879607/smart-city_te6cmr.png'
+							alt='stemfaire cardboard engineering'
+						/>
+					}
 					programTitle={`stemprenuers: smart city 2.0`.toUpperCase()}
 					programSubtitle={`Welcome Future Engineers of the new Smart City!`}
 					programDescription={`This camp will take students through various STEM disciplines (Laser cutting, 3D printing, SketchUp Design Software, CNC, Soldering, Sensors, Siri and Alexa Technology, and more!) to create a 3D scalable Smart City Block.`}
@@ -262,7 +249,13 @@ const LevelUpAtMesaCollege = ({ componentName }) => {
 				/>
 
 				<ProgramContainer
-					hasIcon={`ICON`}
+					hasIcon={
+						<img
+							className='icon'
+							src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710879745/cyber-academy_ozklli.png'
+							alt='stemfaire cardboard engineering'
+						/>
+					}
 					programTitle={`cyber academy`.toUpperCase()}
 					programSubtitle={`New course! Become a cyber guardian this summer!`}
 					programDescription={`Students in Treobytes' Cyber camp will learn the knowledge and skills to protect themselves and others online. Cyber camp will guide students to gain a fundamental understanding of how information Technology works, its vulnerabilities, and how to defend against those threats.`}
@@ -275,7 +268,13 @@ const LevelUpAtMesaCollege = ({ componentName }) => {
 				/>
 
 				<ProgramContainer
-					hasIcon={`ICON`}
+					hasIcon={
+						<img
+							className='icon'
+							src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710879809/web-developers_zduwgi.png'
+							alt='stemfaire cardboard engineering'
+						/>
+					}
 					programTitle={`stemprenuers: web developers`.toUpperCase()}
 					programSubtitle={`New course!`}
 					programDescription={`Ignite your students's creativity, design, and coding skills this summer! STEMprenuers: Web Developers track teaches students how to create and market their own business venture.`}
@@ -288,7 +287,13 @@ const LevelUpAtMesaCollege = ({ componentName }) => {
 				/>
 
 				<ProgramContainer
-					hasIcon={`ICON`}
+					hasIcon={
+						<img
+							className='icon'
+							src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710879907/formula-tech_zy44uw.png'
+							alt='stemfaire cardboard engineering'
+						/>
+					}
 					programTitle={`formula tech`.toUpperCase()}
 					programSubtitle={`New course!`}
 					programDescription={`Rev up your creativity in our Engineering Projects class, where students embark on a thrilling journey to explore remote-controlled cars and energy through the lens of engineers! Students will build and program basic car parts using the versatile Arduino platform.`}

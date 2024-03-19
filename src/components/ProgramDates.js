@@ -71,7 +71,7 @@ const ProgramDates = ({
 				</div>
 
 				<div className='information'>
-					<h4 className='header header-four'>Program Dates in Summer 2024: </h4>
+					<h4 className='header header-four'>{`Program Dates in Summer ${new Date().getFullYear()}: `}</h4>
 					<div className='boxes'>
 						<div className='boxes-1'>
 							<div className='box location'>

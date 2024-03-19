@@ -45,11 +45,11 @@ export const TemplateIntro = ({
 			</div>
 
 			{(introHeader || introBody) && (
-				<div className='container'>
-					<div
-						className={`template-${componentName} intro`}
-						id={`template-${componentName}`}
-					>
+				<div
+					className={`template-${componentName} intro`}
+					id={`template-${componentName}`}
+				>
+					<div className='container'>
 						<h2 className='header header-two'>{introHeader}</h2>
 						<p className='paragraph'>{introBody}</p>
 					</div>

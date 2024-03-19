@@ -21,9 +21,9 @@ const ProgramContainer = ({
 		<div className='container'>
 			<div className='column col-1'>
 				<div className='header-wrapper'>
-					<h3 className='header header-three'>
+					<h5 className='header header-five'>
 						{`${programTitle}`.toUpperCase()}
-					</h3>
+					</h5>
 					<div className='has-icon'>{hasIcon}</div>
 				</div>
 				<p className='paragraph'>{programSubtitle}</p>

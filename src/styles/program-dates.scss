@@ -83,9 +83,11 @@
 
 			.boxes {
 				display: flex;
+				flex-direction: column;
 
 				@media #{$medium} {
 					display: inline-flex;
+					flex-direction: row;
 				}
 
 				.boxes-1,

@@ -18,6 +18,7 @@ const ProgramDates = ({
 	contentDays,
 	contentDates,
 	contentTime,
+	contentGrades,
 }) => {
 	return (
 		<div className={`${componentName} `} data-testid={componentName}>
@@ -30,9 +31,11 @@ const ProgramDates = ({
 								backgroundImage: 'url(' + image1 + ')',
 							}}
 						>
-							<div className='copy'>
-								<p className='paragraph paragraph-1'>{description1}</p>
-							</div>
+							{description1 && (
+								<div className='copy'>
+									<p className='paragraph paragraph-1'>{description1}</p>
+								</div>
+							)}
 						</div>
 
 						<div
@@ -41,9 +44,11 @@ const ProgramDates = ({
 								backgroundImage: 'url(' + image2 + ')',
 							}}
 						>
-							<div className='copy'>
-								<p className='paragraph paragraph-2'>{description2}</p>
-							</div>
+							{description2 && (
+								<div className='copy'>
+									<p className='paragraph paragraph-2'>{description2}</p>
+								</div>
+							)}
 						</div>
 					</div>
 					<div className='row row-2'>
@@ -53,9 +58,11 @@ const ProgramDates = ({
 								backgroundImage: 'url(' + image3 + ')',
 							}}
 						>
-							<div className='copy'>
-								<p className='paragraph paragraph-3'>{description3}</p>
-							</div>
+							{description3 && (
+								<div className='copy'>
+									<p className='paragraph paragraph-3'>{description3}</p>
+								</div>
+							)}
 						</div>
 						<div
 							className='image image-4'
@@ -63,9 +70,11 @@ const ProgramDates = ({
 								backgroundImage: 'url(' + image4 + ')',
 							}}
 						>
-							<div className='copy'>
-								<p className='paragraph paragraph-4'>{description4}</p>
-							</div>
+							{description4 && (
+								<div className='copy'>
+									<p className='paragraph paragraph-4'>{description4}</p>
+								</div>
+							)}
 						</div>
 					</div>
 				</div>
@@ -129,6 +138,7 @@ const ProgramDates = ({
 
 								<div className='content'>{contentDates}</div>
 							</div>
+
 							<div className='box time'>
 								<div className='heading'>
 									<div className='icon'>
@@ -138,6 +148,18 @@ const ProgramDates = ({
 								</div>
 								<div className='content'>{contentTime}</div>
 							</div>
+
+							{contentGrades && (
+								<div className='box grades'>
+									<div className='heading'>
+										<div className='icon'>
+											<Time fill='#fff' />
+										</div>
+										<h6 className='header header-six'>GRADES</h6>
+									</div>
+									<div className='content'>{contentGrades}</div>
+								</div>
+							)}
 						</div>
 					</div>
 				</div>

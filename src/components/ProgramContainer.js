@@ -26,11 +26,13 @@ const ProgramContainer = ({
 					</h5>
 					<div className='has-icon'>{hasIcon}</div>
 				</div>
-				<p className='paragraph'>{programSubtitle}</p>
+				{programSubtitle && <p className='paragraph'>{programSubtitle}</p>}
 
-				<p className='paragraph'>{programDescription}</p>
+				{programDescription && (
+					<p className='paragraph'>{programDescription}</p>
+				)}
 
-				<p className='paragraph'>{programFootText}</p>
+				{programFootText && <p className='paragraph'>{programFootText}</p>}
 
 				<Link href={href} className='btn-wrapper'>
 					<Button

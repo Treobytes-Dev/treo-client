@@ -4,9 +4,6 @@ import Head from 'next/head';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import Button from '../../components/Button';
-import SummerOfSTEM from '../../components/SummerOfSTEM';
-import ProgramContainer from '../../components/ProgramContainer';
-import { TemplateIntro } from '../../components/TemplateIntro';
 
 import Link from 'next/link';
 

@@ -4,7 +4,7 @@
 .page {
 	// for fixed navigation
 	@media #{$medium} {
-		padding-top: 5rem;
+		padding-top: 6.5rem;
 	}
 
 	.anchor {
@@ -794,6 +794,18 @@
 	&.level-up-city-college {
 		.program-dates {
 			background-color: rgb(206, 144, 162);
+		}
+	}
+
+	&.north-county-and-expansion {
+		.program-dates {
+			background-color: rgb(206, 144, 162);
+		}
+
+		.sub-header {
+			color: $color-secondary;
+			text-align: center;
+			margin: 20px 0;
 		}
 	}
 }

@@ -26,7 +26,7 @@ const LevelUpAtMesaCollege = ({ componentName }) => {
 	);
 
 	const hero =
-		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1709693053/leadership-hero_tgmuu8.jpg';
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710795241/hero-level-up-mesa-college_qtmvm0.jpg';
 
 	return (
 		<>
@@ -35,9 +35,21 @@ const LevelUpAtMesaCollege = ({ componentName }) => {
 			<div className={`page ${componentName}`}>
 				<TemplateIntro
 					heroImage={hero}
-					heroHeader='Students'
-					introHeader='Why join Treobytes camps and STEM class?'
+					introHeader={`Treobytes Summer Level Up Camp At Mesa College`.toUpperCase()}
 				/>
+
+				<div className='intro-sign-up'>
+					<div className='container'>
+						<a
+							href='https://www.inplay.org/providers/treobytes'
+							target='_blank'
+							rel='noreferrer noopener'
+							className='wrapper-btn'
+						>
+							<Button children='SIGN UP ON INPLAY' additionalClass='red' />
+						</a>
+					</div>
+				</div>
 				<Footer />
 			</div>
 		</>

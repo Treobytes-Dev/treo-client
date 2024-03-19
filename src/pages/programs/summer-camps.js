@@ -1,3 +1,4 @@
+import { useContext, useEffect, useState } from 'react';
 import Head from 'next/head';
 
 // components
@@ -11,6 +12,7 @@ import { TemplateIntro } from '../../components/TemplateIntro';
 // icons
 import SportsTech from '../../assets/icons/SportsTech';
 import GameDevelopment from '../../assets/icons/GameDevelopment';
+import Link from 'next/link';
 
 const SummerCamps = ({ componentName }) => {
 	const head = () => (
@@ -30,6 +32,8 @@ const SummerCamps = ({ componentName }) => {
 			<meta property='og:image:secure_url' content='' />
 		</Head>
 	);
+
+	const [isSummerOfStemVisible, setIsSummerOfStemVisible] = useState(false);
 
 	const hero =
 		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1709693053/leadership-hero_tgmuu8.jpg';
@@ -123,6 +127,28 @@ const SummerCamps = ({ componentName }) => {
 					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710786700/game-development-single-image_eic0qd.jpg'
 					singleAltTag='Game Development'
 				/>
+
+				<ProgramContainer
+					hasIcon={
+						<img
+							className='icon'
+							src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710812370/stemfaire-cardboard_ylckig.png'
+							alt='stemfaire cardboard engineering'
+						/>
+					}
+					programTitle='Stemfaire: Cardboard Engineering'
+					programSubtitle='Combine physical movement and technology!'
+					programDescription='Utilizing an interactive technology ecosystem, this camp builds a student wellness portfolio (daily-to-yearly, delivering heart rate data, reflective journaling, and performance metrics) that can correlate to academic, social, and emotional growth.'
+					programFootText='Each day, students will participate in diffrerent sports and technology activities.'
+					btnColor='lime-green'
+					thumbnails={gameDevelopmentThumbnails}
+					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710786700/game-development-single-image_eic0qd.jpg'
+					singleAltTag='Stemfaire Cardboard Engineering'
+				/>
+
+				<Link href='/programs/level-up-at-mesa-college'>
+					Level Up At Mesa College
+				</Link>
 
 				<Footer />
 			</div>

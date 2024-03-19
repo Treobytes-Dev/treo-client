@@ -65,9 +65,9 @@ const LevelUpCityCollege = ({ componentName }) => {
 	];
 
 	const cardboardEngineeringThumbnails = [
-		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797099/circuits-plugged-in-thumbnail-1_ob8ecg.jpg',
-		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797102/circuits-plugged-in-thumbnail-2_mfz69y.jpg',
-		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710010480/donate-image-3_d0mjtw.jpg',
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710795237/card-board-thumbnail-2_hx82nl.jpg',
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797693/cardboard-thumbnail-2_cjqoit.jpg',
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710795239/card-board-thumbnail-3_jtri7v.jpg',
 	];
 
 	return (

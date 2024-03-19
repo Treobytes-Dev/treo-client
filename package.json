@@ -30,7 +30,7 @@
     "react-image-file-resizer": "^0.4.8",
     "react-quill": "^2.0.0",
     "sanitize-html": "^2.12.1",
-    "sass": "^1.69.6"
+    "sass": "^1.71.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.2.1",

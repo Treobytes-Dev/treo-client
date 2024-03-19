@@ -5,6 +5,10 @@
 		.header {
 			text-align: center;
 			color: $color-secondary;
+
+			&.header-two {
+				margin: 0 0 40px 0;
+			}
 		}
 
 		.columns {

@@ -2,6 +2,7 @@ import { string } from 'prop-types';
 
 import ImageContainer from './ImageContainer';
 import Button from './Button';
+import Link from 'next/link';
 
 const ProgramContainer = ({
 	componentName,
@@ -11,6 +12,7 @@ const ProgramContainer = ({
 	programDescription,
 	programFootText,
 	btnColor,
+	href,
 	thumbnails,
 	singleImage,
 	singleAltTag,
@@ -30,12 +32,12 @@ const ProgramContainer = ({
 
 				<p className='paragraph'>{programFootText}</p>
 
-				<div className='btn-wrapper'>
+				<Link href={href} className='btn-wrapper'>
 					<Button
 						children={`Click to sign up!`.toUpperCase()}
 						additionalClass={btnColor}
 					/>
-				</div>
+				</Link>
 			</div>
 			<div className='column col-2'>
 				<ImageContainer

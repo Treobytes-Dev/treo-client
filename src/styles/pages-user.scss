@@ -724,6 +724,43 @@
 	}
 
 	&.summer-camps {
+		.header-two {
+			text-align: center;
+			color: $color-secondary;
+		}
+		.row {
+			display: flex;
+			flex-direction: column;
+
+			@media #{$medium} {
+				flex-direction: row;
+			}
+
+			.card {
+				display: flex;
+				width: 100%;
+				flex-direction: column;
+				align-items: center;
+				padding: 20px;
+				opacity: 0.5;
+
+				&:hover {
+					box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+					opacity: 1;
+				}
+
+				@media #{$medium} {
+					width: 50%;
+				}
+
+				.wrapper-button {
+					width: 250px;
+				}
+			}
+		}
+	}
+
+	&.summer-of-stem {
 		.intro-join-today {
 			.wrapper-btn {
 				display: flex;
@@ -738,17 +775,14 @@
 			}
 		}
 
-		.title-section {
-			text-align: center;
+		.program-dates {
+			background-color: #e49f67;
+		}
+	}
 
-			.header-three {
-				color: $color-secondary;
-			}
-
-			.callout {
-				font-weight: 400;
-				margin: 0 0 0 10px;
-			}
+	&.level-up-at-mesa-college {
+		.program-dates {
+			background-color: rgb(206, 144, 162);
 		}
 	}
 }

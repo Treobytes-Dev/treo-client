@@ -18,12 +18,16 @@ export const TemplateIntro = ({
 				<Hero
 					children={
 						<>
-							<div className='fore-ground'>
-								<div className='text'>
-									<h2 className='header header-two'>{heroHeader}</h2>
-									<h4 className='header header-four'>{heroSubHeader}</h4>
-								</div>
-							</div>
+							{heroHeader ||
+								(heroSubHeader && (
+									<div className='fore-ground'>
+										<div className='text'>
+											<h2 className='header header-two'>{heroHeader}</h2>
+											<h4 className='header header-four'>{heroSubHeader}</h4>
+										</div>
+									</div>
+								))}
+
 							{/* <button > */}
 							{scrollToTarget && (
 								<button className='assets' onClick={scrollToTarget}>

@@ -1,0 +1,14 @@
+@import './_variables.scss';
+
+.title-section {
+	text-align: center;
+
+	.header-three {
+		color: $color-secondary;
+	}
+
+	.callout {
+		font-weight: 400;
+		margin: 0 0 0 10px;
+	}
+}

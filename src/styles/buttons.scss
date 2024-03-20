@@ -99,4 +99,16 @@
 	&.royal-blue {
 		background-color: #0078b5;
 	}
+
+	&.secondary {
+		background-color: $color-secondary;
+	}
+
+	&.off-orange {
+		background-color: #efa97c;
+	}
+
+	&.beige {
+		background-color: #f5e6cc;
+	}
 }

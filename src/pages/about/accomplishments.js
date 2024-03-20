@@ -62,24 +62,61 @@ const Accomplishments = ({ componentName }) => {
 						<div className='lists'>
 							<ul className='unordered-list'>
 								<li className='list-item'>
-									<h5 className='header header-five'>Infento builds</h5>
+									<h5 className='header header-five'>
+										{`san diego unified school district`.toUpperCase()}
+									</h5>
+								</li>
+
+								<li className='list-item indent'>
+									<h5 className='header header-five '>
+										{`steam magnet program`.toUpperCase()}
+									</h5>
+								</li>
+
+								<li className='list-item'>
+									<h5 className='header header-five'>
+										{`lemon grove school district`.toUpperCase()}
+									</h5>
 								</li>
 								<li className='list-item'>
-									<h5 className='header header-five'>Drones</h5>
+									<h5 className='header header-five'>
+										{`escondido union school district`.toUpperCase()}
+									</h5>
 								</li>
 								<li className='list-item'>
-									<h5 className='header header-five'>3D printing</h5>
+									<h5 className='header header-five'>
+										{`banning school unified school district`.toUpperCase()}
+									</h5>
+								</li>
+								<li className='list-item'>
+									<h5 className='header header-five'>
+										{`south bay school district`.toUpperCase()}
+									</h5>
 								</li>
 							</ul>
 							<ul className='unordered-list'>
 								<li className='list-item'>
-									<h5 className='header header-five'>Arduinos</h5>
+									<h5 className='header header-five'>
+										{`charter schools`.toUpperCase()}
+									</h5>
 								</li>
 								<li className='list-item'>
-									<h5 className='header header-five'>Laser cutters</h5>
+									<h5 className='header header-five'>
+										{`birch aquarium / scripps`.toUpperCase()}
+									</h5>
 								</li>
 								<li className='list-item'>
-									<h5 className='header header-five'>CNC machines</h5>
+									<h5 className='header header-five'>
+										{`boys and girls club`.toUpperCase()}
+									</h5>
+								</li>
+								<li className='list-item'>
+									<h5 className='header header-five'>{`ymca`.toUpperCase()}</h5>
+								</li>
+								<li className='list-item'>
+									<h5 className='header header-five'>
+										{`houston area (2025)`.toUpperCase()}
+									</h5>
 								</li>
 							</ul>
 						</div>

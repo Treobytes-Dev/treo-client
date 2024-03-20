@@ -46,7 +46,10 @@ const OurStory = ({ componentName }) => {
 			{head()}
 			<Navigation />
 			<div className={`page ${componentName}`}>
-				<TemplateIntro heroImage={hero} heroHeader='About Us' />
+				<TemplateIntro
+					heroImage={hero}
+					introHeader={`About Us`.toUpperCase()}
+				/>
 
 				<div className='container'>
 					<div className='intro-columns'>

@@ -42,6 +42,32 @@
 				flex-direction: column;
 			}
 		}
+
+		.button-container {
+			.button {
+				justify-content: center;
+				align-items: center;
+				font-size: 16px;
+
+				@media #{$large} {
+					display: flex;
+					display: inline-flex;
+					width: 25%;
+				}
+			}
+		}
+
+		.wrapper-join-mailing-list .container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.join-mailing-list {
+				@media #{$large} {
+					width: 300px;
+				}
+			}
+		}
 	}
 
 	&.our-story {
@@ -163,8 +189,8 @@
 						background-repeat: no-repeat;
 						background-position: top;
 						background-size: cover;
-						height: 50px;
-						width: 50px;
+						height: 100px;
+						width: 100px;
 						border-radius: 50%;
 					}
 				}
@@ -195,6 +221,10 @@
 		}
 
 		.facilitators {
+			.header-two {
+				color: $color-secondary;
+			}
+
 			.header {
 				text-align: center;
 				margin-bottom: 20px;
@@ -251,14 +281,20 @@
 		}
 
 		.block {
-			background-color: #9f3f62;
+			background-color: $color-third;
+			text-align: center;
+
+			.header-three {
+				color: $color-white;
+			}
+
 			.copy {
-				padding: 20px 0;
+				padding: 10px 0 20px 0;
 				color: $color-white;
 				line-height: 1.75;
 
 				@media #{$medium} {
-					padding: 40px 0;
+					padding: 10px 0 40px 0;
 				}
 			}
 		}
@@ -410,6 +446,11 @@
 					.list-item {
 						list-style-type: disc;
 						padding: 10px 0;
+
+						&.indent {
+							margin-left: 20px;
+							list-style-type: circle;
+						}
 					}
 				}
 			}

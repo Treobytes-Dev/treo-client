@@ -12,15 +12,9 @@ const Card = ({ title, name, contact, source }) => (
 			className='avatar'
 			style={{
 				backgroundImage: 'url(' + source + ')',
-				backgroundRepeat: 'no-repeat',
-				backgroundPosition: 'top',
-				backgroundSize: 'cover',
-				height: '50px',
-				width: '50px',
-				borderRadius: '50%',
 			}}
 		/>
-		<h5 className='header header-five title'>{title}</h5>
+		<h5 className='header header-five title'>{title.toUpperCase()}</h5>
 		<h5 className='header header-five name'>{name}</h5>
 		<h6 className='header header-six contact'>{contact}</h6>
 	</div>
@@ -51,11 +45,11 @@ const LeadershipTree = () => (
 				contact='lauren@treobytes.com'
 				source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692261/avatar-lauren-wisniewski_dxg29g.jpg'
 			/>
-			<Card title='Operations Administrator' name='TBA' />
+			{/* <Card title='Operations Administrator' name='TBA' /> */}
 		</div>
 		<div className='tier tier-4'>
 			<div className='column column-1'>
-				<h4 className='header header-four'>Marketing Team</h4>
+				<h4 className='header header-four'>{`Marketing Team`.toUpperCase()}</h4>
 				<div className='cards'>
 					<Card
 						title='Marketing Director'
@@ -73,19 +67,15 @@ const LeadershipTree = () => (
 			</div>
 
 			<div className='column column-2'>
-				<h4 className='header header-four'>Product Development</h4>
+				<h4 className='header header-four'>
+					{`Operations Team`.toUpperCase()}
+				</h4>
 				<div className='cards'>
 					<Card
-						title='Product Development'
-						name='Khalil Jackson'
-						contact='khalil@treobytes.com'
-						source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692261/avatar-khalil-jackson_drcs0c.jpg'
-					/>
-					<Card
-						title='Product Development'
-						name='Ryan Palmares'
-						contact='ryan@treobytes.com'
-						source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692261/avatar-ryan-palmares_df6nba.jpg'
+						title='Operations Administrator'
+						name='Sophia Bjerk'
+						contact='sophia@treobytes.com'
+						source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710973495/sophia-bjerk-thumbnail_bbsktn.jpg'
 					/>
 				</div>
 			</div>
@@ -153,16 +143,25 @@ const Leadership = ({ componentName }) => {
 
 				<div className='block'>
 					<div className='container'>
+						<h3 className='header header-three'>{`Diverse`.toUpperCase()}</h3>
 						<h5 className='header header-five copy'>
 							Recruiting a diverse population of STEM college students to
 							facilitate courses for middle school students is paramount for
 							creating an inclusive and enriching educational experience.
+						</h5>
+
+						<h3 className='header header-three'>{`strengths`.toUpperCase()}</h3>
+						<h5 className='header header-five copy'>
 							Diverse role models and instructors bring varied perspectives,
 							backgrounds, and experiences, inspiring middle school students
-							from different walks of life to pursue STEM fields. Exposure to
-							instructors with diverse identities and backgrounds not only
-							enhances representation but also helps break down stereotypes,
-							showcasing the breadth of possibilities within STEM.
+							from different walks of life to pursue STEM fields.
+						</h5>
+
+						<h3 className='header header-three'>{`outcomes`.toUpperCase()}</h3>
+						<h5 className='header header-five copy'>
+							Exposure to instructors with diverse identities and backgrounds
+							not only enhances representation but also helps break down
+							stereotypes, showcasing the breadth of possibilities within STEM.
 						</h5>
 					</div>
 				</div>

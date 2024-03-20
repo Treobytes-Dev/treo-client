@@ -6,10 +6,11 @@ const IntroToCamp = ({
 	collegeName,
 	collegeText,
 	collegeImage,
+	headerText,
 }) => (
 	<div className={componentName}>
 		<div className='container'>
-			<h2 className='header header-two'>WHY SPEND THE SUMMER WITH US?</h2>
+			<h2 className='header header-two'>{headerText}</h2>
 			<div className='columns'>
 				<div className='col col-1'>
 					<ul className='unordered-list'>{listItemMarks}</ul>
@@ -18,7 +19,7 @@ const IntroToCamp = ({
 					<div className='image'>
 						<img className='img' src={collegeImage} />
 					</div>
-					<h3 className='header header-three'>{collegeName.toUpperCase()}</h3>
+					<h4 className='header header-four'>{collegeName.toUpperCase()}</h4>
 					<p className='paragraph'>{collegeText}</p>
 				</div>
 			</div>
@@ -27,6 +28,7 @@ const IntroToCamp = ({
 );
 
 IntroToCamp.propTypes = {
+	headerText: string,
 	errorMsg: string,
 	successMsg: string,
 	loading: bool,
@@ -34,6 +36,7 @@ IntroToCamp.propTypes = {
 
 IntroToCamp.defaultProps = {
 	componentName: 'intro-to-camp',
+	headerText: 'WHY SPEND THE SUMMER WITH US?',
 };
 
 export default IntroToCamp;

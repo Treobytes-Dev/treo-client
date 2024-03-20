@@ -808,4 +808,112 @@
 			margin: 20px 0;
 		}
 	}
+
+	&.scholars-program {
+		.program-dates {
+			background-color: rgb(206, 144, 162);
+		}
+
+		.sub-header {
+			color: $color-secondary;
+			text-align: center;
+			margin: 20px 0;
+		}
+
+		.columns {
+			display: flex;
+			flex-direction: column;
+
+			@media #{$medium} {
+				flex-direction: row;
+			}
+
+			.container {
+				display: flex;
+				.col {
+					display: flex;
+					flex-direction: column;
+
+					@media #{$medium} {
+						display: inline-flex;
+						width: 50%;
+					}
+
+					.paragraph,
+					.img {
+						margin: 20px 0;
+						border-radius: 10px;
+					}
+				}
+			}
+		}
+
+		.advocacy-and-impact {
+			display: flex;
+			flex-direction: column;
+
+			@media #{$medium} {
+				flex-direction: row;
+			}
+
+			.box {
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+				height: 200px;
+				flex-direction: column;
+
+				@media #{$medium} {
+					display: inline-flex;
+					width: 25%;
+				}
+
+				&.health-and-well-being,
+				&.social {
+					background-color: $color-secondary;
+				}
+
+				&.environment,
+				&.equity {
+					background-color: $color-third;
+				}
+
+				.header-five {
+					text-align: center;
+					color: $color-white;
+				}
+			}
+		}
+
+		.program-dates {
+			.container {
+				.images {
+					display: none;
+				}
+
+				.information {
+					display: flex;
+					width: 100%;
+
+					.button {
+						color: #333;
+					}
+				}
+			}
+		}
+	}
+
+	&.after-school-enrichment {
+		.things-to-know {
+			.wrapper-buttons {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				.button {
+					width: 250px;
+				}
+			}
+		}
+	}
 }

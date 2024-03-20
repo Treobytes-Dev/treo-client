@@ -48,7 +48,7 @@ const Navigation = () => {
 				},
 				{
 					subLinkName: 'After School Enrichment',
-					subUrlName: '/programs/After School Enrichment',
+					subUrlName: '/programs/after-school-enrichment',
 				},
 			],
 			editable: false,

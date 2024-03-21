@@ -124,6 +124,11 @@
 						.our-solution {
 							display: flex;
 							flex-direction: column;
+							margin: 20px 0 0 0;
+
+							@media #{$medium} {
+								margin: 40px 0 0 0;
+							}
 
 							.heading {
 								display: flex;
@@ -150,6 +155,7 @@
 							background-size: cover;
 							height: 500px;
 							width: 500px;
+							border-radius: 40px;
 						}
 					}
 				}
@@ -1025,6 +1031,12 @@
 
 			.container {
 				display: flex;
+				flex-direction: column;
+
+				@media #{$medium} {
+					flex-direction: row;
+				}
+
 				.col {
 					display: flex;
 					flex-direction: column;
@@ -1032,6 +1044,10 @@
 					@media #{$medium} {
 						display: inline-flex;
 						width: 50%;
+
+						&.col-1 {
+							padding-right: 20px;
+						}
 					}
 
 					.paragraph,

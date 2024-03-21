@@ -9,6 +9,7 @@ import Footer from '../../components/Footer';
 import IntroToCamp from '../../components/IntroToCamp';
 import ProgramContainer from '../../components/ProgramContainer';
 import Button from '../../components/Button';
+import Sponsors from '../../components/Sponsors';
 
 const AfterSchoolEnrichment = ({ componentName }) => {
 	const head = () => (
@@ -58,6 +59,50 @@ const AfterSchoolEnrichment = ({ componentName }) => {
 		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710010480/donate-image-3_d0mjtw.jpg',
 	];
 
+	const sponsors = [
+		{
+			id: 1,
+			url: 'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710808986/sponsor-1_n3bawk.jpg',
+			alt: 'san diego unified school district',
+		},
+		{
+			id: 2,
+			url: 'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710808991/sponsor-2_odeaot.jpg',
+			alt: 'escondido union school district',
+		},
+		{
+			id: 3,
+			url: 'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710808996/sponsor-3_rgnhc0.jpg',
+			alt: 'lemon grove school district',
+		},
+		{
+			id: 4,
+			url: 'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710809001/sponsor-4_xdvy3a.jpg',
+			alt: 'banning unified school district',
+		},
+		{
+			id: 5,
+			url: 'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710809007/sponsor-5_ye76sb.jpg',
+			alt: 'high tech middle',
+		},
+
+		{
+			id: 6,
+			url: 'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710809012/sponsor-6_p7ekkx.jpg',
+			alt: 'the ymca',
+		},
+		{
+			id: 7,
+			url: 'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710809017/sponsor-7_q7rdqy.jpg',
+			alt: 'boys and girls club of greater san diego',
+		},
+		{
+			id: 8,
+			url: 'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710809022/sponsor-8_wnkask.jpg',
+			alt: 'south bay union school district',
+		},
+	];
+
 	return (
 		<>
 			{head()}
@@ -68,6 +113,8 @@ const AfterSchoolEnrichment = ({ componentName }) => {
 					introHeader={`after school enrichment`.toUpperCase()}
 					introBody={`Once the school day ends, we provide students STEM learning! Our facilitators will arrive at the school's location with our industry-relevant technology and equipment.`}
 				/>
+
+				<Sponsors sponsors={sponsors} />
 
 				<IntroToCamp
 					headerText={`what you will get from our after-school programs:`.toUpperCase()}

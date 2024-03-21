@@ -1,0 +1,29 @@
+@import './_variables.scss';
+.sponsors {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.intro-header {
+		text-align: center;
+	}
+
+	.sponsor {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 1rem 0;
+
+		@media #{$medium} {
+			display: inline-flex;
+			width: auto;
+			height: 100px;
+			padding: 0 20px;
+		}
+
+		img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+}

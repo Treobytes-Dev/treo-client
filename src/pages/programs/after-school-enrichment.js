@@ -59,6 +59,18 @@ const AfterSchoolEnrichment = ({ componentName }) => {
 		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710010480/donate-image-3_d0mjtw.jpg',
 	];
 
+	const dronesThumbnails = [
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710010480/donate-image-2_m6jz36.jpg',
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710809789/drones-tech-thumbnail-2_e4qufa.jpg',
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710809799/drones-tech-thumbnail-3_s7qadw.jpg',
+	];
+
+	const cadModelingThumbnails = [
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710809783/cad-modeling-thumbnail-1_djfzj1.jpg',
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1711042057/cad-modeling-thumbnail_jwh7rx.jpg',
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1711042361/cad-modeling-thumbnail-2_ap05jo.jpg',
+	];
+
 	const sponsors = [
 		{
 			id: 1,
@@ -230,7 +242,7 @@ const AfterSchoolEnrichment = ({ componentName }) => {
 					btnColor='mustard-yellow'
 					href='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797096/circuits-plugged-in-single-image_iyysco.jpg'
 					thumbnails={arduinoEngineeringThumbnails}
-					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710799226/dji-robotics-single-image_j57ihd.jpg'
+					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797096/circuits-plugged-in-single-image_iyysco.jpg'
 					singleAltTag='arduino engineering'
 				/>
 
@@ -248,8 +260,8 @@ const AfterSchoolEnrichment = ({ componentName }) => {
 					programFootText={`This hands-on experience will highlight students programming skills and unleash their boundless imagination as they push the boundaries of what they can achieve.`}
 					btnColor='royal-blue'
 					href='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797096/circuits-plugged-in-single-image_iyysco.jpg'
-					thumbnails={arduinoEngineeringThumbnails}
-					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710813318/cardboard-engineering-helmet-2_vmluii.jpg'
+					thumbnails={dronesThumbnails}
+					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797718/north-county-thumbnail-2_ecyvv6.jpg'
 					singleAltTag='drones tech'
 				/>
 
@@ -266,8 +278,8 @@ const AfterSchoolEnrichment = ({ componentName }) => {
 					programDescription={`They will then venture into the realm of 3D modeling, sculpting their ideas into tangible forms through mesh modeling, surface modeling, and parametric.`}
 					btnColor='orange'
 					href='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797096/circuits-plugged-in-single-image_iyysco.jpg'
-					thumbnails={arduinoEngineeringThumbnails}
-					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710813318/cardboard-engineering-helmet-2_vmluii.jpg'
+					thumbnails={cadModelingThumbnails}
+					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709781049/students-2_ofjk4n.jpg'
 					singleAltTag='cad modeling + laser cutting'
 				/>
 

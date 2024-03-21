@@ -967,6 +967,10 @@
 	}
 
 	&.summer-of-stem {
+		.hero-wrapper .hero {
+			background-position: top;
+		}
+
 		.intro-join-today {
 			.wrapper-btn {
 				display: flex;

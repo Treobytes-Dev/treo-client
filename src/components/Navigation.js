@@ -74,49 +74,13 @@ const Navigation = () => {
 			],
 			editable: false,
 		},
-		{
-			id: 17,
-			url: '/students',
-			linkName: 'Students',
-			position: '3',
-			subItems: [],
-			editable: false,
-		},
+
 		{
 			id: 20,
-			url: '/parents',
-			linkName: 'Parents',
-			position: '4',
+			url: '/donate',
+			linkName: 'Donate',
+			position: '3',
 			subItems: [],
-			editable: false,
-		},
-		{
-			id: 93,
-			url: '/partner-with-us/districts',
-			linkName: 'Partner with us',
-			position: '5',
-			subItems: [
-				{
-					subLinkName: 'Districts',
-					subUrlName: '/partner-with-us/districts',
-				},
-				{
-					subLinkName: 'Corporate',
-					subUrlName: '/partner-with-us/corporate',
-				},
-				{
-					subLinkName: 'Colleges',
-					subUrlName: '/partner-with-us/colleges',
-				},
-				{
-					subLinkName: 'Foundations',
-					subUrlName: '/partner-with-us/foundations',
-				},
-				{
-					subLinkName: 'Donate',
-					subUrlName: '/partner-with-us/donate',
-				},
-			],
 			editable: false,
 		},
 	];

@@ -76,7 +76,7 @@ const Home = ({ componentName }) => {
 								alt='atom'
 							/>
 						</div>
-						<h2 className='header header-two'>{`Career Aspirations Being in Middle School`}</h2>
+						<h2 className='header header-two'>{`Career Aspirations Begin in Middle School`}</h2>
 					</div>
 				</div>
 
@@ -102,7 +102,7 @@ const Home = ({ componentName }) => {
 						<h5 className='header header-five'>
 							Treobytes provides students
 							<span className='callout'>Vocational Pathways</span> to STEM
-							Career
+							Careers
 						</h5>
 					</div>
 				</div>
@@ -190,13 +190,11 @@ const Home = ({ componentName }) => {
 											alt='gear'
 										/>
 									</div>
-									<h5 className='header header-five'>
-										Technical Skill Development
-									</h5>
+									<h5 className='header header-five'>Our solution</h5>
 								</div>
 
 								<p className='paragraph'>
-									Our hands on vocational programs mirror current college
+									Our hands-on vocational programs mirror current college
 									curriculum distributed in a micro learning format. These brief
 									learning modules comprising bite-sized learning activities
 									teach students how to design and conduct experiments, to

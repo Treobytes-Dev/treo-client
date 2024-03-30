@@ -106,6 +106,12 @@
 		.btm-content {
 			.container {
 				display: flex;
+				flex-direction: column;
+
+				@media #{$medium} {
+					flex-direction: row;
+				}
+
 				.column {
 					display: flex;
 					flex-direction: column;
@@ -120,15 +126,23 @@
 							padding: 0 20px 0 0;
 						}
 
+						.technical-skill-development {
+							@media #{$medium} {
+								margin: 0;
+							}
+						}
+
+						.our-solution {
+							margin: 20px 0 0 0;
+							@media #{$medium} {
+								margin: 40px 0 0 0;
+							}
+						}
+
 						.technical-skill-development,
 						.our-solution {
 							display: flex;
 							flex-direction: column;
-							margin: 20px 0 0 0;
-
-							@media #{$medium} {
-								margin: 40px 0 0 0;
-							}
 
 							.heading {
 								display: flex;

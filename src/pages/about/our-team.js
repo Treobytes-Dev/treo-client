@@ -5,6 +5,7 @@ import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 
 import { TemplateIntro } from '../../components/TemplateIntro';
+import Sponsors from '../../components/Sponsors';
 
 const Card = ({ title, name, contact, source }) => (
 	<div className='box'>
@@ -29,25 +30,23 @@ const LeadershipTree = () => (
 				contact='ava@treobytes.com'
 				source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692311/avatar-ava_qz1ado.jpg'
 			/>
-		</div>
-		<div className='tier tier-2'>
+
 			<Card
 				title='Director'
 				name='Antoine Serrano'
 				contact='antoines@treobytes.com'
 				source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692261/avatar-antoine-serrano_tvpevf.jpg'
 			/>
-		</div>
-		<div className='tier tier-3'>
+
 			<Card
 				title='Assistant Director'
 				name='Lauren Wisniewski'
 				contact='lauren@treobytes.com'
 				source='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692261/avatar-lauren-wisniewski_dxg29g.jpg'
 			/>
-			{/* <Card title='Operations Administrator' name='TBA' /> */}
 		</div>
-		<div className='tier tier-4'>
+
+		<div className='tier tier-2'>
 			<div className='column column-1'>
 				<h4 className='header header-four'>{`Marketing Team`.toUpperCase()}</h4>
 				<div className='cards'>
@@ -83,7 +82,7 @@ const LeadershipTree = () => (
 	</div>
 );
 
-const Leadership = ({ componentName }) => {
+const OurTeam = ({ componentName }) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -113,6 +112,40 @@ const Leadership = ({ componentName }) => {
 		{ id: 5, name: 'SDCCD' },
 	];
 
+	const sponsors = [
+		{
+			id: 1,
+			url: 'https://res.cloudinary.com/dtjvswb7v/image/upload/v1711844972/Screenshot_2024-03-30_at_5.29.14_PM_g6gsn7.png',
+			alt: 'san diego state university',
+		},
+		{
+			id: 2,
+			url: 'https://res.cloudinary.com/dtjvswb7v/image/upload/v1711225327/usd-logo-primary-2c_o8zduf.png',
+			alt: 'university of san diego',
+		},
+		{
+			id: 3,
+			url: 'https://res.cloudinary.com/dtjvswb7v/image/upload/v1711844492/uc-san-diego_okhkjh.png',
+			alt: 'uc san diego',
+		},
+		{
+			id: 4,
+			url: 'https://res.cloudinary.com/dtjvswb7v/image/upload/v1711226402/csusm-textlogo-sp_kwmdyq.png',
+			alt: 'csusm',
+		},
+		{
+			id: 5,
+			url: 'https://res.cloudinary.com/dtjvswb7v/image/upload/v1711226401/sdccd_color_vert_g0mi21.png',
+			alt: 'san diego community college district',
+		},
+
+		{
+			id: 6,
+			url: 'https://res.cloudinary.com/dtjvswb7v/image/upload/v1711844682/mt-san-jacinto-college_lmx2lw.png',
+			alt: 'mt san jacinto college',
+		},
+	];
+
 	return (
 		<>
 			{head()}
@@ -120,8 +153,7 @@ const Leadership = ({ componentName }) => {
 			<div className={`page ${componentName}`}>
 				<TemplateIntro
 					heroImage={hero}
-					heroHeader='Leadership'
-					introHeader='Management Team'
+					introHeader='Our Team'
 					introBody='Meet our team working to achieve equity in the STEM workforce!'
 				/>
 
@@ -129,50 +161,94 @@ const Leadership = ({ componentName }) => {
 
 				<div className='facilitators'>
 					<h2 className='header header-two'>Facilitators</h2>
-					<div className='colleges'>
-						{colleges.map((college) => (
-							<div
-								key={college.id}
-								className={`college ${college.name.toLowerCase()}`}
-							>
-								<p className='paragraph'>{college.name}</p>
-							</div>
-						))}
-					</div>
+					<Sponsors sponsors={sponsors} />
 				</div>
 
 				<div className='block'>
 					<div className='container'>
-						<h3 className='header header-three'>{`Diverse`.toUpperCase()}</h3>
-						<h5 className='header header-five copy'>
-							Recruiting a diverse population of STEM college students to
-							facilitate courses for middle school students is paramount for
-							creating an inclusive and enriching educational experience.
-						</h5>
+						<div className='row'>
+							<div className='column column-1'>
+								<div
+									className='image'
+									style={{
+										backgroundImage:
+											'url(' +
+											'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710793150/dream-garage-single-image_ixhtnj.jpg' +
+											')',
+									}}
+								/>
+							</div>
+							<div className='column column-2'>
+								<h3 className='header header-three'>
+									{`Diverse`.toUpperCase()}
+								</h3>
+								<h5 className='header header-five copy'>
+									Recruiting a diverse population of STEM college students to
+									facilitate courses for middle school students is paramount for
+									creating an inclusive and enriching educational experience.
+								</h5>
+							</div>
+						</div>
 
-						<h3 className='header header-three'>{`strengths`.toUpperCase()}</h3>
-						<h5 className='header header-five copy'>
-							Diverse role models and instructors bring varied perspectives,
-							backgrounds, and experiences, inspiring middle school students
-							from different walks of life to pursue STEM fields.
-						</h5>
+						<div className='row'>
+							<div className='column column-1'>
+								<div
+									className='image'
+									style={{
+										backgroundImage:
+											'url(' +
+											'https://res.cloudinary.com/dtjvswb7v/image/upload/v1711846337/group-photo_ce3hxn.jpg' +
+											')',
+									}}
+								/>
+							</div>
+							<div className='column column-2'>
+								<h3 className='header header-three'>
+									{`strengths`.toUpperCase()}
+								</h3>
+								<h5 className='header header-five copy'>
+									Diverse role models and instructors bring varied perspectives,
+									backgrounds, and experiences, inspiring middle school students
+									from different walks of life to pursue STEM fields.
+								</h5>
+							</div>
+						</div>
 
-						<h3 className='header header-three'>{`outcomes`.toUpperCase()}</h3>
-						<h5 className='header header-five copy'>
-							Exposure to instructors with diverse identities and backgrounds
-							not only enhances representation but also helps break down
-							stereotypes, showcasing the breadth of possibilities within STEM.
-						</h5>
+						<div className='row'>
+							<div className='column column-1'>
+								<div
+									className='image'
+									style={{
+										backgroundImage:
+											'url(' +
+											'https://res.cloudinary.com/dtjvswb7v/image/upload/v1711846337/student-on-pc_dm7kom.jpg' +
+											')',
+									}}
+								/>
+							</div>
+							<div className='column column-2'>
+								<h3 className='header header-three'>
+									{`outcomes`.toUpperCase()}
+								</h3>
+								<h5 className='header header-five copy'>
+									Exposure to instructors with diverse identities and
+									backgrounds not only enhances representation but also helps
+									break down stereotypes, showcasing the breadth of
+									possibilities within STEM.
+								</h5>
+							</div>
+						</div>
 					</div>
 				</div>
+
 				<Footer />
 			</div>
 		</>
 	);
 };
 
-Leadership.defaultProps = {
-	componentName: 'leadership',
+OurTeam.defaultProps = {
+	componentName: 'our-team',
 };
 
-export default Leadership;
+export default OurTeam;

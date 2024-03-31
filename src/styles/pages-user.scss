@@ -313,7 +313,7 @@
 		}
 	}
 
-	&.leadership {
+	&.our-team {
 		.hero-wrapper.hero {
 			background-position: top;
 		}
@@ -410,8 +410,12 @@
 				text-align: center;
 				margin-bottom: 20px;
 			}
+		}
 
-			.colleges {
+		.block {
+			text-align: center;
+
+			.row {
 				display: flex;
 				flex-direction: column;
 
@@ -419,63 +423,53 @@
 					flex-direction: row;
 				}
 
-				.college {
-					width: 100%;
+				.column {
 					display: flex;
-					align-items: center;
-					justify-content: center;
-					height: 100px;
+					margin: 0 0 20px 0;
 
 					@media #{$medium} {
-						width: 20%;
-						height: 200px;
 						display: inline-flex;
-					}
-
-					&.usd {
-						background-color: #f7dba2;
-					}
-
-					&.sdsu {
-						background-color: #e59f67;
-					}
-
-					&.ucsd {
-						background-color: #ce90a2;
-					}
-
-					&.ucsm {
-						background-color: #d66c42;
-					}
-
-					&.sdccd {
-						background-color: #bc597b;
-					}
-
-					.paragraph {
-						color: $color-white;
-						font-size: 24px;
-						font-weight: 700;
+						margin: 0 0 40px 0;
 					}
 				}
-			}
-		}
 
-		.block {
-			background-color: $color-third;
-			text-align: center;
+				.column-1 {
+					@media #{$medium} {
+						width: 33.3%;
+					}
 
-			.header-three {
-				color: $color-white;
-			}
+					.image {
+						background-repeat: no-repeat;
+						background-position: center;
+						background-size: cover;
+						height: 250px;
+						width: 100%;
+						border-radius: 40px;
+					}
+				}
 
-			.copy {
-				padding: 10px 0 20px 0;
-				color: $color-white;
-				line-height: 1.75;
+				.column-2 {
+					flex-direction: column;
+					text-align: left;
 
-				@media #{$medium} {
-					padding: 10px 0 40px 0;
+					@media #{$medium} {
+						width: 66.6%;
+						padding: 0 0 0 20px;
+					}
+
+					.header-three {
+						color: $color-third;
+					}
+
+					.copy {
+						padding: 10px 0 20px 0;
+
+						line-height: 1.75;
+
+						@media #{$medium} {
+							padding: 10px 0 40px 0;
+						}
+					}
 				}
 			}
 		}
@@ -587,6 +581,33 @@
 			}
 		}
 
+		.image-sponsor-row {
+			.container {
+				display: flex;
+				flex-direction: column;
+
+				@media #{$medium} {
+					flex-direction: row;
+				}
+
+				.image-box {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					@media #{$medium} {
+						display: inline-flex;
+						width: 33.3%;
+					}
+				}
+			}
+		}
+
+		.header.header-three.sponsors {
+			text-align: center;
+			color: $color-secondary;
+		}
+
 		.copy-block {
 			display: flex;
 			justify-content: center;
@@ -599,12 +620,10 @@
 
 			.section-title {
 				text-align: center;
-				.call-out {
-					color: $color-secondary;
-				}
+				color: $color-secondary;
 			}
 
-			.lists {
+			.body-content {
 				display: flex;
 				flex-direction: column;
 
@@ -612,42 +631,47 @@
 					flex-direction: row;
 				}
 
-				.unordered-list {
+				.lists {
 					display: flex;
 					flex-direction: column;
-					width: 100%;
-					margin: 0 20px;
 
 					@media #{$medium} {
-						width: 50%;
-						display: inline-flex;
-						padding: 20px 0;
+						flex-direction: row;
+						width: 66.6%;
 					}
 
-					.list-item {
-						list-style-type: disc;
-						padding: 10px 0;
+					.unordered-list {
+						display: flex;
+						flex-direction: column;
+						width: 100%;
+						margin: 0 20px;
 
-						&.indent {
-							margin-left: 20px;
-							list-style-type: circle;
+						@media #{$medium} {
+							display: inline-flex;
+							padding: 20px 0;
+						}
+
+						.list-item {
+							list-style-type: disc;
+							padding: 10px 0;
+
+							&.indent {
+								margin-left: 20px;
+								list-style-type: circle;
+							}
 						}
 					}
 				}
-			}
-		}
 
-		.bottom-block {
-			background-color: $color-third;
-			color: $color-white;
-			padding: 20px 0;
+				.diagram {
+					display: flex;
+					flex-direction: column;
 
-			@media #{$medium} {
-				padding: 40px 0;
-			}
-
-			.header {
-				line-height: 2;
+					@media #{$medium} {
+						flex-direction: row;
+						width: 33.3%;
+					}
+				}
 			}
 		}
 	}

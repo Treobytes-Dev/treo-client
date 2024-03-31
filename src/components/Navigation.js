@@ -64,8 +64,8 @@ const Navigation = () => {
 					subUrlName: '/about/our-story',
 				},
 				{
-					subLinkName: 'Leadership',
-					subUrlName: '/about/leadership',
+					subLinkName: 'Our Team',
+					subUrlName: '/about/our-team',
 				},
 				{
 					subLinkName: 'Accomplishments',

@@ -232,7 +232,7 @@ const NorthCountyAndExpansion = ({ componentName }) => {
 					btnColor='lime-green'
 					href='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797096/circuits-plugged-in-single-image_iyysco.jpg'
 					thumbnails={printing3DThumbnails}
-					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710813318/cardboard-engineering-helmet-2_vmluii.jpg'
+					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1711305819/IMG_4774_xlsdok.jpg'
 					singleAltTag='stemfaire + 3d printing'
 				/>
 

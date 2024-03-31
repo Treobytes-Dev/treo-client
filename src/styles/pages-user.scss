@@ -530,6 +530,10 @@
 	}
 
 	&.accomplishments {
+		.hero-wrapper .hero {
+			background-position: top;
+		}
+
 		.numbers {
 			display: flex;
 			width: 100%;
@@ -1186,6 +1190,10 @@
 	}
 
 	&.after-school-enrichment {
+		.hero-wrapper .hero {
+			background-position: top;
+		}
+
 		.things-to-know {
 			.wrapper-buttons {
 				display: flex;

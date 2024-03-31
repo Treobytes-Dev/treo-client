@@ -200,7 +200,7 @@ const LevelUpCityCollege = ({ componentName }) => {
 					btnColor='lime-green'
 					href='https://www.inplay.org/providers/treobytes'
 					thumbnails={cardboardEngineeringThumbnails}
-					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710813318/cardboard-engineering-helmet-2_vmluii.jpg'
+					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1711305819/IMG_4774_xlsdok.jpg'
 					singleAltTag='cardboard engineering + robotics'
 				/>
 				<Footer />

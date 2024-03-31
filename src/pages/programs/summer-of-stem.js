@@ -212,7 +212,7 @@ const SummerOfSTEM = ({ componentName }) => {
 					btnColor='lime-green'
 					href='https://www.hisawyer.com/treobytes/schedules/activity-set/667830'
 					thumbnails={stemFaireThumbnails}
-					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710813318/cardboard-engineering-helmet-2_vmluii.jpg'
+					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1711305819/IMG_4774_xlsdok.jpg'
 					singleAltTag='Stemfaire Cardboard Engineering'
 				/>
 

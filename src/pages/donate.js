@@ -59,7 +59,7 @@ const Donate = ({ componentName }) => {
 
 						<div className='column col-2'>
 							<Cake dimensions={100} />
-							<h4 className='header header-four orange'>ON GOING SUPPORT</h4>
+							<h4 className='header header-four orange'>ONGOING SUPPORT</h4>
 							<p className='paragraph'>
 								Once a year we celebrate another wonderful orbit around the Sun
 								(minus 6 hours and 9 minutes). Once in a while, we put someone

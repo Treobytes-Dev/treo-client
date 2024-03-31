@@ -51,7 +51,7 @@ export const TemplateIntro = ({
 				>
 					<div className='container'>
 						<h2 className='header header-two'>{introHeader}</h2>
-						<p className='paragraph'>{introBody}</p>
+						{introBody && <p className='paragraph'>{introBody}</p>}
 					</div>
 				</div>
 			)}

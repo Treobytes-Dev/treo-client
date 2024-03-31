@@ -54,27 +54,41 @@ const OurStory = ({ componentName }) => {
 				<div className='container'>
 					<div className='intro-columns'>
 						<div className='column column-1'>
-							Treobytes is 501(c)(3) non-profit focused on building the next
-							generation of the STEM workforce. Established in 2014, our mission
-							is to change the socio and economic trajectory for students by
-							providing vocational STEM education. Treobytes strives towards
-							developing a diverse workforce who is prepared to meet industry
-							demands in STEM disciplines.
+							<img
+								className='icon'
+								src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710812446/who-we-are_rrzxxq.png'
+								alt='who we are icon'
+							/>
+							<h3 className='header header-three'>
+								{`who we are:`.toUpperCase()}
+							</h3>
+							<p className='paragraph'>
+								Treobytes is 501(c)(3) non-profit focused on building the next
+								generation of the STEM workforce. Established in 2014, our
+								mission is to change the socio and economic trajectory for
+								students by providing vocational STEM education. Treobytes
+								strives towards developing a diverse workforce who is prepared
+								to meet industry demands in STEM disciplines.
+							</p>
 						</div>
 						<div className='column column-2'>
-							We achieve this by providing hands-on classes with a culminating
-							ending project. Treobytes collaborates with our “TREO” of
-							partners: students, educational systems and industry partners. We
-							are looking for any support, no matter how small! Donations would
-							be used to update technologies, equipment, and STEM topics offered
-							to students.
+							<img
+								className='icon'
+								src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710812440/what-we-do_qkakxg.png'
+								alt='who we are icon'
+							/>
+							<h3 className='header header-three'>
+								{`what we do:`.toUpperCase()}
+							</h3>
+							<p className='paragraph'>
+								We achieve this by providing hands-on classes with a culminating
+								ending project. Treobytes collaborates with our “TREO” of
+								partners: students, educational systems and industry partners.
+								We are looking for any support, no matter how small! Donations
+								would be used to update technologies, equipment, and STEM topics
+								offered to students.
+							</p>
 						</div>
-					</div>
-				</div>
-
-				<div className='container'>
-					<div className='wrapper-icon'>
-						<RobotFace dimensions={150} fill={'rgb(173, 33, 70)'} />
 					</div>
 				</div>
 
@@ -119,12 +133,6 @@ const OurStory = ({ componentName }) => {
 							for today’s and tomorrow’s economy to ensure that pathways to
 							well-paying jobs are accessible.
 						</h3>
-					</div>
-				</div>
-
-				<div className='container'>
-					<div className='wrapper-icon'>
-						<PhoneAndWatch dimensions={150} fill={'rgb(173, 33, 70)'} />
 					</div>
 				</div>
 

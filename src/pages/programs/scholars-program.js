@@ -126,10 +126,16 @@ const ScholarsProgram = ({ componentName }) => {
 								acquiring unparalleled STEM expertise and the motivation to make
 								a difference.
 							</p>
-							<Button
-								children={`join the movement`.toUpperCase()}
-								additionalClass='orange'
-							/>
+							<a
+								className='button-anchor'
+								href='https://forms.gle/tY6WJkktQrXQov7v8'
+								target='_blank'
+							>
+								<Button
+									children={`join the movement`.toUpperCase()}
+									additionalClass='orange'
+								/>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -145,10 +151,16 @@ const ScholarsProgram = ({ componentName }) => {
 					contentDates={<p className='paragraph'>March 9th - April 20th</p>}
 					contentTime={<p className='paragraph'>9:00am - 11:00am</p>}
 					contentGrades={
-						<Button
-							children={`apply today`.toUpperCase()}
-							additionalClass='edit'
-						/>
+						<a
+							className='button-anchor'
+							href='https://forms.gle/tY6WJkktQrXQov7v8'
+							target='_blank'
+						>
+							<Button
+								children={`apply today`.toUpperCase()}
+								additionalClass='edit'
+							/>
+						</a>
 					}
 				/>
 

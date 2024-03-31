@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../context';
 import Head from 'next/head';
+import Link from 'next/link';
 
 // components
 import Navigation from '../components/Navigation';
@@ -57,7 +58,10 @@ const HelpCenter = ({ componentName }) => {
 			{head()}
 			<Navigation />
 			<div className={`page ${componentName}`}>
-				<TemplateIntro heroImage={hero} heroHeader='Help Center' />
+				<TemplateIntro
+					heroImage={hero}
+					introHeader={`help center`.toUpperCase()}
+				/>
 
 				<div className='questions'>
 					<div className='container'>
@@ -108,22 +112,33 @@ const HelpCenter = ({ componentName }) => {
 
 				<div className='button-container'>
 					<div className='container'>
-						<Button
-							children={`scholars program`.toUpperCase()}
-							additionalClass='secondary'
-						/>
-						<Button
-							children={`summer of stem camp`.toUpperCase()}
-							additionalClass='pale'
-						/>
-						<Button
-							children={`level up camps`.toUpperCase()}
-							additionalClass='orange'
-						/>
-						<Button
-							children={`banning program`.toUpperCase()}
-							additionalClass='off-orange'
-						/>
+						<Link className='button-anchor' href='/programs'>
+							<Button
+								children={`scholars program`.toUpperCase()}
+								additionalClass='secondary'
+							/>
+						</Link>
+
+						<Link className='button-anchor' href='/summer-of-stem'>
+							<Button
+								children={`summer of stem camp`.toUpperCase()}
+								additionalClass='pale'
+							/>
+						</Link>
+
+						<Link className='button-anchor' href='/level-up-camps'>
+							<Button
+								children={`level up camps`.toUpperCase()}
+								additionalClass='orange'
+							/>
+						</Link>
+
+						<Link className='button-anchor' href='/banning-program'>
+							<Button
+								children={`North county and expansion`.toUpperCase()}
+								additionalClass='off-orange'
+							/>
+						</Link>
 					</div>
 				</div>
 
@@ -131,7 +146,7 @@ const HelpCenter = ({ componentName }) => {
 					<div className='container'>
 						<Button
 							children={`join our mailing list`.toUpperCase()}
-							additionalClass='beige join-mailing-list'
+							additionalClass='secondary join-mailing-list'
 						/>
 					</div>
 				</div>

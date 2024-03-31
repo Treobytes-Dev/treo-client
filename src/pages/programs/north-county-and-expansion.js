@@ -111,23 +111,6 @@ const NorthCountyAndExpansion = ({ componentName }) => {
 				/>
 
 				<h3 className='header header-three sub-header'>
-					{`summer offerings`.toUpperCase()}
-				</h3>
-
-				<ProgramContainer
-					hasIcon={<SportsTech />}
-					programTitle={`Stem Sports + Tech`.toUpperCase()}
-					programSubtitle='Combine physical movement and technology!'
-					programDescription={`Utilizing the Garmin ${tradeMark} technology system, this camp builds a student wellness portfolio (daily-to-yearly, delivering heart rate data, reflective journaling, and performance metrics) that can correlate to academic, social, and emotional growth`}
-					programFootText='Each day, students will take part in various health and nutrition activities incorporating different STEM sports and technologies'
-					btnColor='purple'
-					href='https://www.hisawyer.com/treobytes/schedules/activity-set/673279'
-					thumbnails={stemSportsThumbnails}
-					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710786700/stem-sports-single-image_r0gqja.jpg'
-					singleAltTag='Stem Sports + Tech'
-				/>
-
-				<h3 className='header header-three sub-header'>
 					{`banning unified school district`.toUpperCase()}
 				</h3>
 

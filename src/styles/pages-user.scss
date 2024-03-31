@@ -202,7 +202,7 @@
 		}
 
 		.button-container {
-			.button {
+			.button-anchor .button {
 				justify-content: center;
 				align-items: center;
 				font-size: 16px;
@@ -287,6 +287,29 @@
 		.wrapper-icon {
 			display: flex;
 			justify-content: center;
+		}
+
+		.intro-columns {
+			.column {
+				display: flex;
+
+				@media #{$medium} {
+					display: inline-flex;
+					align-items: center;
+				}
+				.header {
+					color: $color-secondary;
+					margin: 10px 0;
+				}
+
+				.icon {
+					width: 100%;
+
+					@media #{$medium} {
+						width: 50%;
+					}
+				}
+			}
 		}
 	}
 
@@ -1029,6 +1052,12 @@
 	}
 
 	&.scholars-program {
+		.button-anchor {
+			@media #{$medium} {
+				width: 260px;
+			}
+		}
+
 		.program-dates {
 			background-color: rgb(206, 144, 162);
 		}

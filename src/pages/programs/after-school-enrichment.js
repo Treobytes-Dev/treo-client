@@ -1,6 +1,5 @@
 // next
 import Head from 'next/head';
-import Link from 'next/link';
 
 // components
 import { TemplateIntro } from '../../components/TemplateIntro';
@@ -115,6 +114,14 @@ const AfterSchoolEnrichment = ({ componentName }) => {
 		},
 	];
 
+	// scroll to logic
+	const scrollToTarget = () => {
+		const targetElement = document.getElementById('scroll-to-el');
+		if (targetElement) {
+			targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	};
+
 	return (
 		<>
 			{head()}
@@ -124,8 +131,10 @@ const AfterSchoolEnrichment = ({ componentName }) => {
 					heroImage={hero}
 					introHeader={`after school enrichment`.toUpperCase()}
 					introBody={`Once the school day ends, we provide students STEM learning! Our facilitators will arrive at the school's location with our industry-relevant technology and equipment.`}
+					scrollToTarget={scrollToTarget}
 				/>
 
+				<div id='scroll-to-el' />
 				<Sponsors sponsors={sponsors} />
 
 				<IntroToCamp
@@ -197,7 +206,7 @@ const AfterSchoolEnrichment = ({ componentName }) => {
 						</div>
 						<div className='wrapper-buttons'>
 							<a
-								href='https://www.hisawyer.com/treobytes/schedules?sched_ids%5B%5D=191129&schedule_id=camps'
+								href='mailto:info@treobytes.com'
 								target='_blank'
 								rel='noreferrer noopener'
 								className='anchor'
@@ -221,7 +230,7 @@ const AfterSchoolEnrichment = ({ componentName }) => {
 					programDescription='Utilizing an interactive technology ecosystem, this camp builds a student wellness portfolio (daily-to-yearly, delivering heart rate data, reflective journaling, and performance metrics) that can correlate to academic, social, and emotional growth.'
 					programFootText='Each day, students will participate in diffrerent sports and technology activities.'
 					btnColor='lime-green'
-					href='https://www.hisawyer.com/treobytes/schedules/activity-set/667830'
+					href='mailto:info@treobytes.com'
 					thumbnails={stemFaireThumbnails}
 					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1711305819/IMG_4774_xlsdok.jpg'
 					singleAltTag='Stemfaire Cardboard Engineering'
@@ -238,9 +247,8 @@ const AfterSchoolEnrichment = ({ componentName }) => {
 					programTitle={`arduino engineering`.toUpperCase()}
 					programSubtitle={`In Arduino Engineering, students will embark on an exciting journey to explore the fundamentals of Arduino technology and its practical applications to real-world challenges.`}
 					programDescription={`Through hands-on experiences, they will learn the art of programming, allowing them to bring their innovative ideas to life. THe course delves into the fascinating realm of structures and aerospace engineering, prividing insights into designing and building robust systems.`}
-					programFootText={``}
 					btnColor='mustard-yellow'
-					href='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797096/circuits-plugged-in-single-image_iyysco.jpg'
+					href='mailto:info@treobytes.com'
 					thumbnails={arduinoEngineeringThumbnails}
 					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797096/circuits-plugged-in-single-image_iyysco.jpg'
 					singleAltTag='arduino engineering'
@@ -259,7 +267,7 @@ const AfterSchoolEnrichment = ({ componentName }) => {
 					programDescription={`Students will program their own set of Tello drones through orchestrated flights over Mission Pads while executing flips and daring acrobatic maneuvers.`}
 					programFootText={`This hands-on experience will highlight students programming skills and unleash their boundless imagination as they push the boundaries of what they can achieve.`}
 					btnColor='royal-blue'
-					href='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797096/circuits-plugged-in-single-image_iyysco.jpg'
+					href='mailto:info@treobytes.com'
 					thumbnails={dronesThumbnails}
 					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797718/north-county-thumbnail-2_ecyvv6.jpg'
 					singleAltTag='drones tech'
@@ -277,7 +285,7 @@ const AfterSchoolEnrichment = ({ componentName }) => {
 					programSubtitle={`Welcome to CAD modeling and Laster Cutting - a dynamic course where students delve into the realms of digital modeling, honing their creativity and technical skills. Through hands-on exploration, participants master the precision of laser cutting technology, craftiing intricate designs with CAD software and experiementing with various materials.`}
 					programDescription={`They will then venture into the realm of 3D modeling, sculpting their ideas into tangible forms through mesh modeling, surface modeling, and parametric.`}
 					btnColor='orange'
-					href='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797096/circuits-plugged-in-single-image_iyysco.jpg'
+					href='mailto:info@treobytes.com'
 					thumbnails={cadModelingThumbnails}
 					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709781049/students-2_ofjk4n.jpg'
 					singleAltTag='cad modeling + laser cutting'

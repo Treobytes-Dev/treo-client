@@ -35,6 +35,14 @@ const ScholarsProgram = ({ componentName }) => {
 	const hero =
 		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797712/hero-north-county_ooorfm.jpg';
 
+	// scroll to logic
+	const scrollToTarget = () => {
+		const targetElement = document.getElementById('scroll-to-el');
+		if (targetElement) {
+			targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	};
+
 	return (
 		<>
 			{head()}
@@ -43,7 +51,9 @@ const ScholarsProgram = ({ componentName }) => {
 				<TemplateIntro
 					heroImage={hero}
 					introHeader={`treobytes scholars program`.toUpperCase()}
+					scrollToTarget={scrollToTarget}
 				/>
+				<div id='scroll-to-el' />
 				<h3 className='header header-three sub-header'>A Vocational Pathway</h3>
 
 				<div className='columns'>

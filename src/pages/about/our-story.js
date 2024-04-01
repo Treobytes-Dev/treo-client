@@ -7,10 +7,8 @@ import Footer from '../../components/Footer';
 import { TemplateIntro } from '../../components/TemplateIntro';
 
 // icons
-import { RobotFace } from '../../assets/icons/RobotFace';
 import { ComputerScreen } from '../../assets/icons/ComputerScreen';
 import { ChevronButton } from '../../assets/icons/ChevronButton';
-import { PhoneAndWatch } from '../../assets/icons/PhoneAndWatch';
 import { RunningPerson } from '../../assets/icons/RunningPerson';
 
 const OurStory = ({ componentName }) => {
@@ -41,6 +39,14 @@ const OurStory = ({ componentName }) => {
 	const vision =
 		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692261/about-us-vision_oua5bj.jpg';
 
+	// scroll to logic
+	const scrollToTarget = () => {
+		const targetElement = document.getElementById('scroll-to-el');
+		if (targetElement) {
+			targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	};
+
 	return (
 		<>
 			{head()}
@@ -49,10 +55,14 @@ const OurStory = ({ componentName }) => {
 				<TemplateIntro
 					heroImage={hero}
 					introHeader={`About Us`.toUpperCase()}
+					scrollToTarget={scrollToTarget}
 				/>
 
-				<div className='container'>
-					<div className='intro-columns'>
+				{/* scrollTo */}
+				<div id='scroll-to-el' />
+
+				<div className='intro-columns'>
+					<div className='container'>
 						<div className='column column-1'>
 							<img
 								className='icon'

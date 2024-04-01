@@ -77,12 +77,27 @@ const Accomplishments = ({ componentName }) => {
 		},
 	];
 
+	// scroll to logic
+	const scrollToTarget = () => {
+		const targetElement = document.getElementById('scroll-to-el');
+		if (targetElement) {
+			targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	};
+
 	return (
 		<>
 			{head()}
 			<Navigation />
 			<div className={`page ${componentName}`}>
-				<TemplateIntro heroImage={hero} introHeader='Accomplishments' />
+				<TemplateIntro
+					heroImage={hero}
+					introHeader='Accomplishments'
+					scrollToTarget={scrollToTarget}
+				/>
+
+				{/* scrollTo */}
+				<div id='scroll-to-el' />
 
 				<div className='numbers'>
 					<div className='block block-1'>

@@ -78,6 +78,14 @@ const SummerOfSTEM = ({ componentName }) => {
 		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710795239/card-board-thumbnail-3_jtri7v.jpg',
 	];
 
+	// scroll to logic
+	const scrollToTarget = () => {
+		const targetElement = document.getElementById('scroll-to-el');
+		if (targetElement) {
+			targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	};
+
 	const tradeMark = '\u2122';
 
 	return (
@@ -85,8 +93,13 @@ const SummerOfSTEM = ({ componentName }) => {
 			{head()}
 			<Navigation />
 			<div className={`page ${componentName}`}>
-				<TemplateIntro heroImage={hero} introHeader='SUMMER OF STEM CAMP' />
+				<TemplateIntro
+					heroImage={hero}
+					introHeader='SUMMER OF STEM CAMP'
+					scrollToTarget={scrollToTarget}
+				/>
 
+				<div id='scroll-to-el' />
 				<IntroSignUp
 					href='https://www.hisawyer.com/treobytes/schedules?sched_ids%5B%5D=191129&schedule_id=camps'
 					btnText={`join today!`.toUpperCase()}

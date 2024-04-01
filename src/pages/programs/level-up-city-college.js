@@ -70,6 +70,14 @@ const LevelUpCityCollege = ({ componentName }) => {
 		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710795239/card-board-thumbnail-3_jtri7v.jpg',
 	];
 
+	// scroll to logic
+	const scrollToTarget = () => {
+		const targetElement = document.getElementById('scroll-to-el');
+		if (targetElement) {
+			targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	};
+
 	return (
 		<>
 			{head()}
@@ -78,8 +86,11 @@ const LevelUpCityCollege = ({ componentName }) => {
 				<TemplateIntro
 					heroImage={hero}
 					introHeader={`treobytes summer level up camp at city college`.toUpperCase()}
+					scrollToTarget={scrollToTarget}
 				/>
 
+				{/* scrollTo */}
+				<div id='scroll-to-el' />
 				<IntroSignUp
 					href='https://www.inplay.org/providers/treobytes'
 					btnText={`sign up on inplay`.toUpperCase()}

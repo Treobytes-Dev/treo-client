@@ -33,6 +33,14 @@ const Donate = ({ componentName }) => {
 	const hero =
 		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710009545/hero-donate_o9mqil.jpg';
 
+	// scroll to logic
+	const scrollToTarget = () => {
+		const targetElement = document.getElementById('scroll-to-el');
+		if (targetElement) {
+			targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	};
+
 	return (
 		<>
 			{head()}
@@ -41,7 +49,11 @@ const Donate = ({ componentName }) => {
 				<TemplateIntro
 					heroImage={hero}
 					introHeader={`let's build the next generation of stem leaders together!`.toUpperCase()}
+					scrollToTarget={scrollToTarget}
 				/>
+
+				{/* scrollTo */}
+				<div id='scroll-to-el' />
 
 				<div className='intro-icons'>
 					<div className='container'>

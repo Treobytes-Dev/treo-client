@@ -186,11 +186,7 @@
 		}
 
 		.copy-block {
-			padding: 20px 0 0 0;
-
-			@media #{$medium} {
-				padding: 40px 0 0 0;
-			}
+			padding: 40px 0 0 0;
 
 			.header {
 				margin-bottom: 10px;
@@ -202,15 +198,32 @@
 		}
 
 		.button-container {
-			.button-anchor .button {
-				justify-content: center;
-				align-items: center;
-				font-size: 16px;
+			.column {
+				display: flex;
+				flex-direction: column;
 
-				@media #{$large} {
-					display: flex;
+				@media #{$medium} {
+					width: 50%;
 					display: inline-flex;
-					width: 25%;
+					justify-content: center;
+					align-items: center;
+				}
+
+				.button-anchor {
+					@media #{$medium} {
+						width: 300px;
+					}
+
+					.button {
+						justify-content: center;
+						align-items: center;
+
+						@media #{$medium} {
+							display: flex;
+							display: inline-flex;
+							text-wrap: wrap;
+						}
+					}
 				}
 			}
 		}
@@ -540,9 +553,11 @@
 			justify-content: space-evenly;
 			font-size: 36px;
 			flex-direction: column;
+			padding: 20px 0 0 0;
 
 			@media #{$large} {
 				flex-direction: row;
+				padding: 40px 0 0 0;
 			}
 
 			.block {
@@ -851,10 +866,12 @@
 				justify-content: center;
 				align-items: center;
 				text-align: center;
+				padding: 40px 0;
 
 				@media #{$medium} {
 					display: inline-flex;
 					width: 33.3%;
+					padding: 0;
 				}
 
 				.badge {

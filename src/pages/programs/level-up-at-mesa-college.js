@@ -85,6 +85,14 @@ const LevelUpAtMesaCollege = ({ componentName }) => {
 
 	const tradeMark = '\u2122';
 
+	// scroll to logic
+	const scrollToTarget = () => {
+		const targetElement = document.getElementById('scroll-to-el');
+		if (targetElement) {
+			targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	};
+
 	return (
 		<>
 			{head()}
@@ -93,7 +101,11 @@ const LevelUpAtMesaCollege = ({ componentName }) => {
 				<TemplateIntro
 					heroImage={hero}
 					introHeader={`Treobytes Summer Level Up Camp At Mesa College`.toUpperCase()}
+					scrollToTarget={scrollToTarget}
 				/>
+
+				{/* scrollTo */}
+				<div id='scroll-to-el' />
 
 				<IntroSignUp
 					href='https://www.inplay.org/providers/treobytes'

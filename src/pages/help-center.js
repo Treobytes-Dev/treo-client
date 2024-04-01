@@ -53,6 +53,14 @@ const HelpCenter = ({ componentName }) => {
 	const hero =
 		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692263/help-center-hero_wapvlc.jpg';
 
+	// scroll to logic
+	const scrollToTarget = () => {
+		const targetElement = document.getElementById('scroll-to-el');
+		if (targetElement) {
+			targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	};
+
 	return (
 		<>
 			{head()}
@@ -61,7 +69,11 @@ const HelpCenter = ({ componentName }) => {
 				<TemplateIntro
 					heroImage={hero}
 					introHeader={`help center`.toUpperCase()}
+					scrollToTarget={scrollToTarget}
 				/>
+
+				{/* scrollTo */}
+				<div id='scroll-to-el' />
 
 				<div className='questions'>
 					<div className='container'>
@@ -100,11 +112,11 @@ const HelpCenter = ({ componentName }) => {
 						/>
 						<CopyBlock
 							header='How can my student join a Treobytes Program?'
-							copyPrimary={`To join our programs, you can sign up for our mailing list. By subscribing, you'll stay updated on upcoming programs, events, and important announcements. Click the button below to join our mialing list and you'll receive the latest information!
+							copyPrimary={`To join our programs, you can sign up for our mailing list. By subscribing, you'll stay updated on upcoming programs, events, and important announcements. Click the button below to join our mailing list and you'll receive the latest information!
             `}
 						/>
 						<p className='paragraph'>
-							You can find out more infromation and join our programs by
+							You can find out more information and join our programs by
 							clicking on the buttons below!
 						</p>
 					</div>
@@ -112,33 +124,37 @@ const HelpCenter = ({ componentName }) => {
 
 				<div className='button-container'>
 					<div className='container'>
-						<Link className='button-anchor' href='/programs'>
-							<Button
-								children={`scholars program`.toUpperCase()}
-								additionalClass='secondary'
-							/>
-						</Link>
+						<div className='column column-1'>
+							<Link className='button-anchor' href='/programs'>
+								<Button
+									children={`scholars program`.toUpperCase()}
+									additionalClass='secondary'
+								/>
+							</Link>
 
-						<Link className='button-anchor' href='/summer-of-stem'>
-							<Button
-								children={`summer of stem camp`.toUpperCase()}
-								additionalClass='pale'
-							/>
-						</Link>
+							<Link className='button-anchor' href='/summer-of-stem'>
+								<Button
+									children={`summer of stem camp`.toUpperCase()}
+									additionalClass='pale'
+								/>
+							</Link>
+						</div>
 
-						<Link className='button-anchor' href='/level-up-camps'>
-							<Button
-								children={`level up camps`.toUpperCase()}
-								additionalClass='orange'
-							/>
-						</Link>
+						<div className='column column-2'>
+							<Link className='button-anchor' href='/level-up-camps'>
+								<Button
+									children={`level up camps`.toUpperCase()}
+									additionalClass='orange'
+								/>
+							</Link>
 
-						<Link className='button-anchor' href='/banning-program'>
-							<Button
-								children={`North county and expansion`.toUpperCase()}
-								additionalClass='off-orange'
-							/>
-						</Link>
+							<Link className='button-anchor' href='/banning-program'>
+								<Button
+									children={`North county and expansion`.toUpperCase()}
+									additionalClass='off-orange'
+								/>
+							</Link>
+						</div>
 					</div>
 				</div>
 

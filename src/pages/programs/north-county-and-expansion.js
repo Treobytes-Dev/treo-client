@@ -9,9 +9,6 @@ import IntroToCamp from '../../components/IntroToCamp';
 import ProgramContainer from '../../components/ProgramContainer';
 import TracksSection from '../../components/TracksSection';
 
-// icons
-import SportsTech from '../../assets/icons/SportsTech';
-
 const NorthCountyAndExpansion = ({ componentName }) => {
 	const head = () => (
 		<Head>
@@ -78,7 +75,13 @@ const NorthCountyAndExpansion = ({ componentName }) => {
 		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710793452/sky-sea-tech-thumbnail-2_cenuwr.jpg',
 	];
 
-	const tradeMark = '\u2122';
+	// scroll to logic
+	const scrollToTarget = () => {
+		const targetElement = document.getElementById('scroll-to-el');
+		if (targetElement) {
+			targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	};
 
 	return (
 		<>
@@ -88,7 +91,12 @@ const NorthCountyAndExpansion = ({ componentName }) => {
 				<TemplateIntro
 					heroImage={hero}
 					introHeader={`north county and expansion`.toUpperCase()}
+					scrollToTarget={scrollToTarget}
 				/>
+
+				{/* scrollTo */}
+				<div id='scroll-to-el' />
+
 				<h3 className='header header-three sub-header'>
 					{`escondido union school district`.toUpperCase()}
 				</h3>

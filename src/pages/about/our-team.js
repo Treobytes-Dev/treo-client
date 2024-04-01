@@ -146,6 +146,14 @@ const OurTeam = ({ componentName }) => {
 		},
 	];
 
+	// scroll to logic
+	const scrollToTarget = () => {
+		const targetElement = document.getElementById('scroll-to-el');
+		if (targetElement) {
+			targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	};
+
 	return (
 		<>
 			{head()}
@@ -155,7 +163,11 @@ const OurTeam = ({ componentName }) => {
 					heroImage={hero}
 					introHeader='Our Team'
 					introBody='Meet our team working to achieve equity in the STEM workforce!'
+					scrollToTarget={scrollToTarget}
 				/>
+
+				{/* scrollTo */}
+				<div id='scroll-to-el' />
 
 				<LeadershipTree />
 

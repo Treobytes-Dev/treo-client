@@ -7,7 +7,6 @@ import axios from 'axios';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Status from '../components/Status';
-
 import { TemplateIntro } from '../components/TemplateIntro';
 
 // mocking hero

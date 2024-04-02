@@ -148,7 +148,7 @@ const Accomplishments = ({ componentName }) => {
 					className='header header-three sponsors'
 					style={{ textAlign: 'center' }}
 				>
-					{`sponsors`.toUpperCase()}
+					{`partnerships`.toUpperCase()}
 				</h3>
 				<Sponsors sponsors={sponsors} />
 

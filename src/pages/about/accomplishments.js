@@ -3,9 +3,11 @@ import Head from 'next/head';
 // components
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
-
 import { TemplateIntro } from '../../components/TemplateIntro';
 import Sponsors from '../../components/Sponsors';
+
+// svg
+import VennDiagram from '../../assets/images/VennDiagram';
 
 const Accomplishments = ({ componentName }) => {
 	const head = () => (
@@ -152,7 +154,7 @@ const Accomplishments = ({ componentName }) => {
 
 				<div className='copy-block'>
 					<div className='container'>
-						<h3 className='header header-three section-title'>OUR REACH</h3>
+						<h3 className='header header-three section-title'>OUR REACH:</h3>
 						<div className='body-content'>
 							<div className='lists'>
 								<ul className='unordered-list'>
@@ -216,12 +218,12 @@ const Accomplishments = ({ componentName }) => {
 								</ul>
 							</div>
 							<div className='diagram'>
-								<div
+								{/* <div
 									className='image'
 									style={{
 										backgroundImage:
 											'url(' +
-											'https://res.cloudinary.com/dtjvswb7v/image/upload/v1711846729/diagram_lhzife.png' +
+											'https://res.cloudinary.com/dtjvswb7v/image/upload/v1712020329/Screenshot_2024-04-01_at_6.11.49_PM_fb9bep.png' +
 											')',
 										backgroundRepeat: 'no-repeat',
 										backgroundPosition: 'center center',
@@ -229,7 +231,9 @@ const Accomplishments = ({ componentName }) => {
 										height: '500px',
 										width: '100%',
 									}}
-								/>
+								/> */}
+
+								<VennDiagram />
 							</div>
 						</div>
 					</div>

@@ -227,7 +227,7 @@ const NorthCountyAndExpansion = ({ componentName }) => {
 					btnColor='mustard-yellow'
 					href='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797096/circuits-plugged-in-single-image_iyysco.jpg'
 					thumbnails={arduinoEngineeringThumbnails}
-					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710799226/dji-robotics-single-image_j57ihd.jpg'
+					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797096/circuits-plugged-in-single-image_iyysco.jpg'
 					singleAltTag='arduino engineering'
 				/>
 

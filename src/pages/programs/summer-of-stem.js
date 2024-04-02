@@ -38,7 +38,7 @@ const SummerOfSTEM = ({ componentName }) => {
 	);
 
 	const hero =
-		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1709693053/leadership-hero_tgmuu8.jpg';
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692266/summer-of-stem-camps-hero_fvqzmt.jpg';
 
 	const listItemsSummerOfSTEM = [
 		{ copy: 'World class STEM instruction' },

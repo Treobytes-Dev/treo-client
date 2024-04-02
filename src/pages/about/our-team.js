@@ -102,15 +102,7 @@ const OurTeam = ({ componentName }) => {
 	);
 
 	const hero =
-		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1709693053/leadership-hero_tgmuu8.jpg';
-
-	const colleges = [
-		{ id: 1, name: 'USD' },
-		{ id: 2, name: 'SDSU' },
-		{ id: 3, name: 'UCSD' },
-		{ id: 4, name: 'UCSM' },
-		{ id: 5, name: 'SDCCD' },
-	];
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1712014855/Untitled_design_27_pf4oae.png';
 
 	const sponsors = [
 		{

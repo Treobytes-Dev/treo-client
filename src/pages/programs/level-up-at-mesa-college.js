@@ -83,6 +83,30 @@ const LevelUpAtMesaCollege = ({ componentName }) => {
 		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710793729/aerial-drone-soccer-thumbnail-3_yohaj2.jpg',
 	];
 
+	const smartCityThumbnails = [
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1712011534/Untitled_design_17_wsvuap.png',
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1711639754/Level%20Up%20Mesa%20College/R5__7826_websize_1_iewu4e.jpg',
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1710795241/hero-level-up-mesa-college_qtmvm0.jpg',
+	];
+
+	const cyberAcademyThumbnails = [
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1712011534/Untitled_design_17_wsvuap.png',
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1712011813/Untitled_design_18_akdx7q.png',
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1712012428/Untitled_design_20_lfoftp.png',
+	];
+
+	const webDevelopersThumbnails = [
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1712011666/398c7dda8eec8babf891f509948e1d501311ff01_2_1023x543_ce3k59.jpg',
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1712012166/Untitled_design_19_uratt4.png',
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1712012525/Untitled_design_21_ps23hc.png',
+	];
+
+	const formulaTechThumbnails = [
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1712013044/Untitled_design_25_xjhp5c.png',
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1711639754/Level%20Up%20Mesa%20College/R5__7826_websize_1_iewu4e.jpg',
+		'https://res.cloudinary.com/dtjvswb7v/image/upload/v1712013143/Untitled_design_26_pv7go6.png',
+	];
+
 	const tradeMark = '\u2122';
 
 	// scroll to logic
@@ -261,8 +285,8 @@ const LevelUpAtMesaCollege = ({ componentName }) => {
 					programFootText={`Students will also learn about supply chain management, managing budgets, permits and project timelines. This is an intermediate level 2 camp.enges with a splash of creativity and a boatload of fun!`}
 					btnColor='grass-green'
 					href='https://www.inplay.org/providers/treobytes'
-					thumbnails={aerialDroneSoccerThumbnails}
-					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710793726/aerial-drone-soccer-single-image_xm9xla.jpg'
+					thumbnails={smartCityThumbnails}
+					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1711638888/Summer%20of%20STEM%20page/R5__8753_tekmgv.jpg'
 					singleAltTag='stemprenuers: smart city 2.0'
 				/>
 
@@ -280,8 +304,8 @@ const LevelUpAtMesaCollege = ({ componentName }) => {
 					programFootText={`Cyber campers will learn this knowledge and test their cybersecurity skills through an fun and interactive Cyber platform called Haiku!`}
 					btnColor='mustard-yellow'
 					href='https://www.inplay.org/providers/treobytes'
-					thumbnails={aerialDroneSoccerThumbnails}
-					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710793726/aerial-drone-soccer-single-image_xm9xla.jpg'
+					thumbnails={cyberAcademyThumbnails}
+					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1712011019/Untitled_design_11_b2jbmp.png'
 					singleAltTag='cyber academy'
 				/>
 
@@ -299,8 +323,8 @@ const LevelUpAtMesaCollege = ({ componentName }) => {
 					programFootText={`Then students will learn coding and design skills to build their own interactive websites. Students will learn HTML, CSS, and JavaScript to create their very own website and develop the foundational skill set to grow their web development skills`}
 					btnColor='candy-purple'
 					href='https://www.inplay.org/providers/treobytes'
-					thumbnails={aerialDroneSoccerThumbnails}
-					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710793726/aerial-drone-soccer-single-image_xm9xla.jpg'
+					thumbnails={webDevelopersThumbnails}
+					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710795753/cyber-academy-single-image_wb5vgp.jpg'
 					singleAltTag='stemprenuers: web developers'
 				/>
 
@@ -318,8 +342,8 @@ const LevelUpAtMesaCollege = ({ componentName }) => {
 					programFootText={`Culminating in a grand finale, students will engineer their own remote-controlled cars, putting their newfound skills to the test in a high-speed race to innovation`}
 					btnColor='orange'
 					href='https://www.inplay.org/providers/treobytes'
-					thumbnails={aerialDroneSoccerThumbnails}
-					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710793726/aerial-drone-soccer-single-image_xm9xla.jpg'
+					thumbnails={formulaTechThumbnails}
+					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1712013010/Untitled_design_24_jhhdjw.png'
 					singleAltTag='formula tech'
 				/>
 

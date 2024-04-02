@@ -5,6 +5,11 @@
 		.intro-header {
 			text-align: center;
 			color: $color-secondary;
+			margin: 0 0 40px 0;
+
+			@media #{$medium} {
+				margin: 0;
+			}
 		}
 
 		.columns {
@@ -16,17 +21,15 @@
 			}
 
 			.col {
-				margin: 40px 40px 0 40px;
 				display: flex;
 				flex-direction: column;
 				border-radius: 20px;
 				padding: 20px;
+				margin: 0 0 40px 0;
 
 				@media #{$medium} {
 					display: inline-flex;
-				}
-
-				@media #{$medium} {
+					margin: 40px 40px 0 40px;
 					width: 50%;
 				}
 

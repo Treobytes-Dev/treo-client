@@ -153,16 +153,22 @@ const LevelUpAtMesaCollege = ({ componentName }) => {
 				/>
 
 				<IntroToCamp
-					listItemMarks={listItemsSummerOfSTEM.map((item, index) => (
-						<li className='list-item' key={index}>
-							<img
-								className='check'
-								src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710524188/program-checkmark_rwdl56.png'
-								alt='check mark'
-							/>
-							<p className='paragraph'>{item.copy}</p>
-						</li>
-					))}
+					listItemMarks={listItemsSummerOfSTEM.map((item, index, array) => {
+						return (
+							<li
+								className='list-item'
+								key={index}
+								style={{ fontWeight: index === array.length - 1 && 'bolder' }}
+							>
+								<img
+									className='check'
+									src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710524188/program-checkmark_rwdl56.png'
+									alt='check mark'
+								/>
+								<p className='paragraph'>{item.copy}</p>
+							</li>
+						);
+					})}
 					collegeImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710524188/mesa-college_pbflas.jpg'
 					collegeName='Mesa College'
 					collegeText='Business and Technology Building'

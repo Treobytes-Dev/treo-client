@@ -51,8 +51,14 @@
 					align-items: center;
 
 					.image .img {
+						border-radius: 10px;
+					}
+
+					.header {
+						margin: 20px 0 0 0;
+
 						@media #{$medium} {
-							border-radius: 10px;
+							margin: 0;
 						}
 					}
 				}

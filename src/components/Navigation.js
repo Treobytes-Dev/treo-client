@@ -147,7 +147,7 @@ const Navigation = () => {
 								<Link
 									href={link.url}
 									className={
-										current === link.url ? `nav-link active` : 'nav-link'
+										current === link.url ? `nav-link current` : 'nav-link'
 									}
 								>
 									<p className='paragraph'>{link.linkName}</p>
@@ -192,7 +192,7 @@ const Navigation = () => {
 								<Link
 									href={link.url}
 									className={
-										current === link.url ? `nav-link active` : 'nav-link'
+										current === link.url ? `nav-link current` : 'nav-link'
 									}
 								>
 									<p className='paragraph'>{link.linkName}</p>
@@ -214,7 +214,7 @@ const Navigation = () => {
 														href={subLink.subUrlName}
 														className={
 															current === subLink.subUrlName
-																? `nav-link active`
+																? `nav-link current`
 																: 'nav-link'
 														}
 													>
@@ -247,7 +247,7 @@ const Navigation = () => {
 			)}
 			<Link
 				href='/'
-				className={`logo ${current === '/' ? `nav-link active` : 'nav-link'}`}
+				className={`logo ${current === '/' ? `nav-link current` : 'nav-link'}`}
 				style={{ width: '300px' }}
 			>
 				<Logo />

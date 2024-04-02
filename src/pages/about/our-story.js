@@ -64,11 +64,13 @@ const OurStory = ({ componentName }) => {
 				<div className='intro-columns'>
 					<div className='container'>
 						<div className='column column-1'>
-							<img
-								className='icon'
-								src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710812446/who-we-are_rrzxxq.png'
-								alt='who we are icon'
-							/>
+							<div className='wrapper-icon'>
+								<img
+									className='icon'
+									src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710812446/who-we-are_rrzxxq.png'
+									alt='who we are icon'
+								/>
+							</div>
 							<h3 className='header header-three'>
 								{`who we are:`.toUpperCase()}
 							</h3>
@@ -82,11 +84,14 @@ const OurStory = ({ componentName }) => {
 							</p>
 						</div>
 						<div className='column column-2'>
-							<img
-								className='icon'
-								src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710812440/what-we-do_qkakxg.png'
-								alt='who we are icon'
-							/>
+							<div className='wrapper-icon'>
+								<img
+									className='icon'
+									src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710812440/what-we-do_qkakxg.png'
+									alt='who we are icon'
+								/>
+							</div>
+
 							<h3 className='header header-three'>
 								{`what we do:`.toUpperCase()}
 							</h3>

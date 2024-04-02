@@ -1,6 +1,9 @@
 @import './_variables.scss';
 
 .program-dates {
+	padding: 40px 0;
+	margin: 40px 0 0 0;
+
 	.container {
 		display: flex;
 		flex-direction: column;
@@ -71,10 +74,12 @@
 
 		.information {
 			color: $color-white;
+			margin: 40px 0 0 0;
 
 			@media #{$medium} {
 				display: inline-flex;
 				padding: 0 0 0 40px;
+				margin: 0;
 			}
 
 			.header {
@@ -112,7 +117,11 @@
 						}
 
 						.content {
-							padding: 0 0 0 40px;
+							padding: 0;
+
+							@media #{$medium} {
+								padding: 0 0 0 40px;
+							}
 
 							.paragraph {
 								color: $color-white;

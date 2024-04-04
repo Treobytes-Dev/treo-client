@@ -3,7 +3,6 @@ import Head from 'next/head';
 // components
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
-import Button from '../../components/Button';
 import { TemplateIntro } from '../../components/TemplateIntro';
 import ProgramDates from '../../components/ProgramDates';
 import IntroToCamp from '../../components/IntroToCamp';
@@ -207,7 +206,7 @@ const LevelUpAtMesaCollege = ({ componentName }) => {
 					programDescription={`Utilizing the Garmin ${tradeMark} technology system, this camp builds a student wellness portfolio (daily-to-yearly, delivering heart rate data, reflective journaling, and performance metrics) that can correlate to academic, social, and emotional growth`}
 					programFootText='Each day, students will take part in various health and nutrition activities incorporating different STEM sports and technologies'
 					btnColor='purple'
-					href='https://www.hisawyer.com/treobytes/schedules/activity-set/673279'
+					href='https://www.inplay.org/providers/treobytes'
 					thumbnails={stemSportsThumbnails}
 					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710786700/stem-sports-single-image_r0gqja.jpg'
 					singleAltTag='Stem Sports: SUMMER OLYMPIANS'
@@ -220,7 +219,7 @@ const LevelUpAtMesaCollege = ({ componentName }) => {
 					programDescription='Build the video game you have always wanted to play! Game Development and Design involves design, audio, sound, coding, scripting, and narration'
 					programFootText='Students will develop all these key skills as they work in groups with the culmination of a video game development and design'
 					btnColor='blue'
-					href='https://www.hisawyer.com/treobytes/schedules/activity-set/667822'
+					href='https://www.inplay.org/providers/treobytes'
 					thumbnails={gameDevelopmentThumbnails}
 					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710786700/game-development-single-image_eic0qd.jpg'
 					singleAltTag='Game Development'

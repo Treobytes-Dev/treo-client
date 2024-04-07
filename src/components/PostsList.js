@@ -8,7 +8,7 @@ const PostsList = ({ componentName, posts, handlePrompt, handleEdit }) => {
 			{posts?.length ? (
 				posts.map((post) => (
 					<div key={post._id} className={componentName}>
-						<h4 className='header-four post-title'>{post.title}</h4>
+						<h4 className='header header-four post-title'>{post.title}</h4>
 						<div className='options'>
 							<Link
 								style={{ display: 'inline-flex', alignItems: 'center' }}
@@ -32,7 +32,7 @@ const PostsList = ({ componentName, posts, handlePrompt, handleEdit }) => {
 					</div>
 				))
 			) : (
-				<h4 className='header-four'>No posts</h4>
+				<h4 className='header header-four'>No posts</h4>
 			)}
 		</>
 	);

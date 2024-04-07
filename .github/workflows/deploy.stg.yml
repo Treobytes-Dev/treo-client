@@ -3,20 +3,33 @@ name: Deploy Next.js app to S3
 on:
   push:
     branches:
-      - main # Set this to the branch you want to deploy from
+      - dev # Set this to the branch you want to deploy from
+
+  # These permissions are needed to interact with GitHub's OIDC Token endpoint.
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   build-and-deploy:
+    name: Build and Deploy
     runs-on: ubuntu-latest
+
+    env:
+      NEXTJS_DIST: out
+      AWS_REGION: us-west-1
+      S3_BUCKET: treobytes-stg
+      CLOUDFRONT_DISTRIBUTION_ID: E2Z47SCUPN4N69
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Configure AWS credentials from AWS account
+        uses: aws-actions/configure-aws-credentials@v2
         with:
-          node-version: ${{ env.NODE_VERSION }} # Set this to the Node.js version you're using
+          role-to-assume: arn:aws:iam::132930376828:role/oidc-aws-github
+          aws-region: ${{ env.AWS_REGION }}
 
       - name: Install Dependencies
         run: npm install
@@ -24,14 +37,19 @@ jobs:
       - name: Build and Export Next.js app
         run: |
           npm run build
-          npm run export
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{env.AWS_ACCESS_KEY_ID}}
-          aws-secret-access-key: ${{env.AWS_SECRET_ACCESS_KEY}}
+          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           aws-region: us-west-2 # Set your AWS region
 
       - name: Deploy to S3
-        run: aws s3 sync ./out s3://treobytes-stg --delete
+        run: aws s3 sync --delete ${{env.NEXTJS_DIST}} s3://${{ env.S3_BUCKET_STG }}
+
+      - name: Copy files to the STG website with the AWS CLI
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"

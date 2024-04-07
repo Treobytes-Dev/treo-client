@@ -37,7 +37,7 @@ const UserRoute = ({ children }) => {
 	// TODO: Create a loading page for this
 	// refer to modal
 	return !ok ? (
-		<h2 className='header-two'>...Loading UserRoute</h2>
+		<h2 className='header header-two'>...Loading UserRoute</h2>
 	) : (
 		<>{children}</>
 	);

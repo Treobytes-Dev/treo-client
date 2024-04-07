@@ -2,15 +2,8 @@
 
 @import './styles/reset.scss';
 
-@import './styles/error.scss';
-@import './styles/dashboard.scss';
-@import './styles/animation.scss';
-@import './styles/pages.scss';
-@import './styles/templates.scss';
-@import './styles/avatar.scss';
-@import './styles/main.scss';
-@import './styles/navigation.scss';
-@import './styles/side-nav.scss';
+// components
+
 @import './styles/htmlElements.scss';
 @import './styles/posts.scss';
 @import './styles/layout.scss';
@@ -33,3 +26,23 @@
 @import './styles/image-container.scss';
 @import './styles/diagram-levels.scss';
 @import './styles/mobile-menu.scss';
+@import './styles/program-dates.scss';
+@import './styles/intro-to-camp.scss';
+@import './styles/things-to-know.scss';
+@import './styles/program-container.scss';
+@import './styles/tracks-section.scss';
+@import './styles/intro-sign-up.scss';
+@import './styles/sponsors.scss';
+@import './styles/error.scss';
+@import './styles/templates.scss';
+@import './styles/avatar.scss';
+@import './styles/side-nav.scss';
+@import './styles/navigation.scss';
+@import './styles/footer.scss';
+@import './styles/animation.scss';
+
+// pages
+@import './styles/dashboard.scss';
+@import './styles/pages-admin.scss';
+@import './styles/pages-user.scss';
+@import './styles/main.scss';

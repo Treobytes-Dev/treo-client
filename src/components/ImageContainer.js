@@ -15,7 +15,7 @@ const ImageContainer = ({
 			</div>
 
 			<div className='multiples'>
-				{thumbnails.map((thumbnail) => (
+				{thumbnails?.map((thumbnail) => (
 					<div
 						key={thumbnail}
 						className='thumbnail'

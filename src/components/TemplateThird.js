@@ -15,12 +15,12 @@ export const TemplateThird = ({
 				<div className='group one'>
 					<div className='heading'>
 						<div className='wrapper-icon'>{icon}</div>
-						<h4 className='header-four'>{headerPrimary}:</h4>
+						<h4 className='header header-four'>{headerPrimary}:</h4>
 					</div>
 					<p className='paragraph'>{copyPrimary}</p>
 				</div>
 				<div className='group two'>
-					<h4 className='header-four'>{headerSecondary}:</h4>
+					<h4 className='header header-four'>{headerSecondary}:</h4>
 					<p className='paragraph'>{copySecondary}</p>
 				</div>
 			</div>

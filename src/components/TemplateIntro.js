@@ -18,18 +18,25 @@ export const TemplateIntro = ({
 				<Hero
 					children={
 						<>
-							<div className='fore-ground'>
-								<div className='text'>
-									<h2 className='header header-two'>{heroHeader}</h2>
-									<h4 className='header header-four'>{heroSubHeader}</h4>
-								</div>
-							</div>
+							{heroHeader ||
+								(heroSubHeader && (
+									<div className='fore-ground'>
+										<div className='text'>
+											<h2 className='header header-two'>{heroHeader}</h2>
+											<h4 className='header header-four'>{heroSubHeader}</h4>
+										</div>
+									</div>
+								))}
+
 							{/* <button > */}
-							<button className='assets' onClick={scrollToTarget}>
-								<div className='carrot-down'>
-									<CarrotDown fill='#333' />
-								</div>
-							</button>
+							{scrollToTarget && (
+								<button className='assets' onClick={scrollToTarget}>
+									<div className='carrot-down'>
+										<CarrotDown fill='#333' />
+									</div>
+								</button>
+							)}
+
 							{/* </button> */}
 						</>
 					}
@@ -37,15 +44,17 @@ export const TemplateIntro = ({
 				/>
 			</div>
 
-			<div className='container'>
+			{(introHeader || introBody) && (
 				<div
 					className={`template-${componentName} intro`}
 					id={`template-${componentName}`}
 				>
-					<h2 className='header header-two'>{introHeader}</h2>
-					<p className='paragraph'>{introBody}</p>
+					<div className='container'>
+						<h2 className='header header-two'>{introHeader}</h2>
+						{introBody && <p className='paragraph'>{introBody}</p>}
+					</div>
 				</div>
-			</div>
+			)}
 		</>
 	);
 };

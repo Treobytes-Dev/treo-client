@@ -19,9 +19,10 @@ body,
 
 .hero-wrapper {
 	color: $color-white;
+	height: 60%;
 
 	@media #{$medium} {
-		height: 60%;
+		height: 80%;
 	}
 
 	.body {
@@ -82,5 +83,11 @@ body,
 				}
 			}
 		}
+	}
+}
+
+.template-intro {
+	.container {
+		padding-bottom: 0;
 	}
 }

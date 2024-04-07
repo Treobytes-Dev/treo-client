@@ -1,0 +1,68 @@
+@import './_variables.scss';
+
+.intro-to-camp {
+	.container {
+		.header {
+			text-align: center;
+			color: $color-secondary;
+
+			&.header-two {
+				margin: 0 0 40px 0;
+			}
+		}
+
+		.columns {
+			display: flex;
+			flex-direction: column;
+
+			@media #{$medium} {
+				flex-direction: row;
+			}
+
+			.col {
+				margin: 40px 0 0 0;
+
+				@media #{$medium} {
+					width: 50%;
+					margin: 0;
+				}
+
+				&.col-1 {
+					.unordered-list {
+						flex-direction: column;
+
+						.list-item {
+							display: flex;
+							flex-direction: row;
+							padding: 5px 0;
+
+							.check {
+								width: 25px;
+								height: 25px;
+								margin: 0 15px 0 0;
+							}
+						}
+					}
+				}
+
+				&.col-2 {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+
+					.image .img {
+						border-radius: 10px;
+					}
+
+					.header {
+						margin: 20px 0 0 0;
+
+						@media #{$medium} {
+							margin: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

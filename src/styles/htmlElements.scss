@@ -63,6 +63,12 @@ body {
 }
 
 // headings
+.page {
+	.header {
+		font-weight: 700;
+	}
+}
+
 .header-one {
 	font-size: $heading-one;
 	line-height: normal;
@@ -122,7 +128,6 @@ body {
 
 	.list-item {
 		list-style-type: none;
-		color: $gray-600;
 	}
 }
 

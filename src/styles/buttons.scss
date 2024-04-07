@@ -1,10 +1,16 @@
 @import './_variables.scss';
 
 // buttons
+
 .button {
 	padding: 10px 5px;
 	border-radius: 5px;
 	height: 60px;
+
+	&.default {
+		border-radius: 30px;
+		font-weight: 700;
+	}
 
 	&.primary {
 		background-color: $color-primary;
@@ -40,5 +46,69 @@
 		color: $color-warning;
 		margin: 20px 0;
 		width: 100%;
+	}
+
+	&.red {
+		background-color: $color-secondary;
+	}
+
+	&.orange {
+		background-color: $color-third;
+	}
+
+	&.pale {
+		background-color: #ce90a2;
+	}
+
+	&.purple {
+		background-color: rgb(137, 44, 153);
+	}
+
+	&.blue {
+		background-color: rgb(0, 74, 173);
+	}
+
+	&.lime-green {
+		background-color: #7ed957;
+	}
+
+	&.neon-orange {
+		background-color: #ff5757;
+	}
+
+	&.sky-blue {
+		background-color: #0ac0df;
+	}
+
+	&.slate-grey {
+		background-color: #a6a6a6;
+	}
+
+	&.grass-green {
+		background-color: #00bf63;
+	}
+
+	&.mustard-yellow {
+		background-color: #efc908;
+	}
+
+	&.candy-purple {
+		background-color: #ca6ce6;
+	}
+
+	&.royal-blue {
+		background-color: #0078b5;
+	}
+
+	&.secondary {
+		background-color: $color-secondary;
+	}
+
+	&.off-orange {
+		background-color: #efa97c;
+	}
+
+	&.beige {
+		background-color: #f5e6cc;
 	}
 }

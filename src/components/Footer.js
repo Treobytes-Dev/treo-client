@@ -2,13 +2,10 @@ import { useContext, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { AppContext } from '../context';
 import { useRouter } from 'next/router';
-import Cookies from 'js-cookie';
-import axios from 'axios';
 
-import { MobileMenu } from './MobileMenu.js';
-import Avatar from '../assets/icons/Avatar.js';
-import Logo from '../assets/icons/Logo.js';
-import { Loader } from '../assets/icons/Loader.js';
+import { Instagram } from '../assets/icons/Instagram.js';
+import { Facebook } from '../assets/icons/Facebook.js';
+import { LinkedIn } from '../assets/icons/LinkedIn.js';
 
 // todo:
 // create CRUD functionality to add pages
@@ -23,38 +20,12 @@ const Footer = () => {
 	const [state, setState, page, setPage] = useContext(AppContext);
 	// local
 	const [current, setCurrent] = useState();
-	const [loading, setLoading] = useState('');
-	const [errorMsg, setErrorMsg] = useState('');
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
-	const [windowWidth, setWindowWidth] = useState(0); // initialize with a default value, like 0
 
 	const router = useRouter();
-	const { pages } = page;
 
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			setCurrent(window.location.pathname);
-		}
-	}, []);
-
-	useEffect(() => {
-		if (state?.token) fetchPages();
-	}, [state?.token]);
-
-	useEffect(() => {
-		// Ensure the code runs only in the client-side
-		const handleResize = () => {
-			setWindowWidth(window.innerWidth);
-		};
-
-		if (typeof window !== 'undefined') {
-			window.addEventListener('resize', handleResize);
-
-			// Set the initial width
-			setWindowWidth(window.innerWidth);
-
-			// Cleanup
-			return () => window.removeEventListener('resize', handleResize);
 		}
 	}, []);
 
@@ -73,10 +44,60 @@ const Footer = () => {
 
 	return (
 		<div className='footer'>
-			<p className='paragraph'>
-				{`\u00A9`} {currentYear} Treobytes. All rights reserved
-			</p>
-			<ul className='unordered-list base-options'>
+			<ul className='unordered-list base-options col-1'>
+				<li className='list-item'>
+					<p className='paragraph'>961 S 16th St</p>
+				</li>
+
+				<li className='list-item'>
+					<p className='paragraph'>San Diego, CA 92113</p>
+				</li>
+
+				<li className='list-item'>
+					<p className='paragraph'>Barrio Logan</p>
+				</li>
+			</ul>
+
+			<ul className='unordered-list base-options col-2'>
+				<li className='list-item'>
+					<p className='paragraph'>Copyright {`\u00A9`} Treobytes</p>
+				</li>
+
+				<li className='list-item'>
+					<p className='paragraph'>EIN 46-3992953</p>
+				</li>
+
+				<div className='icons'>
+					<li className='list-item'>
+						<Link
+							className='nav-link'
+							href='https://www.instagram.com/treobytes/?hl=en'
+						>
+							<Instagram fill='#fff' />
+						</Link>
+					</li>
+
+					<li className='list-item'>
+						<Link
+							className='nav-link'
+							href='https://www.facebook.com/treobytes'
+						>
+							<Facebook fill='#fff' />
+						</Link>
+					</li>
+
+					<li className='list-item'>
+						<Link
+							className='nav-link'
+							href='https://www.linkedin.com/company/treobytes'
+						>
+							<LinkedIn fill='#fff' />
+						</Link>
+					</li>
+				</div>
+			</ul>
+
+			<ul className='unordered-list base-options col-3'>
 				{footerLinks.map((link) => (
 					<li className='list-item' key={link.id}>
 						<Link
@@ -87,20 +108,18 @@ const Footer = () => {
 						</Link>
 					</li>
 				))}
-			</ul>
-
-			<ul className='unordered-list base-options'>
 				<li className='list-item'>
-					<Link href='/contact-us'>Contact Us</Link>
-				</li>
-				<li className='list-item'>
-					{/* <Link href={mailto:}></Link> */}
-					<Link href='mailto:info@treobytes.com?body=My custom mail body'>
+					<Link
+						className='nav-link'
+						href='mailto:info@treobytes.com?body=My custom mail body'
+					>
 						info@treobytes.com
 					</Link>
 				</li>
 				<li className='list-item'>
-					<Link href='tel:+6193338589'>619.333.8589</Link>
+					<Link className='nav-link' href='tel:+6193338589'>
+						619.333.8589
+					</Link>
 				</li>
 			</ul>
 		</div>

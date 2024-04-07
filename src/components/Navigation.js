@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { use, useContext, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { AppContext } from '../context';
 import { useRouter } from 'next/router';
@@ -9,6 +9,7 @@ import { MobileMenu } from './MobileMenu.js';
 import Avatar from '../assets/icons/Avatar.js';
 import Logo from '../assets/icons/Logo.js';
 import { Loader } from '../assets/icons/Loader.js';
+import { CarrotDown } from '../assets/icons/CarrotDown.js';
 
 // todo:
 // create CRUD functionality to add pages
@@ -26,6 +27,7 @@ const Navigation = () => {
 	const [loading, setLoading] = useState('');
 	const [errorMsg, setErrorMsg] = useState('');
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	const [highlightIndex, setHighlightIndex] = useState('');
 	const [windowWidth, setWindowWidth] = useState(0); // initialize with a default value, like 0
 
 	const router = useRouter();
@@ -45,8 +47,8 @@ const Navigation = () => {
 					subUrlName: '/programs/scholars-program',
 				},
 				{
-					subLinkName: 'Workshops',
-					subUrlName: '/programs/workshops',
+					subLinkName: 'After School Enrichment',
+					subUrlName: '/programs/after-school-enrichment',
 				},
 			],
 			editable: false,
@@ -62,8 +64,8 @@ const Navigation = () => {
 					subUrlName: '/about/our-story',
 				},
 				{
-					subLinkName: 'Leadership',
-					subUrlName: '/about/leadership',
+					subLinkName: 'Our Team',
+					subUrlName: '/about/our-team',
 				},
 				{
 					subLinkName: 'Accomplishments',
@@ -72,49 +74,13 @@ const Navigation = () => {
 			],
 			editable: false,
 		},
-		{
-			id: 17,
-			url: '/students',
-			linkName: 'Students',
-			position: '3',
-			subItems: [],
-			editable: false,
-		},
+
 		{
 			id: 20,
-			url: '/parents',
-			linkName: 'Parents',
-			position: '4',
+			url: '/donate',
+			linkName: 'Donate',
+			position: '3',
 			subItems: [],
-			editable: false,
-		},
-		{
-			id: 93,
-			url: '/partner-with-us/districts',
-			linkName: 'Partner with us',
-			position: '5',
-			subItems: [
-				{
-					subLinkName: 'Districts',
-					subUrlName: '/partner-with-us/districts',
-				},
-				{
-					subLinkName: 'Corporate',
-					subUrlName: '/partner-with-us/corporate',
-				},
-				{
-					subLinkName: 'Colleges',
-					subUrlName: '/partner-with-us/colleges',
-				},
-				{
-					subLinkName: 'Foundations',
-					subUrlName: '/partner-with-us/foundations',
-				},
-				{
-					subLinkName: 'Donate',
-					subUrlName: '/partner-with-us/donate',
-				},
-			],
 			editable: false,
 		},
 	];
@@ -155,19 +121,111 @@ const Navigation = () => {
 		}
 	};
 
+	useEffect(() => {}, [highlightIndex]);
+
+	const handleDisplaySubOptions = (e) => {
+		console.log('e', highlightIndex);
+		setHighlightIndex(e.target.innerText);
+	};
+
+	const handleHideSubOptions = () => {
+		setHighlightIndex('');
+	};
+
 	const renderNavContent = () => (
 		<>
 			<ul className='unordered-list base-options'>
-				{navLinks.map((link) => (
-					<li className='list-item' key={link.id}>
-						<Link
-							href={link.url}
-							className={current === link.url ? `nav-link active` : 'nav-link'}
-						>
-							{link.linkName}
-						</Link>
-					</li>
-				))}
+				{/* mobile first */}
+				{windowWidth < 768
+					? navLinks.map((link) => (
+							<li
+								className='list-item '
+								key={link.id}
+								onMouseEnter={handleDisplaySubOptions}
+								onMouseLeave={handleHideSubOptions}
+							>
+								<Link
+									href={link.url}
+									className={
+										current === link.url ? `nav-link current` : 'nav-link'
+									}
+								>
+									<p className='paragraph'>{link.linkName}</p>
+									{link?.subItems?.length > 0 && (
+										<CarrotDown
+											fill='#333'
+											viewBox='0 96 960 960'
+											dimensions='20'
+										/>
+									)}
+								</Link>
+								{link?.subItems?.length > 0 && (
+									<ul className='unordered-list sub-options'>
+										{link.subItems.map((subLink) => (
+											<li className='list-item' key={subLink.subLinkName}>
+												<Link
+													href={subLink.subUrlName}
+													className={
+														current === subLink.subUrlName
+															? `nav-link current`
+															: 'nav-link'
+													}
+												>
+													{subLink.subLinkName}
+												</Link>
+											</li>
+										))}
+									</ul>
+								)}
+							</li>
+					  ))
+					: navLinks.map((link) => (
+							// desktop
+							<li
+								className={`list-item ${
+									link.linkName === highlightIndex ? 'highlight' : ''
+								}`}
+								key={link.id}
+								onMouseEnter={handleDisplaySubOptions}
+								onMouseLeave={handleHideSubOptions}
+							>
+								<Link
+									href={link.url}
+									className={
+										current === link.url ? `nav-link current` : 'nav-link'
+									}
+								>
+									<p className='paragraph'>{link.linkName}</p>
+									{link?.subItems?.length > 0 && (
+										<CarrotDown
+											fill='#333'
+											viewBox='0 96 960 960'
+											dimensions='20'
+										/>
+									)}
+								</Link>
+
+								{link?.subItems?.length > 0 && (
+									<ul className='unordered-list sub-options'>
+										{link.linkName === highlightIndex &&
+											link.subItems.map((subLink) => (
+												<li className='list-item' key={subLink.subLinkName}>
+													<Link
+														href={subLink.subUrlName}
+														className={
+															current === subLink.subUrlName
+																? `nav-link current`
+																: 'nav-link'
+														}
+													>
+														{subLink.subLinkName}
+													</Link>
+												</li>
+											))}
+									</ul>
+								)}
+							</li>
+					  ))}
 			</ul>
 		</>
 	);
@@ -189,7 +247,7 @@ const Navigation = () => {
 			)}
 			<Link
 				href='/'
-				className={`logo ${current === '/' ? `nav-link active` : 'nav-link'}`}
+				className={`logo ${current === '/' ? `nav-link current` : 'nav-link'}`}
 				style={{ width: '300px' }}
 			>
 				<Logo />

@@ -1,0 +1,47 @@
+import React from 'react';
+import { string } from 'prop-types';
+
+const HealthAndWellbeing = ({
+	componentName,
+	additionalClassName,
+	dimensions,
+	viewBox,
+}) => (
+	<svg
+		className={`${componentName} ${additionalClassName}`}
+		fill='#fff'
+		viewBox={viewBox}
+		width={dimensions}
+		height={dimensions}
+	>
+		<path
+			d='M80-600v-120q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v120h-80v-120H160v120H80Zm80 440q-33 0-56.5-23.5T80-240v-120h80v120h640v-120h80v120q0 33-23.5 56.5T800-160H160Zm240-120q11 0 21-5.5t15-16.5l124-248 44 88q5 11 15 16.5t21 5.5h240v-80H665l-69-138q-5-11-15-15.5t-21-4.5q-11 0-21 4.5T524-658L400-410l-44-88q-5-11-15-16.5t-21-5.5H80v80h215l69 138q5 11 15 16.5t21 5.5Zm80-200Z'
+			fill='inherit'
+		/>
+	</svg>
+);
+
+HealthAndWellbeing.propTypes = {
+	/**
+	 * Optional additional className
+	 */
+	additionalClassName: string,
+
+	/**
+	 * Define icon height and width
+	 */
+	dimensions: string,
+
+	/**
+	 * Define icon viewBox
+	 */
+	viewBox: string,
+};
+
+HealthAndWellbeing.defaultProps = {
+	componentName: 'health-and-wellbeing',
+	dimensions: '24px',
+	viewBox: '0 -960 960 960',
+};
+
+export default HealthAndWellbeing;

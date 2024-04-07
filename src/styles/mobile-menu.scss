@@ -57,13 +57,6 @@
 
 		.wrapper-content {
 			height: 100%;
-
-			.base-options .list-item {
-				&:hover {
-					background-color: rgba($color: $color-primary, $alpha: 0.6);
-					color: $color-white;
-				}
-			}
 		}
 	}
 
@@ -77,7 +70,7 @@
 		visibility: visible;
 		transition: all 0.5s linear;
 		display: flex;
-		position: absolute;
+		position: fixed;
 		background-color: $color-white;
 	}
 }

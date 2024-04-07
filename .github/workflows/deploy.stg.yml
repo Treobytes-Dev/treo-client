@@ -25,18 +25,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Configure AWS credentials from AWS account
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          role-to-assume: arn:aws:iam::132930376828:role/oidc-aws-github
-          aws-region: ${{ env.AWS_REGION }}
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build and Export Next.js app
-        run: |
-          npm run build
+      # - name: Configure AWS credentials from AWS account
+      #   uses: aws-actions/configure-aws-credentials@v2
+      #   with:
+      #     role-to-assume: arn:aws:iam::132930376828:role/oidc-aws-github
+      #     aws-region: ${{ env.AWS_REGION }}
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -44,6 +37,13 @@ jobs:
           aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
           aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           aws-region: us-west-2 # Set your AWS region
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build and Export Next.js app
+        run: |
+          npm run build
 
       - name: Deploy to S3
         run: aws s3 sync --delete ${{env.NEXTJS_DIST}} s3://${{ env.S3_BUCKET_STG }}

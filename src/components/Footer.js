@@ -54,7 +54,7 @@ const Footer = () => {
 				</li>
 
 				<li className='list-item'>
-					<p className='paragraph'>Barrio Logan</p>
+					<p className='paragraph'>Barrio Logann</p>
 				</li>
 			</ul>
 

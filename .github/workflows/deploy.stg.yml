@@ -28,7 +28,7 @@ jobs:
       - name: Configure AWS credentials from AWS account
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: arn:aws:iam::132930376828:role/oidc-aws-github
+          role-to-assume: arn:aws:iam::978027442868:role/github-to-aws-oidc
           aws-region: ${{ env.AWS_REGION }}
 
       # - name: Configure AWS Credentials

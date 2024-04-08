@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-Treobytes Client side application
+Treobytes Client side application 
 
 ## Available Scripts
 

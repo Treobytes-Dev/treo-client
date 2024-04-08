@@ -46,5 +46,3 @@ jobs:
           aws cloudfront create-invalidation \
             --distribution-id ${{ env.DIST_ID }} \
             --paths "/*"
-
-            # E2Z47SCUPN4N69

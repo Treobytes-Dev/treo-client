@@ -9,6 +9,11 @@ jobs:
   build-and-deploy:
     name: Build and Deploy
     runs-on: ubuntu-latest
+    env:
+      BUCKET: treobytes-stg
+      DIST: out
+      REGION: us-west-2
+      DIST_ID: E2Z47SCUPN4N69
 
     steps:
       - name: Checkout Repository
@@ -31,7 +36,15 @@ jobs:
         with:
           aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
           aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-          aws-region: us-west-2 # Set your AWS region
+          aws-region: ${{ env.REGION }} # Set your AWS region
 
       - name: Deploy to S3
-        run: aws s3 sync ./out s3://treobytes-stg --delete
+        run: aws s3 sync ${{ env.DIST }} s3://${{ env.BUCKET }} --delete
+
+      - name: Copy files to the production website with the AWS CLI
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ env.DIST_ID }} \
+            --paths "/*"
+
+            # E2Z47SCUPN4N69

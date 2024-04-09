@@ -53,10 +53,9 @@ const SummerCamps = ({ componentName }) => {
 
 				<div className='container'>
 					<div className='row'>
-						{' '}
 						<Card
 							title='Summer of STEM'
-							image='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709693053/leadership-hero_tgmuu8.jpg'
+							image='https://res.cloudinary.com/dtjvswb7v/image/upload/v1709692266/summer-of-stem-camps-hero_fvqzmt.jpg'
 							link='/programs/summer-of-stem'
 						/>
 						<Card

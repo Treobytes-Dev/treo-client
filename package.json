@@ -18,7 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "@plaiceholder/base64": "^1.0.0",
-    "axios": "^1.6.6",
+    "axios": "^1.6.8",
     "generate-password": "^1.7.1",
     "js-cookie": "^3.0.1",
     "moment": "^2.30.1",

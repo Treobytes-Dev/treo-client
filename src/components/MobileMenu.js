@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { node, string } from 'prop-types';
+import Link from 'next/link';
 
 // components
 import Logo from '../assets/icons/Logo';
@@ -68,7 +69,9 @@ export const MobileMenu = ({
 						<Close />
 					</i>
 
-					<Logo />
+					<Link href='/' className='wrapper-logo'>
+						<Logo />
+					</Link>
 				</div>
 
 				<div className='wrapper-content'>{children}</div>

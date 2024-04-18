@@ -15,7 +15,7 @@ import { LinkedIn } from '../assets/icons/LinkedIn.js';
 // create CRUD functionality to add pages to a title in the footer
 // treobytes create CRUD functionality to add link and image to sponsor component
 
-const Footer = () => {
+const Footer = ({ componentName }) => {
 	// context
 	const [state, setState, page, setPage] = useContext(AppContext);
 	// local
@@ -43,7 +43,7 @@ const Footer = () => {
 	const currentYear = new Date().getFullYear();
 
 	return (
-		<div className='footer'>
+		<div className={componentName}>
 			<ul className='unordered-list base-options col-1'>
 				<li className='list-item'>
 					<p className='paragraph'>961 S 16th St</p>
@@ -60,7 +60,9 @@ const Footer = () => {
 
 			<ul className='unordered-list base-options col-2'>
 				<li className='list-item'>
-					<p className='paragraph'>Copyright {`\u00A9`} Treobytes</p>
+					<p className='paragraph'>
+						Copyright {`\u00A9`} Treobytes {currentYear}
+					</p>
 				</li>
 
 				<li className='list-item'>
@@ -124,6 +126,10 @@ const Footer = () => {
 			</ul>
 		</div>
 	);
+};
+
+Footer.defaultProps = {
+	componentName: 'footer',
 };
 
 export default Footer;

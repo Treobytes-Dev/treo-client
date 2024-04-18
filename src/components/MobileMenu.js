@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { node, string } from 'prop-types';
 
+// components
+import Logo from '../assets/icons/Logo';
+
+// icons
 import Menu from '../assets/icons/Menu';
 import { Close } from '../assets/icons/Close';
 /**
@@ -9,11 +13,8 @@ import { Close } from '../assets/icons/Close';
 
 export const MobileMenu = ({
 	componentName,
-	leftIconClose,
-	rightIconClose,
 	children,
 	title,
-	trigger,
 	additionalClassName,
 }) => {
 	const [style, setStyle] = useState('menu');
@@ -68,7 +69,7 @@ export const MobileMenu = ({
 						<Close />
 					</i>
 
-					{title}
+					<Logo />
 				</div>
 
 				<div className='wrapper-content'>{children}</div>

@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { node, string } from 'prop-types';
 
+// components
+import Logo from '../assets/icons/Logo';
+
+// icons
 import Menu from '../assets/icons/Menu';
 import { Close } from '../assets/icons/Close';
 /**
@@ -9,11 +13,7 @@ import { Close } from '../assets/icons/Close';
 
 export const MobileMenu = ({
 	componentName,
-	leftIconClose,
-	rightIconClose,
 	children,
-	title,
-	trigger,
 	additionalClassName,
 }) => {
 	const [style, setStyle] = useState('menu');
@@ -68,7 +68,7 @@ export const MobileMenu = ({
 						<Close />
 					</i>
 
-					{title}
+					<Logo />
 				</div>
 
 				<div className='wrapper-content'>{children}</div>
@@ -87,26 +87,6 @@ MobileMenu.propTypes = {
 	 * children to populate component's body
 	 */
 	children: node.isRequired,
-
-	/**
-	 * header text
-	 */
-	title: node,
-
-	/**
-	 * content to open side menu
-	 */
-	trigger: node.isRequired,
-
-	/**
-	 * content to close side menu on the left
-	 */
-	leftIconClose: node,
-
-	/**
-	 * content to close side menu on the right
-	 */
-	rightIconClose: node,
 };
 
 MobileMenu.defaultProps = {

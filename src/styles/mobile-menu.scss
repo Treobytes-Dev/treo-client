@@ -7,6 +7,7 @@
 	align-items: center;
 	justify-content: flex-end;
 	padding: 0 20px;
+
 	.overlay,
 	.menu {
 		height: 100%;
@@ -47,11 +48,17 @@
 
 		.wrapper-header {
 			display: flex;
+			flex-direction: column;
 
-			.icon-right {
-				position: absolute;
-				right: 0;
-				margin-right: 20px;
+			.icon-left {
+				display: flex;
+				width: 100%;
+				margin: 0 0 20px 0;
+			}
+
+			.logo {
+				width: 100%;
+				display: flex;
 			}
 		}
 

@@ -14,7 +14,6 @@ import { Close } from '../assets/icons/Close';
 export const MobileMenu = ({
 	componentName,
 	children,
-	title,
 	additionalClassName,
 }) => {
 	const [style, setStyle] = useState('menu');
@@ -88,26 +87,6 @@ MobileMenu.propTypes = {
 	 * children to populate component's body
 	 */
 	children: node.isRequired,
-
-	/**
-	 * header text
-	 */
-	title: node,
-
-	/**
-	 * content to open side menu
-	 */
-	trigger: node.isRequired,
-
-	/**
-	 * content to close side menu on the left
-	 */
-	leftIconClose: node,
-
-	/**
-	 * content to close side menu on the right
-	 */
-	rightIconClose: node,
 };
 
 MobileMenu.defaultProps = {

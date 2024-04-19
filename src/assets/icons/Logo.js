@@ -1,15 +1,7 @@
 import React from 'react';
 
-const Logo = (props) => (
-	<svg
-		x={0}
-		y={0}
-		style={{
-			enableBackground: 'new 0 0 100.4 33.5',
-		}}
-		viewBox='0 0 100.4 33.5'
-		{...props}
-	>
+const Logo = ({ componentName }) => (
+	<svg className={componentName} x={0} y={0} viewBox='0 0 100.4 33.5'>
 		<style>
 			{
 				'.st1,.st2,.st3,.st4,.st5,.st6,.st7{fill-rule:evenodd;clip-rule:evenodd;fill:#a6acd7}.st2,.st3,.st4,.st5,.st6,.st7{fill:#fab049}.st3,.st4,.st5,.st6,.st7{fill:#4360ab}.st4,.st5,.st6,.st7{fill:#e564a4}.st5,.st6,.st7{fill:#99d9ec}.st6,.st7{fill:#f05b23}.st7{fill:#c6202a}.st10,.st11,.st12,.st13,.st14,.st8,.st9{fill-rule:evenodd;clip-rule:evenodd;fill:#474c9f}.st10,.st11,.st12,.st13,.st14,.st9{fill:#45c4e0}.st10,.st11,.st12,.st13,.st14{fill:#fde800}.st11,.st12,.st13,.st14{fill:#e0e21b}.st12,.st13,.st14{fill:#f8a01b}.st13,.st14{fill:#ed2142}.st14{fill:#fff}.st17{fill:#3e96d2}'
@@ -1690,5 +1682,9 @@ const Logo = (props) => (
 		<circle cx={66.2} cy={13.8} r={0.8} />
 	</svg>
 );
+
+Logo.defaultProps = {
+	componentName: 'logo',
+};
 
 export default Logo;

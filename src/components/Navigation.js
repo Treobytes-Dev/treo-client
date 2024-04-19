@@ -247,7 +247,9 @@ const Navigation = () => {
 			)}
 			<Link
 				href='/'
-				className={`logo ${current === '/' ? `nav-link current` : 'nav-link'}`}
+				className={`wrapper-logo ${
+					current === '/' ? `nav-link current` : 'nav-link'
+				}`}
 				style={{ width: '300px' }}
 			>
 				<Logo />

@@ -696,17 +696,17 @@
 				width: 100%;
 				overflow-wrap: break-word;
 
+				@media #{$large} {
+					display: inline-flex;
+					width: 33.33%;
+				}
+
 				.header {
 					display: flex;
 					align-items: center;
 					justify-content: center;
 					flex-direction: column;
 					height: 300px;
-				}
-
-				@media #{$large} {
-					display: inline-flex;
-					width: 33.3%;
 				}
 
 				.callout {

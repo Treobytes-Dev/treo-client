@@ -34,12 +34,12 @@ const ProgramContainer = ({
 
 				{programFootText && <p className='paragraph'>{programFootText}</p>}
 
-				<Link href={href} className='btn-wrapper'>
+				<a href={href} target='_blank' className='btn-wrapper'>
 					<Button
 						children={`Click to sign up!`.toUpperCase()}
 						additionalClass={btnColor}
 					/>
-				</Link>
+				</a>
 			</div>
 			<div className='column col-2'>
 				<ImageContainer

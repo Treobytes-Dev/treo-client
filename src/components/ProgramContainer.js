@@ -2,7 +2,6 @@ import { string } from 'prop-types';
 
 import ImageContainer from './ImageContainer';
 import Button from './Button';
-import Link from 'next/link';
 
 const ProgramContainer = ({
 	componentName,

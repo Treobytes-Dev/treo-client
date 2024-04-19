@@ -1,4 +1,4 @@
-name: Deploy Next.js app to S3
+name: Deploy PROD
 
 on:
   push:

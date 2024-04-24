@@ -74,10 +74,6 @@
 		.list-item {
 			color: $color-white;
 
-			&:hover {
-				background-color: rgba($color: $color-black, $alpha: 0.16);
-			}
-
 			.nav-link {
 				display: flex;
 				flex-direction: row;
@@ -85,7 +81,11 @@
 				margin: 0 0 10px 0;
 
 				@media #{$medium} {
-					padding: 0 20px;
+					padding: 5px 20px;
+				}
+
+				&:hover {
+					background-color: rgba($color: $color-black, $alpha: 0.16);
 				}
 			}
 		}

@@ -69,10 +69,6 @@ const Donate = ({ componentName }) => {
 							</p>
 							<a href="https://paypal.me/treobytes" target="_blank" className='btn-wrapper'>
 							<Button additionalClass='red' children='Donate' />
-							{/* <IntroSignUp */}
-								{/* href='https://www.inplay.org/providers/treobytes' */}
-								{/* btnText={`sign up on inplay`.toUpperCase()} */}
-							{/* /> */}
 							</a>
 						</div>
 

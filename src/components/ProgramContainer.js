@@ -33,20 +33,12 @@ const ProgramContainer = ({
 
 				{programFootText && <p className='paragraph'>{programFootText}</p>}
 
-				{/* Modified the <a> and <Button> allow the <Button> to be removed if there is no href attribute */}
 				{href && <a href={href} target='_blank' className='btn-wrapper'>
 					<Button
 						children={`Click to sign up!`.toUpperCase()}
 						additionalClass={btnColor}
 					/>
 				</a>}
-
-				{/* <a href={href} target='_blank' className='btn-wrapper'>
-					<Button
-						children={`Click to sign up!`.toUpperCase()}
-						additionalClass={btnColor}
-					/>
-				</a> */}
 			</div>
 			<div className='column col-2'>
 				<ImageContainer

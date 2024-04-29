@@ -187,7 +187,6 @@ const NorthCountyAndExpansion = ({ componentName }) => {
 					programDescription={`Students will learn music fundamentals and music production skills including navigating a Digital Audio Workstation (DAW), sampling, creating percussive loops, melody composition, and mixing.`}
 					programFootText='Students will then use their music technology knowledge and skills to create their own song! Some of the technologies that will be covered will be: SoundTrap, Novation LaunchPad, Playground Sessions and more.'
 					btnColor='purple'
-					href='https://www.hisawyer.com/treobytes/schedules/activity-set/673279'
 					thumbnails={musicTechThumbnails}
 					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710799244/music-technology-single-image_erxf0m.jpg'
 					singleAltTag='music technology'
@@ -206,7 +205,6 @@ const NorthCountyAndExpansion = ({ componentName }) => {
 					programDescription={`Inspired by DJI's esteemed RoboMaster robotics conmtest, this track delved into diverse subjects like science, math, physics, and programming`}
 					programFootText={`Students will also have the opportunity to program their own set of Tello drones through orchestrated flights over Mission Pads while executing flips and daring acrobatic manuevers.`}
 					btnColor='neon-orange'
-					href='https://www.hisawyer.com/treobytes/schedules/activity-set/673279'
 					thumbnails={djiRoboticsThumbnails}
 					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710799226/dji-robotics-single-image_j57ihd.jpg'
 					singleAltTag='dji robotics + drones'
@@ -225,7 +223,6 @@ const NorthCountyAndExpansion = ({ componentName }) => {
 					programDescription={`Through hands-on experiences, they will learn the art of programming, allowing them to bring their innovative ideas to life. THe course delves into the fascinating realm of structures and aerospace engineering, prividing insights into designing and building robust systems.`}
 					programFootText={``}
 					btnColor='mustard-yellow'
-					href='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797096/circuits-plugged-in-single-image_iyysco.jpg'
 					thumbnails={arduinoEngineeringThumbnails}
 					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797096/circuits-plugged-in-single-image_iyysco.jpg'
 					singleAltTag='arduino engineering'
@@ -244,7 +241,6 @@ const NorthCountyAndExpansion = ({ componentName }) => {
 					programDescription={`Our camp is an exciting journey into the world of engineering, design, and hands-on innovation-all with the humble yet versatile material, cardboard. Participants will embark on a thrilling exploration of engineering principles and design thinking.`}
 					programFootText={`From constructing sturdy bridges to crafting imaginative architectural wonders, everey project is an opportunity to turn simple sheets of cardboard into incredible feats of engineering.`}
 					btnColor='lime-green'
-					href='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710797096/circuits-plugged-in-single-image_iyysco.jpg'
 					thumbnails={printing3DThumbnails}
 					singleImage='https://res.cloudinary.com/dtjvswb7v/image/upload/v1711305819/IMG_4774_xlsdok.jpg'
 					singleAltTag='stemfaire + 3d printing'

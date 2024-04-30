@@ -67,8 +67,12 @@ const Donate = ({ componentName }) => {
 								We love our lattes. We also love knowing that our youth are
 								prepared for the future. $5 matters. You matter. Let’s do this.
 							</p>
-							<a href="https://paypal.me/treobytes" target="_blank" className='btn-wrapper'>
-							<Button additionalClass='red' children='Donate' />
+							<a
+								href='https://paypal.me/treobytes'
+								target='_blank'
+								className='btn-wrapper'
+							>
+								<Button additionalClass='red' children='Donate' />
 							</a>
 						</div>
 
@@ -80,8 +84,12 @@ const Donate = ({ componentName }) => {
 								(minus 6 hours and 9 minutes). Once in a while, we put someone
 								else above ourselves.
 							</p>
-							<a href="https://paypal.me/treobytes" target="_blank">
-							<Button additionalClass='orange' children='Donate' />
+							<a
+								className='btn-wrapper'
+								href='https://paypal.me/treobytes'
+								target='_blank'
+							>
+								<Button additionalClass='orange' children='Donate' />
 							</a>
 						</div>
 
@@ -97,8 +105,12 @@ const Donate = ({ componentName }) => {
 								operate in a global scope, this is an opportunity to deliver
 								global impact.
 							</p>
-							<a href="https://paypal.me/treobytes" target="_blank">
-							<Button additionalClass='pale' children='Donate' />
+							<a
+								className='btn-wrapper'
+								href='https://paypal.me/treobytes'
+								target='_blank'
+							>
+								<Button additionalClass='pale' children='Donate' />
 							</a>
 						</div>
 					</div>

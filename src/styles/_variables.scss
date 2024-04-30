@@ -4,14 +4,20 @@ $medium: '(min-width: 768px)';
 $large: '(min-width: 992px)';
 $xlarge: '(min-width: 1200px)';
 
-// colors
+// shades and tones
 $color-white: #fff;
 $color-black: #000;
 $color-font-body: #424242;
 
 $color-black-alpha: rgba(0, 0, 0, 0.6);
 
+// colors
 $color-primary: #6ec1e4;
+$color-secondary: rgb(173, 33, 70);
+$color-third: rgb(219, 127, 48);
+$color-fourth: #e2ebf5;
+
+$color-pale: #ce90a2;
 
 $color-warning: #ff9800;
 $color-success: #4caf50;

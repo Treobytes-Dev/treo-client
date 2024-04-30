@@ -1,0 +1,135 @@
+@import './_variables.scss';
+
+.program-dates {
+	padding: 40px 0;
+	margin: 40px 0 0 0;
+
+	.container {
+		display: flex;
+		flex-direction: column;
+
+		@media #{$medium} {
+			flex-direction: row;
+		}
+
+		.images,
+		.information {
+			display: flex;
+			flex-direction: column;
+
+			@media #{$medium} {
+				width: 50%;
+				display: inline-flex;
+			}
+		}
+
+		.images {
+			.row {
+				display: flex;
+				flex-direction: column;
+
+				&.row-2 {
+					padding: 40px 0 0 0;
+				}
+
+				@media #{$medium} {
+					flex-direction: row;
+					justify-content: space-evenly;
+				}
+
+				.image {
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: cover;
+					height: 400px;
+					margin: 10px 0;
+					display: flex;
+					align-items: flex-end;
+					text-align: center;
+					justify-content: center;
+
+					.copy {
+						width: 100%;
+
+						.paragraph {
+							background-color: $color-black-alpha;
+							min-height: 70px;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							color: $color-white;
+							border-radius: 0 0 10px 10px;
+						}
+					}
+
+					border-radius: 10px;
+
+					@media #{$medium} {
+						height: 250px;
+						width: 250px;
+					}
+				}
+			}
+		}
+
+		.information {
+			color: $color-white;
+			margin: 40px 0 0 0;
+
+			@media #{$medium} {
+				display: inline-flex;
+				padding: 0 0 0 40px;
+				margin: 0;
+			}
+
+			.header {
+				text-align: center;
+			}
+
+			.boxes {
+				display: flex;
+				flex-direction: column;
+
+				@media #{$medium} {
+					display: inline-flex;
+					flex-direction: row;
+				}
+
+				.boxes-1,
+				.boxes-2 {
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					padding: 0 15px 0 0;
+
+					.box {
+						display: flex;
+						flex-direction: column;
+						margin: 40px 0 0 0;
+
+						.heading {
+							display: flex;
+
+							.icon {
+								width: 25px;
+								margin: 0 15px 0 0;
+							}
+						}
+
+						.content {
+							padding: 0;
+
+							@media #{$medium} {
+								padding: 0 0 0 40px;
+							}
+
+							.paragraph {
+								color: $color-white;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,18 +1,30 @@
 @import './_variables.scss';
 
 .error,
-.error-404 {
-	.wrapper-icon,
-	.group {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+.error-404,
+.error-500 {
+	margin: 5rem 0 0 0;
+
+	@media #{$medium} {
+		margin: 7rem 0 0 0;
 	}
 
-	.group {
+	.container {
+		display: flex;
 		flex-direction: column;
-		margin: 20px auto 0 auto;
-		width: 100%;
-		text-align: center;
+
+		.wrapper-icon,
+		.group {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.group {
+			flex-direction: column;
+			margin: 20px auto 0 auto;
+			width: 100%;
+			text-align: center;
+		}
 	}
 }

@@ -1,0 +1,48 @@
+name: Deploy PROD
+
+on:
+  push:
+    branches:
+      - main # Set this to the branch you want to deploy from
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    env:
+      BUCKET: treobytes.org
+      DIST: out
+      REGION: us-west-2
+      DIST_ID: E4Q32W36I5AL3
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }} # Set this to the Node.js version you're using
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build and Export Next.js app
+        run: |
+          npm run build
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+          aws-region: ${{ env.REGION }} # Set your AWS region
+
+      - name: Deploy to S3
+        run: aws s3 sync ${{ env.DIST }} s3://${{ env.BUCKET }} --delete
+
+      - name: Copy files to the production website with the AWS CLI
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ env.DIST_ID }} \
+            --paths "/*"

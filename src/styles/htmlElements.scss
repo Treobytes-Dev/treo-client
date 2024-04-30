@@ -63,6 +63,12 @@ body {
 }
 
 // headings
+.page {
+	.header {
+		font-weight: 700;
+	}
+}
+
 .header-one {
 	font-size: $heading-one;
 	line-height: normal;
@@ -120,7 +126,7 @@ body {
 	margin-inline-end: 0;
 	padding-inline-start: 0;
 
-	li {
+	.list-item {
 		list-style-type: none;
 	}
 }
@@ -213,4 +219,8 @@ body {
 
 .checkbox[disabled] label {
 	cursor: not-allowed;
+}
+
+.paragraph {
+	color: $gray-600;
 }

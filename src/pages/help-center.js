@@ -125,14 +125,14 @@ const HelpCenter = ({ componentName }) => {
 				<div className='button-container'>
 					<div className='container'>
 						<div className='column column-1'>
-							<Link className='button-anchor' href='/programs'>
+							<Link className='button-anchor' href='/programs/scholars-program'>
 								<Button
 									children={`scholars program`.toUpperCase()}
 									additionalClass='secondary'
 								/>
 							</Link>
 
-							<Link className='button-anchor' href='/summer-of-stem'>
+							<Link className='button-anchor' href='/programs/summer-of-stem'>
 								<Button
 									children={`summer of stem camp`.toUpperCase()}
 									additionalClass='pale'
@@ -141,14 +141,17 @@ const HelpCenter = ({ componentName }) => {
 						</div>
 
 						<div className='column column-2'>
-							<Link className='button-anchor' href='/level-up-camps'>
+							<Link className='button-anchor' href='/programs/level-up-camps'>
 								<Button
 									children={`level up camps`.toUpperCase()}
 									additionalClass='orange'
 								/>
 							</Link>
 
-							<Link className='button-anchor' href='/banning-program'>
+							<Link
+								className='button-anchor'
+								href='/programs/north-county-and-expansion'
+							>
 								<Button
 									children={`North county and expansion`.toUpperCase()}
 									additionalClass='off-orange'

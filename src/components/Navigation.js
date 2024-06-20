@@ -133,7 +133,7 @@ const Navigation = () => {
 	};
 
 	const renderNavContent = () => (
-		<>
+		<header>
 			<ul className='unordered-list base-options'>
 				{/* mobile first */}
 				{windowWidth < 768
@@ -227,11 +227,11 @@ const Navigation = () => {
 							</li>
 					  ))}
 			</ul>
-		</>
+		</header>
 	);
 
 	return (
-		<div className='navigation'>
+		<nav className='navigation'>
 			{loading && (
 				<div className='loader'>
 					<Loader />
@@ -255,15 +255,9 @@ const Navigation = () => {
 				<Logo />
 			</Link>
 
-			{windowWidth < 768 && (
-				<MobileMenu
-					trigger='Click me'
-					leftIconClose='Left Close'
-					children={renderNavContent()}
-				/>
-			)}
+			{windowWidth < 768 && <MobileMenu children={renderNavContent()} />}
 			{windowWidth > 768 && renderNavContent()}
-		</div>
+		</nav>
 	);
 };
 

@@ -1,32 +1,18 @@
-import { use, useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { AppContext } from '../context';
+
 import { useRouter } from 'next/router';
-import Cookies from 'js-cookie';
-import axios from 'axios';
 
 import { MobileMenu } from './MobileMenu.js';
-import Avatar from '../assets/icons/Avatar.js';
 import Logo from '../assets/icons/Logo.js';
 import { Loader } from '../assets/icons/Loader.js';
 import { CarrotDown } from '../assets/icons/CarrotDown.js';
 
-// todo:
-// create CRUD functionality to add pages
-// functionality to order pages in the navigation
-// create CRUD functionality to add pages to a title in the navigation
-// functionality to order pages in the navigation
-// create CRUD functionality to add pages to a title in the footer
-// treobytes create CRUD functionality to add link and image to sponsor component
-
 const Navigation = () => {
-	// context
-	const [state, setState, page, setPage] = useContext(AppContext);
 	// local
 	const [current, setCurrent] = useState();
 	const [loading, setLoading] = useState('');
 	const [errorMsg, setErrorMsg] = useState('');
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [highlightIndex, setHighlightIndex] = useState('');
 	const [windowWidth, setWindowWidth] = useState(0); // initialize with a default value, like 0
 
@@ -107,19 +93,6 @@ const Navigation = () => {
 			return () => window.removeEventListener('resize', handleResize);
 		}
 	}, []);
-
-	const logout = () => {
-		try {
-			axios.get(`/signout`);
-
-			window.localStorage.removeItem('auth');
-			Cookies.remove('token');
-			setState(null);
-			router.push('/admin/signin');
-		} catch (err) {
-			console.error(err.response.data);
-		}
-	};
 
 	useEffect(() => {}, [highlightIndex]);
 

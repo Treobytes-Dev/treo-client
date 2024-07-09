@@ -133,7 +133,7 @@ const Navigation = () => {
 	};
 
 	const renderNavContent = () => (
-		<header>
+		<nav className='nav'>
 			<ul className='unordered-list base-options'>
 				{/* mobile first */}
 				{windowWidth < 768
@@ -227,11 +227,11 @@ const Navigation = () => {
 							</li>
 					  ))}
 			</ul>
-		</header>
+		</nav>
 	);
 
 	return (
-		<nav className='navigation'>
+		<header className='navigation'>
 			{loading && (
 				<div className='loader'>
 					<Loader />
@@ -257,7 +257,7 @@ const Navigation = () => {
 
 			{windowWidth < 768 && <MobileMenu children={renderNavContent()} />}
 			{windowWidth > 768 && renderNavContent()}
-		</nav>
+		</header>
 	);
 };
 

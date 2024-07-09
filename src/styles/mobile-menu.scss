@@ -41,11 +41,6 @@
 			width: 50%;
 		}
 
-		.wrapper-header,
-		.wrapper-content {
-			padding: 20px;
-		}
-
 		.wrapper-header {
 			display: flex;
 			flex-direction: column;
@@ -54,6 +49,7 @@
 				display: flex;
 				width: 100%;
 				margin: 0 0 20px 0;
+				padding: 20px;
 			}
 
 			.logo {
@@ -64,6 +60,7 @@
 
 		.wrapper-content {
 			height: 100%;
+			padding: 20px;
 		}
 	}
 

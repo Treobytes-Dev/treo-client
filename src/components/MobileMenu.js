@@ -40,7 +40,7 @@ export const MobileMenu = ({
 	};
 
 	return (
-		<div
+		<header
 			className={`${componentName} ${additionalClassName}`}
 			data-test-id={`${componentName}`}
 		>
@@ -76,7 +76,7 @@ export const MobileMenu = ({
 
 				<div className='wrapper-content'>{children}</div>
 			</div>
-		</div>
+		</header>
 	);
 };
 

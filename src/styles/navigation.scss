@@ -13,6 +13,10 @@
 	}
 
 	// override the default styles for the ul
+	.nav {
+		display: flex;
+	}
+
 	.unordered-list {
 		&.base-options {
 			display: unset;

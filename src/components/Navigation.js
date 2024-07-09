@@ -1,32 +1,18 @@
-import { use, useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { AppContext } from '../context';
+
 import { useRouter } from 'next/router';
-import Cookies from 'js-cookie';
-import axios from 'axios';
 
 import { MobileMenu } from './MobileMenu.js';
-import Avatar from '../assets/icons/Avatar.js';
 import Logo from '../assets/icons/Logo.js';
 import { Loader } from '../assets/icons/Loader.js';
 import { CarrotDown } from '../assets/icons/CarrotDown.js';
 
-// todo:
-// create CRUD functionality to add pages
-// functionality to order pages in the navigation
-// create CRUD functionality to add pages to a title in the navigation
-// functionality to order pages in the navigation
-// create CRUD functionality to add pages to a title in the footer
-// treobytes create CRUD functionality to add link and image to sponsor component
-
 const Navigation = () => {
-	// context
-	const [state, setState, page, setPage] = useContext(AppContext);
 	// local
 	const [current, setCurrent] = useState();
 	const [loading, setLoading] = useState('');
 	const [errorMsg, setErrorMsg] = useState('');
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [highlightIndex, setHighlightIndex] = useState('');
 	const [windowWidth, setWindowWidth] = useState(0); // initialize with a default value, like 0
 
@@ -108,19 +94,6 @@ const Navigation = () => {
 		}
 	}, []);
 
-	const logout = () => {
-		try {
-			axios.get(`/signout`);
-
-			window.localStorage.removeItem('auth');
-			Cookies.remove('token');
-			setState(null);
-			router.push('/admin/signin');
-		} catch (err) {
-			console.error(err.response.data);
-		}
-	};
-
 	useEffect(() => {}, [highlightIndex]);
 
 	const handleDisplaySubOptions = (e) => {
@@ -133,7 +106,7 @@ const Navigation = () => {
 	};
 
 	const renderNavContent = () => (
-		<header>
+		<nav className='nav'>
 			<ul className='unordered-list base-options'>
 				{/* mobile first */}
 				{windowWidth < 768
@@ -227,11 +200,11 @@ const Navigation = () => {
 							</li>
 					  ))}
 			</ul>
-		</header>
+		</nav>
 	);
 
 	return (
-		<nav className='navigation'>
+		<header className='navigation'>
 			{loading && (
 				<div className='loader'>
 					<Loader />
@@ -257,7 +230,7 @@ const Navigation = () => {
 
 			{windowWidth < 768 && <MobileMenu children={renderNavContent()} />}
 			{windowWidth > 768 && renderNavContent()}
-		</nav>
+		</header>
 	);
 };
 

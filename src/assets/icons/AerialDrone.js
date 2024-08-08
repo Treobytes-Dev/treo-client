@@ -2,10 +2,10 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const AerialDrone = ({
-	componentName,
+	componentName = 'aerial-drone',
+	dimensions = '24px',
+	viewBox = '-0.1 0 122.8 124',
 	additionalClassName,
-	dimensions,
-	viewBox,
 }) => (
 	<svg
 		className={`${componentName} ${additionalClassName}`}
@@ -40,12 +40,6 @@ AerialDrone.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-AerialDrone.defaultProps = {
-	componentName: 'aerial-drone',
-	dimensions: '24px',
-	viewBox: '-0.1 0 122.8 124',
 };
 
 export default AerialDrone;

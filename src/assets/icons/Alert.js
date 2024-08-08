@@ -2,11 +2,11 @@ import React from 'react';
 import { number, string } from 'prop-types';
 
 export const Alert = ({
-	componentName,
+	dimensions = 24,
+	viewBox = '0 -960 960 960',
+	fill = '#f44336',
+	componentName = 'alert',
 	additionalClassName = '',
-	dimensions,
-	viewBox,
-	fill,
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -27,11 +27,4 @@ Alert.propTypes = {
 	dimensions: number,
 	viewBox: string,
 	fill: string,
-};
-
-Alert.defaultProps = {
-	dimensions: 24,
-	viewBox: '0 -960 960 960',
-	fill: '#f44336',
-	componentName: 'alert',
 };

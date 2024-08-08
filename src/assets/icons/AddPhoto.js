@@ -2,11 +2,11 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const AddPhoto = ({
-	componentName,
+	componentName = 'add-photo',
 	additionalClassName,
-	fill,
-	dimensions,
-	viewBox,
+	fill = '#333',
+	dimensions = '24',
+	viewBox = '0 -960 960 960',
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -34,13 +34,6 @@ AddPhoto.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-AddPhoto.defaultProps = {
-	componentName: 'add-photo',
-	dimensions: '24',
-	viewBox: '0 -960 960 960',
-	fill: '#333',
 };
 
 export default AddPhoto;

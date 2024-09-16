@@ -18,11 +18,11 @@
   "license": "ISC",
   "dependencies": {
     "@plaiceholder/base64": "^1.0.0",
-    "axios": "^1.7.4",
+    "axios": "^1.7.5",
     "generate-password": "^1.7.1",
     "js-cookie": "^3.0.1",
     "moment": "^2.30.1",
-    "next": "^14.2.5",
+    "next": "^14.2.6",
     "prop-types": "^15.8.1",
     "quill": "^1.3.7",
     "react": "^18.3.1",

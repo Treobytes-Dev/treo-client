@@ -11,7 +11,7 @@ body,
 
 .hero,
 .hero-wrapper {
-	height: 100%;
+	height: 80%;
 	background-position: 50%;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -19,10 +19,18 @@ body,
 
 .hero-wrapper {
 	color: $color-white;
-	height: 60%;
+	height: 60vh;
+
+	@media #{$small} {
+		height: 50vh;
+	}
 
 	@media #{$medium} {
-		height: 80%;
+		height: 100vh;
+	}
+
+	@media #{$large} {
+		height: 100vh;
 	}
 
 	.body {

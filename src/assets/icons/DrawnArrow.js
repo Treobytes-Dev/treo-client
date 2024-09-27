@@ -2,11 +2,11 @@ import React from 'react';
 import { number, string } from 'prop-types';
 
 export const DrawnArrow = ({
-	componentName,
+	componentName = 'drawn-arrow',
 	additionalClassName = '',
-	dimensions,
-	viewBox,
-	fill,
+	dimensions = 24,
+	viewBox = '465.4 682.4 1525.8 1087.8',
+	fill = '#333',
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -28,11 +28,4 @@ DrawnArrow.propTypes = {
 	dimensions: number,
 	viewBox: string,
 	fill: string,
-};
-
-DrawnArrow.defaultProps = {
-	dimensions: 24,
-	viewBox: '465.4 682.4 1525.8 1087.8',
-	fill: '#333',
-	componentName: 'drawn-arrow',
 };

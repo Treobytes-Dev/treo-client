@@ -2,9 +2,9 @@ import React from 'react';
 import { number, string } from 'prop-types';
 
 export const Cake = ({
-	componentName,
+	componentName = 'cake',
 	additionalClassName = '',
-	dimensions,
+	dimensions = 24,
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -56,11 +56,4 @@ Cake.propTypes = {
 	dimensions: number,
 	viewBox: string,
 	fill: string,
-};
-
-Cake.defaultProps = {
-	dimensions: 24,
-	viewBox: '0 -960 960 960',
-	fill: '#333',
-	componentName: 'cake',
 };

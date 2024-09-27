@@ -2,11 +2,11 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const Menu = ({
-	componentName,
-	additionalClassName,
-	fill,
-	dimensions,
-	viewBox,
+	componentName = 'menu',
+	additionalClassName = '',
+	fill = '#333',
+	dimensions = '24',
+	viewBox = '0 -960 960 960',
 }) => (
 	<svg
 		className={`icon icon-${componentName} ${additionalClassName}`}
@@ -34,13 +34,6 @@ Menu.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-Menu.defaultProps = {
-	componentName: 'menu',
-	dimensions: '24',
-	viewBox: '0 -960 960 960',
-	fill: '#333',
 };
 
 export default Menu;

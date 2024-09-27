@@ -2,11 +2,11 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const EmailUs = ({
-	componentName,
-	additionalClassName,
-	fill,
-	dimensions,
-	viewBox,
+	componentName = 'email-us',
+	additionalClassName = '',
+	fill = '#333',
+	dimensions = '24',
+	viewBox = '0 -960 960 960',
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -34,12 +34,6 @@ EmailUs.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-EmailUs.defaultProps = {
-	componentName: 'email-us',
-	dimensions: '24',
-	viewBox: '0 -960 960 960',
 };
 
 export default EmailUs;

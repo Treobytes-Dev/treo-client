@@ -1,12 +1,12 @@
 import React from 'react';
-import { string } from 'prop-types';
+import { string, number } from 'prop-types';
 
 export const Close = ({
-	componentName,
+	componentName = 'close',
 	additionalClassName = '',
-	dimensions,
-	viewBox,
-	fill,
+	dimensions = 24,
+	viewBox = '0 -960 960 960',
+	fill = '#333',
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -21,9 +21,9 @@ export const Close = ({
 	</svg>
 );
 
-Close.defaultProps = {
-	dimensions: 24,
-	viewBox: '0 -960 960 960',
-	fill: '#333',
-	componentName: 'close',
+Close.props = {
+	dimensions: number,
+	viewBox: string,
+	fill: string,
+	componentName: string,
 };

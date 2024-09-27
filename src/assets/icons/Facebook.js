@@ -1,12 +1,19 @@
 import React from 'react';
 import { number, string } from 'prop-types';
 
+Facebook.defaultProps = {
+	dimensions: 16,
+	viewBox: '0 0 16 16',
+	fill: '#333',
+	componentName: 'facebook',
+};
+
 export const Facebook = ({
-	componentName,
+	componentName = 'facebook',
 	additionalClassName = '',
-	dimensions,
-	viewBox,
-	fill,
+	dimensions = 16,
+	viewBox = '0 0 16 16',
+	fill = '#333',
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -25,12 +32,4 @@ Facebook.propTypes = {
 	dimensions: number,
 	viewBox: string,
 	fill: string,
-};
-
-Facebook.defaultProps = {
-	dimensions: 16,
-	viewBox: '0 0 16 16',
-	fill: '#333',
-
-	componentName: 'facebook',
 };

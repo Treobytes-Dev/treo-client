@@ -2,11 +2,11 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const GameDevelopment = ({
-	componentName,
-	additionalClassName,
-	fill,
-	dimensions,
-	viewBox,
+	componentName = 'game-development',
+	additionalClassName = '',
+	fill = 'rgb(0, 74, 173)',
+	dimensions = '50',
+	viewBox = '0 -960 960 960',
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -34,13 +34,6 @@ GameDevelopment.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-GameDevelopment.defaultProps = {
-	componentName: 'game-development',
-	dimensions: '50',
-	viewBox: '0 -960 960 960',
-	fill: 'rgb(0, 74, 173)',
 };
 
 export default GameDevelopment;

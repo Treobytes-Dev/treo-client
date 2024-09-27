@@ -2,11 +2,11 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const Users = ({
-	componentName,
-	additionalClassName,
-	fill,
-	dimensions,
-	viewBox,
+	componentName = 'users',
+	additionalClassName = '',
+	fill = '#333',
+	dimensions = '24',
+	viewBox = '0 -960 960 960',
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -34,12 +34,6 @@ Users.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-Users.defaultProps = {
-	componentName: 'users',
-	dimensions: '24',
-	viewBox: '0 -960 960 960',
 };
 
 export default Users;

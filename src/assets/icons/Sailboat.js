@@ -2,11 +2,10 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const Sailboat = ({
-	componentName,
-	additionalClassName,
-	fill,
-	dimensions,
-	viewBox,
+	componentName = 'sail-boat',
+	additionalClassName = '',
+	dimensions = '24px',
+	viewBox = '8 6.5 283.3 291.9',
 }) => (
 	<svg
 		className={`${componentName} ${additionalClassName}`}
@@ -40,12 +39,6 @@ Sailboat.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-Sailboat.defaultProps = {
-	componentName: 'sail-boat',
-	dimensions: '24px',
-	viewBox: '8 6.5 283.3 291.9',
 };
 
 export default Sailboat;

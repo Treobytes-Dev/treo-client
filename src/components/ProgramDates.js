@@ -4,7 +4,7 @@ import { string, any } from 'prop-types';
 import { Time } from '../assets/icons/Time';
 
 const ProgramDates = ({
-	componentName,
+	componentName = 'program-dates',
 	image1,
 	image2,
 	image3,
@@ -186,10 +186,6 @@ ProgramDates.propTypes = {
 	contentDays: any,
 	contentDates: any,
 	contentTime: any,
-};
-
-ProgramDates.defaultProps = {
-	componentName: 'program-dates',
 };
 
 export default ProgramDates;

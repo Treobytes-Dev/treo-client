@@ -1,12 +1,12 @@
 import { string, bool } from 'prop-types';
 
 const IntroToCamp = ({
-	componentName,
+	componentName = 'intro-to-camp',
 	listItemMarks,
 	collegeName,
 	collegeText,
 	collegeImage,
-	headerText,
+	headerText = 'WHY SPEND THE SUMMER WITH US?',
 }) => (
 	<div className={componentName}>
 		<div className='container'>
@@ -32,11 +32,6 @@ IntroToCamp.propTypes = {
 	errorMsg: string,
 	successMsg: string,
 	loading: bool,
-};
-
-IntroToCamp.defaultProps = {
-	componentName: 'intro-to-camp',
-	headerText: 'WHY SPEND THE SUMMER WITH US?',
 };
 
 export default IntroToCamp;

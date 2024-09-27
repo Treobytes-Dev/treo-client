@@ -7,7 +7,7 @@ import Head from 'next/head';
 import Navigation from '../components/Navigation';
 import { Alert } from '../assets/icons/Alert';
 
-const Custom500 = ({ componentName }) => {
+const Custom500 = ({ componentName = 'error-500' }) => {
 	const [state] = useContext(AppContext);
 
 	const head = () => (
@@ -48,10 +48,6 @@ const Custom500 = ({ componentName }) => {
 			</div>
 		</>
 	);
-};
-
-Custom500.defaultProps = {
-	componentName: 'error-500',
 };
 
 export default Custom500;

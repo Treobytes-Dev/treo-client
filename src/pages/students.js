@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 
 import { TemplateIntro } from '../components/TemplateIntro';
 
-const Students = ({ componentName }) => {
+const Students = ({ componentName = 'students' }) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -110,10 +110,6 @@ const Students = ({ componentName }) => {
 			</div>
 		</>
 	);
-};
-
-Students.defaultProps = {
-	componentName: 'students',
 };
 
 export default Students;

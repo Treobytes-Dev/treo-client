@@ -7,7 +7,7 @@ import Head from 'next/head';
 import Navigation from '../components/Navigation';
 import { Alert } from '../assets/icons/Alert';
 
-function Error({ statusCode, componentName }) {
+function Error({ statusCode, componentName = 'error' }) {
 	const [state] = useContext(AppContext);
 	console.error('statusCode', statusCode);
 
@@ -50,10 +50,6 @@ function Error({ statusCode, componentName }) {
 		</>
 	);
 }
-
-Error.defaultProps = {
-	componentName: 'error',
-};
 
 Error.getInitialProps = ({ res, err }) => {
 	const statusCode = res ? res.statusCode : err ? err.statusCode : 404;

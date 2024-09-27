@@ -7,7 +7,7 @@ import Head from 'next/head';
 import Navigation from '../components/Navigation';
 import { Alert } from '../assets/icons/Alert';
 
-const Custom404 = ({ componentName }) => {
+const Custom404 = ({ componentName = 'error-404' }) => {
 	const [state] = useContext(AppContext);
 
 	const head = () => (
@@ -48,10 +48,6 @@ const Custom404 = ({ componentName }) => {
 			</div>
 		</>
 	);
-};
-
-Custom404.defaultProps = {
-	componentName: 'error-404',
 };
 
 export default Custom404;

@@ -11,7 +11,7 @@ import { CopyBlock } from '../components/CopyBlock';
 import { FAQs } from '../assets/icons/FAQs';
 
 import { TemplateIntro } from '../components/TemplateIntro';
-const HelpCenter = ({ componentName }) => {
+const HelpCenter = ({ componentName = 'help-center' }) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -173,10 +173,6 @@ const HelpCenter = ({ componentName }) => {
 			</div>
 		</>
 	);
-};
-
-HelpCenter.defaultProps = {
-	componentName: 'help-center',
 };
 
 export default HelpCenter;

@@ -1,27 +1,14 @@
 import { useContext, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { AppContext } from '../context';
-import { useRouter } from 'next/router';
 
 import { Instagram } from '../assets/icons/Instagram.js';
 import { Facebook } from '../assets/icons/Facebook.js';
 import { LinkedIn } from '../assets/icons/LinkedIn.js';
 
-// todo:
-// create CRUD functionality to add pages
-// functionality to order pages in the navigation
-// create CRUD functionality to add pages to a title in the navigation
-// functionality to order pages in the navigation
-// create CRUD functionality to add pages to a title in the footer
-// treobytes create CRUD functionality to add link and image to sponsor component
-
-const Footer = ({ componentName }) => {
-	// context
-	const [state, setState, page, setPage] = useContext(AppContext);
+const Footer = ({ componentName = 'footer' }) => {
 	// local
 	const [current, setCurrent] = useState();
-
-	const router = useRouter();
 
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
@@ -126,10 +113,6 @@ const Footer = ({ componentName }) => {
 			</ul>
 		</div>
 	);
-};
-
-Footer.defaultProps = {
-	componentName: 'footer',
 };
 
 export default Footer;

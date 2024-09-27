@@ -9,7 +9,7 @@ import Sponsors from '../../components/Sponsors';
 // svg
 import VennDiagram from '../../assets/images/VennDiagram';
 
-const Accomplishments = ({ componentName }) => {
+const Accomplishments = ({ componentName = 'accomplishments' }) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -218,21 +218,6 @@ const Accomplishments = ({ componentName }) => {
 								</ul>
 							</div>
 							<div className='diagram'>
-								{/* <div
-									className='image'
-									style={{
-										backgroundImage:
-											'url(' +
-											'https://res.cloudinary.com/dtjvswb7v/image/upload/v1712020329/Screenshot_2024-04-01_at_6.11.49_PM_fb9bep.png' +
-											')',
-										backgroundRepeat: 'no-repeat',
-										backgroundPosition: 'center center',
-										backgroundSize: 'contain',
-										height: '500px',
-										width: '100%',
-									}}
-								/> */}
-
 								<VennDiagram />
 							</div>
 						</div>
@@ -243,10 +228,6 @@ const Accomplishments = ({ componentName }) => {
 			</div>
 		</>
 	);
-};
-
-Accomplishments.defaultProps = {
-	componentName: 'accomplishments',
 };
 
 export default Accomplishments;

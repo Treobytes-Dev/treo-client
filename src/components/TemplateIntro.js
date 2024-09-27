@@ -4,7 +4,8 @@ import { Hero } from './Hero';
 import { CarrotDown } from '../assets/icons/CarrotDown';
 
 export const TemplateIntro = ({
-	componentName,
+	componentName = 'intro',
+	additionalClassName = '',
 	heroImage,
 	heroHeader,
 	heroSubHeader,
@@ -46,7 +47,7 @@ export const TemplateIntro = ({
 
 			{(introHeader || introBody) && (
 				<div
-					className={`template-${componentName} intro`}
+					className={`template-${componentName} ${additionalClassName} intro`}
 					id={`template-${componentName}`}
 				>
 					<div className='container'>
@@ -70,9 +71,4 @@ TemplateIntro.propTypes = {
 	heroSubHeader: string,
 	introHeader: string,
 	introBody: string,
-};
-
-TemplateIntro.defaultProps = {
-	componentName: 'intro',
-	additionalClassName: '',
 };

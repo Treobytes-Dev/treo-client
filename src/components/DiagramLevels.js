@@ -2,7 +2,12 @@
 import React from 'react';
 import { string, array, object } from 'prop-types';
 
-const DiagramLevels = ({ componentName, rowOne, rowTwo, icon }) => {
+const DiagramLevels = ({
+	componentName = 'diagram-levels',
+	rowOne,
+	rowTwo,
+	icon,
+}) => {
 	return (
 		<div className={`${componentName}`} data-testid={componentName}>
 			<div className='row row-1'>
@@ -46,10 +51,6 @@ DiagramLevels.propTypes = {
 	rowOne: array.isRequired,
 	rowTwo: array.isRequired,
 	icon: object,
-};
-
-DiagramLevels.defaultProps = {
-	componentName: 'diagram-levels',
 };
 
 export default DiagramLevels;

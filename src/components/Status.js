@@ -1,7 +1,12 @@
 import { string, bool } from 'prop-types';
 import { Loader } from '../assets/icons/Loader';
 
-const Status = ({ componentName, errorMsg, successMsg, loading }) => (
+const Status = ({
+	componentName = 'status',
+	errorMsg,
+	successMsg,
+	loading,
+}) => (
 	<div className={componentName}>
 		{!!errorMsg && <h6 className='header header-six error'>{errorMsg}</h6>}
 		{!!successMsg && (
@@ -20,10 +25,6 @@ Status.propTypes = {
 	errorMsg: string,
 	successMsg: string,
 	loading: bool,
-};
-
-Status.defaultProps = {
-	componentName: 'status',
 };
 
 export default Status;

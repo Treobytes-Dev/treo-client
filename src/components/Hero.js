@@ -2,8 +2,8 @@ import React from 'react';
 import { string, any } from 'prop-types';
 
 export const Hero = ({
-	componentName,
-	additionalClassName,
+	componentName = 'hero',
+	additionalClassName = '',
 	children,
 	background,
 }) => {
@@ -33,9 +33,4 @@ Hero.propTypes = {
 	 * Add Hero image
 	 */
 	background: string,
-};
-
-Hero.defaultProps = {
-	componentName: 'hero',
-	additionalClassName: '',
 };

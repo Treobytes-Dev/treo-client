@@ -1,6 +1,6 @@
 import { string } from 'prop-types';
 
-const Sponsors = ({ componentName, sponsors }) => (
+const Sponsors = ({ componentName = 'sponsors', sponsors }) => (
 	<div className={componentName}>
 		<div className='container'>
 			{sponsors.map((sponsor) => (

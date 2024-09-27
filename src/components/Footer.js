@@ -1,6 +1,5 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { AppContext } from '../context';
 
 import { Instagram } from '../assets/icons/Instagram.js';
 import { Facebook } from '../assets/icons/Facebook.js';

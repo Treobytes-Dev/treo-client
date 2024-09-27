@@ -16,8 +16,4 @@ Sponsors.propTypes = {
 	componentName: string,
 };
 
-Sponsors.defaultProps = {
-	componentName: 'sponsors',
-};
-
 export default Sponsors;

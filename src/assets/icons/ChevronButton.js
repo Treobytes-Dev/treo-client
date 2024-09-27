@@ -28,10 +28,3 @@ ChevronButton.propTypes = {
 	viewBox: string,
 	fill: string,
 };
-
-ChevronButton.defaultProps = {
-	dimensions: 24,
-	viewBox: '0 -960 960 960',
-	fill: '#333',
-	componentName: 'chevron-button',
-};

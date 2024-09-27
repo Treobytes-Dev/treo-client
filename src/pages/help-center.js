@@ -1,5 +1,3 @@
-import { useContext, useEffect, useState } from 'react';
-import { AppContext } from '../context';
 import Head from 'next/head';
 import Link from 'next/link';
 

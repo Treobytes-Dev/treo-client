@@ -1,7 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
-import { AppContext } from '../context';
 import Head from 'next/head';
-import axios from 'axios';
 
 // components
 import Navigation from '../components/Navigation';

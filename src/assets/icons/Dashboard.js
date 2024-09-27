@@ -1,12 +1,6 @@
 import React from 'react';
 import { string } from 'prop-types';
 
-Dashboard.defaultProps = {
-	componentName: 'dashboard',
-	dimensions: '24',
-	viewBox: '0 -960 960 960',
-};
-
 const Dashboard = ({
 	componentName = 'dashboard',
 	additionalClassName = '',

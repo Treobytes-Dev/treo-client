@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-import { AppContext } from '../context';
 import Link from 'next/link';
 import Head from 'next/head';
 
@@ -8,7 +6,6 @@ import Navigation from '../components/Navigation';
 import { Alert } from '../assets/icons/Alert';
 
 function Error({ statusCode, componentName = 'error' }) {
-	const [state] = useContext(AppContext);
 	console.error('statusCode', statusCode);
 
 	const head = () => (
@@ -40,9 +37,8 @@ function Error({ statusCode, componentName = 'error' }) {
 					</div>
 					<div className='group'>
 						<h2 className='header header-two '>Oops, there was an error.</h2>
-						<Link className='anchor' href={state ? '/admin/dashboard' : '/'}>
-							Click here to return to the {state ? 'dashboard' : 'landing page'}
-							.
+						<Link className='anchor' href='/'>
+							Click here to return to the landing page .
 						</Link>
 					</div>
 				</div>

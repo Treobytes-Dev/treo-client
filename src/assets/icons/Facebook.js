@@ -1,13 +1,6 @@
 import React from 'react';
 import { number, string } from 'prop-types';
 
-Facebook.defaultProps = {
-	dimensions: 16,
-	viewBox: '0 0 16 16',
-	fill: '#333',
-	componentName: 'facebook',
-};
-
 export const Facebook = ({
 	componentName = 'facebook',
 	additionalClassName = '',

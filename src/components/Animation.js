@@ -2,7 +2,11 @@
 import React from 'react';
 import { string, any } from 'prop-types';
 
-const Animation = ({ componentName, children, typeOfAnimation = '' }) => {
+const Animation = ({
+	componentName = 'animation',
+	children,
+	typeOfAnimation = '',
+}) => {
 	return (
 		<span
 			className={`${componentName} ${typeOfAnimation}`}
@@ -27,10 +31,6 @@ Animation.propTypes = {
 	 * OPTIONS: fade-in, fade-out, vibrate, wobble, flip-in, flip-out
 	 */
 	typeOfAnimation: string,
-};
-
-Animation.defaultProps = {
-	componentName: 'animation',
 };
 
 export default Animation;

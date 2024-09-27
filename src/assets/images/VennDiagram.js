@@ -1,9 +1,9 @@
 import React from 'react';
 import { string } from 'prop-types';
 
-const VennDiagram = () => (
+const VennDiagram = ({ componentName = 'venn-diagram' }) => (
 	<svg
-		className='venn-diagram'
+		className={componentName}
 		width='100%'
 		height='auto'
 		viewBox='0 0 176.25 144.75'
@@ -115,11 +115,7 @@ const VennDiagram = () => (
 	</svg>
 );
 
-VennDiagram.defaultProps = {
-	componentName: 'venn-diagram',
-};
-
-VennDiagram.defaultProps = {
+VennDiagram.propTypes = {
 	componentName: string,
 };
 

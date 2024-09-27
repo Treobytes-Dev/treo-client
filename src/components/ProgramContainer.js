@@ -4,7 +4,7 @@ import ImageContainer from './ImageContainer';
 import Button from './Button';
 
 const ProgramContainer = ({
-	componentName,
+	componentName = 'program-container',
 	hasIcon,
 	programTitle,
 	programSubtitle,
@@ -33,12 +33,14 @@ const ProgramContainer = ({
 
 				{programFootText && <p className='paragraph'>{programFootText}</p>}
 
-				{href && <a href={href} target='_blank' className='btn-wrapper'>
-					<Button
-						children={`Click to sign up!`.toUpperCase()}
-						additionalClass={btnColor}
-					/>
-				</a>}
+				{href && (
+					<a href={href} target='_blank' className='btn-wrapper'>
+						<Button
+							children={`Click to sign up!`.toUpperCase()}
+							additionalClass={btnColor}
+						/>
+					</a>
+				)}
 			</div>
 			<div className='column col-2'>
 				<ImageContainer
@@ -56,10 +58,6 @@ ProgramContainer.propTypes = {
 	 * Define component name
 	 */
 	componentName: string,
-};
-
-ProgramContainer.defaultProps = {
-	componentName: 'program-container',
 };
 
 export default ProgramContainer;

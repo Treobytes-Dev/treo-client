@@ -2,11 +2,11 @@ import React from 'react';
 import { number, string } from 'prop-types';
 
 export const ChevronButton = ({
-	componentName,
+	componentName = 'chevron-button',
 	additionalClassName = '',
-	dimensions,
-	viewBox,
-	fill,
+	dimensions = 24,
+	viewBox = '0 -960 960 960',
+	fill = '#333',
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -27,11 +27,4 @@ ChevronButton.propTypes = {
 	dimensions: number,
 	viewBox: string,
 	fill: string,
-};
-
-ChevronButton.defaultProps = {
-	dimensions: 24,
-	viewBox: '0 -960 960 960',
-	fill: '#333',
-	componentName: 'chevron-button',
 };

@@ -1,5 +1,3 @@
-import { useContext, useEffect, useState } from 'react';
-import { AppContext } from '../context';
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -11,7 +9,7 @@ import { CopyBlock } from '../components/CopyBlock';
 import { FAQs } from '../assets/icons/FAQs';
 
 import { TemplateIntro } from '../components/TemplateIntro';
-const HelpCenter = ({ componentName }) => {
+const HelpCenter = ({ componentName = 'help-center' }) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -173,10 +171,6 @@ const HelpCenter = ({ componentName }) => {
 			</div>
 		</>
 	);
-};
-
-HelpCenter.defaultProps = {
-	componentName: 'help-center',
 };
 
 export default HelpCenter;

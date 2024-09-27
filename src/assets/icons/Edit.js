@@ -2,11 +2,11 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const Edit = ({
-	componentName,
-	additionalClassName,
-	fill,
-	dimensions,
-	viewBox,
+	componentName = 'edit',
+	additionalClassName = '',
+	fill = '#333',
+	dimensions = '24',
+	viewBox = '0 -960 960 960',
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -34,13 +34,6 @@ Edit.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-Edit.defaultProps = {
-	componentName: 'edit',
-	dimensions: '24',
-	viewBox: '0 -960 960 960',
-	fill: '#333',
 };
 
 export default Edit;

@@ -2,11 +2,11 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const Media = ({
-	componentName,
-	additionalClassName,
-	fill,
-	dimensions,
-	viewBox,
+	componentName = 'media',
+	additionalClassName = '',
+	fill = '#333',
+	dimensions = '24',
+	viewBox = '0 -960 960 960',
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -34,13 +34,6 @@ Media.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-Media.defaultProps = {
-	componentName: 'media',
-	dimensions: '24',
-	viewBox: '0 -960 960 960',
-	fill: '#333',
 };
 
 export default Media;

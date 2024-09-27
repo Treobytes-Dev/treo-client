@@ -2,11 +2,11 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const SportsTech = ({
-	componentName,
-	additionalClassName,
-	fill,
-	dimensions,
-	viewBox,
+	componentName = 'sports-tech',
+	additionalClassName = '',
+	fill = 'rgb(137, 44, 153)',
+	dimensions = '50',
+	viewBox = '0 -960 960 960',
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -34,13 +34,6 @@ SportsTech.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-SportsTech.defaultProps = {
-	componentName: 'sports-tech',
-	dimensions: '50',
-	viewBox: '0 -960 960 960',
-	fill: 'rgb(137, 44, 153)',
 };
 
 export default SportsTech;

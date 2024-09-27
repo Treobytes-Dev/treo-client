@@ -2,11 +2,11 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const AnythingElse = ({
-	componentName,
+	componentName = 'anything-else',
+	dimensions = '24',
+	viewBox = '0 -960 960 960',
 	additionalClassName,
 	fill,
-	dimensions,
-	viewBox,
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -34,12 +34,6 @@ AnythingElse.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-AnythingElse.defaultProps = {
-	componentName: 'anything-else',
-	dimensions: '24',
-	viewBox: '0 -960 960 960',
 };
 
 export default AnythingElse;

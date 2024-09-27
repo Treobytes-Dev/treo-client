@@ -5,14 +5,11 @@ import { useRouter } from 'next/router';
 
 import { MobileMenu } from './MobileMenu.js';
 import Logo from '../assets/icons/Logo.js';
-import { Loader } from '../assets/icons/Loader.js';
 import { CarrotDown } from '../assets/icons/CarrotDown.js';
 
 const Navigation = () => {
 	// local
 	const [current, setCurrent] = useState();
-	const [loading, setLoading] = useState('');
-	const [errorMsg, setErrorMsg] = useState('');
 	const [highlightIndex, setHighlightIndex] = useState('');
 	const [windowWidth, setWindowWidth] = useState(0); // initialize with a default value, like 0
 
@@ -205,19 +202,6 @@ const Navigation = () => {
 
 	return (
 		<header className='navigation'>
-			{loading && (
-				<div className='loader'>
-					<Loader />
-				</div>
-			)}
-			{!!errorMsg && (
-				<div
-					className='error'
-					style={{ backgroundColor: 'red', color: 'white' }}
-				>
-					{errorMsg}
-				</div>
-			)}
 			<Link
 				href='/'
 				className={`wrapper-logo ${

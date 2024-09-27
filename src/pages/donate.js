@@ -10,9 +10,8 @@ import { TemplateIntro } from '../components/TemplateIntro';
 // icons
 import { Coffee } from '../assets/icons/Coffee';
 import { Cake } from '../assets/icons/Cake';
-import IntroSignUp from '../components/IntroSignUp';
 
-const Donate = ({ componentName }) => {
+const Donate = ({ componentName = 'donate' }) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -305,10 +304,6 @@ const Donate = ({ componentName }) => {
 			</div>
 		</>
 	);
-};
-
-Donate.defaultProps = {
-	componentName: 'donate',
 };
 
 export default Donate;

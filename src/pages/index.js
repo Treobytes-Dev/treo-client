@@ -1,28 +1,11 @@
-import { useContext, useEffect, useState } from 'react';
-import { AppContext } from '../context';
 import Head from 'next/head';
-import axios from 'axios';
 
 // components
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import Status from '../components/Status';
 import { TemplateIntro } from '../components/TemplateIntro';
 
-// mocking hero
-export const mockHeroImage =
-	'http://treobytes.org/wp-content/uploads/2019/09/Girl-STEAM.jpg';
-
-const Home = ({ componentName }) => {
-	const [state] = useContext(AppContext);
-
-	// comments
-	const [errorMsg, setErrorMsg] = useState('');
-	const [successMsg, setSuccessMsg] = useState('');
-
-	if (errorMsg) setTimeout(() => setErrorMsg(''), 3000);
-	if (successMsg) setTimeout(() => setSuccessMsg(''), 3000);
-
+const Home = ({ componentName = 'home' }) => {
 	// scroll to logic
 	const scrollToTarget = () => {
 		const targetElement = document.getElementById('scroll-to-el');
@@ -54,11 +37,6 @@ const Home = ({ componentName }) => {
 			{head()}
 			<Navigation />
 			<div className={`page ${componentName}`}>
-				{!!errorMsg ||
-					(!!successMsg && (
-						<Status errorMsg={errorMsg} successMsg={successMsg} />
-					))}
-
 				<TemplateIntro
 					heroImage={
 						'https://res.cloudinary.com/dtjvswb7v/image/upload/v1726785775/Homepage_Picture_vmyqrc.png'
@@ -220,10 +198,6 @@ const Home = ({ componentName }) => {
 			</div>
 		</>
 	);
-};
-
-Home.defaultProps = {
-	componentName: 'home',
 };
 
 export default Home;

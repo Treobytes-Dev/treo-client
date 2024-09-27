@@ -3,7 +3,7 @@ import React from 'react';
 import { string, array } from 'prop-types';
 
 const ImageContainer = ({
-	componentName,
+	componentName = 'image-container',
 	singleImage,
 	thumbnails,
 	singleAltTag,
@@ -37,10 +37,6 @@ ImageContainer.propTypes = {
 	singleImage: string.isRequired,
 	thumbnails: array,
 	singleAltTag: string.isRequired,
-};
-
-ImageContainer.defaultProps = {
-	componentName: 'image-container',
 };
 
 export default ImageContainer;

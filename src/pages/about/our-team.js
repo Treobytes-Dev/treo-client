@@ -21,8 +21,8 @@ const Card = ({ title, name, contact, source }) => (
 	</div>
 );
 
-const LeadershipTree = () => (
-	<div className='container leadership-tree'>
+const LeadershipTree = ({ componentName = 'leadership-tree' }) => (
+	<div className={`container ${componentName}`}>
 		<div className='tier tier-1'>
 			<Card
 				title='Founder & CEO'
@@ -82,7 +82,7 @@ const LeadershipTree = () => (
 	</div>
 );
 
-const OurTeam = ({ componentName }) => {
+const OurTeam = ({ componentName = 'our-team' }) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -249,10 +249,6 @@ const OurTeam = ({ componentName }) => {
 			</div>
 		</>
 	);
-};
-
-OurTeam.defaultProps = {
-	componentName: 'our-team',
 };
 
 export default OurTeam;

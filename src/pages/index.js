@@ -61,7 +61,7 @@ const Home = ({ componentName }) => {
 
 				<TemplateIntro
 					heroImage={
-						'https://res.cloudinary.com/dtjvswb7v/image/upload/v1711038021/home-hero_vwqlwz.webp'
+						'https://res.cloudinary.com/dtjvswb7v/image/upload/v1726785775/Homepage_Picture_vmyqrc.png'
 					}
 					scrollToTarget={scrollToTarget}
 				/>

@@ -2,11 +2,11 @@ import React from 'react';
 import { string } from 'prop-types';
 
 export const CarrotDown = ({
-	componentName,
+	componentName = 'carrot-down',
 	additionalClassName = '',
-	dimensions,
-	viewBox,
-	fill,
+	dimensions = '24',
+	viewBox = '0 96 960 960',
+	fill = '#333',
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -20,10 +20,3 @@ export const CarrotDown = ({
 		/>
 	</svg>
 );
-
-CarrotDown.defaultProps = {
-	componentName: 'carrot-down',
-	dimensions: '24',
-	viewBox: '0 96 960 960',
-	fill: '#333',
-};

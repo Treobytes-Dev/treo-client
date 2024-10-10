@@ -1,7 +1,10 @@
 import React from 'react';
 import { string } from 'prop-types';
 
-const PartnerCollab = ({ componentName, additionalClassName }) => (
+const PartnerCollab = ({
+	componentName = 'partner-collab',
+	additionalClassName,
+}) => (
 	<svg
 		className={`${componentName} ${additionalClassName}`}
 		x={0}
@@ -68,10 +71,6 @@ PartnerCollab.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-PartnerCollab.defaultProps = {
-	componentName: 'partner-collab',
 };
 
 export default PartnerCollab;

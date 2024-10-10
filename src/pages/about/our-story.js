@@ -13,7 +13,7 @@ import { PhoneAndWatch } from '../../assets/icons/PhoneAndWatch';
 import { RunningPerson } from '../../assets/icons/RunningPerson';
 import { ChevronButton } from '../../assets/icons/ChevronButton';
 
-const OurStory = ({ componentName }) => {
+const OurStory = ({ componentName = 'our-story' }) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -190,10 +190,6 @@ const OurStory = ({ componentName }) => {
 			</div>
 		</>
 	);
-};
-
-OurStory.defaultProps = {
-	componentName: 'our-story',
 };
 
 export default OurStory;

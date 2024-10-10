@@ -2,11 +2,11 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const CommentsWLines = ({
-	componentName,
-	additionalClassName,
-	fill,
-	dimensions,
-	viewBox,
+	componentName = 'comments-w-lines',
+	additionalClassName = '',
+	fill = '#333',
+	dimensions = '24',
+	viewBox = '0 -960 960 960',
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -34,12 +34,6 @@ CommentsWLines.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-CommentsWLines.defaultProps = {
-	componentName: 'comments-w-lines',
-	dimensions: '24',
-	viewBox: '0 -960 960 960',
 };
 
 export default CommentsWLines;

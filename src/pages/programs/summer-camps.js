@@ -21,7 +21,7 @@ const Card = ({ title, image, link }) => (
 	</div>
 );
 
-const SummerCamps = ({ componentName }) => {
+const SummerCamps = ({ componentName = 'summer-camps' }) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -84,10 +84,6 @@ const SummerCamps = ({ componentName }) => {
 			</div>
 		</>
 	);
-};
-
-SummerCamps.defaultProps = {
-	componentName: 'summer-camps',
 };
 
 export default SummerCamps;

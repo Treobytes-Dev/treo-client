@@ -3,11 +3,11 @@ import React from 'react';
 import { string, any } from 'prop-types';
 
 const Button = ({
-	componentName,
+	componentName = 'button',
 	children,
-	applicationSide,
-	forSubmit,
-	additionalClass,
+	applicationSide = 'default',
+	forSubmit = 'submit',
+	additionalClass = '',
 }) => {
 	return (
 		<button
@@ -32,12 +32,6 @@ Button.propTypes = {
 	 * Define content to animate
 	 */
 	children: any.isRequired,
-};
-
-Button.defaultProps = {
-	componentName: 'button',
-	applicationSide: 'default',
-	forSubmit: 'submit',
 };
 
 export default Button;

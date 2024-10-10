@@ -13,7 +13,7 @@ import HealthAndWellbeing from '../../assets/icons/HealthAndWellbeing';
 import Social from '../../assets/icons/Social';
 import Environment from '../../assets/icons/Environment';
 
-const ScholarsProgram = ({ componentName }) => {
+const ScholarsProgram = ({ componentName = 'scholars-program' }) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -178,10 +178,6 @@ const ScholarsProgram = ({ componentName }) => {
 			</div>
 		</>
 	);
-};
-
-ScholarsProgram.defaultProps = {
-	componentName: 'scholars-program',
 };
 
 export default ScholarsProgram;

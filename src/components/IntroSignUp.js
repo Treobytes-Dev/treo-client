@@ -1,7 +1,12 @@
 import { string } from 'prop-types';
 import Button from './Button';
 
-const IntroSignUp = ({ componentName, href, btnText, btnColor }) => (
+const IntroSignUp = ({
+	componentName = 'intro-sign-up',
+	href,
+	btnText,
+	btnColor = 'red',
+}) => (
 	<div className={componentName}>
 		<div className='container'>
 			<a
@@ -21,11 +26,6 @@ IntroSignUp.propTypes = {
 	href: string,
 	btnText: string,
 	btnColor: string,
-};
-
-IntroSignUp.defaultProps = {
-	componentName: 'intro-sign-up',
-	btnColor: 'red',
 };
 
 export default IntroSignUp;

@@ -2,7 +2,7 @@ import { string } from 'prop-types';
 
 import { DrawnArrow } from '../assets/icons/DrawnArrow';
 
-const ThingsToKnow = ({ componentName }) => (
+const ThingsToKnow = ({ componentName = 'things-to-know' }) => (
 	<div className={componentName}>
 		<div className='container'>
 			<h2 className='header header-two intro-header'>THINGS TO KNOW</h2>
@@ -78,10 +78,6 @@ const ThingsToKnow = ({ componentName }) => (
 
 ThingsToKnow.propTypes = {
 	componentName: string,
-};
-
-ThingsToKnow.defaultProps = {
-	componentName: 'things-to-know',
 };
 
 export default ThingsToKnow;

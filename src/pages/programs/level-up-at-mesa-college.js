@@ -16,7 +16,9 @@ import GameDevelopment from '../../assets/icons/GameDevelopment';
 import Sailboat from '../../assets/icons/Sailboat';
 import AerialDrone from '../../assets/icons/AerialDrone';
 
-const LevelUpAtMesaCollege = ({ componentName }) => {
+const LevelUpAtMesaCollege = ({
+	componentName = 'level-up-at-mesa-college',
+}) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -350,10 +352,6 @@ const LevelUpAtMesaCollege = ({ componentName }) => {
 			</div>
 		</>
 	);
-};
-
-LevelUpAtMesaCollege.defaultProps = {
-	componentName: 'level-up-at-mesa-college',
 };
 
 export default LevelUpAtMesaCollege;

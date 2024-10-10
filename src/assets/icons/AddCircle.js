@@ -2,10 +2,10 @@ import React from 'react';
 import { number, string } from 'prop-types';
 
 export const AddCircle = ({
-	componentName,
+	componentName = 'add-circle',
 	additionalClassName = '',
-	dimensions,
-	viewBox,
+	dimensions = 24,
+	viewBox = '0 -960 960 960',
 	fill,
 }) => (
 	<svg
@@ -27,11 +27,4 @@ AddCircle.propTypes = {
 	dimensions: number,
 	viewBox: string,
 	fill: string,
-};
-
-AddCircle.defaultProps = {
-	dimensions: 24,
-	viewBox: '0 -960 960 960',
-	fill: '#333',
-	componentName: 'add-circle',
 };

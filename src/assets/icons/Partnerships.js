@@ -2,11 +2,11 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const Partnerships = ({
-	componentName,
-	additionalClassName,
-	fill,
-	dimensions,
-	viewBox,
+	componentName = 'partnerships',
+	additionalClassName = '',
+	fill = 'black',
+	dimensions = '24',
+	viewBox = '0 -960 960 960',
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -34,13 +34,6 @@ Partnerships.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-Partnerships.defaultProps = {
-	componentName: 'partnerships',
-	dimensions: '24',
-	viewBox: '0 -960 960 960',
-	fill: 'black',
 };
 
 export default Partnerships;

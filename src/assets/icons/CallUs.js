@@ -2,11 +2,11 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const CallUs = ({
-	componentName,
+	componentName = 'call-us',
 	additionalClassName,
 	fill,
-	dimensions,
-	viewBox,
+	dimensions = '24',
+	viewBox = '0 -960 960 960',
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -34,12 +34,6 @@ CallUs.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-CallUs.defaultProps = {
-	componentName: 'call-us',
-	dimensions: '24',
-	viewBox: '0 -960 960 960',
 };
 
 export default CallUs;

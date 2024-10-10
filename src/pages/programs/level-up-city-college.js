@@ -10,7 +10,7 @@ import ProgramContainer from '../../components/ProgramContainer';
 import IntroSignUp from '../../components/IntroSignUp';
 import TracksSection from '../../components/TracksSection';
 
-const LevelUpCityCollege = ({ componentName }) => {
+const LevelUpCityCollege = ({ componentName = 'level-up-city-college' }) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -224,10 +224,6 @@ const LevelUpCityCollege = ({ componentName }) => {
 			</div>
 		</>
 	);
-};
-
-LevelUpCityCollege.defaultProps = {
-	componentName: 'level-up-city-college',
 };
 
 export default LevelUpCityCollege;

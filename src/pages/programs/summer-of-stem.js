@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { TemplateIntro } from '../../components/TemplateIntro';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
-import Button from '../../components/Button';
 import ProgramDates from '../../components/ProgramDates';
 import IntroToCamp from '../../components/IntroToCamp';
 import ThingsToKnow from '../../components/ThingsToKnow';
@@ -18,7 +17,7 @@ import IntroSignUp from '../../components/IntroSignUp';
 import SportsTech from '../../assets/icons/SportsTech';
 import GameDevelopment from '../../assets/icons/GameDevelopment';
 
-const SummerOfSTEM = ({ componentName }) => {
+const SummerOfSTEM = ({ componentName = 'summer-of-stem' }) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -239,10 +238,6 @@ const SummerOfSTEM = ({ componentName }) => {
 			</div>
 		</>
 	);
-};
-
-SummerOfSTEM.defaultProps = {
-	componentName: 'summer-of-stem',
 };
 
 export default SummerOfSTEM;

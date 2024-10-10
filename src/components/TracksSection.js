@@ -1,6 +1,6 @@
 import { string } from 'prop-types';
 
-const TracksSection = ({ componentName }) => (
+const TracksSection = ({ componentName = 'tracks-section' }) => (
 	<div className={componentName}>
 		<div className='container'>
 			<h3 className='header header-three'>{`Tracks 2024`.toUpperCase()}</h3>
@@ -16,10 +16,6 @@ const TracksSection = ({ componentName }) => (
 
 TracksSection.propTypes = {
 	componentName: string,
-};
-
-TracksSection.defaultProps = {
-	componentName: 'tracks-section',
 };
 
 export default TracksSection;

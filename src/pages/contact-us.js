@@ -17,7 +17,7 @@ import AnythingElse from '../assets/icons/AnythingElse';
 import EmailUs from '../assets/icons/EmailUs';
 import CallUs from '../assets/icons/CallUs';
 
-const ContactUs = ({ componentName }) => {
+const ContactUs = ({ componentName = 'contact-us' }) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -115,10 +115,6 @@ const ContactUs = ({ componentName }) => {
 			</div>
 		</>
 	);
-};
-
-ContactUs.defaultProps = {
-	componentName: 'contact-us',
 };
 
 export default ContactUs;

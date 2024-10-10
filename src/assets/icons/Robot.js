@@ -2,11 +2,10 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const Robot = ({
-	componentName,
-	additionalClassName,
-	fill,
-	dimensions,
-	viewBox,
+	componentName = 'robot',
+	additionalClassName = '',
+	fill = '#333',
+	viewBox = '0 0 76 100',
 }) => (
 	<svg
 		className={`${componentName} ${additionalClassName}`}
@@ -39,13 +38,6 @@ Robot.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-Robot.defaultProps = {
-	componentName: 'robot',
-	dimensions: '24',
-	viewBox: '0 0 76 100',
-	fill: '#333',
 };
 
 export default Robot;

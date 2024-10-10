@@ -1,7 +1,11 @@
 import React from 'react';
 import { string } from 'prop-types';
 
-export const Loader = ({ componentName, additionalClassName, fill }) => (
+export const Loader = ({
+	componentName = 'loader',
+	additionalClassName = '',
+	fill = '#333',
+}) => (
 	<svg
 		className={`${componentName} ${additionalClassName}`}
 		data-test-id={`${componentName}`}
@@ -39,9 +43,4 @@ Loader.propTypes = {
 	 * fill color for svg
 	 */
 	fill: string.isRequired,
-};
-
-Loader.defaultProps = {
-	componentName: 'loader',
-	fill: '#333',
 };

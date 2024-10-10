@@ -13,9 +13,9 @@ import { Close } from '../assets/icons/Close';
  */
 
 export const MobileMenu = ({
-	componentName,
+	componentName = 'mobile-menu',
 	children,
-	additionalClassName,
+	additionalClassName = '',
 }) => {
 	const [style, setStyle] = useState('menu');
 	const [menuStatus, setMenuStatus] = useState('open');
@@ -90,8 +90,4 @@ MobileMenu.propTypes = {
 	 * children to populate component's body
 	 */
 	children: node.isRequired,
-};
-
-MobileMenu.defaultProps = {
-	componentName: 'mobile-menu',
 };

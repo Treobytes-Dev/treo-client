@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-import { AppContext } from '../context';
 import Link from 'next/link';
 import Head from 'next/head';
 
@@ -7,9 +5,7 @@ import Head from 'next/head';
 import Navigation from '../components/Navigation';
 import { Alert } from '../assets/icons/Alert';
 
-const Custom404 = ({ componentName }) => {
-	const [state] = useContext(AppContext);
-
+const Custom404 = ({ componentName = 'error-404' }) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -39,19 +35,14 @@ const Custom404 = ({ componentName }) => {
 					</div>
 					<div className='group'>
 						<h2 className='header header-two'>Oops, there was an error.</h2>
-						<Link className='anchor' href={state ? '/admin/dashboard' : '/'}>
-							Click here to return to the {state ? 'dashboard' : 'landing page'}
-							.
+						<Link className='anchor' href='/'>
+							Click here to return to the landing page.
 						</Link>
 					</div>
 				</div>
 			</div>
 		</>
 	);
-};
-
-Custom404.defaultProps = {
-	componentName: 'error-404',
 };
 
 export default Custom404;

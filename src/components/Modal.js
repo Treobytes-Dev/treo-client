@@ -1,8 +1,14 @@
-const Modal = ({ isVisible, setIsVisible, content, closeButton }) => {
+const Modal = ({
+	componentName,
+	isVisible,
+	setIsVisible,
+	content,
+	closeButton = true,
+}) => {
 	return (
 		<>
 			{isVisible ? (
-				<div className='modal'>
+				<div className={componentName}>
 					{content}
 					{closeButton && (
 						<button
@@ -19,11 +25,6 @@ const Modal = ({ isVisible, setIsVisible, content, closeButton }) => {
 			)}
 		</>
 	);
-};
-
-Modal.defaultProps = {
-	componentName: 'modal',
-	closeButton: true,
 };
 
 export default Modal;

@@ -2,10 +2,10 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const Equity = ({
-	componentName,
-	additionalClassName,
-	dimensions,
-	viewBox,
+	componentName = 'equity',
+	additionalClassName = '',
+	dimensions = '24px',
+	viewBox = '0 -960 960 960',
 }) => (
 	<svg
 		className={`${componentName} ${additionalClassName}`}
@@ -36,12 +36,6 @@ Equity.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-Equity.defaultProps = {
-	componentName: 'equity',
-	dimensions: '24px',
-	viewBox: '0 -960 960 960',
 };
 
 export default Equity;

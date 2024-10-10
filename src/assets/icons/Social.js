@@ -2,10 +2,10 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const Social = ({
-	componentName,
-	additionalClassName,
-	dimensions,
-	viewBox,
+	componentName = 'social',
+	additionalClassName = '',
+	dimensions = '24px',
+	viewBox = '0 -960 960 960',
 }) => (
 	<svg
 		className={`${componentName} ${additionalClassName}`}
@@ -36,12 +36,6 @@ Social.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-Social.defaultProps = {
-	componentName: 'social',
-	dimensions: '24px',
-	viewBox: '0 -960 960 960',
 };
 
 export default Social;

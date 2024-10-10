@@ -10,7 +10,9 @@ import ProgramContainer from '../../components/ProgramContainer';
 import Button from '../../components/Button';
 import Sponsors from '../../components/Sponsors';
 
-const AfterSchoolEnrichment = ({ componentName }) => {
+const AfterSchoolEnrichment = ({
+	componentName = 'after-school-enrichment',
+}) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -301,10 +303,6 @@ const AfterSchoolEnrichment = ({ componentName }) => {
 			</div>
 		</>
 	);
-};
-
-AfterSchoolEnrichment.defaultProps = {
-	componentName: 'after-school-enrichment',
 };
 
 export default AfterSchoolEnrichment;

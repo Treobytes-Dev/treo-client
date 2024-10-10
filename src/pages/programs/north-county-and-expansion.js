@@ -9,7 +9,9 @@ import IntroToCamp from '../../components/IntroToCamp';
 import ProgramContainer from '../../components/ProgramContainer';
 import TracksSection from '../../components/TracksSection';
 
-const NorthCountyAndExpansion = ({ componentName }) => {
+const NorthCountyAndExpansion = ({
+	componentName = 'north-county-and-expansion',
+}) => {
 	const head = () => (
 		<Head>
 			<title>{`Treobytes | ${componentName}`}</title>
@@ -250,10 +252,6 @@ const NorthCountyAndExpansion = ({ componentName }) => {
 			</div>
 		</>
 	);
-};
-
-NorthCountyAndExpansion.defaultProps = {
-	componentName: 'north-county-and-expansion',
 };
 
 export default NorthCountyAndExpansion;

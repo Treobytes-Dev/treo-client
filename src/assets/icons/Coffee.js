@@ -2,11 +2,9 @@ import React from 'react';
 import { number, string } from 'prop-types';
 
 export const Coffee = ({
-	componentName,
+	componentName = 'coffee',
 	additionalClassName = '',
-	dimensions,
-	viewBox,
-	fill,
+	dimensions = 24,
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -32,11 +30,4 @@ Coffee.propTypes = {
 	dimensions: number,
 	viewBox: string,
 	fill: string,
-};
-
-Coffee.defaultProps = {
-	dimensions: 24,
-	viewBox: '0 -960 960 960',
-	fill: '#333',
-	componentName: 'coffee',
 };

@@ -2,11 +2,11 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const Trash = ({
-	componentName,
-	additionalClassName,
-	fill,
-	dimensions,
-	viewBox,
+	componentName = 'trash',
+	additionalClassName = '',
+	fill = '#333',
+	dimensions = '24',
+	viewBox = '0 -960 960 960',
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -34,13 +34,6 @@ Trash.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-Trash.defaultProps = {
-	componentName: 'trash',
-	dimensions: '24',
-	viewBox: '0 -960 960 960',
-	fill: '#333',
 };
 
 export default Trash;

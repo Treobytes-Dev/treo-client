@@ -19,10 +19,18 @@ body,
 
 .hero-wrapper {
 	color: $color-white;
-	height: 60%;
+	height: 60vh;
+
+	@media #{$small} {
+		height: 50vh;
+	}
 
 	@media #{$medium} {
-		height: 80%;
+		height: 100vh;
+	}
+
+	@media #{$large} {
+		height: 100vh;
 	}
 
 	.body {
@@ -73,6 +81,7 @@ body,
 				height: 100px;
 				width: 100px;
 				box-shadow: 20px 20px 60px #bebebe;
+				margin-bottom: 150px;
 
 				&:hover {
 					background-color: $color-white;

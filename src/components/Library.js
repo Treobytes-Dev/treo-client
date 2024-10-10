@@ -2,7 +2,7 @@ import { func, object } from 'prop-types';
 import { Close } from '../assets/icons/Close';
 
 const Library = ({
-	componentName,
+	componentName = 'library',
 	media,
 	handleImageDelete,
 	handleSelectedMedia,
@@ -40,10 +40,6 @@ Library.propTypes = {
 	media: object.isRequired,
 	handleImageDelete: func.isRequired,
 	handleSelectedMedia: func.isRequired,
-};
-
-Library.defaultProps = {
-	componentName: 'library',
 };
 
 export default Library;

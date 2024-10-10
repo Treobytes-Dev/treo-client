@@ -2,10 +2,10 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const Environment = ({
-	componentName,
-	additionalClassName,
-	dimensions,
-	viewBox,
+	componentName = 'environment',
+	additionalClassName = '',
+	dimensions = '24px',
+	viewBox = '0 -960 960 960',
 }) => (
 	<svg
 		className={`${componentName} ${additionalClassName}`}
@@ -36,12 +36,6 @@ Environment.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-Environment.defaultProps = {
-	componentName: 'environment',
-	dimensions: '24px',
-	viewBox: '0 -960 960 960',
 };
 
 export default Environment;

@@ -1,7 +1,12 @@
 import React from 'react';
 import { string } from 'prop-types';
 
-export const CopyBlock = ({ componentName, header, copyPrimary, listItem }) => {
+export const CopyBlock = ({
+	componentName = 'copy-block',
+	header,
+	copyPrimary,
+	listItem,
+}) => {
 	return (
 		<div className={`${componentName} `} id={`${componentName}`}>
 			<h4 className='header header-four'>{header}</h4>
@@ -20,9 +25,4 @@ CopyBlock.propTypes = {
 	additionalClassName: string,
 	header: string,
 	copyPrimary: string,
-};
-
-CopyBlock.defaultProps = {
-	componentName: 'copy-block',
-	additionalClassName: '',
 };

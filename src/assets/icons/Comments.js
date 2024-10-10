@@ -2,11 +2,11 @@ import React from 'react';
 import { string } from 'prop-types';
 
 const Comments = ({
-	componentName,
-	additionalClassName,
-	fill,
-	dimensions,
-	viewBox,
+	componentName = 'comments',
+	additionalClassName = '',
+	fill = '#333',
+	dimensions = '24',
+	viewBox = '0 -960 960 960',
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -34,12 +34,6 @@ Comments.propTypes = {
 	 * Define icon viewBox
 	 */
 	viewBox: string,
-};
-
-Comments.defaultProps = {
-	componentName: 'comments',
-	dimensions: '24',
-	viewBox: '0 -960 960 960',
 };
 
 export default Comments;

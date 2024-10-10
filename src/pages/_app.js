@@ -1,10 +1,9 @@
-import { AppProvider } from '../context';
 import '../App.scss';
 import Head from 'next/head';
 
 const Base = ({ Component, pageProps }) => {
 	return (
-		<AppProvider>
+		<>
 			<Head>
 				<meta charSet='utf-8' />
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
@@ -27,7 +26,7 @@ const Base = ({ Component, pageProps }) => {
 			<div className='content'>
 				<Component {...pageProps} />
 			</div>
-		</AppProvider>
+		</>
 	);
 };
 

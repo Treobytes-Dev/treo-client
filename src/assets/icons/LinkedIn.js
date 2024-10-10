@@ -2,11 +2,11 @@ import React from 'react';
 import { number, string } from 'prop-types';
 
 export const LinkedIn = ({
-	componentName,
+	componentName = 'linkedIn',
 	additionalClassName = '',
-	dimensions,
-	viewBox,
-	fill,
+	dimensions = 16,
+	viewBox = '0 0 16 16',
+	fill = '#333',
 }) => (
 	<svg
 		className={`icon ${componentName} ${additionalClassName}`}
@@ -25,12 +25,4 @@ LinkedIn.propTypes = {
 	dimensions: number,
 	viewBox: string,
 	fill: string,
-};
-
-LinkedIn.defaultProps = {
-	dimensions: 16,
-	viewBox: '0 0 16 16',
-	fill: '#333',
-
-	componentName: 'LinkedIn',
 };

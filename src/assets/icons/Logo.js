@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Logo = ({ componentName }) => (
+const Logo = ({ componentName = 'logo' }) => (
 	<svg className={componentName} x={0} y={0} viewBox='0 0 100.4 33.5'>
 		<style>
 			{
@@ -1682,9 +1682,5 @@ const Logo = ({ componentName }) => (
 		<circle cx={66.2} cy={13.8} r={0.8} />
 	</svg>
 );
-
-Logo.defaultProps = {
-	componentName: 'logo',
-};
 
 export default Logo;

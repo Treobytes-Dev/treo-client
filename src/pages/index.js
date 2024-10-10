@@ -11,7 +11,7 @@ import { TemplateIntro } from '../components/TemplateIntro';
 
 // mocking hero
 export const mockHeroImage =
-	'http://treobytes.org/wp-content/uploads/2019/09/Girl-STEAM.jpg';
+	'https://res.cloudinary.com/dtjvswb7v/image/upload/v1726785775/Homepage_Picture_vmyqrc.png';
 
 const Home = ({ componentName }) => {
 	const [state] = useContext(AppContext);
@@ -70,7 +70,7 @@ const Home = ({ componentName }) => {
 					<div className='container'>
 						<div className='icon'>
 							<img
-								className='img'
+								className='img'								
 								src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710983480/atom_i2u0i2.png'
 								alt='atom'
 							/>

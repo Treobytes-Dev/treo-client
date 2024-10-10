@@ -48,7 +48,7 @@ const Home = ({ componentName = 'home' }) => {
 					<div className='container'>
 						<div className='icon'>
 							<img
-								className='img'
+								className='img'								
 								src='https://res.cloudinary.com/dtjvswb7v/image/upload/v1710983480/atom_i2u0i2.png'
 								alt='atom'
 							/>
